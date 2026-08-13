@@ -1,0 +1,2 @@
+# Ignore Jekyll processing to ensure raw static HTML/CSS works cleanly
+.nojekyll
