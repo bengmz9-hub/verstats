@@ -4,12 +4,17 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node / Build artifacts (if any future addition)
+# Internal agent maps & memory files
+.project-map.md
+
+# Build artifacts
 node_modules/
 dist/
 build/
 
-# Backups
+# Backups & private environment variables
 backups/
 *.zip
 *.bak
+.env
+.env.local
