@@ -1,6 +1,6 @@
-# Landing Comerç24h — estructura
+# Landing Verstats — estructura
 
-Landing del pack "Presencia digital + más clientes" (proyecto FUTURO, Hospitalet).
+Landing del pack "Presencia digital + más clientes" (proyecto FUTURO, Hospitalet — marca Verstats).
 Diseño: petróleo nocturno #0e1f2a + ámbar #e8a33d, Satoshi + General Sans (Fontshare), gate impeccable 4.0 a 0 hallazgos.
 
 ## Estructura (regla: NADA suelto en la raíz)
