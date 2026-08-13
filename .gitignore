@@ -1,0 +1,15 @@
+# Local / Editor cache
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node / Build artifacts (if any future addition)
+node_modules/
+dist/
+build/
+
+# Backups
+backups/
+*.zip
+*.bak

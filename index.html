@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verstats — Presencia digital para el comercio de barrio</title>
+<meta name="description" content="Tu ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
+<meta property="og:title" content="Verstats — Presencia digital para el comercio de barrio">
+<meta property="og:description" content="Tu ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verstats — Presencia digital para el comercio de barrio">
+<meta name="twitter:description" content="Ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
+<meta name="twitter:image" content="assets/img/og-image.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #0e1f2a;
+    --card: #17303d;
+    --ink: #e6eef2;
+    --muted: #93a7b2;
+    --line: #28424f;
+    --accent: #e8a33d;      /* ámbar petróleo */
+    --accent-deep: #c98a2a;
+    --accent-soft: #243b44;
+    --green: #4ade80;       /* estados "abierto" / checks (verde claro sobre oscuro) */
+    --wa: #25d366;          /* verde WhatsApp oficial (brillante) — CTAs */
+    --wa-deep: #075e54;     /* verde WhatsApp oficial (oscuro) — header chat */
+    --wa-out: #d9fdd3;      /* burbuja saliente oficial */
+    --wa-sys: #dcf8c6;      /* burbuja sistema oficial */
+    --wa-chat-bg: #e5ddd5;  /* fondo de chat oficial */
+    --ig-gradient: linear-gradient(45deg,#f09433,#dc2743,#bc1888); /* gradiente oficial Instagram */
+    --dark: #08141c;        /* fondo del CTA final */
+    --shadow: 0 1px 2px rgba(0,0,0,.25), 0 4px 10px rgba(0,0,0,.28);
+    --radius: 16px;
+    --font-display: 'Satoshi', 'Segoe UI', system-ui, sans-serif;
+    --font-body: 'General Sans', 'Segoe UI', system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; }
+  ::selection { background: var(--accent-soft); color: var(--accent-deep); }
+
+  /* ===================== NAV ===================== */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14,31,42,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; max-width: 1280px; margin: 0 auto; }
+  .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+  .logo span { color: var(--accent); }
+  .logo-img { height: 34px; width: auto; background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; transition: color .15s ease; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
+  .nav-cta:hover { background: #1eb857; color: #06402d; }
+
+  /* ===================== HERO ===================== */
+  .hero { padding: 88px 0 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.08; letter-spacing: -0.03em; text-wrap: pretty; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero .lead { font-size: 1.18rem; color: var(--muted); margin-top: 22px; max-width: 26em; text-wrap: pretty; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 50px; padding: 12px 24px; border-radius: 12px;
+    font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+    text-decoration: none; border: 1px solid transparent; cursor: pointer;
+    transition: transform .12s ease, background .15s ease;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn-wa { background: var(--wa); color: #06402d; }
+  .btn-wa:hover { background: #1eb857; color: #06402d; }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+  /* Mockup teléfono WhatsApp */
+  .phone { width: min(340px, 100%); margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 32px; padding: 10px; box-shadow: var(--shadow); }
+  .phone-screen { border-radius: 24px; overflow: hidden; background: var(--wa-chat-bg); }
+  .phone-bar { display: flex; align-items: center; gap: 10px; background: var(--wa-deep); color: #fff; padding: 12px 14px; }
+  .phone-bar .ava { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--dark); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: .95rem; }
+  .phone-bar .who b { display: block; font-size: .92rem; line-height: 1.2; }
+  .phone-bar .who span { font-size: .75rem; opacity: .85; }
+  .phone-chat { display: flex; flex-direction: column; gap: 8px; padding: 16px 12px; }
+  .wa { max-width: 86%; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
+  .wa-in { align-self: flex-start; background: #fff; color: #111; border-bottom-left-radius: 3px; }
+  .wa-out { align-self: flex-end; background: var(--wa-out); color: #111; border-bottom-right-radius: 3px; }
+  .wa .hora { display: block; text-align: right; font-size: .7rem; line-height: 1.4; color: #8a8178; margin-top: 3px; }
+  .wa-sys { align-self: center; background: var(--wa-sys); border-radius: 8px; font-size: .82rem; text-align: center; color: #14532d; padding: 8px 12px; max-width: 96%; }
+  .phone-tip { text-align: center; font-size: .83rem; color: var(--muted); margin-top: 12px; }
+
+  /* ===================== TRUST BAR ===================== */
+  .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--card); padding: 4px 0; }
+  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .trust-item { display: flex; align-items: center; gap: 12px; padding: 18px 20px; }
+  .trust-item + .trust-item { border-left: 1px solid var(--line); }
+  .trust-item .tick { color: var(--green); font-weight: 800; font-family: var(--font-display); font-size: 1.05rem; }
+  .trust-item b { display: block; font-family: var(--font-display); font-size: .93rem; }
+  .trust-item span { font-size: .85rem; color: var(--muted); }
+
+  /* ===================== SECCIONES ===================== */
+  section { padding: 88px 0; }
+  .sec-head { max-width: 680px; margin-bottom: 52px; }
+  .sec-head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 3.2vw, 2.4rem); letter-spacing: -0.02em; line-height: 1.15; text-wrap: pretty; }
+  .sec-head p { color: var(--muted); margin-top: 14px; font-size: 1.05rem; max-width: 34em; text-wrap: pretty; }
+
+  /* ===== LO QUE COMPRAS: bloques alternados ===== */
+  .compras { display: flex; flex-direction: column; gap: 72px; }
+  .compra { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .compra.flip .compra-copy { order: 2; }
+  .compra-flat { grid-template-columns: 1fr; gap: 32px; }
+  .compra-num { font-family: var(--font-display); font-weight: 800; font-size: .9rem; color: var(--accent); letter-spacing: .04em; display: block; margin-bottom: 10px; }
+  .compra-copy h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; line-height: 1.2; text-wrap: pretty; }
+  .compra-copy p { color: var(--muted); margin-top: 12px; max-width: 36em; text-wrap: pretty; }
+  .compra-note { margin-top: 16px; font-size: .85rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; }
+
+  /* Mockup Google Maps */
+  .gm { border-radius: 12px; overflow: hidden; border: 1px solid #dadce0; background: #fff; box-shadow: var(--shadow); }
+  .gm-search { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #fff; border-bottom: 1px solid #dadce0; font-size: .88rem; }
+  .gm-search .q { flex: 1; background: #f1f3f4; border-radius: 999px; padding: 8px 14px; }
+  .ic { width: 16px; height: 16px; flex: none; display: inline-block; vertical-align: -3px; }
+  .gm-search .ic { width: 15px; height: 15px; }
+  .gm-name { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px 4px; }
+  .gm-name b { font-family: var(--font-display); font-size: 1.12rem; }
+  .gm-stars { color: #f59e0b; letter-spacing: 2px; font-size: .95rem; }
+  .gm-meta { padding: 6px 16px; color: var(--muted); font-size: .87rem; }
+  .gm-meta .tipo { color: #1a73e8; }
+  .gm-info { display: flex; flex-direction: column; gap: 3px; padding: 8px 16px; font-size: .87rem; }
+  .gm-info .open { color: var(--green); font-weight: 700; }
+  .gm-actions { display: flex; gap: 8px; padding: 6px 16px 12px; }
+  .gm-actions span { flex: 1; text-align: center; border: 1px solid #dadce0; border-radius: 999px; padding: 8px 0; font-size: .84rem; color: #1a73e8; }
+  /* impeccable-disable codex-grid-background -- mockup de mapa Google: superficie de mapa legitima segun la propia regla */
+  .gm-map { position: relative; height: 170px; margin: 0 16px 16px; border-radius: 10px; overflow: hidden; background: #e8eaed;
+    background-image: linear-gradient(#d5d8dc 1px, transparent 1px), linear-gradient(90deg, #d5d8dc 1px, transparent 1px);
+    background-size: 28px 28px; }
+  .gm-pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -100%); font-size: 2rem; filter: drop-shadow(0 2px 3px rgba(0,0,0,.3)); }
+  .gm-tag { position: absolute; left: 50%; top: 58%; transform: translateX(-50%); background: #fff; border: 1px solid #dadce0; border-radius: 6px; padding: 7px 12px; font-size: .82rem; font-weight: 600; white-space: nowrap; }
+  .gm-tag small { color: var(--muted); font-weight: 400; }
+
+  /* Mockup reseñas */
+  .revs { display: flex; flex-direction: column; gap: 14px; }
+  .rev { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+  .rev-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .rev-ava { width: 38px; height: 38px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-deep); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; }
+  .rev-head .who { font-size: .87rem; }
+  .rev-head .who b { display: block; line-height: 1.25; }
+  .rev-head .who span { color: var(--muted); font-size: .76rem; }
+  .rev-stars { color: #f59e0b; letter-spacing: 2px; font-size: .92rem; margin-bottom: 6px; }
+  .rev-text { font-size: .93rem; }
+  .rev-resp { margin-top: 12px; background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; font-size: .88rem; }
+  .rev-resp .tag { font-weight: 700; color: var(--accent-deep); display: block; margin-bottom: 3px; font-size: .8rem; }
+
+  /* Posts Instagram */
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .post { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+  .post .dia { font-size: .75rem; letter-spacing: .04em; color: var(--accent); font-weight: 600; padding: 12px 12px 0; font-family: var(--font-display); }
+  .post .head { display: flex; align-items: center; gap: 8px; padding: 10px 12px; }
+  /* impeccable-disable low-contrast -- avatar con gradiente oficial de Instagram (identidad de marca, letra blanca como en la app real) */
+  .post .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--ig-gradient); color: #fff; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
+  .post .user b { font-size: .84rem; display: block; line-height: 1.2; }
+  .post .user span { font-size: .76rem; color: var(--muted); }
+  .post .foto { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+  .post .acciones { display: flex; gap: 12px; padding: 8px 12px 4px; align-items: center; }
+  .post .acciones svg { width: 22px; height: 22px; }
+  .post .likes { font-size: .8rem; font-weight: 600; padding: 6px 12px; }
+  .post .caption { font-size: .82rem; padding: 8px 12px 12px; max-width: 42ch; }
+  .post .caption b { font-weight: 700; }
+  .post .tags { color: #00376b; }
+
+  /* Bot + calendario */
+  .bot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+  .bot-chat { background: var(--wa-chat-bg); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; font-size: .88rem; }
+  .bot-cal { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+  .cal-head { background: var(--accent); color: #fff; text-align: center; font-family: var(--font-display); font-weight: 700; padding: 10px; font-size: .92rem; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: .8rem; }
+  .cal-grid .dow { color: var(--muted); font-size: .75rem; padding: 8px 0 4px; font-weight: 600; }
+  .cal-grid .day { padding: 6px 0; }
+  .cal-grid .day.muted { color: #d6d3d1; }
+  .cal-grid .day.hit { background: var(--accent); color: #fff; font-weight: 700; border-radius: 50%; width: 28px; height: 28px; margin: 1px auto; display: grid; place-items: center; }
+  .cal-note { padding: 10px 14px; border-top: 1px dashed var(--line); font-size: .82rem; color: var(--muted); }
+  .cal-note b { color: var(--accent-deep); }
+
+  /* ===== QUÉ INCLUYE ===== */
+  .incluye { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .inc { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: box-shadow .15s ease, transform .15s ease; }
+  .inc:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .inc .check { color: var(--green); font-family: var(--font-display); font-weight: 800; font-size: 1rem; display: block; margin-bottom: 12px; }
+  .inc h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
+  .inc p { color: var(--muted); font-size: .93rem; max-width: 36em; text-wrap: pretty; }
+
+  /* ===== CÓMO FUNCIONA ===== */
+  .pasos { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); overflow: hidden; }
+  .paso { padding: 30px; position: relative; }
+  .paso + .paso { border-left: 1px solid var(--line); }
+  .paso .num { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--accent); display: block; margin-bottom: 14px; }
+  .paso h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
+  .paso p { color: var(--muted); font-size: .93rem; text-wrap: pretty; }
+
+  /* ===== PRECIOS ===== */
+  .preus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+  .paquet { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: flex; flex-direction: column; }
+  .paquet .tag { font-size: .74rem; letter-spacing: .1em; font-weight: 700; color: var(--muted); font-family: var(--font-display); margin-bottom: 10px; }
+  .paquet h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+  .paquet .preu { font-family: var(--font-display); font-weight: 800; font-size: 2.2rem; letter-spacing: -0.02em; margin: 14px 0 4px; }
+  .paquet .preu small { font-size: .95rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+  .paquet .preu-note { font-size: .85rem; color: var(--muted); margin-bottom: 18px; }
+  .paquet ul { list-style: none; margin: 0 0 26px; flex: 1; }
+  .paquet li { padding: 7px 0 7px 26px; position: relative; font-size: .93rem; }
+  .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+  .paquet .btn { width: 100%; }
+  .paquet.recomanat { border: 2px solid var(--accent); position: relative; }
+  .paquet.recomanat .tag { color: var(--accent); }
+  .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-family: var(--font-display); font-size: .75rem; font-weight: 700; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; white-space: nowrap; }
+
+  /* ===== CTA FINAL ===== */
+  .final { background: var(--dark); border-radius: 24px; color: var(--ink); padding: 64px 48px; text-align: center; }
+  .final h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.02em; max-width: 22em; margin: 0 auto; text-wrap: pretty; }
+  .final p { color: #b8ad9c; margin: 16px auto 28px; max-width: 30em; font-size: 1.02rem; text-wrap: pretty; }
+  .final .btn-wa { background: var(--wa); color: #06402d; }
+  .final .btn-wa:hover { background: #1eb857; color: #06402d; }
+  .final .mini { margin-top: 16px; font-size: .84rem; color: #8d8374; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--muted); font-size: .88rem; }
+  footer p { margin-bottom: 4px; }
+
+  /* ===== Overrides dark mode: mockups y hardcoded ===== */
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+  .badge { color: var(--dark); }
+  .paquet.recomanat .badge { color: var(--dark); }
+  .cal-head { color: var(--dark); }
+  .cal-grid .day.hit { color: var(--dark); }
+  .bot-cal { background: var(--card); border-color: var(--line); }
+  .cal-grid .day { color: var(--ink); }
+  .cal-grid .day.muted { color: var(--muted); }
+  .cal-note { color: var(--muted); }
+  .cal-note b { color: var(--accent); }
+  .phone-tip { color: var(--muted); }
+  .trust { background: var(--card); }
+  .inc { background: var(--card); }
+  .inc:hover { box-shadow: var(--shadow); }
+  .pasos { background: var(--card); }
+  .paquet { background: var(--card); }
+
+  /* ===== Instagram: UI oficial light (fijo, no depende del tema) ===== */
+  .post { background: #fff; border-color: #dbdbdb; }
+  .post .dia { color: #737373; }
+  .post .user b { color: #262626; }
+  .post .user span { color: #737373; }
+  .post .likes { color: #262626; }
+  .post .caption { color: #262626; }
+  .post .caption b { color: #262626; }
+  .post .tags { color: #00376b; }
+
+  /* ===== Google Maps: UI oficial light (fijo, no depende del tema) ===== */
+  .gm { background: #fff; border-color: #dadce0; }
+  .gm-search { background: #fff; border-color: #dadce0; }
+  .gm-search .q { background: #f1f3f4; color: #202124; }
+  .gm-name { background: #fff; }
+  .gm-name b { color: #202124; }
+  .gm-meta { color: #5f6368; }
+  .gm-meta .tipo { color: #1a73e8; }
+  .gm-info { color: #5f6368; }
+  .gm-info .open { color: #188038; }
+  .gm-actions span { border-color: #dadce0; color: #1a73e8; background: #fff; }
+  .gm-map { background: #e8eaed; background-image: linear-gradient(#d5d8dc 1px, transparent 1px), linear-gradient(90deg, #d5d8dc 1px, transparent 1px); background-size: 28px 28px; }
+  .gm-tag { background: #fff; border-color: #dadce0; color: #202124; }
+  .gm-tag small { color: #5f6368; }
+
+  /* ===== Google Reseñas: UI oficial light ===== */
+  .rev { background: #fff; border-color: #dadce0; }
+  .rev-ava { background: #4285f4; color: #fff; }
+  .rev:nth-child(2) .rev-ava { background: #ea4335; }
+  .rev-head .who b { color: #202124; }
+  .rev-head .who span { color: #5f6368; }
+  .rev-stars { color: #fbbc04; }
+  .rev-text { color: #202124; }
+  .rev-resp { background: #f8f9fa; color: #202124; }
+  .rev-resp .tag { color: #1a73e8; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .phone { max-width: 320px; }
+    .compra, .compra.flip .compra-copy { grid-template-columns: 1fr; order: 0; }
+    .posts { grid-template-columns: 1fr; max-width: 420px; }
+    .pasos { grid-template-columns: 1fr; }
+    .paso + .paso { border-left: none; border-top: 1px solid var(--line); }
+    .incluye { grid-template-columns: 1fr 1fr; }
+    .preus { grid-template-columns: 1fr; max-width: 440px; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--line); }
+    section { padding: 64px 0; }
+  }
+
+  /* FAQ */
+  .faq-title { max-width: none; text-align: center; margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 720px; margin: 0 auto; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 18px; }
+  summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; padding: 16px 0; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent); font-size: 1.25rem; font-weight: 700; line-height: 1; }
+  details[open] summary::after { content: "−"; }
+  details p { padding: 0 0 16px; color: var(--muted); font-size: .95rem; }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav { padding: 12px 16px; }
+    .nav-cta { padding: 0 14px; font-size: .88rem; }
+    .bot-grid { grid-template-columns: 1fr; }
+    .incluye { grid-template-columns: 1fr; }
+    .final { padding: 48px 24px; }
+    .hero { padding: 56px 0 48px; }
+    .compra { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#top"><img src="assets/img/logo-verstats.png" alt="Logo Verstats" class="logo-img">VER<span>STATS</span></a>
+    <nav class="nav-links">
+      <a href="#que-compras">Ver lo que compras</a>
+      <a href="#que-incluye">Qué incluye</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#preus">Precios</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats">Escríbenos por WhatsApp</a>
+  </div>
+</header>
+
+<div id="top" class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Tu negocio, <em>visible</em> y respondiendo, aunque no estés</h1>
+        <p class="lead">Para el comercio de Pubilla Cases y Can Serra: te lo dejamos todo hecho y funcionando en dos semanas — tu ficha de Google optimizada, tus reseñas respondidas, tus redes con contenido nuevo y tu WhatsApp preparado. Tú solo sigues con tu negocio.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Comer%C3%A724h">Escríbenos por WhatsApp</a>
+          <a class="btn btn-ghost" href="#que-compras">Ver lo que compras</a>
+        </div>
+      </div>
+      <div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-bar">
+              <div class="ava">B</div>
+              <div class="who"><b>Peluquería Bell Sal</b><span>en línea</span></div>
+            </div>
+            <div class="phone-chat">
+              <div class="wa wa-in">Hola, ¿tenéis hueco para un corte el viernes por la tarde?<span class="hora">17:24</span></div>
+              <div class="wa wa-out">¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?<span class="hora">17:24</span></div>
+              <div class="wa wa-in">¡Perfecto, lo reservo!<span class="hora">17:25</span></div>
+              <div class="wa-sys">✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar</div>
+            </div>
+          </div>
+        </div>
+        <p class="phone-tip">Así responde tu WhatsApp cuando tú estás con un cliente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRUST BAR ============ -->
+  <div class="trust">
+    <div class="trust-grid wrap">
+      <div class="trust-item"><span class="tick">✓</span><div><b>Sin permanencia</b><span>Si no te convence, lo dejamos.</span></div></div>
+      <div class="trust-item"><span class="tick">✓</span><div><b>Alta en 1-2 semanas</b><span>Nada de proyectos eternos.</span></div></div>
+      <div class="trust-item"><span class="tick">✓</span><div><b>Datos reales</b><span>Tus fotos, tu horario, tu estilo.</span></div></div>
+    </div>
+  </div>
+
+  <!-- ============ LO QUE COMPRAS ============ -->
+  <section id="que-compras">
+    <div class="sec-head">
+      <h2>Esto es lo que compras: cada parte del paquete, vista.</h2>
+      <p>Nada de promesas. Cada ejemplo está montado con datos ficticios de una peluquería tipo; en el tuyo van tus fotos, tus horarios y tu tono.</p>
+    </div>
+
+    <div class="compras">
+
+      <!-- 1. Google -->
+      <div class="compra">
+        <div class="compra-copy">
+          <span class="compra-num">Google Maps</span>
+          <h3>Tu ficha de Google, apareciendo cuando te buscan</h3>
+          <p>Optimizada, con tus fotos y horarios bien puestos. Así se ve cuando un vecino busca lo que tú vendes en tu barrio.</p>
+          <p class="compra-note">En tu ficha van tus fotos, tu horario y tus datos reales.</p>
+        </div>
+        <div class="gm">
+          <div class="gm-search"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span class="q">peluquería Pubilla Cases</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+          <div class="gm-name">
+            <b>Peluquería Bell Sal</b>
+            <div><span class="gm-stars">★★★★★</span><br><span style="font-size:.8rem">4,8 · 127 reseñas</span></div>
+          </div>
+          <div class="gm-meta"><span class="tipo">Peluquería</span> · C/ de la Marina 12, Pubilla Cases</div>
+          <div class="gm-info">
+            <span class="open">Abierto · Cierra a las 20:00</span>
+            <span>2 min a pie · 3,4 km</span>
+          </div>
+          <div class="gm-actions"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Llamar</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> Cómo llegar</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Sitio web</span></div>
+          <div class="gm-map">
+            <div class="gm-pin"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#ea4335"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg></div>
+            <div class="gm-tag">Peluquería Bell Sal <small>★ 4,8</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Reseñas -->
+      <div class="compra flip">
+        <div class="compra-copy">
+          <span class="compra-num">Tus reseñas</span>
+          <h3>Tus reseñas, respondidas por ti (sin que tengas que pensarlo)</h3>
+          <p>Las buenas, para dar las gracias. Las malas, para arreglar el problema en público. Todo respondido con tu tono.</p>
+          <p class="compra-note">Respuestas escritas con los datos reales de tus reseñas, respondiendo de verdad a cada cliente.</p>
+        </div>
+        <div class="revs">
+          <div class="rev">
+            <div class="rev-head">
+              <div class="rev-ava">M</div>
+              <div class="who"><b>María P.</b><span>hace 2 semanas · Google</span></div>
+            </div>
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">Me hicieron un corte y un tinte y quedé encantada. Trato cercano y precio justo. La recomiendo.</p>
+            <div class="rev-resp">
+              <span class="tag">Respuesta del propietario</span>
+              ¡Gracias, María! Nos alegra muchísimo que te gustara el resultado. ¡Te esperamos cuando quieras!
+            </div>
+          </div>
+          <div class="rev">
+            <div class="rev-head">
+              <div class="rev-ava">J</div>
+              <div class="who"><b>Jordi R.</b><span>hace 1 mes · Google</span></div>
+            </div>
+            <div class="rev-stars">★★★★☆</div>
+            <p class="rev-text">Buen servicio, el único pero es que había que esperar un poco. Por lo demás, todo bien.</p>
+            <div class="rev-resp">
+              <span class="tag">Respuesta del propietario</span>
+              Hola Jordi, gracias por tu reseña. Estamos mirando cómo reducir la espera en horas punta. ¡Te esperamos!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Instagram -->
+      <div class="compra compra-flat">
+        <div class="compra-copy">
+          <span class="compra-num">Tu Instagram</span>
+          <h3>Tu Instagram vivo: 2-3 posts cada semana, hechos y listos</h3>
+          <p>Con tus productos, tus ofertas y tu barrio. Generados con IA y ajustados a tu estilo; tú solo le das a publicar.</p>
+          <p class="compra-note">Estos tres ejemplos están generados con IA. En tu pack se usan fotos reales de TU negocio, nada de stock genérico.</p>
+        </div>
+        <div class="posts">
+          <div class="post">
+            <div class="dia">Lunes · Promoción</div>
+            <div class="head">
+              <div class="avatar">B</div>
+              <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+            </div>
+            <img class="foto" src="assets/img/post1-color.webp" alt="Post de promoción: tratamiento de color con 20% de descuento" loading="lazy">
+            <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+            <div class="likes">Le gusta a 87 personas</div>
+            <div class="caption"><b>peluquerias.bellsal</b> ¿Te acuerdas de ese color que se te va rápido?<br>Este mes, tinte + tratamiento de brillo con <b>20% de descuento</b> si lo pides por WhatsApp.<br><span class="tags">#PubillaCases #Hospitalet #PeluqueriaHospitalet</span></div>
+          </div>
+          <div class="post">
+            <div class="dia">Miércoles · Prueba social</div>
+            <div class="head">
+              <div class="avatar">B</div>
+              <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+            </div>
+            <img class="foto" src="assets/img/post2-bob.webp" alt="Post de prueba social: corte bob con opinión de clienta" loading="lazy">
+            <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+            <div class="likes">Le gusta a 64 personas</div>
+            <div class="caption"><b>peluquerias.bellsal</b> "El mejor corte que me han hecho en años, y el precio justo." (Marta, Pubilla Cases). Corte + acabado desde 15€.<br><span class="tags">#PeluqueriaBarrio #CorteDePelo #LHospitalet</span></div>
+          </div>
+          <div class="post">
+            <div class="dia">Viernes · Horario + cita</div>
+            <div class="head">
+              <div class="avatar">B</div>
+              <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+            </div>
+            <img class="foto" src="assets/img/post3-local.webp" alt="Post de horario: interior del local" loading="lazy">
+            <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+            <div class="likes">Le gusta a 52 personas</div>
+            <div class="caption"><b>peluquerias.bellsal</b> Viernes de "me lo arreglo para el finde". Tenemos huecos esta tarde; pásate o escríbenos. L-V 9:30-20:00 · S 9:30-14:00<br><span class="tags">#ViernesDePelu #PeluqueriaPubillaCases</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. WhatsApp + bot -->
+      <div class="compra flip">
+        <div class="compra-copy">
+          <span class="compra-num">Tu WhatsApp</span>
+          <h3>Tu WhatsApp respondiendo y las citas apuntándose solas</h3>
+          <p>Respuestas rápidas para lo que todo el mundo pregunta, mensaje de ausencia, catálogo… y si quieres dar el salto, un bot de citas que reserva en tu Google Calendar sin que hagas nada.</p>
+          <p class="compra-note">El bot de citas es un extra opcional (fase 2), se monta cuando tu negocio ya tiene volumen. El paquete base ya incluye el WhatsApp Business configurado con respuestas automáticas.</p>
+        </div>
+        <div class="bot-grid">
+          <div class="bot-chat">
+            <div class="wa wa-in">Hola, ¿tenéis hueco para un corte el viernes por la tarde?<span class="hora">17:24</span></div>
+            <div class="wa wa-out">¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?<span class="hora">17:24</span></div>
+            <div class="wa wa-in">¡Perfecto, lo reservo!<span class="hora">17:25</span></div>
+            <div class="wa-sys">✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar</div>
+          </div>
+          <div class="bot-cal">
+            <div class="cal-head">Agosto 2026</div>
+            <div class="cal-grid">
+              <span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span>
+              <span class="day muted">28</span><span class="day muted">29</span><span class="day muted">30</span><span class="day muted">31</span><span class="day">1</span><span class="day">2</span><span class="day">3</span>
+              <span class="day">4</span><span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span><span class="day">10</span>
+              <span class="day">11</span><span class="day">12</span><span class="day">13</span><span class="day hit">14</span><span class="day">15</span><span class="day">16</span><span class="day">17</span>
+              <span class="day">18</span><span class="day">19</span><span class="day">20</span><span class="day">21</span><span class="day">22</span><span class="day">23</span><span class="day">24</span>
+              <span class="day">25</span><span class="day">26</span><span class="day">27</span><span class="day">28</span><span class="day">29</span><span class="day">30</span><span class="day">31</span>
+            </div>
+            <div class="cal-note"><b>Viernes 14 · 17:30</b> — Corte de pelo<br>Cliente: María P. · vía WhatsApp</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ QUÉ INCLUYE ============ -->
+  <section id="que-incluye">
+    <div class="sec-head">
+      <h2>Qué incluye (y por qué te trae clientes)</h2>
+      <p>No es publicidad genérica. Es que tu negocio aparezca cuando tus vecinos lo buscan, con presencia viva cada semana.</p>
+    </div>
+    <div class="incluye">
+      <div class="inc">
+        <span class="check">✓</span>
+        <h3>Tu ficha de Google perfecta</h3>
+        <p>Fotos, horarios, servicios y categorías correctos. Cuando alguien busca "peluquería en Pubilla Cases", apareces tú, bien presentado.</p>
+      </div>
+      <div class="inc">
+        <span class="check">✓</span>
+        <h3>Reseñas respondidas</h3>
+        <p>Respondemos por ti a tus reseñas (bien y mal) y cada mes te contamos qué dicen tus clientes. Las reseñas se leen antes de entrar.</p>
+      </div>
+      <div class="inc">
+        <span class="check">✓</span>
+        <h3>Contenido cada semana</h3>
+        <p>2-3 posts al mes en Instagram/Facebook con tus productos, ofertas y el barrio. Hechos y listos para publicar, con tu estilo.</p>
+      </div>
+      <div class="inc">
+        <span class="check">✓</span>
+        <h3>WhatsApp preparado</h3>
+        <p>Respuestas rápidas, mensaje de ausencia y catálogo montados. Los clientes preguntan lo de siempre; ahora respondes sin repetirte.</p>
+      </div>
+      <div class="inc">
+        <span class="check">✓</span>
+        <h3>Informe semanal de tu sector</h3>
+        <p>Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué precios mueven, qué dicen las reseñas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section id="como-funciona">
+    <div class="sec-head">
+      <h2>Cómo funciona: tres pasos, sin tecnicismos</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <span class="num">01</span>
+        <h3>Nos das acceso y te miramos el negocio</h3>
+        <p>Tu ficha de Google, tu WhatsApp, tus redes (si tienes). Nos cuentas tu negocio en 10 minutos y nosotros hacemos el resto.</p>
+      </div>
+      <div class="paso">
+        <span class="num">02</span>
+        <h3>En dos semanas, todo funcionando</h3>
+        <p>Día 10: te enseñamos tu ficha de Google y tu primer post en vivo, con tus fotos reales. Lo apruebas y seguimos con el resto.</p>
+      </div>
+      <div class="paso">
+        <span class="num">03</span>
+        <h3>Cada semana, contenido nuevo sin que pienses en ello</h3>
+        <p>Posts listos, reseñas respondidas, informe del sector cada lunes. Tú sigues atendiendo; tu presencia digital trabaja.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRECIOS ============ -->
+  <section id="preus">
+    <div class="sec-head">
+      <h2>Precios de barrio, sin letra pequeña</h2>
+      <p>Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.</p>
+    </div>
+    <div class="preus">
+      <div class="paquet">
+        <div class="tag">Extra (a la carta)</div>
+        <h3>Web o landing</h3>
+        <div class="preu">600 € <small>una vez</small></div>
+        <p class="preu-note">Página sencilla y para móvil, con tus fotos y tu estilo.</p>
+        <ul>
+          <li>Página web sencilla y para móvil</li>
+          <li>Con tus fotos y tu estilo</li>
+          <li>Mantenimiento 50 €/mes (opcional)</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20la%20web%20o%20landing">Preguntar</a>
+      </div>
+      <div class="paquet recomanat">
+        <div class="badge">El más contratado</div>
+        <div class="tag">El paquete completo</div>
+        <h3>Presencia digital</h3>
+        <div class="preu">350 € <small>+ 50 €/mes</small></div>
+        <p class="preu-note">Instalación única + cuota mensual, sin permanencia.</p>
+        <ul>
+          <li>Ficha de Google optimizada y gestionada</li>
+          <li>Reseñas respondidas + informe mensual</li>
+          <li>8-12 posts al mes hechos y listos</li>
+          <li>WhatsApp Business configurado</li>
+          <li>Informe semanal de tu sector</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20el%20paquete%20de%20presencia%20digital">Comenzar</a>
+      </div>
+      <div class="paquet">
+        <div class="tag">Precio especial</div>
+        <h3>Asociados de PubillaComerç</h3>
+        <div class="preu">245 € <small>+ 50 €/mes</small></div>
+        <p class="preu-note">Para comercios asociados de la asociación del barrio.</p>
+        <ul>
+          <li>Todo el paquete Presencia digital</li>
+          <li>30% de descuento en la instalación</li>
+          <li>Para comercios asociados</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Soy%20asociado%20de%20PubillaComer%C3%A7%20y%20quiero%20el%20precio%20especial">Comenzar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="sec-head faq-title">Preguntas que nos hacen antes de empezar</h2>
+      <div class="faq-list">
+        <details>
+          <summary>¿Cuánto tarda en estar todo funcionando?</summary>
+          <p>Entre una y dos semanas desde que confirmamos. Antes de pagar nada te enseñamos tu ficha de Google y tu primer post montados con tus fotos reales: lo ves funcionando y luego decides.</p>
+        </details>
+        <details>
+          <summary>¿Necesito saber de tecnología o hacer algo?</summary>
+          <p>No. Todo se entrega hecho: montamos, gestionamos y te avisamos por WhatsApp. Tu única tarea es seguir con tu negocio; si quieres, apruebas el contenido antes de publicarlo.</p>
+        </details>
+        <details>
+          <summary>¿Y si no me gusta o no me trae clientes?</summary>
+          <p>Sin permanencia: el contrato es mes a mes y te das de baja cuando quieras. La instalación se paga una vez; el mantenimiento se mantiene solo mientras te esté funcionando.</p>
+        </details>
+        <details>
+          <summary>¿Tenéis que entrar en mi cuenta de Google?</summary>
+          <p>No. Te enviamos una invitación con permisos desde tu propia ficha: tú mantienes el control y puedes quitar el acceso cuando quieras. Tu contraseña no se toca.</p>
+        </details>
+        <details>
+          <summary>¿Qué incluye exactamente el mantenimiento de 50 €/mes?</summary>
+          <p>Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el informe semanal de tu barrio (qué hacen tus competidores).</p>
+        </details>
+        <details>
+          <summary>Ya me llevan las redes. ¿Me sirve esto?</summary>
+          <p>Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta — la ficha de Google y las reseñas, por ejemplo, o el informe semanal. Se paga por lo que se usa.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section id="prova">
+    <div class="final">
+      <h2>Te lo dejamos montado, y lo ves antes de pagar</h2>
+      <p>Montamos tu ficha de Google y tu primer post con tus fotos reales. Te lo enseñamos funcionando. Si te gusta, seguimos con el resto del paquete.</p>
+      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20ver%20como%20funciona%20el%20paquete%20de%20presencia%20digital">Escríbenos por WhatsApp</a>
+      <p class="mini">Respondemos en menos de 24h · Sin compromiso</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.</p>
+    <p>Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.</p>
+  </div>
+</footer>
+
+</body>
+</html>
