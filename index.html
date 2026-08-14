@@ -151,8 +151,8 @@
   .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
   .logo span { color: var(--accent); }
   .logo-img { height: 34px; width: auto; background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
-  .nav-links { display: flex; align-items: center; gap: 26px; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; transition: color .15s ease; }
+  .nav-links { display: flex; align-items: center; gap: 20px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; white-space: nowrap; transition: color .15s ease; }
   .nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
   
   .lang-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
@@ -461,6 +461,7 @@
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 900px) {
+    .nav-links { display: none; }
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .phone { max-width: 320px; }
     .compra, .compra.flip .compra-copy { grid-template-columns: 1fr; order: 0; }
