@@ -326,13 +326,31 @@
   .inc h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
   .inc p { color: var(--muted); font-size: .93rem; max-width: 36em; text-wrap: pretty; }
 
-  /* ===== CÓMO FUNCIONA ===== */
-  .pasos { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); overflow: hidden; }
-  .paso { padding: 30px; position: relative; }
-  .paso + .paso { border-left: 1px solid var(--line); }
-  .paso .num { font-family: var(--font-display); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); display: block; margin-bottom: 12px; }
-  .paso h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
-  .paso p { color: var(--muted); font-size: .93rem; text-wrap: pretty; }
+  /* ===== CÓMO FUNCIONA / ROADMAP 14 DÍAS ===== */
+  .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 10px; }
+  .roadmap-step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; display: flex; flex-direction: column; }
+  .roadmap-badge { display: inline-block; width: fit-content; background: var(--accent-soft); color: var(--accent); font-family: var(--font-display); font-weight: 700; font-size: .8rem; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+  .roadmap-step h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; line-height: 1.25; }
+  .roadmap-step p { font-size: .9rem; color: var(--muted); line-height: 1.55; }
+
+  /* ===== CALCULADORA ROI DE BARRIO ===== */
+  .roi-box {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 36px 32px; margin-bottom: 48px; box-shadow: var(--shadow);
+  }
+  .roi-box-head h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .roi-box-head p { color: var(--muted); font-size: .95rem; margin-bottom: 26px; }
+  .roi-grid-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 26px; }
+  .roi-field { display: flex; flex-direction: column; gap: 8px; }
+  .roi-field-label { display: flex; justify-content: space-between; align-items: center; font-size: .92rem; font-weight: 600; color: var(--ink); }
+  .roi-field-val { color: var(--accent); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+  .roi-range { width: 100%; height: 6px; border-radius: 3px; background: var(--line); outline: none; -webkit-appearance: none; appearance: none; cursor: pointer; }
+  .roi-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+  .roi-results-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .roi-res-card span { display: block; font-size: .82rem; color: var(--muted); margin-bottom: 4px; }
+  .roi-res-card b { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--ink); }
+  .roi-res-card.profit b { color: var(--green); }
+  .roi-note-banner { margin-top: 16px; font-size: .88rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 
   /* ===== PRECIOS ===== */
   .preus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
@@ -421,8 +439,9 @@
     .phone { max-width: 320px; }
     .compra, .compra.flip .compra-copy { grid-template-columns: 1fr; order: 0; }
     .posts { grid-template-columns: 1fr; max-width: 420px; }
-    .pasos { grid-template-columns: 1fr; }
-    .paso + .paso { border-left: none; border-top: 1px solid var(--line); }
+    .roadmap { grid-template-columns: 1fr 1fr; }
+    .roi-grid-inputs { grid-template-columns: 1fr; }
+    .roi-results-row { grid-template-columns: 1fr; gap: 12px; }
     .incluye { grid-template-columns: 1fr 1fr; }
     .preus { grid-template-columns: 1fr; max-width: 440px; }
     .trust-grid { grid-template-columns: 1fr; }
@@ -761,36 +780,82 @@
     </div>
   </section>
 
-  <!-- ============ CÓMO FUNCIONA ============ -->
+  <!-- ============ CÓMO FUNCIONA (ROADMAP 14 DÍAS) ============ -->
   <section id="como-funciona">
     <div class="sec-head">
-      <h2>Cómo funciona: tres pasos, sin tecnicismos</h2>
+      <h2 id="roadmap-title">Cómo funciona: tus primeros 14 días paso a paso</h2>
+      <p id="roadmap-sub">Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.</p>
     </div>
-    <div class="pasos">
-      <div class="paso">
-        <span class="num">Paso 1</span>
-        <h3>Nos das acceso y te miramos el negocio</h3>
-        <p>Tu ficha de Google, tu WhatsApp, tus redes (si tienes). Nos cuentas tu negocio en 10 minutos y nosotros hacemos el resto.</p>
+    <div class="roadmap">
+      <div class="roadmap-step">
+        <span class="roadmap-badge">Día 1 – 2</span>
+        <h3 id="rm-step1-h">Charla de 10 minutos</h3>
+        <p id="rm-step1-p">Nos cuentas tu negocio por WhatsApp y nos envías fotos de tu local o servicios. Sin formularios largos ni papeleo.</p>
       </div>
-      <div class="paso">
-        <span class="num">Paso 2</span>
-        <h3>En dos semanas, todo funcionando</h3>
-        <p>Día 10: te enseñamos tu ficha de Google y tu primer post en vivo, con tus fotos reales. Lo apruebas y seguimos con el resto.</p>
+      <div class="roadmap-step">
+        <span class="roadmap-badge">Día 7</span>
+        <h3 id="rm-step2-h">Primer borrador en vivo</h3>
+        <p id="rm-step2-p">Montamos tu ficha de Google Maps optimizada y preparamos tu primer lote de contenidos para que lo revises.</p>
       </div>
-      <div class="paso">
-        <span class="num">Paso 3</span>
-        <h3>Cada semana, contenido nuevo sin que pienses en ello</h3>
-        <p>Posts listos, reseñas respondidas, informe del sector cada lunes. Tú sigues atendiendo; tu presencia digital trabaja.</p>
+      <div class="roadmap-step">
+        <span class="roadmap-badge">Día 10</span>
+        <h3 id="rm-step3-h">Lo ves antes de pagar</h3>
+        <p id="rm-step3-p">Te enseñamos todo funcionando con tus fotos y datos reales. Si te gusta, seguimos; si no te convence, no pagas nada.</p>
+      </div>
+      <div class="roadmap-step">
+        <span class="roadmap-badge">Día 14</span>
+        <h3 id="rm-step4-h">Todo en marcha</h3>
+        <p id="rm-step4-p">Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes; tu presencia digital trabaja sola.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ PRECIOS ============ -->
+  <!-- ============ PRECIOS & CALCULADORA ROI ============ -->
   <section id="preus">
     <div class="sec-head">
-      <h2>Precios de barrio, sin letra pequeña</h2>
-      <p>Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.</p>
+      <h2 id="preus-title">Precios de barrio, sin letra pequeña</h2>
+      <p id="preus-sub">Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.</p>
     </div>
+
+    <!-- Calculadora interactiva ROI -->
+    <div class="roi-box" aria-label="Calculadora de retorno de inversión">
+      <div class="roi-box-head">
+        <h3 id="roi-title">Calcula cuánto te renta este paquete</h3>
+        <p id="roi-sub">Mueve los controles con los números reales de tu negocio y comprueba cómo se amortiza la cuota.</p>
+      </div>
+      <div class="roi-grid-inputs">
+        <div class="roi-field">
+          <div class="roi-field-label">
+            <label for="roi-clients" id="roi-lbl-clients">Clientes nuevos que te encuentran al mes:</label>
+            <span class="roi-field-val" id="roi-clients-val">4 clientes</span>
+          </div>
+          <input type="range" id="roi-clients" min="1" max="15" value="4" step="1" oninput="calcRoi()" class="roi-range">
+        </div>
+        <div class="roi-field">
+          <div class="roi-field-label">
+            <label for="roi-ticket" id="roi-lbl-ticket">Gasto medio por cliente / compra:</label>
+            <span class="roi-field-val" id="roi-ticket-val">20 €</span>
+          </div>
+          <input type="range" id="roi-ticket" min="5" max="80" value="20" step="1" oninput="calcRoi()" class="roi-range">
+        </div>
+      </div>
+      <div class="roi-results-row">
+        <div class="roi-res-card">
+          <span id="roi-res-extra-lbl">Ingreso extra estimado:</span>
+          <b id="roi-extra">+80 €/mes</b>
+        </div>
+        <div class="roi-res-card">
+          <span id="roi-res-fee-lbl">Coste cuota mensual:</span>
+          <b>-50 €/mes</b>
+        </div>
+        <div class="roi-res-card profit">
+          <span id="roi-res-profit-lbl">Beneficio limpio para tu caja:</span>
+          <b id="roi-profit">+30 €/mes</b>
+        </div>
+      </div>
+      <p class="roi-note-banner" id="roi-note-text">✅ Con solo 3 clientes nuevos al mes, el pack ya se paga completamente solo.</p>
+    </div>
+
     <div class="preus">
       <div class="paquet">
         <div class="tag">Precio especial barrio</div>
@@ -916,7 +981,26 @@
       tabPeluqueria: '💇‍♀️ Peluquería & Estética',
       tabHosteleria: '☕ Bar & Restaurante',
       tabComercio: '🛍️ Tienda & Comercio',
-      mobileBarDesc: 'Presencia digital de barrio'
+      mobileBarDesc: 'Presencia digital de barrio',
+      rmTitle: 'Cómo funciona: tus primeros 14 días paso a paso',
+      rmSub: 'Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.',
+      rm1H: 'Charla de 10 minutos',
+      rm1P: 'Nos cuentas tu negocio por WhatsApp y nos envías fotos de tu local o servicios. Sin formularios largos ni papeleo.',
+      rm2H: 'Primer borrador en vivo',
+      rm2P: 'Montamos tu ficha de Google Maps optimizada y preparamos tu primer lote de contenidos para que lo revises.',
+      rm3H: 'Lo ves antes de pagar',
+      rm3P: 'Te enseñamos todo funcionando con tus fotos y datos reales. Si te gusta, seguimos; si no te convence, no pagas nada.',
+      rm4H: 'Todo en marcha',
+      rm4P: 'Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes; tu presencia digital trabaja sola.',
+      preusTitle: 'Precios de barrio, sin letra pequeña',
+      preusSub: 'Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.',
+      roiTitle: 'Calcula cuánto te renta este paquete',
+      roiSub: 'Mueve los controles con los números reales de tu negocio y comprueba cómo se amortiza la cuota.',
+      roiLblClients: 'Clientes nuevos que te encuentran al mes:',
+      roiLblTicket: 'Gasto medio por cliente / compra:',
+      roiResExtra: 'Ingreso extra estimado:',
+      roiResFee: 'Coste cuota mensual:',
+      roiResProfit: 'Beneficio limpio para tu caja:'
     },
     ca: {
       heroH1: 'El teu negoci, <em>visible</em> i responent, encara que no hi siguis',
@@ -934,7 +1018,26 @@
       tabPeluqueria: '💇‍♀️ Perruqueria & Estètica',
       tabHosteleria: '☕ Bar & Restaurant',
       tabComercio: '🛍️ Botiga & Comerç',
-      mobileBarDesc: 'Presència digital de barri'
+      mobileBarDesc: 'Presència digital de barri',
+      rmTitle: 'Com funciona: els teus primers 14 dies pas a pas',
+      rmSub: 'Sense sorpreses ni tecnicismes. Saps en tot moment què passa des del primer missatge fins que el teu negoci està actiu al barri.',
+      rm1H: 'Xerrada de 10 minuts',
+      rm1P: 'Ens expliques el teu negoci per WhatsApp i ens passes fotos del teu local o serveis. Sense formularis llargs ni paperassa.',
+      rm2H: 'Primer esborrany en viu',
+      rm2P: 'Muntem la teva fitxa de Google Maps optimitzada i preparem el teu primer lot de continguts perquè el revisis.',
+      rm3H: 'Ho veus abans de pagar',
+      rm3P: 'T\'ho ensenyem tot funcionant amb les teves fotos i dades reals. Si t\'agrada, seguim; si no et convenç, no pagues res.',
+      rm4H: 'Tot en marxa',
+      rm4P: 'Fitxa activa, ressenyes ateses i WhatsApp a punt. Tu continues amb els teus clients; la teva presència digital treballa sola.',
+      preusTitle: 'Preus de barri, sense lletra petita',
+      preusSub: 'Instal·lació única + quota mensual. Sense permanència: si no et convenç, ho deixem.',
+      roiTitle: 'Calcula quant et rendeix aquest paquet',
+      roiSub: 'Mou els controls amb els números reals del teu negoci i comprova com s\'amortitza la quota.',
+      roiLblClients: 'Clients nous que et descobreixen al mes:',
+      roiLblTicket: 'Despesa mitjana per client / compra:',
+      roiResExtra: 'Ingrés extra estimat:',
+      roiResFee: 'Cost quota mensual:',
+      roiResProfit: 'Benefici net per a la teva caixa:'
     }
   };
 
@@ -971,6 +1074,49 @@
     if (tabHost) tabHost.textContent = t.tabHosteleria;
     if (tabCom) tabCom.textContent = t.tabComercio;
     if (mobDesc) mobDesc.textContent = t.mobileBarDesc;
+
+    // Roadmap & ROI i18n
+    const rmTitle = document.getElementById('roadmap-title');
+    const rmSub = document.getElementById('roadmap-sub');
+    const rm1H = document.getElementById('rm-step1-h');
+    const rm1P = document.getElementById('rm-step1-p');
+    const rm2H = document.getElementById('rm-step2-h');
+    const rm2P = document.getElementById('rm-step2-p');
+    const rm3H = document.getElementById('rm-step3-h');
+    const rm3P = document.getElementById('rm-step3-p');
+    const rm4H = document.getElementById('rm-step4-h');
+    const rm4P = document.getElementById('rm-step4-p');
+    const preusTitle = document.getElementById('preus-title');
+    const preusSub = document.getElementById('preus-sub');
+    const roiTitle = document.getElementById('roi-title');
+    const roiSub = document.getElementById('roi-sub');
+    const roiLblClients = document.getElementById('roi-lbl-clients');
+    const roiLblTicket = document.getElementById('roi-lbl-ticket');
+    const roiResExtraLbl = document.getElementById('roi-res-extra-lbl');
+    const roiResFeeLbl = document.getElementById('roi-res-fee-lbl');
+    const roiResProfitLbl = document.getElementById('roi-res-profit-lbl');
+
+    if (rmTitle) rmTitle.textContent = t.rmTitle;
+    if (rmSub) rmSub.textContent = t.rmSub;
+    if (rm1H) rm1H.textContent = t.rm1H;
+    if (rm1P) rm1P.textContent = t.rm1P;
+    if (rm2H) rm2H.textContent = t.rm2H;
+    if (rm2P) rm2P.textContent = t.rm2P;
+    if (rm3H) rm3H.textContent = t.rm3H;
+    if (rm3P) rm3P.textContent = t.rm3P;
+    if (rm4H) rm4H.textContent = t.rm4H;
+    if (rm4P) rm4P.textContent = t.rm4P;
+    if (preusTitle) preusTitle.textContent = t.preusTitle;
+    if (preusSub) preusSub.textContent = t.preusSub;
+    if (roiTitle) roiTitle.textContent = t.roiTitle;
+    if (roiSub) roiSub.textContent = t.roiSub;
+    if (roiLblClients) roiLblClients.textContent = t.roiLblClients;
+    if (roiLblTicket) roiLblTicket.textContent = t.roiLblTicket;
+    if (roiResExtraLbl) roiResExtraLbl.textContent = t.roiResExtra;
+    if (roiResFeeLbl) roiResFeeLbl.textContent = t.roiResFee;
+    if (roiResProfitLbl) roiResProfitLbl.textContent = t.roiResProfit;
+
+    calcRoi();
   }
 
   const nicheData = {
@@ -1018,6 +1164,46 @@
     if (gmStars) gmStars.textContent = data.stars;
     if (gmMeta) gmMeta.innerHTML = `<span class="tipo">${data.tipo}</span> · ${data.dir}`;
     if (gmTag) gmTag.innerHTML = data.tag;
+  }
+
+  function calcRoi() {
+    const clientsInput = document.getElementById('roi-clients');
+    const ticketInput = document.getElementById('roi-ticket');
+    if (!clientsInput || !ticketInput) return;
+    const clients = parseInt(clientsInput.value, 10);
+    const ticket = parseInt(ticketInput.value, 10);
+    const clientsVal = document.getElementById('roi-clients-val');
+    const ticketVal = document.getElementById('roi-ticket-val');
+    const extraEl = document.getElementById('roi-extra');
+    const profitEl = document.getElementById('roi-profit');
+    const noteEl = document.getElementById('roi-note-text');
+
+    const clientSuffix = currentLang === 'ca' ? (clients === 1 ? 'client' : 'clients') : (clients === 1 ? 'cliente' : 'clientes');
+    if (clientsVal) clientsVal.textContent = `${clients} ${clientSuffix}`;
+    if (ticketVal) ticketVal.textContent = `${ticket} €`;
+
+    const extra = clients * ticket;
+    const profit = extra - 50;
+
+    if (extraEl) extraEl.textContent = `+${extra} €/${currentLang === 'ca' ? 'mes' : 'mes'}`;
+    if (profitEl) {
+      if (profit >= 0) {
+        profitEl.textContent = `+${profit} €/${currentLang === 'ca' ? 'mes' : 'mes'}`;
+        profitEl.style.color = 'var(--green)';
+      } else {
+        profitEl.textContent = `${profit} €/${currentLang === 'ca' ? 'mes' : 'mes'}`;
+        profitEl.style.color = '#f87171';
+      }
+    }
+
+    if (noteEl) {
+      const minNeeded = Math.ceil(50 / ticket);
+      if (currentLang === 'ca') {
+        noteEl.textContent = `✅ Amb només ${minNeeded} ${minNeeded === 1 ? 'client nou' : 'clients nous'} al mes, la quota es paga completament sola.`;
+      } else {
+        noteEl.textContent = `✅ Con solo ${minNeeded} ${minNeeded === 1 ? 'cliente nuevo' : 'clientes nuevos'} al mes, el pack ya se paga completamente solo.`;
+      }
+    }
   }
 
   // Scroll listener for mobile sticky bar
