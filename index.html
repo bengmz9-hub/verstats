@@ -180,15 +180,18 @@
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     min-height: 50px; padding: 12px 24px; border-radius: 12px;
-    font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
     text-decoration: none; border: 1px solid transparent; cursor: pointer;
     transition: transform .15s cubic-bezier(0.16, 1, 0.3, 1), background .15s ease, box-shadow .15s ease;
   }
-  .btn:hover { transform: translateY(-1px); }
   .btn:active { transform: scale(.97); }
-  .btn-wa { background: var(--wa); color: #06402d; }
-  .btn-wa:hover { background: #1eb857; color: #06402d; }
-  .btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-wa {
+    background: linear-gradient(180deg, #2ae772 0%, #25d366 100%);
+    color: #063d27;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
   .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
   /* Mockup teléfono WhatsApp */
@@ -364,9 +367,37 @@
   .paquet li { padding: 7px 0 7px 26px; position: relative; font-size: .93rem; }
   .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
   .paquet .btn { width: 100%; }
-  .paquet.recomanat { border: 2px solid var(--accent); position: relative; }
+  .paquet.recomanat {
+    border: 2px solid var(--accent);
+    position: relative;
+    box-shadow: 0 12px 36px rgba(232, 163, 61, 0.14), 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
   .paquet.recomanat .tag { color: var(--accent); }
-  .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-family: var(--font-display); font-size: .75rem; font-weight: 700; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; white-space: nowrap; }
+  .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--dark); font-family: var(--font-display); font-size: .75rem; font-weight: 800; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+
+  /* Modal de Informe Semanal (Craft) */
+  .inc-demo-btn {
+    display: inline-block; margin-top: 12px; background: transparent; border: none;
+    color: var(--accent); font-family: var(--font-display); font-weight: 700; font-size: .88rem;
+    cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px;
+  }
+  .report-modal {
+    border: none; border-radius: 20px; background: transparent; padding: 0;
+    max-width: 580px; width: 90%; margin: auto;
+    box-shadow: 0 24px 64px rgba(0,0,0,.75);
+  }
+  .report-modal::backdrop { background: rgba(8, 20, 28, 0.82); backdrop-filter: blur(6px); }
+  .modal-card { background: var(--card); border: 1px solid var(--accent-soft); border-radius: 20px; padding: 28px; color: var(--ink); }
+  .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .modal-tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: .75rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; margin-bottom: 6px; }
+  .modal-head h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; }
+  .modal-close { background: var(--paper); border: 1px solid var(--line); color: var(--muted); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
+  .modal-close:hover { color: var(--ink); border-color: var(--accent); }
+  .report-section { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .report-section h4 { font-family: var(--font-display); font-size: .95rem; margin-bottom: 8px; color: var(--accent); }
+  .report-section p { font-size: .88rem; color: var(--muted); margin-bottom: 6px; line-height: 1.5; }
+  .report-tip { background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.25); border-radius: 12px; padding: 14px; font-size: .86rem; color: var(--ink); margin-top: 14px; }
+  .modal-foot { margin-top: 20px; display: flex; justify-content: flex-end; }
 
   /* ===== CTA FINAL ===== */
   .final { background: var(--dark); border-radius: 24px; color: var(--ink); padding: 64px 48px; text-align: center; }
@@ -776,6 +807,7 @@
         <span class="check">✓</span>
         <h3>Informe semanal de tu sector</h3>
         <p>Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué precios mueven, qué dicen las reseñas.</p>
+        <button class="inc-demo-btn" onclick="openReportModal()" id="btn-open-report">Ver ejemplo de informe semanal →</button>
       </div>
     </div>
   </section>
@@ -941,6 +973,37 @@
       <p class="mini">Respondemos en menos de 24h · Sin compromiso</p>
     </div>
   </section>
+
+  <!-- Modal de Demostración del Radar Semanal (Craft) -->
+  <dialog id="reportModal" class="report-modal" aria-labelledby="modalReportTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <span class="modal-tag" id="modalTag">Ejemplo de Entrega Semanal</span>
+          <h3 id="modalReportTitle">Radar Semanal Verstats — Lunes 10 de Agosto</h3>
+        </div>
+        <button class="modal-close" onclick="closeReportModal()" aria-label="Cerrar modal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="report-section">
+          <h4 id="modalSec1Title">📍 Movimientos en tu Barrio (<span class="barrio-name">Pubilla Cases / Can Serra</span>)</h4>
+          <p id="modalSec1P1">• <b>2 competidores</b> cambiaron horario de verano sin actualizar Google Maps (oportunidad de captar clientes en tarde).</p>
+          <p id="modalSec1P2">• <b>Reseñas destacadas:</b> El local cercano acumuló quejas por lentitud; en tu ficha destacan la atención rápida.</p>
+        </div>
+        <div class="report-section">
+          <h4 id="modalSec2Title">⭐ Rendimiento de tu Ficha</h4>
+          <p id="modalSec2P1">• <b>18 llamadas directas</b> desde tu ficha de Google Maps (+22% vs semana anterior).</p>
+          <p id="modalSec2P2">• <b>4 reseñas nuevas</b> recibidas y respondidas al 100% en menos de 2 horas con tu tono.</p>
+        </div>
+        <div class="report-tip" id="modalTip">
+          💡 <b>Recomendación para este viernes:</b> Publicar post de aviso de horarios del fin de semana con la foto del nuevo producto.
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-wa" onclick="closeReportModal()" style="min-height:40px;padding:8px 18px;font-size:.9rem;">Cerrar demostración</button>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Mobile Sticky Bottom Bar -->
   <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacte ràpid">
@@ -1205,6 +1268,68 @@
       }
     }
   }
+
+  // Modal helpers (Craft)
+  function openReportModal() {
+    const modal = document.getElementById('reportModal');
+    if (modal && typeof modal.showModal === 'function') {
+      modal.showModal();
+    }
+  }
+  function closeReportModal() {
+    const modal = document.getElementById('reportModal');
+    if (modal) {
+      modal.close();
+    }
+  }
+
+  // Multi-neighborhood engine (Extract)
+  const neighborhoodPresets = {
+    collblanc: {
+      name: 'Collblanc y La Torrassa',
+      assoc: 'Asociados de Collblanc Comerç',
+      address1: 'C/ del Progrés 14, Collblanc',
+      address2: 'Ctra. de Collblanc 68, L\'Hospitalet',
+      address3: 'C/ Riera Blanca 32, Collblanc',
+      searchPrefix: 'Collblanc'
+    },
+    bellvitge: {
+      name: 'Bellvitge y Gornal',
+      assoc: 'Asociados de Bellvitge Comerç',
+      address1: 'Rambla de Marina 140, Bellvitge',
+      address2: 'Av. d\'Amèrica 22, Bellvitge',
+      address3: 'Av. de la Mare de Déu de Bellvitge 4, L\'Hospitalet',
+      searchPrefix: 'Bellvitge'
+    },
+    florida: {
+      name: 'La Florida y Les Planes',
+      assoc: 'Asociados de La Florida Comerç',
+      address1: 'Av. Masnou 50, La Florida',
+      address2: 'Av. Primavera 12, La Florida',
+      address3: 'C/ Sevilla 18, La Florida',
+      searchPrefix: 'La Florida'
+    }
+  };
+
+  function applyNeighborhoodPreset() {
+    const params = new URLSearchParams(window.location.search);
+    const barrioKey = params.get('barrio')?.toLowerCase();
+    if (!barrioKey || !neighborhoodPresets[barrioKey]) return;
+    const b = neighborhoodPresets[barrioKey];
+
+    document.querySelectorAll('.barrio-name').forEach(el => el.textContent = b.name);
+    const lead = document.querySelector('.hero .lead');
+    if (lead) {
+      lead.textContent = lead.textContent.replace('Pubilla Cases y Can Serra', b.name).replace('Pubilla Cases i Can Serra', b.name);
+    }
+    const assocTitle = document.querySelector('.paquet h3');
+    if (assocTitle && assocTitle.textContent.includes('PubillaComerç')) {
+      assocTitle.textContent = b.assoc;
+    }
+  }
+
+  // Initialize
+  applyNeighborhoodPreset();
 
   // Scroll listener for mobile sticky bar
   window.addEventListener('scroll', () => {
