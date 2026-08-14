@@ -153,9 +153,22 @@
   .logo-img { height: 34px; width: auto; background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
   .nav-links { display: flex; align-items: center; gap: 26px; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; transition: color .15s ease; }
-  .nav-links a:hover { color: var(--ink); }
   .nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
-  .nav-cta:hover { background: #1eb857; color: #06402d; }
+  
+  .lang-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+  .lang-btn { background: transparent; border: none; color: var(--muted); font-family: var(--font-display); font-weight: 700; font-size: .78rem; padding: 4px 10px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
+  .lang-btn.active { background: var(--accent); color: var(--dark); }
+  .lang-btn:focus-visible { outline: 2px solid var(--accent); }
+
+  @media (hover: hover) {
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta:hover { background: #1eb857; color: #06402d; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-wa:hover { background: #1eb857; color: #06402d; }
+    .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    .inc:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .niche-btn:hover { color: var(--ink); border-color: var(--accent-soft); background: #1e3a47; }
+  }
 
   /* ===================== HERO ===================== */
   .hero { padding: 88px 0 72px; }
@@ -427,16 +440,47 @@
   summary::after { content: "+"; color: var(--accent); font-size: 1.35rem; font-weight: 700; line-height: 1; display: inline-block; transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1); }
   details[open] summary::after { transform: rotate(45deg); }
   details p { padding: 0 0 16px; color: var(--muted); font-size: .95rem; line-height: 1.6; }
+  /* Mobile Sticky Action Bar */
+  .mobile-sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    z-index: 90;
+    background: rgba(14,31,42,.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--accent-soft);
+    border-radius: 16px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mobile-sticky-bar.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .mobile-bar-info b { display: block; font-family: var(--font-display); font-size: .88rem; color: var(--ink); line-height: 1.2; }
+  .mobile-bar-info span { font-size: .75rem; color: var(--muted); }
+  .mobile-bar-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--wa); color: #06402d; font-family: var(--font-display); font-weight: 700; font-size: .84rem;
+    padding: 8px 14px; border-radius: 10px; text-decoration: none; white-space: nowrap;
+    transition: transform .15s ease;
+  }
+  .mobile-bar-btn:active { transform: scale(.96); }
+
   @media (max-width: 600px) {
-    .wrap { padding: 0 20px; }
-    .nav-links { display: none; }
-    .nav { padding: 12px 16px; }
-    .nav-cta { padding: 0 14px; font-size: .88rem; }
-    .bot-grid { grid-template-columns: 1fr; }
-    .incluye { grid-template-columns: 1fr; }
-    .final { padding: 48px 24px; }
-    .hero { padding: 56px 0 48px; }
-    .compra { gap: 28px; }
+    .mobile-sticky-bar { display: flex; }
+    body { padding-bottom: 72px; }
   }
   @media (max-width: 360px) {
     .wrap { padding: 0 14px; }
@@ -468,13 +512,19 @@
   <nav class="nav" aria-label="Navegación principal">
     <a class="logo" href="#top"><img src="assets/img/logo-verstats.png" alt="Logo Verstats" class="logo-img" width="34" height="34">VER<span>STATS</span></a>
     <div class="nav-links">
-      <a href="#que-compras">Ver lo que compras</a>
-      <a href="#que-incluye">Qué incluye</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#preus">Precios</a>
-      <a href="#faq">Preguntas</a>
+      <a href="#que-compras" data-i18n="nav-que-compras">Ver lo que compras</a>
+      <a href="#que-incluye" data-i18n="nav-que-incluye">Qué incluye</a>
+      <a href="#como-funciona" data-i18n="nav-como-funciona">Cómo funciona</a>
+      <a href="#preus" data-i18n="nav-precios">Precios</a>
+      <a href="#faq" data-i18n="nav-faq">Preguntas</a>
     </div>
-    <a class="nav-cta" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats">Escríbenos por WhatsApp</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="lang-toggle" role="group" aria-label="Selector d'idioma">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btn-ca" onclick="setLang('ca')">CA</button>
+      </div>
+      <a class="nav-cta" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats" data-i18n="btn-whatsapp">Escríbenos por WhatsApp</a>
+    </div>
   </nav>
 </header>
 
@@ -827,16 +877,102 @@
     </div>
   </section>
 
+  <!-- Mobile Sticky Bottom Bar -->
+  <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacte ràpid">
+    <div class="mobile-bar-info">
+      <b>Verstats</b>
+      <span id="mobileBarDesc">Presencia digital de barrio</span>
+    </div>
+    <a class="mobile-bar-btn" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats">
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-1px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <span id="mobileBarCta">WhatsApp</span>
+    </a>
+  </div>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.</p>
-    <p>Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.</p>
+    <p id="footer-p1">Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.</p>
+    <p id="footer-p2">Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.</p>
   </div>
 </footer>
 
 <script>
+  const i18n = {
+    es: {
+      heroH1: 'Tu negocio, <em>visible</em> y respondiendo, aunque no estés',
+      heroLead: 'Para el comercio y hostelería de Pubilla Cases y Can Serra: te lo dejamos todo hecho y funcionando en dos semanas. Tu ficha de Google optimizada, tus reseñas respondidas, tus redes con contenido nuevo y tu WhatsApp preparado. Tú solo sigues con tu negocio.',
+      heroBtnWa: 'Escríbenos por WhatsApp',
+      heroBtnGhost: 'Ver lo que compras',
+      trust1: 'Sin permanencia',
+      trust1Sub: 'Si no te convence, lo dejamos.',
+      trust2: 'Alta en 1-2 semanas',
+      trust2Sub: 'Nada de proyectos eternos.',
+      trust3: 'Datos reales',
+      trust3Sub: 'Tus fotos, tu horario, tu estilo.',
+      comprasH2: 'Esto es lo que compras: cada parte del paquete, vista.',
+      comprasLead: 'Nada de promesas abstractas. Elige tu tipo de negocio para ver una demostración realista; en el tuyo van tus fotos, tus horarios y tu estilo.',
+      tabPeluqueria: '💇‍♀️ Peluquería & Estética',
+      tabHosteleria: '☕ Bar & Restaurante',
+      tabComercio: '🛍️ Tienda & Comercio',
+      mobileBarDesc: 'Presencia digital de barrio'
+    },
+    ca: {
+      heroH1: 'El teu negoci, <em>visible</em> i responent, encara que no hi siguis',
+      heroLead: 'Per al comerç i hostaleria de Pubilla Cases i Can Serra: t\'ho deixem tot fet i funcionant en dues setmanes. La teva fitxa de Google optimitzada, les teves ressenyes respostes, les xarxes amb contingut nou i el teu WhatsApp a punt. Tu només continues amb el teu negoci.',
+      heroBtnWa: 'Escriu-nos per WhatsApp',
+      heroBtnGhost: 'Mira què compres',
+      trust1: 'Sense permanència',
+      trust1Sub: 'Si no et convenç, ho deixem.',
+      trust2: 'Alta en 1-2 setmanes',
+      trust2Sub: 'Sense projectes eterns.',
+      trust3: 'Dades reals',
+      trust3Sub: 'Les teves fotos, horaris i estil.',
+      comprasH2: 'Això és el que compres: cada part del paquet, vista.',
+      comprasLead: 'Sense promeses abstractes. Tria el teu tipus de negoci per veure una demostració realista; al teu van les teves fotos, horaris i estil.',
+      tabPeluqueria: '💇‍♀️ Perruqueria & Estètica',
+      tabHosteleria: '☕ Bar & Restaurant',
+      tabComercio: '🛍️ Botiga & Comerç',
+      mobileBarDesc: 'Presència digital de barri'
+    }
+  };
+
+  let currentLang = 'es';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
+    const t = i18n[lang];
+    const heroH1 = document.querySelector('.hero h1');
+    const heroLead = document.querySelector('.hero .lead');
+    const heroBtnWa = document.querySelector('.hero .btn-wa');
+    const heroBtnGhost = document.querySelector('.hero .btn-ghost');
+    const trustItems = document.querySelectorAll('.trust-item');
+    const comprasH2 = document.querySelector('#que-compras .sec-head h2');
+    const comprasLead = document.querySelector('#que-compras .sec-head p');
+    const tabPel = document.getElementById('tab-peluqueria');
+    const tabHost = document.getElementById('tab-hosteleria');
+    const tabCom = document.getElementById('tab-comercio');
+    const mobDesc = document.getElementById('mobileBarDesc');
+
+    if (heroH1) heroH1.innerHTML = t.heroH1;
+    if (heroLead) heroLead.textContent = t.heroLead;
+    if (heroBtnWa) heroBtnWa.textContent = t.heroBtnWa;
+    if (heroBtnGhost) heroBtnGhost.textContent = t.heroBtnGhost;
+    if (trustItems[0]) { trustItems[0].querySelector('b').textContent = t.trust1; trustItems[0].querySelector('span:not(.tick)').textContent = t.trust1Sub; }
+    if (trustItems[1]) { trustItems[1].querySelector('b').textContent = t.trust2; trustItems[1].querySelector('span:not(.tick)').textContent = t.trust2Sub; }
+    if (trustItems[2]) { trustItems[2].querySelector('b').textContent = t.trust3; trustItems[2].querySelector('span:not(.tick)').textContent = t.trust3Sub; }
+    if (comprasH2) comprasH2.textContent = t.comprasH2;
+    if (comprasLead) comprasLead.textContent = t.comprasLead;
+    if (tabPel) tabPel.textContent = t.tabPeluqueria;
+    if (tabHost) tabHost.textContent = t.tabHosteleria;
+    if (tabCom) tabCom.textContent = t.tabComercio;
+    if (mobDesc) mobDesc.textContent = t.mobileBarDesc;
+  }
+
   const nicheData = {
     peluqueria: {
       search: 'peluquería Pubilla Cases',
@@ -883,6 +1019,17 @@
     if (gmMeta) gmMeta.innerHTML = `<span class="tipo">${data.tipo}</span> · ${data.dir}`;
     if (gmTag) gmTag.innerHTML = data.tag;
   }
+
+  // Scroll listener for mobile sticky bar
+  window.addEventListener('scroll', () => {
+    const bar = document.getElementById('mobileStickyBar');
+    if (!bar) return;
+    if (window.scrollY > 380) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }, { passive: true });
 </script>
 
 </body>
