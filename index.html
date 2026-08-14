@@ -166,9 +166,10 @@
     min-height: 50px; padding: 12px 24px; border-radius: 12px;
     font-family: var(--font-display); font-weight: 600; font-size: 1rem;
     text-decoration: none; border: 1px solid transparent; cursor: pointer;
-    transition: transform .12s ease, background .15s ease;
+    transition: transform .15s cubic-bezier(0.16, 1, 0.3, 1), background .15s ease, box-shadow .15s ease;
   }
-  .btn:active { transform: scale(.98); }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: scale(.97); }
   .btn-wa { background: var(--wa); color: #06402d; }
   .btn-wa:hover { background: #1eb857; color: #06402d; }
   .btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
@@ -182,6 +183,16 @@
   .phone-bar .who b { display: block; font-size: .92rem; line-height: 1.2; }
   .phone-bar .who span { font-size: .75rem; opacity: .85; }
   .phone-chat { display: flex; flex-direction: column; gap: 8px; padding: 16px 12px; }
+  
+  @keyframes waMsgIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .phone-chat .wa:nth-child(1) { animation: waMsgIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+  .phone-chat .wa:nth-child(2) { animation: waMsgIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+  .phone-chat .wa:nth-child(3) { animation: waMsgIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both; }
+  .phone-chat .wa-sys { animation: waMsgIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both; }
+
   .wa { max-width: 86%; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
   .wa-in { align-self: flex-start; background: #fff; color: #111; border-bottom-left-radius: 3px; }
   .wa-out { align-self: flex-end; background: var(--wa-out); color: #111; border-bottom-right-radius: 3px; }
@@ -412,6 +423,28 @@
     .final { padding: 48px 24px; }
     .hero { padding: 56px 0 48px; }
     .compra { gap: 28px; }
+  }
+  @media (max-width: 360px) {
+    .wrap { padding: 0 14px; }
+    .nav { padding: 10px 12px; }
+    .nav-cta { padding: 0 10px; font-size: .82rem; }
+    .hero { padding: 40px 0 32px; }
+    .phone { padding: 6px; }
+    .phone-chat { padding: 12px 8px; }
+    .btn { width: 100%; padding: 10px 14px; font-size: .92rem; }
+    .hero-ctas { flex-direction: column; width: 100%; }
+    .paquet { padding: 20px 14px; }
+    .inc { padding: 20px 14px; }
+    .paso { padding: 20px 14px; }
+    .final { padding: 32px 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>
 </head>
