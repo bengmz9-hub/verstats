@@ -565,13 +565,13 @@
       <a href="#que-compras" data-i18n="nav-que-compras">Ver lo que compras</a>
       <a href="#que-incluye" data-i18n="nav-que-incluye">Qué incluye</a>
       <a href="#como-funciona" data-i18n="nav-como-funciona">Cómo funciona</a>
-      <a href="#preus" data-i18n="nav-precios">Precios</a>
+      <a href="#precios" data-i18n="nav-precios">Precios</a>
       <a href="#faq" data-i18n="nav-faq">Preguntas</a>
     </div>
     <div style="display:flex;align-items:center;gap:10px;">
-      <div class="lang-toggle" role="group" aria-label="Selector d'idioma">
-        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
-        <button class="lang-btn" id="btn-ca" onclick="setLang('ca')">CA</button>
+      <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')" aria-label="Cambiar idioma a Español">ES</button>
+        <button class="lang-btn" id="btn-ca" onclick="setLang('ca')" aria-label="Canviar idioma a Català">CA</button>
       </div>
       <a class="nav-cta wa-link" data-wa-context="nav" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20m%C3%A1s%20de%20Verstats%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" data-i18n="nav-btn-whatsapp">Escríbenos por WhatsApp</a>
     </div>
@@ -852,7 +852,8 @@
   </section>
 
   <!-- ============ PRECIOS & CALCULADORA ROI ============ -->
-  <section id="preus">
+  <section id="precios">
+    <div id="preus" style="position:relative;top:-80px;"></div>
     <div class="sec-head">
       <h2 id="preus-title" data-i18n="preus-title">Precios de barrio, sin letra pequeña</h2>
       <p id="preus-sub" data-i18n="preus-sub">Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.</p>
