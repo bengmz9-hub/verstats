@@ -1529,14 +1529,29 @@
     const nameTxt = b.name[currentLang] || b.name.es;
     const assocTxt = b.assoc[currentLang] || b.assoc.es;
 
+    // 1. Reemplazo de spans de nombre de barrio
     document.querySelectorAll('.barrio-name').forEach(el => el.textContent = nameTxt);
+
+    // 2. Lead del Hero: idempotente tomando base del diccionario i18n
     const lead = document.querySelector('.hero .lead');
-    if (lead) {
-      lead.textContent = lead.textContent.replace('Pubilla Cases y Can Serra', nameTxt).replace('Pubilla Cases i Can Serra', nameTxt);
+    if (lead && i18n[currentLang] && i18n[currentLang]['hero-lead']) {
+      const baseLead = i18n[currentLang]['hero-lead'];
+      lead.textContent = baseLead
+        .replace('Pubilla Cases y Can Serra', nameTxt)
+        .replace('Pubilla Cases i Can Serra', nameTxt);
     }
-    const assocTitle = document.querySelector('.paquet h3');
+
+    // 3. Título de asociados: selector robusto por data-i18n
+    const assocTitle = document.querySelector('[data-i18n="paquet1-h3"]');
     if (assocTitle) {
       assocTitle.textContent = assocTxt;
+    }
+
+    // 4. Actualización dinámica del título de la pestaña
+    if (currentLang === 'ca') {
+      document.title = `Verstats — Presència digital a ${nameTxt}`;
+    } else {
+      document.title = `Verstats — Presencia digital en ${nameTxt}`;
     }
   }
 
