@@ -142,7 +142,6 @@
   .wrap { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
   a { color: inherit; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-  ::selection { background: var(--accent-soft); color: var(--accent-deep); }
 
   /* ===================== NAV ===================== */
   header {
@@ -418,7 +417,6 @@
   /* ===== Overrides dark mode: mockups y hardcoded ===== */
   ::selection { background: var(--accent-soft); color: var(--accent); }
   .badge { color: var(--dark); }
-  .paquet.recomanat .badge { color: var(--dark); }
   .cal-head { color: var(--dark); }
   .cal-grid .day.hit { color: var(--dark); }
   .bot-cal { background: var(--card); border-color: var(--line); }
@@ -617,9 +615,9 @@
   <!-- ============ TRUST BAR ============ -->
   <div class="trust">
     <div class="trust-grid wrap">
-      <div class="trust-item"><span class="tick">✓</span><div><b data-i18n="trust-1-b">Sin permanencia</b><span data-i18n="trust-1-span">Si no te convence, lo dejamos.</span></div></div>
-      <div class="trust-item"><span class="tick">✓</span><div><b data-i18n="trust-2-b">Alta en 1-2 semanas</b><span data-i18n="trust-2-span">Nada de proyectos eternos.</span></div></div>
-      <div class="trust-item"><span class="tick">✓</span><div><b data-i18n="trust-3-b">Datos reales</b><span data-i18n="trust-3-span">Tus fotos, tu horario, tu estilo.</span></div></div>
+      <div class="trust-item"><span class="tick" aria-hidden="true">✓</span><div><b data-i18n="trust-1-b">Sin permanencia</b><span data-i18n="trust-1-span">Si no te convence, lo dejamos.</span></div></div>
+      <div class="trust-item"><span class="tick" aria-hidden="true">✓</span><div><b data-i18n="trust-2-b">Alta en 1-2 semanas</b><span data-i18n="trust-2-span">Nada de proyectos eternos.</span></div></div>
+      <div class="trust-item"><span class="tick" aria-hidden="true">✓</span><div><b data-i18n="trust-3-b">Datos reales</b><span data-i18n="trust-3-span">Tus fotos, tu horario, tu estilo.</span></div></div>
     </div>
   </div>
 
@@ -631,12 +629,12 @@
     </div>
 
     <div class="niche-selector" role="tablist" aria-label="Ver ejemplos por tipo de negocio">
-      <button class="niche-btn active" role="tab" aria-selected="true" id="tab-peluqueria" onclick="switchNiche('peluqueria')" data-i18n="tab-peluqueria">💇‍♀️ Peluquería & Estética</button>
-      <button class="niche-btn" role="tab" aria-selected="false" id="tab-hosteleria" onclick="switchNiche('hosteleria')" data-i18n="tab-hosteleria">☕ Bar & Restaurante</button>
-      <button class="niche-btn" role="tab" aria-selected="false" id="tab-comercio" onclick="switchNiche('comercio')" data-i18n="tab-comercio">🛍️ Tienda & Comercio</button>
+      <button class="niche-btn active" role="tab" aria-selected="true" aria-controls="panel-niche" id="tab-peluqueria" onclick="switchNiche('peluqueria')" data-i18n="tab-peluqueria">💇‍♀️ Peluquería & Estética</button>
+      <button class="niche-btn" role="tab" aria-selected="false" aria-controls="panel-niche" id="tab-hosteleria" onclick="switchNiche('hosteleria')" data-i18n="tab-hosteleria">☕ Bar & Restaurante</button>
+      <button class="niche-btn" role="tab" aria-selected="false" aria-controls="panel-niche" id="tab-comercio" onclick="switchNiche('comercio')" data-i18n="tab-comercio">🛍️ Tienda & Comercio</button>
     </div>
 
-    <div class="compras">
+    <div class="compras" role="tabpanel" id="panel-niche" aria-labelledby="tab-peluqueria">
 
       <!-- 1. Google -->
       <div class="compra">
@@ -771,7 +769,7 @@
             <div class="cal-head" data-i18n="bot-cal-head">Agosto 2026</div>
             <div class="cal-grid">
               <span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span>
-              <span class="day muted">28</span><span class="day muted">29</span><span class="day muted">30</span><span class="day muted">31</span><span class="day">1</span><span class="day">2</span><span class="day">3</span>
+              <span class="day muted" aria-hidden="true">28</span><span class="day muted" aria-hidden="true">29</span><span class="day muted" aria-hidden="true">30</span><span class="day muted" aria-hidden="true">31</span><span class="day">1</span><span class="day">2</span><span class="day">3</span>
               <span class="day">4</span><span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span><span class="day">10</span>
               <span class="day">11</span><span class="day">12</span><span class="day">13</span><span class="day hit">14</span><span class="day">15</span><span class="day">16</span><span class="day">17</span>
               <span class="day">18</span><span class="day">19</span><span class="day">20</span><span class="day">21</span><span class="day">22</span><span class="day">23</span><span class="day">24</span>
@@ -1447,6 +1445,10 @@
       btn.classList.toggle('active', isCurrent);
       btn.setAttribute('aria-selected', isCurrent);
     });
+    const panelNiche = document.getElementById('panel-niche');
+    if (panelNiche) {
+      panelNiche.setAttribute('aria-labelledby', `tab-${nicheKey}`);
+    }
     const gmSearch = document.getElementById('gm-search-text');
     const gmName = document.getElementById('gm-name-text');
     const gmStars = document.getElementById('gm-stars-text');
@@ -1477,6 +1479,9 @@
     const clientSuffix = currentLang === 'ca' ? (clients === 1 ? 'client' : 'clients') : (clients === 1 ? 'cliente' : 'clientes');
     if (clientsVal) clientsVal.textContent = `${clients} ${clientSuffix}`;
     if (ticketVal) ticketVal.textContent = `${ticket} €`;
+
+    clientsInput.setAttribute('aria-valuetext', `${clients} ${clientSuffix}`);
+    ticketInput.setAttribute('aria-valuetext', `${ticket} euros`);
 
     const extra = clients * ticket;
     const profit = extra - 50;
@@ -1634,6 +1639,7 @@
   });
 
   // Initialize
+  calcRoi();
   applyNeighborhoodPreset();
   updateWhatsAppLinks();
 
