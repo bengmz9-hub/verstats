@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="Ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
 <meta name="twitter:image" content="assets/img/og-image.png">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="canonical" href="https://verstats.com/">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
@@ -246,8 +247,9 @@
     transition: all .15s ease; display: inline-flex; align-items: center; gap: 6px;
   }
   .niche-btn:hover { color: var(--ink); border-color: var(--accent-soft); background: #1e3a47; }
-  .niche-btn.active { background: var(--accent); color: var(--dark); border-color: var(--accent); }
   .niche-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .demo-badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-display); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+  .demo-badge::before { content: '•'; font-size: 1rem; line-height: 0; color: #d97706; }
 
   .compras { display: flex; flex-direction: column; gap: 72px; }
   .compra { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
@@ -572,7 +574,7 @@
         <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
         <button class="lang-btn" id="btn-ca" onclick="setLang('ca')">CA</button>
       </div>
-      <a class="nav-cta" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats" target="_blank" rel="noopener noreferrer" data-i18n="nav-btn-whatsapp">Escríbenos por WhatsApp</a>
+      <a class="nav-cta wa-link" data-wa-context="nav" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20m%C3%A1s%20de%20Verstats%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" data-i18n="nav-btn-whatsapp">Escríbenos por WhatsApp</a>
     </div>
   </nav>
 </header>
@@ -586,13 +588,14 @@
         <h1 data-i18n="hero-h1">Tu negocio, <em>visible</em> y respondiendo, aunque no estés</h1>
         <p class="lead" data-i18n="hero-lead">Para el comercio y hostelería de Pubilla Cases y Can Serra: te lo dejamos todo hecho y funcionando en dos semanas. Tu ficha de Google optimizada, tus reseñas respondidas, tus redes con contenido nuevo y tu WhatsApp preparado. Tú solo sigues con tu negocio.</p>
         <div class="hero-ctas">
-          <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats" target="_blank" rel="noopener noreferrer" data-i18n="hero-btn-wa">Escríbenos por WhatsApp</a>
+          <a class="btn btn-wa wa-link" data-wa-context="hero" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20c%C3%B3mo%20est%C3%A1%20mi%20negocio%20en%20Google%20y%20el%20barrio" target="_blank" rel="noopener noreferrer" data-i18n="hero-btn-wa">Escríbenos por WhatsApp</a>
           <a class="btn btn-ghost" href="#que-compras" data-i18n="hero-btn-ghost">Ver lo que compras</a>
         </div>
       </div>
       <div>
         <div class="phone">
           <div class="phone-screen">
+            <div style="padding: 8px 12px 0; background: var(--wa-deep);"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
             <div class="phone-bar">
               <div class="ava">B</div>
               <div class="who"><b>Peluquería Bell Sal</b><span>en línea</span></div>
@@ -643,6 +646,7 @@
           <p class="compra-note" data-i18n="compra1-note">En tu ficha van tus fotos, tu horario y tus datos reales.</p>
         </div>
         <div class="gm">
+          <div style="padding: 10px 14px 4px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
           <div class="gm-search"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span class="q" id="gm-search-text">peluquería Pubilla Cases</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
           <div class="gm-name">
             <b id="gm-name-text">Peluquería Bell Sal</b>
@@ -670,6 +674,7 @@
           <p class="compra-note" data-i18n="compra2-note">Respuestas escritas con los datos reales de tus reseñas, respondiendo de verdad a cada cliente.</p>
         </div>
         <div class="revs">
+          <div style="margin-bottom: -4px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
           <div class="rev">
             <div class="rev-head">
               <div class="rev-ava">M</div>
@@ -705,39 +710,42 @@
           <p data-i18n="compra3-p">Con tus productos, tus ofertas y tu barrio. Hechos y ajustados a tu estilo; tú solo le das a publicar.</p>
           <p class="compra-note" data-i18n="compra3-note">Estos tres ejemplos están creados para la demo. En tu pack se usan fotos reales de TU negocio, nada de stock genérico.</p>
         </div>
-        <div class="posts">
-          <div class="post">
-            <div class="dia" data-i18n="post1-dia">Lunes · Promoción</div>
-            <div class="head">
-              <div class="avatar">B</div>
-              <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+        <div>
+          <div style="margin-bottom: 12px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+          <div class="posts">
+            <div class="post">
+              <div class="dia" data-i18n="post1-dia">Lunes · Promoción</div>
+              <div class="head">
+                <div class="avatar">B</div>
+                <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+              </div>
+              <img class="foto" src="assets/img/post1-color.webp" alt="Post de promoción: tratamiento de color con 20% de descuento" width="340" height="420" loading="lazy">
+              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+              <div class="likes" data-i18n="post1-likes">Le gusta a 87 personas</div>
+              <div class="caption"><b data-i18n="post1-caption-user">peluquerias.bellsal</b> <span data-i18n="post1-caption-txt">¿Te acuerdas de ese color que se te va rápido? Este mes, tinte + brillo con <b>20% de descuento</b> por WhatsApp.</span><br><span class="tags">#PubillaCases #Hospitalet #PeluqueriaHospitalet</span></div>
             </div>
-            <img class="foto" src="assets/img/post1-color.webp" alt="Post de promoción: tratamiento de color con 20% de descuento" width="340" height="420" loading="lazy">
-            <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
-            <div class="likes" data-i18n="post1-likes">Le gusta a 87 personas</div>
-            <div class="caption"><b data-i18n="post1-caption-user">peluquerias.bellsal</b> <span data-i18n="post1-caption-txt">¿Te acuerdas de ese color que se te va rápido? Este mes, tinte + brillo con <b>20% de descuento</b> por WhatsApp.</span><br><span class="tags">#PubillaCases #Hospitalet #PeluqueriaHospitalet</span></div>
-          </div>
-          <div class="post">
-            <div class="dia" data-i18n="post2-dia">Miércoles · Prueba social</div>
-            <div class="head">
-              <div class="avatar">B</div>
-              <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+            <div class="post">
+              <div class="dia" data-i18n="post2-dia">Miércoles · Prueba social</div>
+              <div class="head">
+                <div class="avatar">B</div>
+                <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+              </div>
+              <img class="foto" src="assets/img/post2-bob.webp" alt="Post de prueba social: corte bob con opinión de clienta" width="340" height="420" loading="lazy">
+              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+              <div class="likes" data-i18n="post2-likes">Le gusta a 64 personas</div>
+              <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post2-caption-txt">"El mejor corte que me han hecho en años, y el precio justo." (Marta, Pubilla Cases). Corte + acabado desde 15€.</span><br><span class="tags">#PeluqueriaBarrio #CorteDePelo #LHospitalet</span></div>
             </div>
-            <img class="foto" src="assets/img/post2-bob.webp" alt="Post de prueba social: corte bob con opinión de clienta" width="340" height="420" loading="lazy">
-            <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
-            <div class="likes" data-i18n="post2-likes">Le gusta a 64 personas</div>
-            <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post2-caption-txt">"El mejor corte que me han hecho en años, y el precio justo." (Marta, Pubilla Cases). Corte + acabado desde 15€.</span><br><span class="tags">#PeluqueriaBarrio #CorteDePelo #LHospitalet</span></div>
-          </div>
-          <div class="post">
-            <div class="dia" data-i18n="post3-dia">Viernes · Horario + cita</div>
-            <div class="head">
-              <div class="avatar">B</div>
-              <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+            <div class="post">
+              <div class="dia" data-i18n="post3-dia">Viernes · Horario + cita</div>
+              <div class="head">
+                <div class="avatar">B</div>
+                <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
+              </div>
+              <img class="foto" src="assets/img/post3-local.webp" alt="Post de horario: interior del local" width="340" height="420" loading="lazy">
+              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+              <div class="likes" data-i18n="post3-likes">Le gusta a 52 personas</div>
+              <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post3-caption-txt">Viernes de "me lo arreglo para el finde". Tenemos huecos esta tarde; pásate o escríbenos. L-V 9:30-20:00 · S 9:30-14:00</span><br><span class="tags">#ViernesDePelu #PeluqueriaPubillaCases</span></div>
             </div>
-            <img class="foto" src="assets/img/post3-local.webp" alt="Post de horario: interior del local" width="340" height="420" loading="lazy">
-            <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
-            <div class="likes" data-i18n="post3-likes">Le gusta a 52 personas</div>
-            <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post3-caption-txt">Viernes de "me lo arreglo para el finde". Tenemos huecos esta tarde; pásate o escríbenos. L-V 9:30-20:00 · S 9:30-14:00</span><br><span class="tags">#ViernesDePelu #PeluqueriaPubillaCases</span></div>
           </div>
         </div>
       </div>
@@ -752,6 +760,7 @@
         </div>
         <div class="bot-grid">
           <div class="bot-chat">
+            <div style="margin-bottom: 8px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
             <div class="wa wa-in"><span data-i18n="bot-chat-msg1">Hola, ¿tenéis hueco para un corte el viernes por la tarde?</span><span class="hora">17:24</span></div>
             <div class="wa wa-out"><span data-i18n="bot-chat-msg2">¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?</span><span class="hora">17:24</span></div>
             <div class="wa wa-in"><span data-i18n="bot-chat-msg3">¡Perfecto, lo reservo!</span><span class="hora">17:25</span></div>
@@ -880,7 +889,7 @@
           <b data-i18n="roi-res-fee-val">-50 €/mes</b>
         </div>
         <div class="roi-res-card profit">
-          <span id="roi-res-profit-lbl" data-i18n="roi-res-profit-lbl">Beneficio limpio para tu caja:</span>
+          <span id="roi-res-profit-lbl" data-i18n="roi-res-profit-lbl">Impacto económico estimado:</span>
           <b id="roi-profit">+30 €/mes</b>
         </div>
       </div>
@@ -898,7 +907,7 @@
           <li data-i18n="paquet1-li2">30% de descuento en la instalación</li>
           <li data-i18n="paquet1-li3">Para comercios asociados</li>
         </ul>
-        <a class="btn btn-ghost" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Soy%20asociado%20de%20PubillaComer%C3%A7%20y%20quiero%20el%20precio%20especial" target="_blank" rel="noopener noreferrer" data-i18n="paquet1-btn">Comenzar</a>
+        <a class="btn btn-ghost wa-link" data-wa-context="plan-asociados" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Soy%20asociado%20de%20PubillaComer%C3%A7%20y%20quiero%20el%20precio%20especial" target="_blank" rel="noopener noreferrer" data-i18n="paquet1-btn">Comenzar</a>
       </div>
       <div class="paquet recomanat">
         <div class="badge" data-i18n="paquet2-badge">El más contratado</div>
@@ -913,7 +922,7 @@
           <li data-i18n="paquet2-li4">WhatsApp Business configurado</li>
           <li data-i18n="paquet2-li5">Informe semanal de tu sector</li>
         </ul>
-        <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20el%20paquete%20de%20presencia%20digital" target="_blank" rel="noopener noreferrer" data-i18n="paquet2-btn">Comenzar</a>
+        <a class="btn btn-wa wa-link" data-wa-context="plan-completo" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20el%20paquete%20completo%20de%20Presencia%20Digital" target="_blank" rel="noopener noreferrer" data-i18n="paquet2-btn">Comenzar</a>
       </div>
       <div class="paquet">
         <div class="tag" data-i18n="paquet3-tag">Extra (a la carta)</div>
@@ -925,7 +934,7 @@
           <li data-i18n="paquet3-li2">Con tus fotos y tu estilo</li>
           <li data-i18n="paquet3-li3">Mantenimiento 50 €/mes (opcional)</li>
         </ul>
-        <a class="btn btn-ghost" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20la%20web%20o%20landing" target="_blank" rel="noopener noreferrer" data-i18n="paquet3-btn">Preguntar</a>
+        <a class="btn btn-ghost wa-link" data-wa-context="plan-web" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20extra%20de%20Web%20o%20Landing" target="_blank" rel="noopener noreferrer" data-i18n="paquet3-btn">Preguntar</a>
       </div>
     </div>
   </section>
@@ -944,7 +953,7 @@
           <p data-i18n="faq-a2">No. Todo se entrega hecho: montamos, gestionamos y te avisamos por WhatsApp. Tu única tarea es seguir con tu negocio; si quieres, apruebas el contenido antes de publicarlo.</p>
         </details>
         <details>
-          <summary data-i18n="faq-q3">¿Y si no me gusta o no me trae clientes?</summary>
+          <summary data-i18n="faq-q3">¿Y si no me gusta o no me convence?</summary>
           <p data-i18n="faq-a3">Sin permanencia: el contrato es mes a mes y te das de baja cuando quieras. La instalación se paga una vez; el mantenimiento se mantiene solo mientras te esté funcionando.</p>
         </details>
         <details>
@@ -968,7 +977,7 @@
     <div class="final">
       <h2 data-i18n="prova-h2">Te lo dejamos montado, y lo ves antes de pagar</h2>
       <p data-i18n="prova-p">Montamos tu ficha de Google y tu primer post con tus fotos reales. Te lo enseñamos funcionando. Si te gusta, seguimos con el resto del paquete.</p>
-      <a class="btn btn-wa" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20ver%20como%20funciona%20el%20paquete%20de%20presencia%20digital" target="_blank" rel="noopener noreferrer" data-i18n="prova-btn-wa">Escríbenos por WhatsApp</a>
+      <a class="btn btn-wa wa-link" data-wa-context="cta-final" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20ver%20la%20muestra%20de%20mi%20ficha%20y%20posts%20antes%20de%20pagar" target="_blank" rel="noopener noreferrer" data-i18n="prova-btn-wa">Escríbenos por WhatsApp</a>
       <p class="mini" data-i18n="prova-mini">Respondemos en menos de 24h · Sin compromiso</p>
     </div>
   </section>
@@ -978,7 +987,7 @@
     <div class="modal-card">
       <div class="modal-head">
         <div>
-          <span class="modal-tag" id="modalTag" data-i18n="modal-tag">Ejemplo de Entrega Semanal</span>
+          <span class="modal-tag" id="modalTag" data-i18n="modal-tag">DEMO · Ejemplo de Entrega Semanal</span>
           <h3 id="modalReportTitle" data-i18n="modal-title">Radar Semanal Verstats — Lunes 10 de Agosto</h3>
         </div>
         <button class="modal-close" onclick="closeReportModal()" aria-label="Cerrar modal">×</button>
@@ -988,35 +997,36 @@
           <h4 id="modalSec1Title" data-i18n="modal-sec1-title">📍 Movimientos en tu Barrio (<span class="barrio-name">Pubilla Cases / Can Serra</span>)</h4>
           <p id="modalSec1P1" data-i18n="modal-sec1-p1">• <b>2 competidores</b> cambiaron horario de verano sin actualizar Google Maps (oportunidad de captar clientes en tarde).</p>
           <p id="modalSec1P2" data-i18n="modal-sec1-p2">• <b>Reseñas destacadas:</b> El local cercano acumuló quejas por lentitud; en tu ficha destacan la atención rápida.</p>
+          <p id="modalSec1P3" data-i18n="modal-sec1-p3">• <b>Acción recomendada:</b> Mantener horario visible en WhatsApp y destacar servicio rápido en el próximo post.</p>
         </div>
         <div class="report-section">
           <h4 id="modalSec2Title" data-i18n="modal-sec2-title">⭐ Rendimiento de tu Ficha</h4>
           <p id="modalSec2P1" data-i18n="modal-sec2-p1">• <b>18 llamadas directas</b> desde tu ficha de Google Maps (+22% vs semana anterior).</p>
           <p id="modalSec2P2" data-i18n="modal-sec2-p2">• <b>4 reseñas nuevas</b> recibidas y respondidas al 100% en menos de 2 horas con tu tono.</p>
         </div>
-        <div class="report-tip" id="modalTip" data-i18n="modal-tip">
-          💡 <b>Recomendación para este viernes:</b> Publicar post de aviso de horarios del fin de semana con la foto del nuevo producto.
+        <div class="report-tip">
+          <p id="modalTip" data-i18n="modal-tip">💡 <b>Recomendación para este viernes:</b> Publicar post de aviso de horarios del fin de semana con la foto del nuevo producto.</p>
         </div>
       </div>
       <div class="modal-foot">
-        <button class="btn btn-wa" onclick="closeReportModal()" style="min-height:40px;padding:8px 18px;font-size:.9rem;" data-i18n="modal-btn-close">Cerrar demostración</button>
+        <button class="btn btn-wa" onclick="closeReportModal()" data-i18n="modal-btn-close">Cerrar demostración</button>
       </div>
     </div>
   </dialog>
 
-  <!-- Mobile Sticky Bottom Bar -->
-  <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacte ràpid">
-    <div class="mobile-bar-info">
-      <b>Verstats</b>
-      <span id="mobileBarDesc" data-i18n="mobile-bar-desc">Presencia digital de barrio</span>
-    </div>
-    <a class="mobile-bar-btn" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20mas%20de%20Verstats" target="_blank" rel="noopener noreferrer">
-      <svg class="ic" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-1px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-      <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
-    </a>
-  </div>
-
 </main>
+
+<!-- Mobile Sticky Bottom Bar -->
+<div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacto rápido">
+  <div class="mobile-bar-info">
+    <b>Verstats</b>
+    <span id="mobileBarDesc" data-i18n="mobile-bar-desc">Presencia digital de barrio</span>
+  </div>
+  <a class="mobile-bar-btn wa-link" data-wa-context="mobile-sticky" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20m%C3%A1s%20de%20Verstats" target="_blank" rel="noopener noreferrer">
+    <svg class="ic" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-1px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
+  </a>
+</div>
 
 <footer>
   <div class="wrap">
@@ -1096,7 +1106,7 @@
       "bot-cal-head": "Agosto 2026",
       "bot-cal-note-hit": "Viernes 14 · 17:30",
       "bot-cal-note-desc": "Corte de pelo<br>Cliente: María P. · vía WhatsApp",
-      "incluye-h2": "Qué incluye (y por qué te trae clientes)",
+      "incluye-h2": "Qué incluye (y cómo te ayuda a ganar clientes)",
       "incluye-lead": "No es publicidad genérica. Es que tu negocio aparezca cuando tus vecinos lo buscan, con presencia viva cada semana.",
       "inc1-h3": "Tu ficha de Google perfecta",
       "inc1-p": "Fotos, horarios, servicios y categorías correctos. Cuando alguien busca \"peluquería o restaurante en Pubilla Cases\", apareces tú, bien presentado.",
@@ -1106,9 +1116,9 @@
       "inc3-p": "8-12 posts al mes en Instagram/Facebook (2-3 por semana) con tus productos, ofertas y el barrio. Hechos y listos para publicar, con tu estilo.",
       "inc4-h3": "WhatsApp preparado",
       "inc4-p": "Respuestas rápidas, mensaje de ausencia y catálogo montados. Los clientes preguntan lo de siempre; ahora respondes sin repetirte.",
-      "inc5-h3": "Informe semanal de tu sector",
-      "inc5-p": "Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué precios mueven, qué dicen las reseñas.",
-      "inc-demo-btn": "Ver ejemplo de informe semanal →",
+      "inc5-h3": "Radar semanal de tu sector",
+      "inc5-p": "Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué dicen las reseñas y qué acciones puedes aplicar tú.",
+      "inc-demo-btn": "Ver ejemplo de radar semanal →",
       "roadmap-title": "Cómo funciona: tus primeros 14 días paso a paso",
       "roadmap-sub": "Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.",
       "rm-step1-badge": "Día 1 – 2",
@@ -1122,17 +1132,17 @@
       "rm-step3-p": "Te enseñamos todo funcionando con tus fotos y datos reales. Si te gusta, seguimos; si no te convence, no pagas nada.",
       "rm-step4-badge": "Día 14",
       "rm-step4-h": "Todo en marcha",
-      "rm-step4-p": "Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes; tu presencia digital trabaja sola.",
+      "rm-step4-p": "Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes mientras tu presencia digital trabaja cada día para que más vecinos te encuentren.",
       "preus-title": "Precios de barrio, sin letra pequeña",
       "preus-sub": "Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.",
-      "roi-title": "Calcula cuánto te renta este paquete",
-      "roi-sub": "Mueve los controles con los números reales de tu negocio y comprueba cómo se amortiza la cuota.",
+      "roi-title": "Calcula el impacto estimado en tu negocio",
+      "roi-sub": "Mueve los controles con los números reales de tu comercio y comprueba cómo se amortiza la cuota.",
       "roi-lbl-clients": "Clientes nuevos que te encuentran al mes:",
       "roi-lbl-ticket": "Gasto medio por cliente / compra:",
-      "roi-res-extra-lbl": "Ingreso extra estimado:",
+      "roi-res-extra-lbl": "Ingreso adicional estimado:",
       "roi-res-fee-lbl": "Coste cuota mensual:",
       "roi-res-fee-val": "-50 €/mes",
-      "roi-res-profit-lbl": "Beneficio limpio para tu caja:",
+      "roi-res-profit-lbl": "Impacto económico estimado:",
       "paquet1-tag": "Precio especial barrio",
       "paquet1-h3": "Asociados de PubillaComerç",
       "paquet1-note": "Para comercios asociados de la asociación del barrio.",
@@ -1148,7 +1158,7 @@
       "paquet2-li2": "Reseñas respondidas + informe mensual",
       "paquet2-li3": "8-12 posts al mes hechos y listos",
       "paquet2-li4": "WhatsApp Business configurado",
-      "paquet2-li5": "Informe semanal de tu sector",
+      "paquet2-li5": "Radar semanal de tu sector",
       "paquet2-btn": "Comenzar",
       "paquet3-tag": "Extra (a la carta)",
       "paquet3-h3": "Web o landing",
@@ -1164,23 +1174,24 @@
       "faq-a1": "Entre una y dos semanas desde que confirmamos. Antes de pagar nada te enseñamos tu ficha de Google y tu primer post montados con tus fotos reales: lo ves funcionando y luego decides.",
       "faq-q2": "¿Necesito saber de tecnología o hacer algo?",
       "faq-a2": "No. Todo se entrega hecho: montamos, gestionamos y te avisamos por WhatsApp. Tu única tarea es seguir con tu negocio; si quieres, apruebas el contenido antes de publicarlo.",
-      "faq-q3": "¿Y si no me gusta o no me trae clientes?",
+      "faq-q3": "¿Y si no me gusta o no me convence?",
       "faq-a3": "Sin permanencia: el contrato es mes a mes y te das de baja cuando quieras. La instalación se paga una vez; el mantenimiento se mantiene solo mientras te esté funcionando.",
       "faq-q4": "¿Tenéis que entrar en mi cuenta de Google?",
       "faq-a4": "No. Te enviamos una invitación con permisos desde tu propia ficha: tú mantienes el control y puedes quitar el acceso cuando quieras. Tu contraseña no se toca.",
       "faq-q5": "¿Qué incluye exactamente el mantenimiento de 50 €/mes?",
-      "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el informe semanal de tu barrio (qué hacen tus competidores).",
+      "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el radar semanal de tu barrio (competencia y oportunidades accionables).",
       "faq-q6": "Ya me llevan las redes. ¿Me sirve esto?",
-      "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el informe semanal. Se paga por lo que se usa.",
+      "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el radar semanal. Se paga por lo que se usa.",
       "prova-h2": "Te lo dejamos montado, y lo ves antes de pagar",
       "prova-p": "Montamos tu ficha de Google y tu primer post con tus fotos reales. Te lo enseñamos funcionando. Si te gusta, seguimos con el resto del paquete.",
       "prova-btn-wa": "Escríbenos por WhatsApp",
       "prova-mini": "Respondemos en menos de 24h · Sin compromiso",
-      "modal-tag": "Ejemplo de Entrega Semanal",
+      "modal-tag": "DEMO · Ejemplo de Entrega Semanal",
       "modal-title": "Radar Semanal Verstats — Lunes 10 de Agosto",
       "modal-sec1-title": "📍 Movimientos en tu Barrio (<span class=\"barrio-name\">Pubilla Cases / Can Serra</span>)",
       "modal-sec1-p1": "• <b>2 competidores</b> cambiaron horario de verano sin actualizar Google Maps (oportunidad de captar clientes en tarde).",
       "modal-sec1-p2": "• <b>Reseñas destacadas:</b> El local cercano acumuló quejas por lentitud; en tu ficha destacan la atención rápida.",
+      "modal-sec1-p3": "• <b>Acción recomendada:</b> Mantener horario visible en WhatsApp y destacar servicio rápido en el próximo post.",
       "modal-sec2-title": "⭐ Rendimiento de tu Ficha",
       "modal-sec2-p1": "• <b>18 llamadas directas</b> desde tu ficha de Google Maps (+22% vs semana anterior).",
       "modal-sec2-p2": "• <b>4 reseñas nuevas</b> recibidas y respondidas al 100% en menos de 2 horas con tu tono.",
@@ -1192,29 +1203,29 @@
       "footer-p2": "Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad."
     },
     ca: {
-      "nav-que-compras": "Mira què compres",
+      "nav-que-compras": "Veure el que compres",
       "nav-que-incluye": "Què inclou",
       "nav-como-funciona": "Com funciona",
       "nav-precios": "Preus",
-      "nav-faq": "Preguntes freqüents",
+      "nav-faq": "Preguntes",
       "nav-btn-whatsapp": "Escriu-nos per WhatsApp",
       "hero-h1": "El teu negoci, <em>visible</em> i responent, encara que no hi siguis",
-      "hero-lead": "Per al comerç i hostaleria de Pubilla Cases i Can Serra: t'ho deixem tot fet i funcionant en dues setmanes. La teva fitxa de Google optimitzada, les teves ressenyes respostes, les xarxes amb contingut nou i el teu WhatsApp a punt. Tu només continues amb el teu negoci.",
+      "hero-lead": "Per al comerç i restauració de Pubilla Cases i Can Serra: t'ho deixem tot fet i funcionant en dues setmanes. La teva fitxa de Google optimitzada, les teves ressenyes respostes, les teves xarxes amb contingut nou i el teu WhatsApp preparat. Tu només continues amb el teu negoci.",
       "hero-btn-wa": "Escriu-nos per WhatsApp",
-      "hero-btn-ghost": "Mira què compres",
-      "hero-chat-msg1": "Hola, teniu un forat per tallar el divendres a la tarda?",
-      "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim forat. Et va bé?",
-      "hero-chat-msg3": "Perfecte, ho reservo!",
+      "hero-btn-ghost": "Veure el que compres",
+      "hero-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
+      "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
+      "hero-chat-msg3": "Perfecte, me'l reservo!",
       "hero-chat-sys": "✅ Cita creada. Divendres 14 d'agost, 17:30 · Tall de cabell<br>S'ha apuntat sola al teu Google Calendar",
-      "hero-phone-tip": "Així respon el teu WhatsApp quan tu estàs amb un client.",
+      "hero-phone-tip": "Així respon el teu WhatsApp quan estàs atenent un client.",
       "trust-1-b": "Sense permanència",
       "trust-1-span": "Si no et convenç, ho deixem.",
       "trust-2-b": "Alta en 1-2 setmanes",
-      "trust-2-span": "Sense projectes eterns.",
+      "trust-2-span": "Res de projectes eterns.",
       "trust-3-b": "Dades reals",
-      "trust-3-span": "Les teves fotos, horaris i estil.",
+      "trust-3-span": "Les teves fotos, el teu horari, el teu estil.",
       "compras-h2": "Això és el que compres: cada part del paquet, vista.",
-      "compras-lead": "Sense promeses abstractes. Tria el teu tipus de negoci per veure una demostració realista; al teu van les teves fotos, horaris i estil.",
+      "compras-lead": "Res de promeses abstractes. Tria el teu tipus de negoci per veure una demostració realista; al teu van les teves fotos, els teus horaris i el teu estil.",
       "tab-peluqueria": "💇‍♀️ Perruqueria & Estètica",
       "tab-hosteleria": "☕ Bar & Restaurant",
       "tab-comercio": "🛍️ Botiga & Comerç",
@@ -1224,12 +1235,12 @@
       "compra1-note": "A la teva fitxa van les teves fotos, el teu horari i les teves dades reals.",
       "gm-open-text": "Obert · Tanca a les 20:00",
       "gm-dist-text": "2 min a peu · 3,4 km",
-      "gm-act-call": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/></svg> Trucar",
-      "gm-act-route": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"3 11 22 2 13 21 11 13 3 11\"/></svg> Com arribar-hi",
-      "gm-act-web": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg> Lloc web",
+      "gm-act-call": "Trucar",
+      "gm-act-route": "Com arribar",
+      "gm-act-web": "Lloc web",
       "compra2-num": "Les teves ressenyes",
-      "compra2-h3": "Les teves ressenyes, respostes per tu (sense haver de pensar-hi)",
-      "compra2-p": "Les bones, per donar les gràcies. Les dolentes, per solucionar el problema en públic. Tot respost amb el teu to.",
+      "compra2-h3": "Les teves ressenyes, respostes per tu (sense que hagis de pensar-ho)",
+      "compra2-p": "Les bones, per donar les gràcies. Les dolentes, per arreglar el problema en públic. Tot respost amb el teu to.",
       "compra2-note": "Respostes escrites amb les dades reals de les teves ressenyes, responent de debò a cada client.",
       "rev-owner-tag": "Resposta del propietari",
       "rev1-text": "Em van fer un tall i un tint i vaig quedar encantada. Tracte proper i preu just. La recomano.",
@@ -1239,28 +1250,28 @@
       "compra3-num": "El teu Instagram",
       "compra3-h3": "El teu Instagram viu: 2-3 posts cada setmana, fets i a punt",
       "compra3-p": "Amb els teus productes, les teves ofertes i el teu barri. Fets i ajustats al teu estil; tu només li dones a publicar.",
-      "compra3-note": "Aquests tres exemples estan creats per a la demo. Al teu pack s'utilitzen fotos reals del TEU negoci, gens d'estoc genèric.",
+      "compra3-note": "Aquests tres exemples estan creats per a la demo. Al teu pack s'utilitzen fotos reals del TEU negoci, res de stock genèric.",
       "post1-dia": "Dilluns · Promoció",
       "post1-likes": "Li agrada a 87 persones",
-      "post1-caption-txt": "Te'n recordes d'aquell color que marxa ràpid? Aquest mes, tint + brillantor amb <b>20% de descompte</b> per WhatsApp.",
+      "post1-caption-txt": "Te'n recordes d'aquell color que se te'n va ràpid? Aquest mes, tint + brillantor amb un <b>20% de descompte</b> per WhatsApp.",
       "post2-dia": "Dimecres · Prova social",
       "post2-likes": "Li agrada a 64 persones",
-      "post2-caption-txt": "\"El millor tall que m'han fet en anys, i el preu just.\" (Marta, Pubilla Cases). Tall + acabat des de 15€.",
+      "post2-caption-txt": "\"El millor tall que m'han fet en anys, i el preu just.\" (Marta, Pubilla Cases). Tall + pentinat des de 15€.",
       "post3-dia": "Divendres · Horari + cita",
       "post3-likes": "Li agrada a 52 persones",
-      "post3-caption-txt": "Divendres de \"me l'arreglo per al cap de setmana\". Tenim forats aquesta tarda; passa o escriu-nos. DL-DV 9:30-20:00 · DS 9:30-14:00",
+      "post3-caption-txt": "Divendres de \"m'ho arreglo per al cap de setmana\". Tenim forats aquesta tarda; passa o escriu-nos. Dll-Dv 9:30-20:00 · Ds 9:30-14:00",
       "compra4-num": "El teu WhatsApp",
       "compra4-h3": "El teu WhatsApp responent i les cites apuntant-se soles",
       "compra4-p": "Respostes ràpides per al que tothom pregunta, missatge d'absència, catàleg… i si vols fer el salt, un bot de cites que reserva al teu Google Calendar sense que facis res.",
       "compra4-note": "El bot de cites és un extra opcional (fase 2), es munta quan el teu negoci ja té volum. El paquet base ja inclou el WhatsApp Business configurat amb respostes automàtiques.",
-      "bot-chat-msg1": "Hola, teniu un forat per tallar el divendres a la tarda?",
-      "bot-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim forat. Et va bé?",
-      "bot-chat-msg3": "Perfecte, ho reservo!",
+      "bot-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
+      "bot-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
+      "bot-chat-msg3": "Perfecte, me'l reservo!",
       "bot-chat-sys": "✅ Cita creada. Divendres 14 d'agost, 17:30 · Tall de cabell<br>S'ha apuntat sola al teu Google Calendar",
       "bot-cal-head": "Agost 2026",
       "bot-cal-note-hit": "Divendres 14 · 17:30",
       "bot-cal-note-desc": "Tall de cabell<br>Client: Maria P. · via WhatsApp",
-      "incluye-h2": "Què inclou (i per què et porta clients)",
+      "incluye-h2": "Què inclou (i com t'ajuda a guanyar clients)",
       "incluye-lead": "No és publicitat genèrica. És que el teu negoci aparegui quan els teus veïns el busquen, amb presència viva cada setmana.",
       "inc1-h3": "La teva fitxa de Google perfecta",
       "inc1-p": "Fotos, horaris, serveis i categories correctes. Quan algú cerca \"perruqueria o restaurant a Pubilla Cases\", apareixes tu, ben presentat.",
@@ -1270,9 +1281,9 @@
       "inc3-p": "8-12 posts al mes a Instagram/Facebook (2-3 per setmana) amb els teus productes, ofertes i el barri. Fets i a punt per publicar, amb el teu estil.",
       "inc4-h3": "WhatsApp a punt",
       "inc4-p": "Respostes ràpides, missatge d'absència i catàleg muntats. Els clients pregunten el de sempre; ara respons sense repetir-te.",
-      "inc5-h3": "Informe setmanal del teu sector",
-      "inc5-p": "Cada dilluns, 5 minuts de lectura: què fan els teus competidors del barri, quins preus mouen, què diuen les ressenyes.",
-      "inc-demo-btn": "Veure exemple d'informe setmanal →",
+      "inc5-h3": "Radar setmanal del teu sector",
+      "inc5-p": "Cada dilluns, 5 minuts de lectura: què fan els teus competidors del barri, quines ressenyes tenen i quines accions pots aplicar tu.",
+      "inc-demo-btn": "Veure exemple de radar setmanal →",
       "roadmap-title": "Com funciona: els teus primers 14 dies pas a pas",
       "roadmap-sub": "Sense sorpreses ni tecnicismes. Saps en tot moment què passa des del primer missatge fins que el teu negoci està actiu al barri.",
       "rm-step1-badge": "Dia 1 – 2",
@@ -1286,17 +1297,17 @@
       "rm-step3-p": "T'ho ensenyem tot funcionant amb les teves fotos i dades reals. Si t'agrada, seguim; si no et convenç, no pagues res.",
       "rm-step4-badge": "Dia 14",
       "rm-step4-h": "Tot en marxa",
-      "rm-step4-p": "Fitxa activa, ressenyes ateses i WhatsApp a punt. Tu continues amb els teus clients; la teva presència digital treballa sola.",
+      "rm-step4-p": "Fitxa activa, ressenyes ateses i WhatsApp a punt. Tu continues amb els teus clients mentre la teva presència digital treballa cada dia perquè més veïns et trobin.",
       "preus-title": "Preus de barri, sense lletra petita",
       "preus-sub": "Instal·lació única + quota mensual. Sense permanència: si no et convenç, ho deixem.",
-      "roi-title": "Calcula quant et rendeix aquest paquet",
+      "roi-title": "Calcula l'impacte estimat al teu negoci",
       "roi-sub": "Mou els controls amb els números reals del teu negoci i comprova com s'amortitza la quota.",
       "roi-lbl-clients": "Clients nous que et descobreixen al mes:",
       "roi-lbl-ticket": "Despesa mitjana per client / compra:",
-      "roi-res-extra-lbl": "Ingrés extra estimat:",
+      "roi-res-extra-lbl": "Ingrés addicional estimat:",
       "roi-res-fee-lbl": "Cost quota mensual:",
       "roi-res-fee-val": "-50 €/mes",
-      "roi-res-profit-lbl": "Benefici net per a la teva caixa:",
+      "roi-res-profit-lbl": "Impacte econòmic estimat:",
       "paquet1-tag": "Preu especial barri",
       "paquet1-h3": "Associats de PubillaComerç",
       "paquet1-note": "Per a comerços associats de l'associació del barri.",
@@ -1312,7 +1323,7 @@
       "paquet2-li2": "Ressenyes respostes + informe mensual",
       "paquet2-li3": "8-12 posts al mes fets i a punt",
       "paquet2-li4": "WhatsApp Business configurat",
-      "paquet2-li5": "Informe setmanal del teu sector",
+      "paquet2-li5": "Radar setmanal del teu sector",
       "paquet2-btn": "Començar",
       "paquet3-tag": "Extra (a la carta)",
       "paquet3-h3": "Web o landing",
@@ -1328,7 +1339,7 @@
       "faq-a1": "Entre una i dues setmanes des que confirmem. Abans de pagar res t'ensenyem la teva fitxa de Google i el teu primer post muntats amb les teves fotos reals: ho veus funcionant i després decideixes.",
       "faq-q2": "Necessito saber de tecnologia o fer alguna cosa?",
       "faq-a2": "No. Tot s'entrega fet: muntem, gestionem i t'avisem per WhatsApp. La teva única tasca és continuar amb el teu negoci; si vols, aproves el contingut abans de publicar-lo.",
-      "faq-q3": "I si no m'agrada o no em porta clients?",
+      "faq-q3": "I si no m'agrada o no em convenç?",
       "faq-a3": "Sense permanència: el contracte és mes a mes i et dones de baixa quan vulguis. La instal·lació es paga una vegada; el manteniment es manté només mentre t'estigui funcionant.",
       "faq-q4": "Heu d'entrar al meu compte de Google?",
       "faq-a4": "No. T'enviem una invitació amb permisos des de la teva pròpia fitxa: tu mantens el control i pots treure l'accés quan vulguis. La teva contrasenya no es toca.",
@@ -1377,6 +1388,7 @@
     calcRoi();
     switchNiche(activeNiche);
     applyNeighborhoodPreset();
+    updateWhatsAppLinks();
   }
 
   const nicheData = {
@@ -1528,8 +1540,67 @@
     }
   }
 
+  // Configuración de WhatsApp centralizada (fácil de sustituir en producción)
+  const WHATSAPP_PHONE = '34XXXXXXXXX';
+
+  const waMessages = {
+    hero: {
+      es: 'Hola! Quiero saber cómo está mi negocio en Google y el barrio',
+      ca: 'Hola! Vull saber com està el meu negoci a Google i al barri'
+    },
+    nav: {
+      es: 'Hola! Quiero saber más de Verstats para mi negocio',
+      ca: 'Hola! Vull saber més de Verstats per al meu negoci'
+    },
+    'plan-asociados': {
+      es: 'Hola! Soy asociado de la asociación de comerciantes y quiero el precio especial',
+      ca: 'Hola! Sóc associat de l\'associació de comerciants i vull el preu especial'
+    },
+    'plan-completo': {
+      es: 'Hola! Quiero información sobre el paquete completo de Presencia Digital',
+      ca: 'Hola! Vull informació sobre el paquet complet de Presència Digital'
+    },
+    'plan-web': {
+      es: 'Hola! Quiero saber más sobre el extra de Web o Landing',
+      ca: 'Hola! Vull saber més sobre l\'extra de Web o Landing'
+    },
+    'cta-final': {
+      es: 'Hola! Quiero ver la muestra de mi ficha y posts antes de pagar',
+      ca: 'Hola! Vull veure la mostra de la meva fitxa i posts abans de pagar'
+    },
+    'mobile-sticky': {
+      es: 'Hola! Quiero saber más de Verstats',
+      ca: 'Hola! Vull saber més de Verstats'
+    }
+  };
+
+  function updateWhatsAppLinks() {
+    document.querySelectorAll('.wa-link').forEach(link => {
+      const ctx = link.getAttribute('data-wa-context') || 'hero';
+      const msgObj = waMessages[ctx] || waMessages.hero;
+      const text = encodeURIComponent(msgObj[currentLang] || msgObj.es);
+      link.href = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
+    });
+  }
+
+  // Tracking de clics para embudo de conversión
+  document.addEventListener('click', (e) => {
+    const waLink = e.target.closest('.wa-link');
+    if (waLink) {
+      const context = waLink.getAttribute('data-wa-context') || 'unknown';
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'whatsapp_click', {
+          event_category: 'conversion',
+          event_label: context,
+          lang: currentLang
+        });
+      }
+    }
+  });
+
   // Initialize
   applyNeighborhoodPreset();
+  updateWhatsAppLinks();
 
   // Scroll listener for mobile sticky bar
   window.addEventListener('scroll', () => {
