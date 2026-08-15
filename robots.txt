@@ -1,4 +1,5 @@
+# Bloqueo temporal de indexación durante desarrollo (sin dominio)
+# TODO (LANZAMIENTO CON DOMINIO): Permitir rastreo 'Allow: /' y enlazar sitemap oficial
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://verstats.com/sitemap.xml
