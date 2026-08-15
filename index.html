@@ -11,13 +11,13 @@
 <meta property="og:title" content="Verstats — Presencia digital para el comercio de barrio">
 <meta property="og:description" content="Tu ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/og-image.png">
+<meta property="og:image" content="https://verstats.com/assets/img/og-image.png">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Verstats — Presencia digital para el comercio de barrio">
 <meta name="twitter:description" content="Ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
-<meta name="twitter:image" content="assets/img/og-image.png">
-<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<meta name="twitter:image" content="https://verstats.com/assets/img/og-image.png">
+<link rel="icon" href="https://verstats.com/assets/img/favicon.png" type="image/png">
 <link rel="canonical" href="https://verstats.com/">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -869,14 +869,14 @@
             <label for="roi-clients" id="roi-lbl-clients" data-i18n="roi-lbl-clients">Clientes nuevos que te encuentran al mes:</label>
             <span class="roi-field-val" id="roi-clients-val">4 clientes</span>
           </div>
-          <input type="range" id="roi-clients" min="1" max="15" value="4" step="1" oninput="calcRoi()" class="roi-range">
+          <input type="range" id="roi-clients" min="1" max="15" value="4" step="1" oninput="calcRoi()" class="roi-range" aria-describedby="roi-clients-val" aria-label="Clientes nuevos al mes">
         </div>
         <div class="roi-field">
           <div class="roi-field-label">
             <label for="roi-ticket" id="roi-lbl-ticket" data-i18n="roi-lbl-ticket">Gasto medio por cliente / compra:</label>
             <span class="roi-field-val" id="roi-ticket-val">20 €</span>
           </div>
-          <input type="range" id="roi-ticket" min="5" max="80" value="20" step="1" oninput="calcRoi()" class="roi-range">
+          <input type="range" id="roi-ticket" min="5" max="80" value="20" step="1" oninput="calcRoi()" class="roi-range" aria-describedby="roi-ticket-val" aria-label="Gasto medio por cliente">
         </div>
       </div>
       <div class="roi-results-row">
@@ -942,7 +942,9 @@
   <!-- ============ FAQ ============ -->
   <section id="faq">
     <div class="wrap">
-      <h2 class="sec-head faq-title" data-i18n="faq-title">Preguntas que nos hacen antes de empezar</h2>
+      <div class="sec-head">
+        <h2 class="faq-title" data-i18n="faq-title">Preguntas que nos hacen antes de empezar</h2>
+      </div>
       <div class="faq-list">
         <details>
           <summary data-i18n="faq-q1">¿Cuánto tarda en estar todo funcionando?</summary>
@@ -1032,6 +1034,11 @@
   <div class="wrap">
     <p id="footer-p1" data-i18n="footer-p1">Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.</p>
     <p id="footer-p2" data-i18n="footer-p2">Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.</p>
+    <p style="margin-top:14px; font-size:0.82rem; color:var(--muted);">
+      <a href="#top" data-i18n="footer-legal" style="color:var(--muted); text-decoration:underline;">Aviso legal</a> · 
+      <a href="#top" data-i18n="footer-privacy" style="color:var(--muted); text-decoration:underline;">Privacidad</a> · 
+      <a href="#top" data-i18n="footer-cookies" style="color:var(--muted); text-decoration:underline;">Cookies</a>
+    </p>
   </div>
 </footer>
 
@@ -1200,7 +1207,10 @@
       "mobile-bar-desc": "Presencia digital de barrio",
       "mobile-bar-cta": "WhatsApp",
       "footer-p1": "Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.",
-      "footer-p2": "Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad."
+      "footer-p2": "Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.",
+      "footer-legal": "Aviso legal",
+      "footer-privacy": "Privacidad",
+      "footer-cookies": "Cookies"
     },
     ca: {
       "nav-que-compras": "Veure el que compres",
@@ -1364,7 +1374,10 @@
       "mobile-bar-desc": "Presència digital de barri",
       "mobile-bar-cta": "WhatsApp",
       "footer-p1": "Verstats — presència digital per al comerç de barri de L'Hospitalet de Llobregat.",
-      "footer-p2": "Pubilla Cases · Can Serra · expansió a altres barris de la ciutat."
+      "footer-p2": "Pubilla Cases · Can Serra · expansió a altres barris de la ciutat.",
+      "footer-legal": "Avís legal",
+      "footer-privacy": "Privadesa",
+      "footer-cookies": "Cookies"
     }
   };
 
