@@ -22,7 +22,7 @@
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -482,7 +482,6 @@
   }
 
   /* FAQ */
-  .faq-title { max-width: none; text-align: center; margin-bottom: 40px; }
   .faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 720px; margin: 0 auto; }
   details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 18px; transition: border-color .18s ease, background-color .18s ease; }
   details[open] { border-color: var(--accent); }
@@ -578,6 +577,8 @@
     </div>
   </nav>
 </header>
+
+<div id="a11y-status" role="status" aria-live="polite" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"></div>
 
 <main id="top" class="wrap">
 
@@ -1390,6 +1391,11 @@
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
     document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
     const t = i18n[lang];
+
+    const a11y = document.getElementById('a11y-status');
+    if (a11y) {
+      a11y.textContent = lang === 'ca' ? 'Idioma canviat a català' : 'Idioma cambiado a español';
+    }
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
