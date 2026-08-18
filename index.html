@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <title>Verstats — Presencia digital para el comercio de barrio</title>
@@ -102,455 +102,7 @@
   ]
 }
 </script>
-<style>
-  :root {
-    --paper: #0e1f2a;
-    --card: #17303d;
-    --ink: #e6eef2;
-    --muted: #93a7b2;
-    --line: #28424f;
-    --accent: #e8a33d;      /* ámbar petróleo */
-    --accent-deep: #c98a2a;
-    --accent-soft: #243b44;
-    --green: #4ade80;       /* estados "abierto" / checks (verde claro sobre oscuro) */
-    --wa: #25d366;          /* verde WhatsApp oficial (brillante) — CTAs */
-    --wa-deep: #075e54;     /* verde WhatsApp oficial (oscuro) — header chat */
-    --wa-out: #d9fdd3;      /* burbuja saliente oficial */
-    --wa-sys: #dcf8c6;      /* burbuja sistema oficial */
-    --wa-chat-bg: #e5ddd5;  /* fondo de chat oficial */
-    --ig-gradient: linear-gradient(45deg,#f09433,#dc2743,#bc1888); /* gradiente oficial Instagram */
-    --dark: #08141c;        /* fondo del CTA final */
-    --shadow: 0 1px 2px rgba(0,0,0,.25), 0 4px 10px rgba(0,0,0,.28);
-    --radius: 16px;
-    --font-display: 'Satoshi', 'Segoe UI', system-ui, sans-serif;
-    --font-body: 'General Sans', 'Segoe UI', system-ui, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--font-body);
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  h1, h2, h3 { text-wrap: balance; }
-  p, .lead, .sec-head p, .compra-copy p, details p { text-wrap: pretty; }
-  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
-  a { color: inherit; }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-  /* ===================== NAV ===================== */
-  header {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(14,31,42,.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; max-width: 1280px; margin: 0 auto; }
-  .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
-  .logo span { color: var(--accent); }
-  .logo-img { height: 34px; width: auto; background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
-  .nav-links { display: flex; align-items: center; gap: 20px; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; white-space: nowrap; transition: color .15s ease; }
-  .nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
-  
-  .lang-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
-  .lang-btn { background: transparent; border: none; color: var(--muted); font-family: var(--font-display); font-weight: 700; font-size: .78rem; padding: 4px 10px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
-  .lang-btn.active { background: var(--accent); color: var(--dark); }
-  .lang-btn:focus-visible { outline: 2px solid var(--accent); }
-
-  @media (hover: hover) {
-    .nav-links a:hover { color: var(--ink); }
-    .nav-cta:hover { background: #1eb857; color: #06402d; }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-wa:hover { background: #1eb857; color: #06402d; }
-    .btn-ghost:hover { background: var(--ink); color: var(--paper); }
-    .inc:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-    .niche-btn:hover { color: var(--ink); border-color: var(--accent-soft); background: #1e3a47; }
-  }
-
-  /* ===================== HERO ===================== */
-  .hero { padding: 88px 0 72px; }
-  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
-  .hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.08; letter-spacing: -0.03em; text-wrap: pretty; }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero .lead { font-size: 1.18rem; color: var(--muted); margin-top: 22px; max-width: 26em; text-wrap: pretty; }
-  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    min-height: 50px; padding: 12px 24px; border-radius: 12px;
-    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
-    text-decoration: none; border: 1px solid transparent; cursor: pointer;
-    transition: transform .15s cubic-bezier(0.16, 1, 0.3, 1), background .15s ease, box-shadow .15s ease;
-  }
-  .btn:active { transform: scale(.97); }
-  .btn-wa {
-    background: linear-gradient(180deg, #2ae772 0%, #25d366 100%);
-    color: #063d27;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-  }
-  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
-  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
-
-  /* Mockup teléfono WhatsApp */
-  .phone { width: min(340px, 100%); margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 32px; padding: 10px; box-shadow: var(--shadow); }
-  .phone-screen { border-radius: 24px; overflow: hidden; background: var(--wa-chat-bg); }
-  .phone-bar { display: flex; align-items: center; gap: 10px; background: var(--wa-deep); color: #fff; padding: 12px 14px; }
-  .phone-bar .ava { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--dark); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: .95rem; }
-  .phone-bar .who b { display: block; font-size: .92rem; line-height: 1.2; }
-  .phone-bar .who span { font-size: .75rem; opacity: .85; }
-  .phone-chat { display: flex; flex-direction: column; gap: 8px; padding: 16px 12px; }
-  
-  @keyframes waMsgIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .phone-chat .wa:nth-child(1) { animation: waMsgIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
-  .phone-chat .wa:nth-child(2) { animation: waMsgIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
-  .phone-chat .wa:nth-child(3) { animation: waMsgIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both; }
-  .phone-chat .wa-sys { animation: waMsgIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both; }
-
-  .wa { max-width: 86%; padding: 9px 12px; border-radius: 12px; font-size: .88rem; }
-  .wa-in { align-self: flex-start; background: #fff; color: #111; border-bottom-left-radius: 3px; }
-  .wa-out { align-self: flex-end; background: var(--wa-out); color: #111; border-bottom-right-radius: 3px; }
-  .wa .hora { display: block; text-align: right; font-size: .7rem; line-height: 1.4; color: #667781; margin-top: 3px; }
-  .wa-sys { align-self: center; background: var(--wa-sys); border-radius: 8px; font-size: .82rem; text-align: center; color: #14532d; padding: 8px 12px; max-width: 96%; }
-  .phone-tip { text-align: center; font-size: .83rem; color: var(--muted); margin-top: 12px; }
-
-  /* ===================== TRUST BAR ===================== */
-  .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--card); padding: 4px 0; }
-  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .trust-item { display: flex; align-items: center; gap: 12px; padding: 18px 20px; }
-  .trust-item + .trust-item { border-left: 1px solid var(--line); }
-  .trust-item .tick { color: var(--green); font-weight: 800; font-family: var(--font-display); font-size: 1.05rem; }
-  .trust-item b { display: block; font-family: var(--font-display); font-size: .93rem; }
-  .trust-item span { font-size: .85rem; color: var(--muted); }
-
-  /* ===================== SECCIONES ===================== */
-  section { padding: 88px 0; }
-  .sec-head { max-width: 680px; margin-bottom: 52px; }
-  .sec-head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 3.2vw, 2.4rem); letter-spacing: -0.02em; line-height: 1.15; text-wrap: pretty; }
-  .sec-head p { color: var(--muted); margin-top: 14px; font-size: 1.05rem; max-width: 34em; text-wrap: pretty; }
-
-  /* ===== LO QUE COMPRAS: bloques alternados ===== */
-  .niche-selector { display: flex; flex-wrap: wrap; gap: 10px; margin: -32px 0 48px; }
-  .niche-btn {
-    background: var(--card); border: 1px solid var(--line); color: var(--muted);
-    font-family: var(--font-display); font-weight: 600; font-size: .92rem;
-    padding: 10px 18px; border-radius: 999px; cursor: pointer;
-    transition: all .15s ease; display: inline-flex; align-items: center; gap: 6px;
-  }
-  .niche-btn:hover { color: var(--ink); border-color: var(--accent-soft); background: #1e3a47; }
-  .niche-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .demo-badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-display); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
-  .demo-badge::before { content: '•'; font-size: 1rem; line-height: 0; color: #d97706; }
-
-  .compras { display: flex; flex-direction: column; gap: 72px; }
-  .compra { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  .compra.flip .compra-copy { order: 2; }
-  .compra-flat { grid-template-columns: 1fr; gap: 32px; }
-  .compra-num { font-family: var(--font-display); font-weight: 800; font-size: .9rem; color: var(--accent); letter-spacing: .04em; display: block; margin-bottom: 10px; }
-  .compra-copy h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; line-height: 1.2; text-wrap: pretty; }
-  .compra-copy p { color: var(--muted); margin-top: 12px; max-width: 36em; text-wrap: pretty; }
-  .compra-note { margin-top: 16px; font-size: .85rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; }
-
-  /* Mockup Google Maps */
-  .gm { border-radius: 12px; overflow: hidden; border: 1px solid #dadce0; background: #fff; box-shadow: var(--shadow); }
-  .gm-search { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #fff; border-bottom: 1px solid #dadce0; font-size: .88rem; }
-  .gm-search .q { flex: 1; background: #f1f3f4; border-radius: 999px; padding: 8px 14px; }
-  .ic { width: 16px; height: 16px; flex: none; display: inline-block; vertical-align: -3px; }
-  .gm-search .ic { width: 15px; height: 15px; }
-  .gm-name { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px 4px; }
-  .gm-name b { font-family: var(--font-display); font-size: 1.12rem; }
-  .gm-stars { color: #f59e0b; letter-spacing: 2px; font-size: .95rem; }
-  .gm-meta { padding: 6px 16px; color: var(--muted); font-size: .87rem; }
-  .gm-meta .tipo { color: #1a73e8; }
-  .gm-info { display: flex; flex-direction: column; gap: 3px; padding: 8px 16px; font-size: .87rem; }
-  .gm-info .open { color: var(--green); font-weight: 700; }
-  .gm-actions { display: flex; gap: 8px; padding: 6px 16px 12px; }
-  .gm-actions span { flex: 1; text-align: center; border: 1px solid #dadce0; border-radius: 999px; padding: 8px 0; font-size: .84rem; color: #1a73e8; }
-  /* impeccable-disable codex-grid-background -- mockup de mapa Google: superficie de mapa legitima segun la propia regla */
-  .gm-map { position: relative; height: 170px; margin: 0 16px 16px; border-radius: 10px; overflow: hidden; background: #e8eaed;
-    background-image: linear-gradient(#d5d8dc 1px, transparent 1px), linear-gradient(90deg, #d5d8dc 1px, transparent 1px);
-    background-size: 28px 28px; }
-  .gm-pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -100%); font-size: 2rem; filter: drop-shadow(0 2px 3px rgba(0,0,0,.3)); }
-  .gm-tag { position: absolute; left: 50%; top: 58%; transform: translateX(-50%); background: #fff; border: 1px solid #dadce0; border-radius: 6px; padding: 7px 12px; font-size: .82rem; font-weight: 600; white-space: nowrap; }
-  .gm-tag small { color: var(--muted); font-weight: 400; }
-
-  /* Mockup reseñas */
-  .revs { display: flex; flex-direction: column; gap: 14px; }
-  .rev { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
-  .rev-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-  .rev-ava { width: 38px; height: 38px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-deep); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; }
-  .rev-head .who { font-size: .87rem; }
-  .rev-head .who b { display: block; line-height: 1.25; }
-  .rev-head .who span { color: var(--muted); font-size: .76rem; }
-  .rev-stars { color: #f59e0b; letter-spacing: 2px; font-size: .92rem; margin-bottom: 6px; }
-  .rev-text { font-size: .93rem; }
-  .rev-resp { margin-top: 12px; background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; font-size: .88rem; }
-  .rev-resp .tag { font-weight: 700; color: var(--accent-deep); display: block; margin-bottom: 3px; font-size: .8rem; }
-
-  /* Posts Instagram */
-  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .post { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
-  .post .dia { font-size: .75rem; letter-spacing: .04em; color: var(--accent); font-weight: 600; padding: 12px 12px 0; font-family: var(--font-display); }
-  .post .head { display: flex; align-items: center; gap: 8px; padding: 10px 12px; }
-  /* impeccable-disable low-contrast -- avatar con gradiente oficial de Instagram (identidad de marca, letra blanca como en la app real) */
-  .post .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--ig-gradient); color: #fff; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
-  .post .user b { font-size: .84rem; display: block; line-height: 1.2; }
-  .post .user span { font-size: .76rem; color: var(--muted); }
-  .post .foto { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
-  .post .acciones { display: flex; gap: 12px; padding: 8px 12px 4px; align-items: center; }
-  .post .acciones svg { width: 22px; height: 22px; }
-  .post .likes { font-size: .8rem; font-weight: 600; padding: 6px 12px; }
-  .post .caption { font-size: .82rem; padding: 8px 12px 12px; max-width: 42ch; }
-  .post .caption b { font-weight: 700; }
-  .post .tags { color: #00376b; }
-
-  /* Bot + calendario */
-  .bot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
-  .bot-chat { background: var(--wa-chat-bg); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; font-size: .88rem; }
-  .bot-cal { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); }
-  .cal-head { background: var(--accent); color: #fff; text-align: center; font-family: var(--font-display); font-weight: 700; padding: 10px; font-size: .92rem; }
-  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: .8rem; }
-  .cal-grid .dow { color: var(--muted); font-size: .75rem; padding: 8px 0 4px; font-weight: 600; }
-  .cal-grid .day { padding: 6px 0; }
-  .cal-grid .day.muted { color: #d6d3d1; }
-  .cal-grid .day.hit { background: var(--accent); color: #fff; font-weight: 700; border-radius: 50%; width: 28px; height: 28px; margin: 1px auto; display: grid; place-items: center; }
-  .cal-note { padding: 10px 14px; border-top: 1px dashed var(--line); font-size: .82rem; color: var(--muted); }
-  .cal-note b { color: var(--accent-deep); }
-
-  /* ===== QUÉ INCLUYE ===== */
-  .incluye { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .inc { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: box-shadow .15s ease, transform .15s ease; }
-  .inc:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-  .inc .check { color: var(--green); font-family: var(--font-display); font-weight: 800; font-size: 1rem; display: block; margin-bottom: 12px; }
-  .inc h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
-  .inc p { color: var(--muted); font-size: .93rem; max-width: 36em; text-wrap: pretty; }
-
-  /* ===== CÓMO FUNCIONA / ROADMAP 14 DÍAS ===== */
-  .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 10px; }
-  .roadmap-step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; display: flex; flex-direction: column; }
-  .roadmap-badge { display: inline-block; width: fit-content; background: var(--accent-soft); color: var(--accent); font-family: var(--font-display); font-weight: 700; font-size: .8rem; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
-  .roadmap-step h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; line-height: 1.25; }
-  .roadmap-step p { font-size: .9rem; color: var(--muted); line-height: 1.55; }
-
-  /* ===== CALCULADORA ROI DE BARRIO ===== */
-  .roi-box {
-    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
-    padding: 36px 32px; margin-bottom: 48px; box-shadow: var(--shadow);
-  }
-  .roi-box-head h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; letter-spacing: -0.01em; margin-bottom: 6px; }
-  .roi-box-head p { color: var(--muted); font-size: .95rem; margin-bottom: 26px; }
-  .roi-grid-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 26px; }
-  .roi-field { display: flex; flex-direction: column; gap: 8px; }
-  .roi-field-label { display: flex; justify-content: space-between; align-items: center; font-size: .92rem; font-weight: 600; color: var(--ink); }
-  .roi-field-val { color: var(--accent); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
-  .roi-range { width: 100%; height: 6px; border-radius: 3px; background: var(--line); outline: none; -webkit-appearance: none; appearance: none; cursor: pointer; }
-  .roi-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
-  .roi-results-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
-  .roi-res-card span { display: block; font-size: .82rem; color: var(--muted); margin-bottom: 4px; }
-  .roi-res-card b { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--ink); }
-  .roi-res-card.profit b { color: var(--green); }
-  .roi-note-banner { margin-top: 16px; font-size: .88rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-
-  /* ===== PRECIOS ===== */
-  .preus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
-  .paquet { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: flex; flex-direction: column; }
-  .paquet .tag { font-size: .74rem; letter-spacing: .1em; font-weight: 700; color: var(--muted); font-family: var(--font-display); margin-bottom: 10px; }
-  .paquet h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
-  .paquet .preu { font-family: var(--font-display); font-weight: 800; font-size: 2.2rem; letter-spacing: -0.02em; margin: 14px 0 4px; }
-  .paquet .preu small { font-size: .95rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
-  .paquet .preu-note { font-size: .85rem; color: var(--muted); margin-bottom: 18px; }
-  .paquet ul { list-style: none; margin: 0 0 26px; flex: 1; }
-  .paquet li { padding: 7px 0 7px 26px; position: relative; font-size: .93rem; }
-  .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
-  .paquet .btn { width: 100%; }
-  .paquet.recomanat {
-    border: 2px solid var(--accent);
-    position: relative;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-  .paquet.recomanat .tag { color: var(--accent); }
-  .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--dark); font-family: var(--font-display); font-size: .75rem; font-weight: 800; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
-
-  /* Modal de Informe Semanal (Craft) */
-  .inc-demo-btn {
-    display: inline-block; margin-top: 12px; background: transparent; border: none;
-    color: var(--accent); font-family: var(--font-display); font-weight: 700; font-size: .88rem;
-    cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px;
-  }
-  .report-modal {
-    border: none; border-radius: 20px; background: transparent; padding: 0;
-    max-width: 580px; width: 90%; margin: auto;
-    box-shadow: 0 24px 64px rgba(0,0,0,.75);
-  }
-  .report-modal::backdrop { background: rgba(8, 20, 28, 0.82); backdrop-filter: blur(6px); }
-  .modal-card { background: var(--card); border: 1px solid var(--accent-soft); border-radius: 20px; padding: 28px; color: var(--ink); }
-  .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
-  .modal-tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: .75rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; margin-bottom: 6px; }
-  .modal-head h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; }
-  .modal-close { background: var(--paper); border: 1px solid var(--line); color: var(--muted); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
-  .modal-close:hover { color: var(--ink); border-color: var(--accent); }
-  .report-section { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
-  .report-section h4 { font-family: var(--font-display); font-size: .95rem; margin-bottom: 8px; color: var(--accent); }
-  .report-section p { font-size: .88rem; color: var(--muted); margin-bottom: 6px; line-height: 1.5; }
-  .report-tip { background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.25); border-radius: 12px; padding: 14px; font-size: .86rem; color: var(--ink); margin-top: 14px; }
-  .modal-foot { margin-top: 20px; display: flex; justify-content: flex-end; }
-
-  /* ===== CTA FINAL ===== */
-  .final { background: var(--dark); border-radius: 24px; color: var(--ink); padding: 64px 48px; text-align: center; }
-  .final h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.02em; max-width: 22em; margin: 0 auto; text-wrap: pretty; }
-  .final p { color: #b8ad9c; margin: 16px auto 28px; max-width: 30em; font-size: 1.02rem; text-wrap: pretty; }
-  .final .btn-wa { background: var(--wa); color: #06402d; }
-  .final .btn-wa:hover { background: #1eb857; color: #06402d; }
-  .final .mini { margin-top: 16px; font-size: .84rem; color: #8d8374; }
-
-  footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--muted); font-size: .88rem; }
-  footer p { margin-bottom: 4px; }
-
-  /* ===== Overrides dark mode: mockups y hardcoded ===== */
-  ::selection { background: var(--accent-soft); color: var(--accent); }
-  .badge { color: var(--dark); }
-  .cal-head { color: var(--dark); }
-  .cal-grid .day.hit { color: var(--dark); }
-  .bot-cal { background: var(--card); border-color: var(--line); }
-  .cal-grid .day { color: var(--ink); }
-  .cal-grid .day.muted { color: var(--muted); }
-  .cal-note { color: var(--muted); }
-  .cal-note b { color: var(--accent); }
-  .phone-tip { color: var(--muted); }
-
-  /* ===== Instagram: UI oficial light (fijo, no depende del tema) ===== */
-  .post { background: #fff; border-color: #dbdbdb; }
-  .post .dia { color: #737373; }
-  .post .user b { color: #262626; }
-  .post .user span { color: #737373; }
-  .post .likes { color: #262626; }
-  .post .caption { color: #262626; }
-  .post .caption b { color: #262626; }
-  .post .tags { color: #00376b; }
-
-  /* ===== Google Maps: UI oficial light (fijo, no depende del tema) ===== */
-  .gm { background: #fff; border-color: #dadce0; }
-  .gm-search { background: #fff; border-color: #dadce0; }
-  .gm-search .q { background: #f1f3f4; color: #202124; }
-  .gm-name { background: #fff; }
-  .gm-name b { color: #202124; }
-  .gm-meta { color: #5f6368; }
-  .gm-meta .tipo { color: #1a73e8; }
-  .gm-info { color: #5f6368; }
-  .gm-info .open { color: #188038; }
-  .gm-actions span { border-color: #dadce0; color: #1a73e8; background: #fff; }
-  .gm-map { background: #e8eaed; background-image: linear-gradient(#d5d8dc 1px, transparent 1px), linear-gradient(90deg, #d5d8dc 1px, transparent 1px); background-size: 28px 28px; }
-  .gm-tag { background: #fff; border-color: #dadce0; color: #202124; }
-  .gm-tag small { color: #5f6368; }
-
-  /* ===== Google Reseñas: UI oficial light ===== */
-  .rev { background: #fff; border-color: #dadce0; }
-  .rev-ava { background: #4285f4; color: #fff; }
-  .rev:nth-child(2) .rev-ava { background: #ea4335; }
-  .rev-head .who b { color: #202124; }
-  .rev-head .who span { color: #5f6368; }
-  .rev-stars { color: #fbbc04; }
-  .rev-text { color: #202124; }
-  .rev-resp { background: #f8f9fa; color: #202124; }
-  .rev-resp .tag { color: #1a73e8; }
-
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .phone { max-width: 320px; }
-    .compra, .compra.flip .compra-copy { grid-template-columns: 1fr; order: 0; }
-    .posts { grid-template-columns: 1fr; max-width: 420px; }
-    .roadmap { grid-template-columns: 1fr 1fr; }
-    .roi-grid-inputs { grid-template-columns: 1fr; }
-    .roi-results-row { grid-template-columns: 1fr; gap: 12px; }
-    .incluye { grid-template-columns: 1fr 1fr; }
-    .preus { grid-template-columns: 1fr; max-width: 440px; }
-    .trust-grid { grid-template-columns: 1fr; }
-    .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--line); }
-    section { padding: 64px 0; }
-  }
-
-  /* FAQ */
-  .faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 720px; margin: 0 auto; }
-  details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 18px; transition: border-color .18s ease, background-color .18s ease; }
-  details[open] { border-color: var(--accent); }
-  summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; padding: 16px 0; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; user-select: none; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--accent); font-size: 1.35rem; font-weight: 700; line-height: 1; display: inline-block; transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1); }
-  details[open] summary::after { transform: rotate(45deg); }
-  details p { padding: 0 0 16px; color: var(--muted); font-size: .95rem; line-height: 1.6; }
-  /* Mobile Sticky Action Bar */
-  .mobile-sticky-bar {
-    display: none;
-    position: fixed;
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    z-index: 90;
-    background: rgba(14,31,42,.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--accent-soft);
-    border-radius: 16px;
-    padding: 10px 14px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.5);
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-    transition: opacity .25s ease, transform .25s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .mobile-sticky-bar.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .mobile-bar-info b { display: block; font-family: var(--font-display); font-size: .88rem; color: var(--ink); line-height: 1.2; }
-  .mobile-bar-info span { font-size: .75rem; color: var(--muted); }
-  .mobile-bar-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--wa); color: #06402d; font-family: var(--font-display); font-weight: 700; font-size: .84rem;
-    padding: 8px 14px; border-radius: 10px; text-decoration: none; white-space: nowrap;
-    transition: transform .15s ease;
-  }
-  .mobile-bar-btn:active { transform: scale(.96); }
-
-  @media (max-width: 600px) {
-    .mobile-sticky-bar { display: flex; }
-    body { padding-bottom: 72px; }
-  }
-  @media (max-width: 360px) {
-    .wrap { padding: 0 14px; }
-    .nav { padding: 10px 12px; }
-    .nav-cta { padding: 0 10px; font-size: .82rem; }
-    .hero { padding: 40px 0 32px; }
-    .phone { padding: 6px; }
-    .phone-chat { padding: 12px 8px; }
-    .btn { width: 100%; padding: 10px 14px; font-size: .92rem; }
-    .hero-ctas { flex-direction: column; width: 100%; }
-    .paquet { padding: 20px 14px; }
-    .inc { padding: 20px 14px; }
-    .paso { padding: 20px 14px; }
-    .final { padding: 32px 14px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-</style>
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
@@ -564,17 +116,17 @@
       <a href="#precios" data-i18n="nav-precios">Precios</a>
       <a href="#faq" data-i18n="nav-faq">Preguntas</a>
     </div>
-    <div style="display:flex;align-items:center;gap:10px;">
+    <div class="lang-switch">
       <div class="lang-toggle" role="group" aria-label="Selector de idioma">
-        <button class="lang-btn active" id="btn-es" onclick="setLang('es')" aria-label="Cambiar idioma a Español">ES</button>
-        <button class="lang-btn" id="btn-ca" onclick="setLang('ca')" aria-label="Canviar idioma a Català">CA</button>
+        <button class="lang-btn active" id="btn-es" aria-label="Cambiar idioma a Español">ES</button>
+        <button class="lang-btn" id="btn-ca" aria-label="Canviar idioma a Català">CA</button>
       </div>
       <a class="nav-cta wa-link" data-wa-context="nav" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20m%C3%A1s%20de%20Verstats%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" data-i18n="nav-btn-whatsapp">Escríbenos por WhatsApp</a>
     </div>
   </nav>
 </header>
 
-<div id="a11y-status" role="status" aria-live="polite" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"></div>
+<div id="a11y-status" role="status" aria-live="polite" class="sr-only"></div>
 
 <main id="top" class="wrap">
 
@@ -592,7 +144,7 @@
       <div>
         <div class="phone">
           <div class="phone-screen">
-            <div style="padding: 8px 12px 0; background: var(--wa-deep);"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+            <div class="badge-wrap-deep"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
             <div class="phone-bar">
               <div class="ava">B</div>
               <div class="who"><b>Peluquería Bell Sal</b><span>en línea</span></div>
@@ -627,9 +179,9 @@
     </div>
 
     <div class="niche-selector" role="tablist" aria-label="Ver ejemplos por tipo de negocio">
-      <button class="niche-btn active" role="tab" aria-selected="true" aria-controls="panel-niche" id="tab-peluqueria" onclick="switchNiche('peluqueria')" data-i18n="tab-peluqueria">💇‍♀️ Peluquería & Estética</button>
-      <button class="niche-btn" role="tab" aria-selected="false" aria-controls="panel-niche" id="tab-hosteleria" onclick="switchNiche('hosteleria')" data-i18n="tab-hosteleria">☕ Bar & Restaurante</button>
-      <button class="niche-btn" role="tab" aria-selected="false" aria-controls="panel-niche" id="tab-comercio" onclick="switchNiche('comercio')" data-i18n="tab-comercio">🛍️ Tienda & Comercio</button>
+      <button class="niche-btn active" role="tab" aria-selected="true" aria-controls="panel-niche" id="tab-peluqueria" data-i18n="tab-peluqueria">💇‍♀️ Peluquería & Estética</button>
+      <button class="niche-btn" role="tab" aria-selected="false" aria-controls="panel-niche" id="tab-hosteleria" data-i18n="tab-hosteleria">☕ Bar & Restaurante</button>
+      <button class="niche-btn" role="tab" aria-selected="false" aria-controls="panel-niche" id="tab-comercio" data-i18n="tab-comercio">🛍️ Tienda & Comercio</button>
     </div>
 
     <div class="compras" role="tabpanel" id="panel-niche" aria-labelledby="tab-peluqueria">
@@ -643,11 +195,11 @@
           <p class="compra-note" data-i18n="compra1-note">En tu ficha van tus fotos, tu horario y tus datos reales.</p>
         </div>
         <div class="gm">
-          <div style="padding: 10px 14px 4px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+          <div class="badge-wrap"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
           <div class="gm-search"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span class="q" id="gm-search-text">peluquería Pubilla Cases</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
           <div class="gm-name">
             <b id="gm-name-text">Peluquería Bell Sal</b>
-            <div><span class="gm-stars">★★★★★</span><br><span id="gm-stars-text" style="font-size:.8rem">4,8 · 127 reseñas</span></div>
+            <div><span class="gm-stars">★★★★★</span><br><span id="gm-stars-text">4,8 · 127 reseñas</span></div>
           </div>
           <div class="gm-meta" id="gm-meta-text"><span class="tipo">Peluquería</span> · C/ de la Marina 12, Pubilla Cases</div>
           <div class="gm-info">
@@ -671,7 +223,7 @@
           <p class="compra-note" data-i18n="compra2-note">Respuestas escritas con los datos reales de tus reseñas, respondiendo de verdad a cada cliente.</p>
         </div>
         <div class="revs">
-          <div style="margin-bottom: -4px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+          <div class="mb-neg4"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
           <div class="rev">
             <div class="rev-head">
               <div class="rev-ava">M</div>
@@ -708,7 +260,7 @@
           <p class="compra-note" data-i18n="compra3-note">Estos tres ejemplos están creados para la demo. En tu pack se usan fotos reales de TU negocio, nada de stock genérico.</p>
         </div>
         <div>
-          <div style="margin-bottom: 12px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+          <div class="mb-12"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
           <div class="posts">
             <div class="post">
               <div class="dia" data-i18n="post1-dia">Lunes · Promoción</div>
@@ -757,7 +309,7 @@
         </div>
         <div class="bot-grid">
           <div class="bot-chat">
-            <div style="margin-bottom: 8px;"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+            <div class="mb-8"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
             <div class="wa wa-in"><span data-i18n="bot-chat-msg1">Hola, ¿tenéis hueco para un corte el viernes por la tarde?</span><span class="hora">17:24</span></div>
             <div class="wa wa-out"><span data-i18n="bot-chat-msg2">¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?</span><span class="hora">17:24</span></div>
             <div class="wa wa-in"><span data-i18n="bot-chat-msg3">¡Perfecto, lo reservo!</span><span class="hora">17:25</span></div>
@@ -812,7 +364,7 @@
         <span class="check">✓</span>
         <h3 data-i18n="inc5-h3">Informe semanal de tu sector</h3>
         <p data-i18n="inc5-p">Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué precios mueven, qué dicen las reseñas.</p>
-        <button class="inc-demo-btn" onclick="openReportModal()" id="btn-open-report" data-i18n="inc-demo-btn">Ver ejemplo de informe semanal →</button>
+        <button class="inc-demo-btn" id="btn-open-report" data-i18n="inc-demo-btn">Ver ejemplo de informe semanal →</button>
       </div>
     </div>
   </section>
@@ -849,7 +401,7 @@
 
   <!-- ============ PRECIOS & CALCULADORA ROI ============ -->
   <section id="precios">
-    <div id="preus" style="position:relative;top:-80px;"></div>
+    <div id="preus"></div>
     <div class="sec-head">
       <h2 id="preus-title" data-i18n="preus-title">Precios de barrio, sin letra pequeña</h2>
       <p id="preus-sub" data-i18n="preus-sub">Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.</p>
@@ -867,14 +419,14 @@
             <label for="roi-clients" id="roi-lbl-clients" data-i18n="roi-lbl-clients">Clientes nuevos que te encuentran al mes:</label>
             <span class="roi-field-val" id="roi-clients-val">4 clientes</span>
           </div>
-          <input type="range" id="roi-clients" min="1" max="15" value="4" step="1" oninput="calcRoi()" class="roi-range" aria-describedby="roi-clients-val" aria-label="Clientes nuevos al mes">
+          <input type="range" id="roi-clients" min="1" max="15" value="4" step="1" class="roi-range" aria-describedby="roi-clients-val" aria-label="Clientes nuevos al mes">
         </div>
         <div class="roi-field">
           <div class="roi-field-label">
             <label for="roi-ticket" id="roi-lbl-ticket" data-i18n="roi-lbl-ticket">Gasto medio por cliente / compra:</label>
             <span class="roi-field-val" id="roi-ticket-val">20 €</span>
           </div>
-          <input type="range" id="roi-ticket" min="5" max="80" value="20" step="1" oninput="calcRoi()" class="roi-range" aria-describedby="roi-ticket-val" aria-label="Gasto medio por cliente">
+          <input type="range" id="roi-ticket" min="5" max="80" value="20" step="1" class="roi-range" aria-describedby="roi-ticket-val" aria-label="Gasto medio por cliente">
         </div>
       </div>
       <div class="roi-results-row">
@@ -940,7 +492,7 @@
   <!-- ============ FAQ ============ -->
   <section id="faq">
     <div class="wrap">
-      <div class="sec-head" style="max-width: 720px; margin: 0 auto 36px; text-align: center;">
+      <div class="sec-head sec-head--center">
         <h2 data-i18n="faq-title">Preguntas que nos hacen antes de empezar</h2>
       </div>
       <div class="faq-list">
@@ -990,7 +542,7 @@
           <span class="modal-tag" id="modalTag" data-i18n="modal-tag">DEMO · Ejemplo de Entrega Semanal</span>
           <h3 id="modalReportTitle" data-i18n="modal-title">Radar Semanal Verstats — Lunes 10 de Agosto</h3>
         </div>
-        <button class="modal-close" onclick="closeReportModal()" aria-label="Cerrar modal">×</button>
+        <button class="modal-close" aria-label="Cerrar modal">×</button>
       </div>
       <div class="modal-body">
         <div class="report-section">
@@ -1009,7 +561,7 @@
         </div>
       </div>
       <div class="modal-foot">
-        <button class="btn btn-wa" onclick="closeReportModal()" data-i18n="modal-btn-close">Cerrar demostración</button>
+        <button id="btn-close-demo" class="btn btn-wa" data-i18n="modal-btn-close">Cerrar demostración</button>
       </div>
     </div>
   </dialog>
@@ -1023,7 +575,7 @@
     <span id="mobileBarDesc" data-i18n="mobile-bar-desc">Presencia digital de barrio</span>
   </div>
   <a class="mobile-bar-btn wa-link" data-wa-context="mobile-sticky" href="https://wa.me/34XXXXXXXXX?text=Hola!%20Quiero%20saber%20m%C3%A1s%20de%20Verstats" target="_blank" rel="noopener noreferrer">
-    <svg class="ic" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-1px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    <svg class="ic ic--va" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
     <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
   </a>
 </div>
@@ -1032,651 +584,15 @@
   <div class="wrap">
     <p id="footer-p1" data-i18n="footer-p1">Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.</p>
     <p id="footer-p2" data-i18n="footer-p2">Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.</p>
-    <p style="margin-top:14px; font-size:0.82rem; color:var(--muted);">
-      <a href="aviso-legal.html" data-i18n="footer-legal" style="color:var(--muted); text-decoration:underline;">Aviso legal</a> · 
-      <a href="privacidad.html" data-i18n="footer-privacy" style="color:var(--muted); text-decoration:underline;">Privacidad</a> · 
-      <a href="cookies.html" data-i18n="footer-cookies" style="color:var(--muted); text-decoration:underline;">Cookies</a>
+    <p class="footer-note">
+      <a href="aviso-legal.html" data-i18n="footer-legal" class="legal-link">Aviso legal</a> · 
+      <a href="privacidad.html" data-i18n="footer-privacy" class="legal-link">Privacidad</a> · 
+      <a href="cookies.html" data-i18n="footer-cookies" class="legal-link">Cookies</a>
     </p>
   </div>
 </footer>
 
-<script>
-  const i18n = {
-    es: {
-      "nav-que-compras": "Ver lo que compras",
-      "nav-que-incluye": "Qué incluye",
-      "nav-como-funciona": "Cómo funciona",
-      "nav-precios": "Precios",
-      "nav-faq": "Preguntas",
-      "nav-btn-whatsapp": "Escríbenos por WhatsApp",
-      "hero-h1": "Tu negocio, <em>visible</em> y respondiendo, aunque no estés",
-      "hero-lead": "Para el comercio y hostelería de Pubilla Cases y Can Serra: te lo dejamos todo hecho y funcionando en dos semanas. Tu ficha de Google optimizada, tus reseñas respondidas, tus redes con contenido nuevo y tu WhatsApp preparado. Tú solo sigues con tu negocio.",
-      "hero-btn-wa": "Escríbenos por WhatsApp",
-      "hero-btn-ghost": "Ver lo que compras",
-      "hero-chat-msg1": "Hola, ¿tenéis hueco para un corte el viernes por la tarde?",
-      "hero-chat-msg2": "¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?",
-      "hero-chat-msg3": "¡Perfecto, lo reservo!",
-      "hero-chat-sys": "✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar",
-      "hero-phone-tip": "Así responde tu WhatsApp cuando tú estás con un cliente.",
-      "trust-1-b": "Sin permanencia",
-      "trust-1-span": "Si no te convence, lo dejamos.",
-      "trust-2-b": "Alta en 1-2 semanas",
-      "trust-2-span": "Nada de proyectos eternos.",
-      "trust-3-b": "Datos reales",
-      "trust-3-span": "Tus fotos, tu horario, tu estilo.",
-      "compras-h2": "Esto es lo que compras: cada parte del paquete, vista.",
-      "compras-lead": "Nada de promesas abstractas. Elige tu tipo de negocio para ver una demostración realista; en el tuyo van tus fotos, tus horarios y tu estilo.",
-      "tab-peluqueria": "💇‍♀️ Peluquería & Estética",
-      "tab-hosteleria": "☕ Bar & Restaurante",
-      "tab-comercio": "🛍️ Tienda & Comercio",
-      "compra1-num": "Google Maps",
-      "compra1-h3": "Tu ficha de Google, apareciendo cuando te buscan",
-      "compra1-p": "Optimizada, con tus fotos y horarios bien puestos. Así se ve cuando un vecino busca lo que tú vendes en tu barrio.",
-      "compra1-note": "En tu ficha van tus fotos, tu horario y tus datos reales.",
-      "gm-open-text": "Abierto · Cierra a las 20:00",
-      "gm-dist-text": "2 min a pie · 3,4 km",
-      "gm-act-call": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/></svg> Llamar",
-      "gm-act-route": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"3 11 22 2 13 21 11 13 3 11\"/></svg> Cómo llegar",
-      "gm-act-web": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg> Sitio web",
-      "compra2-num": "Tus reseñas",
-      "compra2-h3": "Tus reseñas, respondidas por ti (sin que tengas que pensarlo)",
-      "compra2-p": "Las buenas, para dar las gracias. Las malas, para arreglar el problema en público. Todo respondido con tu tono.",
-      "compra2-note": "Respuestas escritas con los datos reales de tus reseñas, respondiendo de verdad a cada cliente.",
-      "rev-owner-tag": "Respuesta del propietario",
-      "rev1-text": "Me hicieron un corte y un tinte y quedé encantada. Trato cercano y precio justo. La recomiendo.",
-      "rev1-resp": "¡Gracias, María! Nos alegra muchísimo que te gustara el resultado. ¡Te esperamos cuando quieras!",
-      "rev2-text": "Menú del día muy completo y las mejores bravas del barrio. Trato rápido y amable.",
-      "rev2-resp": "¡Muchas gracias, Jordi! Nos alegra que disfrutaras del menú. ¡Te esperamos pronto para probar las nuevas tapas!",
-      "compra3-num": "Tu Instagram",
-      "compra3-h3": "Tu Instagram vivo: 2-3 posts cada semana, hechos y listos",
-      "compra3-p": "Con tus productos, tus ofertas y tu barrio. Hechos y ajustados a tu estilo; tú solo le das a publicar.",
-      "compra3-note": "Estos tres ejemplos están creados para la demo. En tu pack se usan fotos reales de TU negocio, nada de stock genérico.",
-      "post1-dia": "Lunes · Promoción",
-      "post1-likes": "Le gusta a 87 personas",
-      "post1-caption-txt": "¿Te acuerdas de ese color que se te va rápido? Este mes, tinte + brillo con <b>20% de descuento</b> por WhatsApp.",
-      "post2-dia": "Miércoles · Prueba social",
-      "post2-likes": "Le gusta a 64 personas",
-      "post2-caption-txt": "\"El mejor corte que me han hecho en años, y el precio justo.\" (Marta, Pubilla Cases). Corte + acabado desde 15€.",
-      "post3-dia": "Viernes · Horario + cita",
-      "post3-likes": "Le gusta a 52 personas",
-      "post3-caption-txt": "Viernes de \"me lo arreglo para el finde\". Tenemos huecos esta tarde; pásate o escríbenos. L-V 9:30-20:00 · S 9:30-14:00",
-      "compra4-num": "Tu WhatsApp",
-      "compra4-h3": "Tu WhatsApp respondiendo y las citas apuntándose solas",
-      "compra4-p": "Respuestas rápidas para lo que todo el mundo pregunta, mensaje de ausencia, catálogo… y si quieres dar el salto, un bot de citas que reserva en tu Google Calendar sin que hagas nada.",
-      "compra4-note": "El bot de citas es un extra opcional (fase 2), se monta cuando tu negocio ya tiene volumen. El paquete base ya incluye el WhatsApp Business configurado con respuestas automáticas.",
-      "bot-chat-msg1": "Hola, ¿tenéis hueco para un corte el viernes por la tarde?",
-      "bot-chat-msg2": "¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?",
-      "bot-chat-msg3": "¡Perfecto, lo reservo!",
-      "bot-chat-sys": "✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar",
-      "bot-cal-head": "Agosto 2026",
-      "bot-cal-note-hit": "Viernes 14 · 17:30",
-      "bot-cal-note-desc": "Corte de pelo<br>Cliente: María P. · vía WhatsApp",
-      "incluye-h2": "Qué incluye (y cómo te ayuda a ganar clientes)",
-      "incluye-lead": "No es publicidad genérica. Es que tu negocio aparezca cuando tus vecinos lo buscan, con presencia viva cada semana.",
-      "inc1-h3": "Tu ficha de Google perfecta",
-      "inc1-p": "Fotos, horarios, servicios y categorías correctos. Cuando alguien busca \"peluquería o restaurante en Pubilla Cases\", apareces tú, bien presentado.",
-      "inc2-h3": "Reseñas respondidas",
-      "inc2-p": "Respondemos por ti a tus reseñas (bien y mal) y cada mes te contamos qué dicen tus clientes. Las reseñas se leen antes de entrar.",
-      "inc3-h3": "Contenido cada semana",
-      "inc3-p": "8-12 posts al mes en Instagram/Facebook (2-3 por semana) con tus productos, ofertas y el barrio. Hechos y listos para publicar, con tu estilo.",
-      "inc4-h3": "WhatsApp preparado",
-      "inc4-p": "Respuestas rápidas, mensaje de ausencia y catálogo montados. Los clientes preguntan lo de siempre; ahora respondes sin repetirte.",
-      "inc5-h3": "Radar semanal de tu sector",
-      "inc5-p": "Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué dicen las reseñas y qué acciones puedes aplicar tú.",
-      "inc-demo-btn": "Ver ejemplo de radar semanal →",
-      "roadmap-title": "Cómo funciona: tus primeros 14 días paso a paso",
-      "roadmap-sub": "Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.",
-      "rm-step1-badge": "Día 1 – 2",
-      "rm-step1-h": "Charla de 10 minutos",
-      "rm-step1-p": "Nos cuentas tu negocio por WhatsApp y nos envías fotos de tu local o servicios. Sin formularios largos ni papeleo.",
-      "rm-step2-badge": "Día 7",
-      "rm-step2-h": "Primer borrador en vivo",
-      "rm-step2-p": "Montamos tu ficha de Google Maps optimizada y preparamos tu primer lote de contenidos para que lo revises.",
-      "rm-step3-badge": "Día 10",
-      "rm-step3-h": "Lo ves antes de pagar",
-      "rm-step3-p": "Te enseñamos todo funcionando con tus fotos y datos reales. Si te gusta, seguimos; si no te convence, no pagas nada.",
-      "rm-step4-badge": "Día 14",
-      "rm-step4-h": "Todo en marcha",
-      "rm-step4-p": "Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes mientras tu presencia digital trabaja cada día para que más vecinos te encuentren.",
-      "preus-title": "Precios de barrio, sin letra pequeña",
-      "preus-sub": "Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.",
-      "roi-title": "Calcula el impacto estimado en tu negocio",
-      "roi-sub": "Mueve los controles con los números reales de tu comercio y comprueba cómo se amortiza la cuota.",
-      "roi-lbl-clients": "Clientes nuevos que te encuentran al mes:",
-      "roi-lbl-ticket": "Gasto medio por cliente / compra:",
-      "roi-res-extra-lbl": "Ingreso adicional estimado:",
-      "roi-res-fee-lbl": "Coste cuota mensual:",
-      "roi-res-fee-val": "-50 €/mes",
-      "roi-res-profit-lbl": "Impacto económico estimado:",
-      "paquet1-tag": "Precio especial barrio",
-      "paquet1-h3": "Asociados de PubillaComerç",
-      "paquet1-note": "Para comercios asociados de la asociación del barrio.",
-      "paquet1-li1": "Todo el paquete Presencia digital",
-      "paquet1-li2": "30% de descuento en la instalación",
-      "paquet1-li3": "Para comercios asociados",
-      "paquet1-btn": "Comenzar",
-      "paquet2-badge": "El más contratado",
-      "paquet2-tag": "El paquete completo",
-      "paquet2-h3": "Presencia digital",
-      "paquet2-note": "Instalación única + cuota mensual, sin permanencia.",
-      "paquet2-li1": "Ficha de Google optimizada y gestionada",
-      "paquet2-li2": "Reseñas respondidas + informe mensual",
-      "paquet2-li3": "8-12 posts al mes hechos y listos",
-      "paquet2-li4": "WhatsApp Business configurado",
-      "paquet2-li5": "Radar semanal de tu sector",
-      "paquet2-btn": "Comenzar",
-      "paquet3-tag": "Extra (a la carta)",
-      "paquet3-h3": "Web o landing",
-      "paquet3-note": "Página sencilla y para móvil, con tus fotos y tu estilo.",
-      "paquet3-li1": "Página web sencilla y para móvil",
-      "paquet3-li2": "Con tus fotos y tu estilo",
-      "paquet3-li3": "Mantenimiento 50 €/mes (opcional)",
-      "paquet3-btn": "Preguntar",
-      "price-mo": "+ 50 €/mes",
-      "price-once": "una vez",
-      "faq-title": "Preguntas que nos hacen antes de empezar",
-      "faq-q1": "¿Cuánto tarda en estar todo funcionando?",
-      "faq-a1": "Entre una y dos semanas desde que confirmamos. Antes de pagar nada te enseñamos tu ficha de Google y tu primer post montados con tus fotos reales: lo ves funcionando y luego decides.",
-      "faq-q2": "¿Necesito saber de tecnología o hacer algo?",
-      "faq-a2": "No. Todo se entrega hecho: montamos, gestionamos y te avisamos por WhatsApp. Tu única tarea es seguir con tu negocio; si quieres, apruebas el contenido antes de publicarlo.",
-      "faq-q3": "¿Y si no me gusta o no me convence?",
-      "faq-a3": "Sin permanencia: el contrato es mes a mes y te das de baja cuando quieras. La instalación se paga una vez; el mantenimiento se mantiene solo mientras te esté funcionando.",
-      "faq-q4": "¿Tenéis que entrar en mi cuenta de Google?",
-      "faq-a4": "No. Te enviamos una invitación con permisos desde tu propia ficha: tú mantienes el control y puedes quitar el acceso cuando quieras. Tu contraseña no se toca.",
-      "faq-q5": "¿Qué incluye exactamente el mantenimiento de 50 €/mes?",
-      "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el radar semanal de tu barrio (competencia y oportunidades accionables).",
-      "faq-q6": "Ya me llevan las redes. ¿Me sirve esto?",
-      "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el radar semanal. Se paga por lo que se usa.",
-      "prova-h2": "Te lo dejamos montado, y lo ves antes de pagar",
-      "prova-p": "Montamos tu ficha de Google y tu primer post con tus fotos reales. Te lo enseñamos funcionando. Si te gusta, seguimos con el resto del paquete.",
-      "prova-btn-wa": "Escríbenos por WhatsApp",
-      "prova-mini": "Respondemos en menos de 24h · Sin compromiso",
-      "modal-tag": "DEMO · Ejemplo de Entrega Semanal",
-      "modal-title": "Radar Semanal Verstats — Lunes 10 de Agosto",
-      "modal-sec1-title": "📍 Movimientos en tu Barrio (<span class=\"barrio-name\">Pubilla Cases / Can Serra</span>)",
-      "modal-sec1-p1": "• <b>2 competidores</b> cambiaron horario de verano sin actualizar Google Maps (oportunidad de captar clientes en tarde).",
-      "modal-sec1-p2": "• <b>Reseñas destacadas:</b> El local cercano acumuló quejas por lentitud; en tu ficha destacan la atención rápida.",
-      "modal-sec1-p3": "• <b>Acción recomendada:</b> Mantener horario visible en WhatsApp y destacar servicio rápido en el próximo post.",
-      "modal-sec2-title": "⭐ Rendimiento de tu Ficha",
-      "modal-sec2-p1": "• <b>18 llamadas directas</b> desde tu ficha de Google Maps (+22% vs semana anterior).",
-      "modal-sec2-p2": "• <b>4 reseñas nuevas</b> recibidas y respondidas al 100% en menos de 2 horas con tu tono.",
-      "modal-tip": "💡 <b>Recomendación para este viernes:</b> Publicar post de aviso de horarios del fin de semana con la foto del nuevo producto.",
-      "modal-btn-close": "Cerrar demostración",
-      "mobile-bar-desc": "Presencia digital de barrio",
-      "mobile-bar-cta": "WhatsApp",
-      "footer-p1": "Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.",
-      "footer-p2": "Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.",
-      "footer-legal": "Aviso legal",
-      "footer-privacy": "Privacidad",
-      "footer-cookies": "Cookies"
-    },
-    ca: {
-      "nav-que-compras": "Veure el que compres",
-      "nav-que-incluye": "Què inclou",
-      "nav-como-funciona": "Com funciona",
-      "nav-precios": "Preus",
-      "nav-faq": "Preguntes",
-      "nav-btn-whatsapp": "Escriu-nos per WhatsApp",
-      "hero-h1": "El teu negoci, <em>visible</em> i responent, encara que no hi siguis",
-      "hero-lead": "Per al comerç i restauració de Pubilla Cases i Can Serra: t'ho deixem tot fet i funcionant en dues setmanes. La teva fitxa de Google optimitzada, les teves ressenyes respostes, les teves xarxes amb contingut nou i el teu WhatsApp preparat. Tu només continues amb el teu negoci.",
-      "hero-btn-wa": "Escriu-nos per WhatsApp",
-      "hero-btn-ghost": "Veure el que compres",
-      "hero-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
-      "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
-      "hero-chat-msg3": "Perfecte, me'l reservo!",
-      "hero-chat-sys": "✅ Cita creada. Divendres 14 d'agost, 17:30 · Tall de cabell<br>S'ha apuntat sola al teu Google Calendar",
-      "hero-phone-tip": "Així respon el teu WhatsApp quan estàs atenent un client.",
-      "trust-1-b": "Sense permanència",
-      "trust-1-span": "Si no et convenç, ho deixem.",
-      "trust-2-b": "Alta en 1-2 setmanes",
-      "trust-2-span": "Res de projectes eterns.",
-      "trust-3-b": "Dades reals",
-      "trust-3-span": "Les teves fotos, el teu horari, el teu estil.",
-      "compras-h2": "Això és el que compres: cada part del paquet, vista.",
-      "compras-lead": "Res de promeses abstractes. Tria el teu tipus de negoci per veure una demostració realista; al teu van les teves fotos, els teus horaris i el teu estil.",
-      "tab-peluqueria": "💇‍♀️ Perruqueria & Estètica",
-      "tab-hosteleria": "☕ Bar & Restaurant",
-      "tab-comercio": "🛍️ Botiga & Comerç",
-      "compra1-num": "Google Maps",
-      "compra1-h3": "La teva fitxa de Google, apareixent quan et busquen",
-      "compra1-p": "Optimitzada, amb les teves fotos i horaris ben posats. Així es veu quan un veí cerca el que tu vens al teu barri.",
-      "compra1-note": "A la teva fitxa van les teves fotos, el teu horari i les teves dades reals.",
-      "gm-open-text": "Obert · Tanca a les 20:00",
-      "gm-dist-text": "2 min a peu · 3,4 km",
-      "gm-act-call": "Trucar",
-      "gm-act-route": "Com arribar",
-      "gm-act-web": "Lloc web",
-      "compra2-num": "Les teves ressenyes",
-      "compra2-h3": "Les teves ressenyes, respostes per tu (sense que hagis de pensar-ho)",
-      "compra2-p": "Les bones, per donar les gràcies. Les dolentes, per arreglar el problema en públic. Tot respost amb el teu to.",
-      "compra2-note": "Respostes escrites amb les dades reals de les teves ressenyes, responent de debò a cada client.",
-      "rev-owner-tag": "Resposta del propietari",
-      "rev1-text": "Em van fer un tall i un tint i vaig quedar encantada. Tracte proper i preu just. La recomano.",
-      "rev1-resp": "Gràcies, Maria! Ens alegra moltíssim que t'agradés el resultat. T'esperem quan vulguis!",
-      "rev2-text": "Menú del dia molt complet i les millors braves del barri. Tracte ràpid i amable.",
-      "rev2-resp": "Moltes gràcies, Jordi! Ens alegra que gaudissis del menú. T'esperem aviat per tastar les noves tapes!",
-      "compra3-num": "El teu Instagram",
-      "compra3-h3": "El teu Instagram viu: 2-3 posts cada setmana, fets i a punt",
-      "compra3-p": "Amb els teus productes, les teves ofertes i el teu barri. Fets i ajustats al teu estil; tu només li dones a publicar.",
-      "compra3-note": "Aquests tres exemples estan creats per a la demo. Al teu pack s'utilitzen fotos reals del TEU negoci, res de stock genèric.",
-      "post1-dia": "Dilluns · Promoció",
-      "post1-likes": "Li agrada a 87 persones",
-      "post1-caption-txt": "Te'n recordes d'aquell color que se te'n va ràpid? Aquest mes, tint + brillantor amb un <b>20% de descompte</b> per WhatsApp.",
-      "post2-dia": "Dimecres · Prova social",
-      "post2-likes": "Li agrada a 64 persones",
-      "post2-caption-txt": "\"El millor tall que m'han fet en anys, i el preu just.\" (Marta, Pubilla Cases). Tall + pentinat des de 15€.",
-      "post3-dia": "Divendres · Horari + cita",
-      "post3-likes": "Li agrada a 52 persones",
-      "post3-caption-txt": "Divendres de \"m'ho arreglo per al cap de setmana\". Tenim forats aquesta tarda; passa o escriu-nos. Dll-Dv 9:30-20:00 · Ds 9:30-14:00",
-      "compra4-num": "El teu WhatsApp",
-      "compra4-h3": "El teu WhatsApp responent i les cites apuntant-se soles",
-      "compra4-p": "Respostes ràpides per al que tothom pregunta, missatge d'absència, catàleg… i si vols fer el salt, un bot de cites que reserva al teu Google Calendar sense que facis res.",
-      "compra4-note": "El bot de cites és un extra opcional (fase 2), es munta quan el teu negoci ja té volum. El paquet base ja inclou el WhatsApp Business configurat amb respostes automàtiques.",
-      "bot-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
-      "bot-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
-      "bot-chat-msg3": "Perfecte, me'l reservo!",
-      "bot-chat-sys": "✅ Cita creada. Divendres 14 d'agost, 17:30 · Tall de cabell<br>S'ha apuntat sola al teu Google Calendar",
-      "bot-cal-head": "Agost 2026",
-      "bot-cal-note-hit": "Divendres 14 · 17:30",
-      "bot-cal-note-desc": "Tall de cabell<br>Client: Maria P. · via WhatsApp",
-      "incluye-h2": "Què inclou (i com t'ajuda a guanyar clients)",
-      "incluye-lead": "No és publicitat genèrica. És que el teu negoci aparegui quan els teus veïns el busquen, amb presència viva cada setmana.",
-      "inc1-h3": "La teva fitxa de Google perfecta",
-      "inc1-p": "Fotos, horaris, serveis i categories correctes. Quan algú cerca \"perruqueria o restaurant a Pubilla Cases\", apareixes tu, ben presentat.",
-      "inc2-h3": "Ressenyes respostes",
-      "inc2-p": "Responem per tu a les teves ressenyes (bones i dolentes) i cada mes t'expliquem què diuen els teus clients. Les ressenyes es llegeixen abans d'entrar.",
-      "inc3-h3": "Contingut cada setmana",
-      "inc3-p": "8-12 posts al mes a Instagram/Facebook (2-3 per setmana) amb els teus productes, ofertes i el barri. Fets i a punt per publicar, amb el teu estil.",
-      "inc4-h3": "WhatsApp a punt",
-      "inc4-p": "Respostes ràpides, missatge d'absència i catàleg muntats. Els clients pregunten el de sempre; ara respons sense repetir-te.",
-      "inc5-h3": "Radar setmanal del teu sector",
-      "inc5-p": "Cada dilluns, 5 minuts de lectura: què fan els teus competidors del barri, quines ressenyes tenen i quines accions pots aplicar tu.",
-      "inc-demo-btn": "Veure exemple de radar setmanal →",
-      "roadmap-title": "Com funciona: els teus primers 14 dies pas a pas",
-      "roadmap-sub": "Sense sorpreses ni tecnicismes. Saps en tot moment què passa des del primer missatge fins que el teu negoci està actiu al barri.",
-      "rm-step1-badge": "Dia 1 – 2",
-      "rm-step1-h": "Xerrada de 10 minuts",
-      "rm-step1-p": "Ens expliques el teu negoci per WhatsApp i ens passes fotos del teu local o serveis. Sense formularis llargs ni paperassa.",
-      "rm-step2-badge": "Dia 7",
-      "rm-step2-h": "Primer esborrany en viu",
-      "rm-step2-p": "Muntem la teva fitxa de Google Maps optimitzada i preparem el teu primer lot de continguts perquè el revisis.",
-      "rm-step3-badge": "Dia 10",
-      "rm-step3-h": "Ho veus abans de pagar",
-      "rm-step3-p": "T'ho ensenyem tot funcionant amb les teves fotos i dades reals. Si t'agrada, seguim; si no et convenç, no pagues res.",
-      "rm-step4-badge": "Dia 14",
-      "rm-step4-h": "Tot en marxa",
-      "rm-step4-p": "Fitxa activa, ressenyes ateses i WhatsApp a punt. Tu continues amb els teus clients mentre la teva presència digital treballa cada dia perquè més veïns et trobin.",
-      "preus-title": "Preus de barri, sense lletra petita",
-      "preus-sub": "Instal·lació única + quota mensual. Sense permanència: si no et convenç, ho deixem.",
-      "roi-title": "Calcula l'impacte estimat al teu negoci",
-      "roi-sub": "Mou els controls amb els números reals del teu negoci i comprova com s'amortitza la quota.",
-      "roi-lbl-clients": "Clients nous que et descobreixen al mes:",
-      "roi-lbl-ticket": "Despesa mitjana per client / compra:",
-      "roi-res-extra-lbl": "Ingrés addicional estimat:",
-      "roi-res-fee-lbl": "Cost quota mensual:",
-      "roi-res-fee-val": "-50 €/mes",
-      "roi-res-profit-lbl": "Impacte econòmic estimat:",
-      "paquet1-tag": "Preu especial barri",
-      "paquet1-h3": "Associats de PubillaComerç",
-      "paquet1-note": "Per a comerços associats de l'associació del barri.",
-      "paquet1-li1": "Tot el paquet Presència digital",
-      "paquet1-li2": "30% de descompte a la instal·lació",
-      "paquet1-li3": "Per a comerços associats",
-      "paquet1-btn": "Començar",
-      "paquet2-badge": "El més contractat",
-      "paquet2-tag": "El paquet complet",
-      "paquet2-h3": "Presència digital",
-      "paquet2-note": "Instal·lació única + quota mensual, sense permanència.",
-      "paquet2-li1": "Fitxa de Google optimitzada i gestionada",
-      "paquet2-li2": "Ressenyes respostes + informe mensual",
-      "paquet2-li3": "8-12 posts al mes fets i a punt",
-      "paquet2-li4": "WhatsApp Business configurat",
-      "paquet2-li5": "Radar setmanal del teu sector",
-      "paquet2-btn": "Començar",
-      "paquet3-tag": "Extra (a la carta)",
-      "paquet3-h3": "Web o landing",
-      "paquet3-note": "Pàgina senzilla i per a mòbil, amb les teves fotos i el teu estil.",
-      "paquet3-li1": "Pàgina web senzilla i per a mòbil",
-      "paquet3-li2": "Amb les teves fotos i el teu estil",
-      "paquet3-li3": "Manteniment 50 €/mes (opcional)",
-      "paquet3-btn": "Demanar informació",
-      "price-mo": "+ 50 €/mes",
-      "price-once": "un sol cop",
-      "faq-title": "Preguntes que ens fan abans de començar",
-      "faq-q1": "Quant triga a estar tot funcionant?",
-      "faq-a1": "Entre una i dues setmanes des que confirmem. Abans de pagar res t'ensenyem la teva fitxa de Google i el teu primer post muntats amb les teves fotos reals: ho veus funcionant i després decideixes.",
-      "faq-q2": "Necessito saber de tecnologia o fer alguna cosa?",
-      "faq-a2": "No. Tot s'entrega fet: muntem, gestionem i t'avisem per WhatsApp. La teva única tasca és continuar amb el teu negoci; si vols, aproves el contingut abans de publicar-lo.",
-      "faq-q3": "I si no m'agrada o no em convenç?",
-      "faq-a3": "Sense permanència: el contracte és mes a mes i et dones de baixa quan vulguis. La instal·lació es paga una vegada; el manteniment es manté només mentre t'estigui funcionant.",
-      "faq-q4": "Heu d'entrar al meu compte de Google?",
-      "faq-a4": "No. T'enviem una invitació amb permisos des de la teva pròpia fitxa: tu mantens el control i pots treure l'accés quan vulguis. La teva contrasenya no es toca.",
-      "faq-q5": "Què inclou exactament el manteniment de 50 €/mes?",
-      "faq-a5": "Tot el paquet, no peces soltes: la gestió de la teva fitxa de Google, les respostes a les ressenyes, 8-12 continguts al mes i l'informe setmanal del teu barri (què fan els teus competidors).",
-      "faq-q6": "Ja em porten les xarxes. Em serveix això?",
-      "faq-a6": "Sí, s'adapta: si ja tens algú, fem només la part que et falta: la fitxa de Google i les ressenyes, per exemple, o l'informe setmanal. Es paga pel que es fa servir.",
-      "prova-h2": "T'ho deixem muntat, i ho veus abans de pagar",
-      "prova-p": "Muntem la teva fitxa de Google i el teu primer post amb les teves fotos reals. T'ho ensenyem funcionant. Si t'agrada, seguim amb la resta del paquet.",
-      "prova-btn-wa": "Escriu-nos per WhatsApp",
-      "prova-mini": "Responem en menys de 24h · Sense compromís",
-      "modal-tag": "Exemple d'Entrega Setmanal",
-      "modal-title": "Radar Setmanal Verstats — Dilluns 10 d'Agost",
-      "modal-sec1-title": "📍 Moviments al teu Barri (<span class=\"barrio-name\">Pubilla Cases / Can Serra</span>)",
-      "modal-sec1-p1": "• <b>2 competidors</b> van canviar horari d'estiu sense actualitzar Google Maps (oportunitat de captar clients a la tarda).",
-      "modal-sec1-p2": "• <b>Ressenyes destacades:</b> El local proper va acumular queixes per lentitud; a la teva fitxa destaquen l'atenció ràpida.",
-      "modal-sec2-title": "⭐ Rendiment de la teva Fitxa",
-      "modal-sec2-p1": "• <b>18 trucades directes</b> des de la teva fitxa de Google Maps (+22% vs setmana anterior).",
-      "modal-sec2-p2": "• <b>4 ressenyes noves</b> rebudes i respostes al 100% en menys de 2 hores amb el teu to.",
-      "modal-tip": "💡 <b>Recomanació per a aquest divendres:</b> Publicar post d'avís d'horaris del cap de setmana amb la foto del nou producte.",
-      "modal-btn-close": "Tancar demostració",
-      "mobile-bar-desc": "Presència digital de barri",
-      "mobile-bar-cta": "WhatsApp",
-      "footer-p1": "Verstats — presència digital per al comerç de barri de L'Hospitalet de Llobregat.",
-      "footer-p2": "Pubilla Cases · Can Serra · expansió a altres barris de la ciutat.",
-      "footer-legal": "Avís legal",
-      "footer-privacy": "Privadesa",
-      "footer-cookies": "Cookies"
-    }
-  };
-
-  let currentLang = 'es';
-  let activeNiche = 'peluqueria';
-
-  // Sanitizador mínimo sin dependencias: whitelist de tags, elimina on* y javascript:
-  function sanitizeHTML(s) {
-    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK'];
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = s;
-    tmpl.content.querySelectorAll('*').forEach(n => {
-      [...n.attributes].forEach(a => {
-        const name = a.name.toLowerCase();
-        if (name.startsWith('on') || (name === 'href' && a.value.toLowerCase().startsWith('javascript:'))) {
-          n.removeAttribute(a.name);
-        }
-      });
-      if (!ALLOWED.includes(n.tagName)) n.replaceWith(...n.childNodes);
-    });
-    return tmpl.innerHTML;
-  }
-
-  function setLang(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-    document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
-    const t = i18n[lang];
-
-    const a11y = document.getElementById('a11y-status');
-    if (a11y) {
-      a11y.textContent = lang === 'ca' ? 'Idioma canviat a català' : 'Idioma cambiado a español';
-    }
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) {
-        el.innerHTML = sanitizeHTML(t[key]);
-      }
-    });
-
-    calcRoi();
-    switchNiche(activeNiche);
-    applyNeighborhoodPreset();
-    updateWhatsAppLinks();
-  }
-
-  const nicheData = {
-    peluqueria: {
-      search: { es: 'peluquería Pubilla Cases', ca: 'perruqueria Pubilla Cases' },
-      name: 'Peluquería Bell Sal',
-      stars: { es: '4,8 · 127 reseñas', ca: '4,8 · 127 ressenyes' },
-      tipo: { es: 'Peluquería', ca: 'Perruqueria' },
-      dir: 'C/ de la Marina 12, Pubilla Cases',
-      tag: 'Peluquería Bell Sal <small>★ 4,8</small>'
-    },
-    hosteleria: {
-      search: { es: 'bar restaurante Can Serra', ca: 'bar restaurant Can Serra' },
-      name: 'Bar Cafetería Can Serra',
-      stars: { es: '4,9 · 215 reseñas', ca: '4,9 · 215 ressenyes' },
-      tipo: { es: 'Bar y Tapas', ca: 'Bar i Tapes' },
-      dir: 'Av. de Can Serra 45, L\'Hospitalet',
-      tag: 'Bar Cafetería Can Serra <small>★ 4,9</small>'
-    },
-    comercio: {
-      search: { es: 'tienda ropa calzado Pubilla Cases', ca: 'botiga roba calçat Pubilla Cases' },
-      name: 'Moda y Calzado Pubilla',
-      stars: { es: '4,7 · 89 reseñas', ca: '4,7 · 89 ressenyes' },
-      tipo: { es: 'Tienda de Ropa', ca: 'Botiga de Roba' },
-      dir: 'C/ Severo Ochoa 28, Pubilla Cases',
-      tag: 'Moda y Calzado Pubilla <small>★ 4,7</small>'
-    }
-  };
-
-  function switchNiche(nicheKey) {
-    activeNiche = nicheKey;
-    const data = nicheData[nicheKey];
-    if (!data) return;
-    document.querySelectorAll('.niche-btn').forEach(btn => {
-      const isCurrent = btn.id === `tab-${nicheKey}`;
-      btn.classList.toggle('active', isCurrent);
-      btn.setAttribute('aria-selected', isCurrent);
-    });
-    const panelNiche = document.getElementById('panel-niche');
-    if (panelNiche) {
-      panelNiche.setAttribute('aria-labelledby', `tab-${nicheKey}`);
-    }
-    const gmSearch = document.getElementById('gm-search-text');
-    const gmName = document.getElementById('gm-name-text');
-    const gmStars = document.getElementById('gm-stars-text');
-    const gmMeta = document.getElementById('gm-meta-text');
-    const gmTag = document.getElementById('gm-tag-text');
-    if (gmSearch) gmSearch.textContent = typeof data.search === 'object' ? data.search[currentLang] : data.search;
-    if (gmName) gmName.textContent = data.name;
-    if (gmStars) gmStars.textContent = typeof data.stars === 'object' ? data.stars[currentLang] : data.stars;
-    if (gmMeta) {
-      const tipoTxt = typeof data.tipo === 'object' ? data.tipo[currentLang] : data.tipo;
-      gmMeta.innerHTML = sanitizeHTML(`<span class="tipo">${tipoTxt}</span> · ${data.dir}`);
-    }
-    if (gmTag) gmTag.innerHTML = sanitizeHTML(data.tag);
-  }
-
-  function calcRoi() {
-    const clientsInput = document.getElementById('roi-clients');
-    const ticketInput = document.getElementById('roi-ticket');
-    if (!clientsInput || !ticketInput) return;
-    const clients = parseInt(clientsInput.value, 10);
-    const ticket = parseInt(ticketInput.value, 10);
-    const clientsVal = document.getElementById('roi-clients-val');
-    const ticketVal = document.getElementById('roi-ticket-val');
-    const extraEl = document.getElementById('roi-extra');
-    const profitEl = document.getElementById('roi-profit');
-    const noteEl = document.getElementById('roi-note-text');
-
-    const clientSuffix = currentLang === 'ca' ? (clients === 1 ? 'client' : 'clients') : (clients === 1 ? 'cliente' : 'clientes');
-    if (clientsVal) clientsVal.textContent = `${clients} ${clientSuffix}`;
-    if (ticketVal) ticketVal.textContent = `${ticket} €`;
-
-    clientsInput.setAttribute('aria-valuetext', `${clients} ${clientSuffix}`);
-    ticketInput.setAttribute('aria-valuetext', `${ticket} euros`);
-
-    const extra = clients * ticket;
-    const profit = extra - 50;
-
-    if (extraEl) extraEl.textContent = `+${extra} €/mes`;
-    if (profitEl) {
-      if (profit >= 0) {
-        profitEl.textContent = `+${profit} €/mes`;
-        profitEl.style.color = 'var(--green)';
-      } else {
-        profitEl.textContent = `${profit} €/mes`;
-        profitEl.style.color = '#f87171';
-      }
-    }
-
-    if (noteEl) {
-      const minNeeded = Math.ceil(50 / ticket);
-      if (currentLang === 'ca') {
-        noteEl.textContent = `✅ Amb només ${minNeeded} ${minNeeded === 1 ? 'client nou' : 'clients nous'} al mes, el pack ja es paga completament sol.`;
-      } else {
-        noteEl.textContent = `✅ Con solo ${minNeeded} ${minNeeded === 1 ? 'cliente nuevo' : 'clientes nuevos'} al mes, el pack ya se paga completamente solo.`;
-      }
-    }
-  }
-
-  // Modal helpers (Craft)
-  function openReportModal() {
-    const modal = document.getElementById('reportModal');
-    if (modal && typeof modal.showModal === 'function') {
-      modal.showModal();
-    }
-  }
-  function closeReportModal() {
-    const modal = document.getElementById('reportModal');
-    if (modal) {
-      modal.close();
-    }
-  }
-
-  // Multi-neighborhood engine (Extract)
-  const neighborhoodPresets = {
-    collblanc: {
-      name: { es: 'Collblanc y La Torrassa', ca: 'Collblanc i La Torrassa' },
-      assoc: { es: 'Asociados de Collblanc Comerç', ca: 'Associats de Collblanc Comerç' },
-      address1: 'C/ del Progrés 14, Collblanc',
-      address2: 'Ctra. de Collblanc 68, L\'Hospitalet',
-      address3: 'C/ Riera Blanca 32, Collblanc'
-    },
-    bellvitge: {
-      name: { es: 'Bellvitge y Gornal', ca: 'Bellvitge i Gornal' },
-      assoc: { es: 'Asociados de Bellvitge Comerç', ca: 'Associats de Bellvitge Comerç' },
-      address1: 'Rambla de Marina 140, Bellvitge',
-      address2: 'Av. d\'Amèrica 22, Bellvitge',
-      address3: 'Av. de la Mare de Déu de Bellvitge 4, L\'Hospitalet'
-    },
-    florida: {
-      name: { es: 'La Florida y Les Planes', ca: 'La Florida i Les Planes' },
-      assoc: { es: 'Asociados de La Florida Comerç', ca: 'Associats de La Florida Comerç' },
-      address1: 'Av. Masnou 50, La Florida',
-      address2: 'Av. Primavera 12, La Florida',
-      address3: 'C/ Sevilla 18, La Florida'
-    }
-  };
-
-  function applyNeighborhoodPreset() {
-    const params = new URLSearchParams(window.location.search);
-    const barrioKey = params.get('barrio')?.toLowerCase();
-    if (!barrioKey || !neighborhoodPresets[barrioKey]) return;
-    const b = neighborhoodPresets[barrioKey];
-    const nameTxt = b.name[currentLang] || b.name.es;
-    const assocTxt = b.assoc[currentLang] || b.assoc.es;
-
-    // 1. Reemplazo de spans de nombre de barrio
-    document.querySelectorAll('.barrio-name').forEach(el => el.textContent = nameTxt);
-
-    // 2. Lead del Hero: idempotente tomando base del diccionario i18n
-    const lead = document.querySelector('.hero .lead');
-    if (lead && i18n[currentLang] && i18n[currentLang]['hero-lead']) {
-      const baseLead = i18n[currentLang]['hero-lead'];
-      lead.textContent = baseLead
-        .replace('Pubilla Cases y Can Serra', nameTxt)
-        .replace('Pubilla Cases i Can Serra', nameTxt);
-    }
-
-    // 3. Título de asociados: selector robusto por data-i18n
-    const assocTitle = document.querySelector('[data-i18n="paquet1-h3"]');
-    if (assocTitle) {
-      assocTitle.textContent = assocTxt;
-    }
-
-    // 4. Actualización dinámica del título de la pestaña
-    if (currentLang === 'ca') {
-      document.title = `Verstats — Presència digital a ${nameTxt}`;
-    } else {
-      document.title = `Verstats — Presencia digital en ${nameTxt}`;
-    }
-  }
-
-  // Configuración de WhatsApp centralizada (fácil de sustituir en producción)
-  const WHATSAPP_PHONE = '34XXXXXXXXX';
-
-  const waMessages = {
-    hero: {
-      es: 'Hola! Quiero saber cómo está mi negocio en Google y el barrio',
-      ca: 'Hola! Vull saber com està el meu negoci a Google i al barri'
-    },
-    nav: {
-      es: 'Hola! Quiero saber más de Verstats para mi negocio',
-      ca: 'Hola! Vull saber més de Verstats per al meu negoci'
-    },
-    'plan-asociados': {
-      es: 'Hola! Soy asociado de la asociación de comerciantes y quiero el precio especial',
-      ca: 'Hola! Sóc associat de l\'associació de comerciants i vull el preu especial'
-    },
-    'plan-completo': {
-      es: 'Hola! Quiero información sobre el paquete completo de Presencia Digital',
-      ca: 'Hola! Vull informació sobre el paquet complet de Presència Digital'
-    },
-    'plan-web': {
-      es: 'Hola! Quiero saber más sobre el extra de Web o Landing',
-      ca: 'Hola! Vull saber més sobre l\'extra de Web o Landing'
-    },
-    'cta-final': {
-      es: 'Hola! Quiero ver la muestra de mi ficha y posts antes de pagar',
-      ca: 'Hola! Vull veure la mostra de la meva fitxa i posts abans de pagar'
-    },
-    'mobile-sticky': {
-      es: 'Hola! Quiero saber más de Verstats',
-      ca: 'Hola! Vull saber més de Verstats'
-    }
-  };
-
-  function updateWhatsAppLinks() {
-    document.querySelectorAll('.wa-link').forEach(link => {
-      const ctx = link.getAttribute('data-wa-context') || 'hero';
-      const msgObj = waMessages[ctx] || waMessages.hero;
-      const text = encodeURIComponent(msgObj[currentLang] || msgObj.es);
-      link.href = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
-    });
-  }
-
-  // Tracking de clics para embudo de conversión
-  document.addEventListener('click', (e) => {
-    const waLink = e.target.closest('.wa-link');
-    if (waLink) {
-      const context = waLink.getAttribute('data-wa-context') || 'unknown';
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'whatsapp_click', {
-          event_category: 'conversion',
-          event_label: context,
-          lang: currentLang
-        });
-      }
-    }
-  });
-
-  // Initialize
-  calcRoi();
-  applyNeighborhoodPreset();
-  updateWhatsAppLinks();
-
-  // Scroll listener for mobile sticky bar
-  window.addEventListener('scroll', () => {
-    const bar = document.getElementById('mobileStickyBar');
-    if (!bar) return;
-    if (window.scrollY > 380) {
-      bar.classList.add('visible');
-    } else {
-      bar.classList.remove('visible');
-    }
-  }, { passive: true });
-
-  // FAQ: aria-expanded dinámico para screen readers
-  document.querySelectorAll('#faq details').forEach(detail => {
-    detail.addEventListener('toggle', () => {
-      const summary = detail.querySelector('summary');
-      if (summary) summary.setAttribute('aria-expanded', detail.open);
-    });
-  });
-</script>
+<script src="assets/script.js"></script>
 
 </body>
 </html>
