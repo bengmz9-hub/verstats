@@ -6,6 +6,7 @@ Thumbs.db
 
 # Internal agent maps & memory files
 .project-map.md
+.token-optimizer/
 
 # Build artifacts
 node_modules/
