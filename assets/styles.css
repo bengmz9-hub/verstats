@@ -58,8 +58,9 @@
   .logo span { color: var(--accent); }
   .logo-img { height: 34px; width: auto; background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
   .nav-links { display: flex; align-items: center; gap: 20px; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; white-space: nowrap; transition: color .15s ease; }
-  .nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
+  .nav-cta { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 700; font-size: .9rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
+  .nav-cta-icon { width: 18px; height: 18px; flex: none; display: inline-block; }
+  .nav-cta-text { display: inline; }
   
   .lang-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
   .lang-btn { background: transparent; border: none; color: var(--muted); font-family: var(--font-display); font-weight: 700; font-size: .78rem; padding: 4px 10px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
@@ -376,6 +377,9 @@
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 900px) {
     .nav-links { display: none; }
+    .nav-cta-text { display: none; }
+    .nav-cta { min-height: 38px; width: 38px; padding: 0; display: inline-grid; place-items: center; border-radius: 50%; }
+    .nav-cta-icon { width: 20px; height: 20px; }
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .phone { max-width: 320px; }
     .compra { grid-template-columns: 1fr; gap: 32px; }
@@ -504,7 +508,6 @@
   @media (max-width: 360px) {
     .wrap { padding: 0 14px; }
     .nav { padding: 10px 12px; }
-    .nav-cta { padding: 0 10px; font-size: .82rem; }
     .hero { padding: 40px 0 32px; }
     .phone { padding: 6px; }
     .phone-chat { padding: 12px 8px; }
