@@ -378,7 +378,9 @@
     .nav-links { display: none; }
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .phone { max-width: 320px; }
-    .compra, .compra.flip .compra-copy { grid-template-columns: 1fr; order: 0; }
+    .compra { grid-template-columns: 1fr; gap: 32px; }
+    .compra.flip .compra-copy { order: -1; }
+    .bot-grid { grid-template-columns: 1fr; gap: 16px; max-width: 440px; margin: 0 auto; width: 100%; }
     .posts { grid-template-columns: 1fr; max-width: 420px; }
     .roadmap { grid-template-columns: 1fr 1fr; }
     .roi-grid-inputs { grid-template-columns: 1fr; }
@@ -440,6 +442,9 @@
   @media (max-width: 600px) {
     .mobile-sticky-bar { display: flex; }
     body { padding-bottom: 72px; }
+    .bot-grid { max-width: 100%; gap: 14px; }
+    .bot-chat { padding: 14px 12px; font-size: .84rem; }
+    .cal-grid .day.hit { width: 26px; height: 26px; font-size: .78rem; }
   }
   @media (max-width: 360px) {
     .wrap { padding: 0 14px; }
