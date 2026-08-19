@@ -7,9 +7,9 @@
       "nav-precios": "Precios",
       "nav-faq": "Preguntas",
       "nav-btn-whatsapp": "Escríbenos por WhatsApp",
-      "hero-h1": "Tu negocio, <em>visible</em> y respondiendo, aunque no estés",
-      "hero-lead": "Para el comercio y hostelería de Pubilla Cases y Can Serra: te lo dejamos todo hecho y funcionando en dos semanas. Tu ficha de Google optimizada, tus reseñas respondidas, tus redes con contenido nuevo y tu WhatsApp preparado. Tú solo sigues con tu negocio.",
-      "hero-btn-wa": "Escríbenos por WhatsApp",
+      "hero-h1": "Consigue que los vecinos de tu barrio te encuentren antes que a tu competencia",
+      "hero-lead": "Ficha de Google Maps optimizada, reseñas respondidas en minutos y redes al día sin quitarte ni 10 minutos de tu negocio. Lo dejamos todo montado en 14 días y lo ves funcionando antes de pagar 1 solo euro.",
+      "hero-btn-wa": "Quiero ver mi negocio funcionando gratis por WhatsApp",
       "hero-btn-ghost": "Ver lo que compras",
       "hero-chat-msg1": "Hola, ¿tenéis hueco para un corte el viernes por la tarde?",
       "hero-chat-msg2": "¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?",
@@ -96,8 +96,8 @@
       "rm-step4-badge": "Día 14",
       "rm-step4-h": "Todo en marcha",
       "rm-step4-p": "Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes mientras tu presencia digital trabaja cada día para que más vecinos te encuentren.",
-      "preus-title": "Precios de barrio, sin letra pequeña",
-      "preus-sub": "Instalación única + cuota mensual. Sin permanencia: si no te convence, lo dejamos.",
+      "preus-title": "Todo tu escaparate digital por menos de lo que cuesta 1 café al día",
+      "preus-sub": "Sin permanencias ni cuotas sorpresa. Con solo 2-3 clientes nuevos al mes, el paquete completo queda 100% amortizado.",
       "roi-title": "Calcula el impacto estimado en tu negocio",
       "roi-sub": "Mueve los controles con los números reales de tu comercio y comprueba cómo se amortiza la cuota.",
       "roi-lbl-clients": "Clientes nuevos que te encuentran al mes:",
@@ -145,9 +145,9 @@
       "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el radar semanal de tu barrio (competencia y oportunidades accionables).",
       "faq-q6": "Ya me llevan las redes. ¿Me sirve esto?",
       "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el radar semanal. Se paga por lo que se usa.",
-      "prova-h2": "Te lo dejamos montado, y lo ves antes de pagar",
-      "prova-p": "Montamos tu ficha de Google y tu primer post con tus fotos reales. Te lo enseñamos funcionando. Si te gusta, seguimos con el resto del paquete.",
-      "prova-btn-wa": "Escríbenos por WhatsApp",
+      "prova-h2": "Te lo dejamos montado: si no te convence, no nos debes nada",
+      "prova-p": "Envíanos unas fotos por WhatsApp. En 7 días te enseñamos cómo queda tu negocio en Google Maps y redes con tus datos reales. Cero compromiso.",
+      "prova-btn-wa": "Ver mi demostración personalizada por WhatsApp",
       "prova-mini": "Respondemos en menos de 24h · Sin compromiso",
       "modal-tag": "DEMO · Ejemplo de Entrega Semanal",
       "modal-title": "Radar Semanal Verstats — Lunes 10 de Agosto",
@@ -175,9 +175,9 @@
       "nav-precios": "Preus",
       "nav-faq": "Preguntes",
       "nav-btn-whatsapp": "Escriu-nos per WhatsApp",
-      "hero-h1": "El teu negoci, <em>visible</em> i responent, encara que no hi siguis",
-      "hero-lead": "Per al comerç i restauració de Pubilla Cases i Can Serra: t'ho deixem tot fet i funcionant en dues setmanes. La teva fitxa de Google optimitzada, les teves ressenyes respostes, les teves xarxes amb contingut nou i el teu WhatsApp preparat. Tu només continues amb el teu negoci.",
-      "hero-btn-wa": "Escriu-nos per WhatsApp",
+      "hero-h1": "Aconsegueix que els veïns del teu barri et trobin abans que a la teva competència",
+      "hero-lead": "Fitxa de Google Maps optimitzada, ressenyes respostes en minuts i xarxes al dia sense treure't ni 10 minuts del teu negoci. T'ho deixem tot muntat en 14 dies i ho veus funcionant abans de pagar 1 sol euro.",
+      "hero-btn-wa": "Vull veure el meu negoci funcionant gratis per WhatsApp",
       "hero-btn-ghost": "Veure el que compres",
       "hero-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
       "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
@@ -264,8 +264,8 @@
       "rm-step4-badge": "Dia 14",
       "rm-step4-h": "Tot en marxa",
       "rm-step4-p": "Fitxa activa, ressenyes ateses i WhatsApp a punt. Tu continues amb els teus clients mentre la teva presència digital treballa cada dia perquè més veïns et trobin.",
-      "preus-title": "Preus de barri, sense lletra petita",
-      "preus-sub": "Instal·lació única + quota mensual. Sense permanència: si no et convenç, ho deixem.",
+      "preus-title": "Tot el teu aparador digital per menys del que costa 1 cafè al dia",
+      "preus-sub": "Sense permanències ni quotes sorpresa. Amb només 2-3 clients nous al mes, el paquet complet queda 100% amortitzat.",
       "roi-title": "Calcula l'impacte estimat al teu negoci",
       "roi-sub": "Mou els controls amb els números reals del teu negoci i comprova com s'amortitza la quota.",
       "roi-lbl-clients": "Clients nous que et descobreixen al mes:",
@@ -313,9 +313,9 @@
       "faq-a5": "Tot el paquet, no peces soltes: la gestió de la teva fitxa de Google, les respostes a les ressenyes, 8-12 continguts al mes i l'informe setmanal del teu barri (què fan els teus competidors).",
       "faq-q6": "Ja em porten les xarxes. Em serveix això?",
       "faq-a6": "Sí, s'adapta: si ja tens algú, fem només la part que et falta: la fitxa de Google i les ressenyes, per exemple, o l'informe setmanal. Es paga pel que es fa servir.",
-      "prova-h2": "T'ho deixem muntat, i ho veus abans de pagar",
-      "prova-p": "Muntem la teva fitxa de Google i el teu primer post amb les teves fotos reals. T'ho ensenyem funcionant. Si t'agrada, seguim amb la resta del paquet.",
-      "prova-btn-wa": "Escriu-nos per WhatsApp",
+      "prova-h2": "T'ho deixem muntat: si no et convenç, no ens deus res",
+      "prova-p": "Passa'ns unes fotos per WhatsApp. En 7 dies t'ensenyem com queda el teu negoci a Google Maps i a xarxes amb dades reals. Zero compromís.",
+      "prova-btn-wa": "Veure la meva demostració personalitzada per WhatsApp",
       "prova-mini": "Responem en menys de 24h · Sense compromís",
       "modal-tag": "Exemple d'Entrega Setmanal",
       "modal-title": "Radar Setmanal Verstats — Dilluns 10 d'Agost",
@@ -449,33 +449,47 @@
     const profitEl = document.getElementById('roi-profit');
     const noteEl = document.getElementById('roi-note-text');
 
-    const clientSuffix = currentLang === 'ca' ? (clients === 1 ? 'client' : 'clients') : (clients === 1 ? 'cliente' : 'clientes');
+    const formatMoney = (val) => new Intl.NumberFormat(currentLang === 'ca' ? 'ca-ES' : 'es-ES', {
+      style: 'currency',
+      currency: 'EUR',
+      maximumFractionDigits: 0
+    }).format(val);
+
+    const pr = new Intl.PluralRules(currentLang === 'ca' ? 'ca' : 'es');
+    const clientSuffix = currentLang === 'ca'
+      ? (pr.select(clients) === 'one' ? 'client' : 'clients')
+      : (pr.select(clients) === 'one' ? 'cliente' : 'clientes');
+
     if (clientsVal) clientsVal.textContent = `${clients} ${clientSuffix}`;
-    if (ticketVal) ticketVal.textContent = `${ticket} €`;
+    if (ticketVal) ticketVal.textContent = formatMoney(ticket);
 
     clientsInput.setAttribute('aria-valuetext', `${clients} ${clientSuffix}`);
-    ticketInput.setAttribute('aria-valuetext', `${ticket} euros`);
+    ticketInput.setAttribute('aria-valuetext', formatMoney(ticket));
 
     const extra = clients * ticket;
     const profit = extra - 50;
 
-    if (extraEl) extraEl.textContent = `+${extra} €/mes`;
+    if (extraEl) extraEl.textContent = `+${formatMoney(extra)}/mes`;
     if (profitEl) {
       if (profit >= 0) {
-        profitEl.textContent = `+${profit} €/mes`;
+        profitEl.textContent = `+${formatMoney(profit)}/mes`;
         profitEl.style.color = 'var(--green)';
       } else {
-        profitEl.textContent = `${profit} €/mes`;
+        profitEl.textContent = `${formatMoney(profit)}/mes`;
         profitEl.style.color = '#f87171';
       }
     }
 
     if (noteEl) {
       const minNeeded = Math.ceil(50 / ticket);
+      const minSuffix = currentLang === 'ca'
+        ? (pr.select(minNeeded) === 'one' ? 'client nou' : 'clients nous')
+        : (pr.select(minNeeded) === 'one' ? 'cliente nuevo' : 'clientes nuevos');
+
       if (currentLang === 'ca') {
-        noteEl.textContent = `✅ Amb només ${minNeeded} ${minNeeded === 1 ? 'client nou' : 'clients nous'} al mes, el pack ja es paga completament sol.`;
+        noteEl.textContent = `✅ Amb només ${minNeeded} ${minSuffix} al mes, el pack ja es paga completament sol.`;
       } else {
-        noteEl.textContent = `✅ Con solo ${minNeeded} ${minNeeded === 1 ? 'cliente nuevo' : 'clientes nuevos'} al mes, el pack ya se paga completamente solo.`;
+        noteEl.textContent = `✅ Con solo ${minNeeded} ${minSuffix} al mes, el pack ya se paga completamente solo.`;
       }
     }
   }
@@ -558,8 +572,8 @@
 
   const waMessages = {
     hero: {
-      es: 'Hola! Quiero saber cómo está mi negocio en Google y el barrio',
-      ca: 'Hola! Vull saber com està el meu negoci a Google i al barri'
+      es: 'Hola! Quiero ver mi negocio funcionando gratis por WhatsApp',
+      ca: 'Hola! Vull veure el meu negoci funcionant gratis per WhatsApp'
     },
     nav: {
       es: 'Hola! Quiero saber más de Verstats para mi negocio',
@@ -578,8 +592,8 @@
       ca: 'Hola! Vull saber més sobre l\'extra de Web o Landing'
     },
     'cta-final': {
-      es: 'Hola! Quiero ver la muestra de mi ficha y posts antes de pagar',
-      ca: 'Hola! Vull veure la mostra de la meva fitxa i posts abans de pagar'
+      es: 'Hola! Quiero ver mi demostración personalizada por WhatsApp',
+      ca: 'Hola! Vull veure la meva demostració personalitzada per WhatsApp'
     },
     'mobile-sticky': {
       es: 'Hola! Quiero saber más de Verstats',
@@ -616,14 +630,19 @@
   applyNeighborhoodPreset();
   updateWhatsAppLinks();
 
-  // Scroll listener for mobile sticky bar
+  // Scroll listener for mobile sticky bar (desacoplado con rAF)
+  let scrollRaf = false;
   window.addEventListener('scroll', () => {
-    const bar = document.getElementById('mobileStickyBar');
-    if (!bar) return;
-    if (window.scrollY > 380) {
-      bar.classList.add('visible');
-    } else {
-      bar.classList.remove('visible');
+    if (!scrollRaf) {
+      requestAnimationFrame(() => {
+        const bar = document.getElementById('mobileStickyBar');
+        if (bar) {
+          if (window.scrollY > 380) bar.classList.add('visible');
+          else bar.classList.remove('visible');
+        }
+        scrollRaf = false;
+      });
+      scrollRaf = true;
     }
   }, { passive: true });
 
@@ -644,4 +663,16 @@ document.getElementById('tab-comercio').addEventListener('click', () => switchNi
 document.getElementById('btn-open-report').addEventListener('click', () => openReportModal());
 document.getElementById('btn-close-demo').addEventListener('click', () => closeReportModal());
 document.querySelectorAll('.modal-close').forEach(el => el.addEventListener('click', () => closeReportModal()));
-['roi-clients', 'roi-ticket'].forEach(id => document.getElementById(id).addEventListener('input', calcRoi));
+
+let roiRafId = null;
+function scheduleRoiCalc() {
+  if (roiRafId) cancelAnimationFrame(roiRafId);
+  roiRafId = requestAnimationFrame(() => {
+    calcRoi();
+    roiRafId = null;
+  });
+}
+['roi-clients', 'roi-ticket'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', scheduleRoiCalc, { passive: true });
+});
