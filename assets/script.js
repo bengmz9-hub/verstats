@@ -9,7 +9,7 @@
       "nav-btn-whatsapp": "Escríbenos por WhatsApp",
       "hero-h1": "Consigue que los vecinos de tu barrio te encuentren antes que a tu competencia",
       "hero-lead": "Ficha de Google Maps optimizada, reseñas respondidas en minutos y redes al día sin quitarte ni 10 minutos de tu negocio. Lo dejamos todo montado en 14 días y lo ves funcionando antes de pagar 1 solo euro.",
-      "hero-btn-wa": "Quiero ver mi negocio funcionando gratis por WhatsApp",
+      "hero-btn-wa": "Ver demostración por WhatsApp",
       "hero-btn-ghost": "Ver lo que compras",
       "hero-chat-msg1": "Hola, ¿tenéis hueco para un corte el viernes por la tarde?",
       "hero-chat-msg2": "¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?",
@@ -177,7 +177,7 @@
       "nav-btn-whatsapp": "Escriu-nos per WhatsApp",
       "hero-h1": "Aconsegueix que els veïns del teu barri et trobin abans que a la teva competència",
       "hero-lead": "Fitxa de Google Maps optimitzada, ressenyes respostes en minuts i xarxes al dia sense treure't ni 10 minuts del teu negoci. T'ho deixem tot muntat en 14 dies i ho veus funcionant abans de pagar 1 sol euro.",
-      "hero-btn-wa": "Vull veure el meu negoci funcionant gratis per WhatsApp",
+      "hero-btn-wa": "Veure demostració per WhatsApp",
       "hero-btn-ghost": "Veure el que compres",
       "hero-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
       "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
@@ -572,8 +572,8 @@
 
   const waMessages = {
     hero: {
-      es: 'Hola! Quiero ver mi negocio funcionando gratis por WhatsApp',
-      ca: 'Hola! Vull veure el meu negoci funcionant gratis per WhatsApp'
+      es: 'Hola! Quiero ver una demostración para mi negocio',
+      ca: 'Hola! Vull veure una demostració per al meu negoci'
     },
     nav: {
       es: 'Hola! Quiero saber más de Verstats para mi negocio',
