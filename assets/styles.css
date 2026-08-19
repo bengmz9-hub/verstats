@@ -385,7 +385,39 @@
     .roadmap { grid-template-columns: 1fr 1fr; }
     .roi-grid-inputs { grid-template-columns: 1fr; }
     .roi-results-row { grid-template-columns: 1fr; gap: 12px; }
-    .incluye { grid-template-columns: 1fr 1fr; }
+    .incluye { grid-template-columns: 1fr; gap: 12px; }
+    .inc {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      column-gap: 14px;
+      row-gap: 4px;
+      align-items: start;
+      padding: 18px 20px;
+    }
+    .inc .check {
+      grid-row: 1 / 3;
+      margin-bottom: 0;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    .inc h3 {
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+    .inc p {
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+    .inc .inc-demo-btn {
+      grid-column: 2;
+      margin-top: 6px;
+    }
     .preus { grid-template-columns: 1fr; max-width: 440px; }
     .trust-grid { grid-template-columns: 1fr; }
     .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--line); }
@@ -456,7 +488,7 @@
     .btn { width: 100%; padding: 10px 14px; font-size: .92rem; }
     .hero-ctas { flex-direction: column; width: 100%; }
     .paquet { padding: 20px 14px; }
-    .inc { padding: 20px 14px; }
+    .inc { padding: 14px 12px; column-gap: 10px; }
     .paso { padding: 20px 14px; }
     .final { padding: 32px 14px; }
   }
