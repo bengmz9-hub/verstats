@@ -3,20 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<title>Verstats — Presencia digital para el comercio de barrio</title>
-<meta name="description" content="Tu ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
-<meta property="og:title" content="Verstats — Presencia digital para el comercio de barrio">
-<meta property="og:description" content="Tu ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
+<title>Verstats — Presencia Digital, Google Maps y WhatsApp para Comercios en L'Hospitalet</title>
+<meta name="description" content="Optimización de ficha de Google Maps, gestión de reseñas, redes sociales y Asistente WhatsApp 24/7 con citas automáticas. Para comercios de Pubilla Cases, Can Serra y L'Hospitalet.">
+<meta name="keywords" content="presencia digital, google maps hospitalet, asistente whatsapp citas, reservas google calendar, reseñas google negocio, pubilla cases, can serra, hospitalet de llobregat">
+
+<!-- Geo-Targeting Local SEO -->
+<meta name="geo.region" content="ES-CT">
+<meta name="geo.placename" content="L'Hospitalet de Llobregat">
+<meta name="geo.position" content="41.3653;2.1009">
+<meta name="ICBM" content="41.3653, 2.1009">
+
+<!-- SEO Multilingüe (Hreflang) -->
+<link rel="alternate" hreflang="es" href="https://verstats.com/">
+<link rel="alternate" hreflang="ca" href="https://verstats.com/?lang=ca">
+<link rel="alternate" hreflang="x-default" href="https://verstats.com/">
+
+<!-- OpenGraph & Redes Sociales -->
+<meta property="og:title" content="Verstats — Presencia Digital y Asistente WhatsApp en L'Hospitalet">
+<meta property="og:description" content="Ficha de Google optimizada, reseñas atendidas, publicaciones semanales y Asistente WhatsApp 24/7 con reservas automáticas en tu barrio.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://verstats.com/">
 <meta property="og:image" content="https://verstats.com/assets/img/og-image.png">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ca_ES">
+
+<!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Verstats — Presencia digital para el comercio de barrio">
-<meta name="twitter:description" content="Ficha de Google optimizada, reseñas respondidas, contenido cada semana y WhatsApp preparado. Para el comercio de Pubilla Cases y Can Serra.">
+<meta name="twitter:title" content="Verstats — Presencia Digital y Asistente WhatsApp en L'Hospitalet">
+<meta name="twitter:description" content="Ficha de Google Maps optimizada, gestión de reseñas y Asistente WhatsApp 24/7 para tu comercio.">
 <meta name="twitter:image" content="https://verstats.com/assets/img/og-image.png">
+
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <!-- TODO (LANZAMIENTO CON DOMINIO): Cambiar a 'index, follow' y definir canonical
 <meta name="robots" content="index, follow">
@@ -26,6 +45,7 @@
 <link rel="preload" href="assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/general-sans-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,22 +53,66 @@
     {
       "@type": "ProfessionalService",
       "name": "Verstats",
-      "description": "Presencia digital para el comercio de barrio en L'Hospitalet de Llobregat: optimización de ficha de Google, gestión de reseñas y contenidos.",
+      "image": "https://verstats.com/assets/img/og-image.png",
+      "url": "https://verstats.com/",
+      "telephone": "+34600000000",
+      "priceRange": "50€ - 350€",
+      "description": "Presencia digital para el comercio de barrio en L'Hospitalet de Llobregat: optimización de ficha de Google Maps, gestión de reseñas, contenidos en redes y Asistente WhatsApp 24/7.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "L'Hospitalet de Llobregat",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.3653,
+        "longitude": 2.1009
+      },
       "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Pubilla Cases, L'Hospitalet de Llobregat"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Can Serra, L'Hospitalet de Llobregat"
-        }
+        { "@type": "AdministrativeArea", "name": "Pubilla Cases, L'Hospitalet de Llobregat" },
+        { "@type": "AdministrativeArea", "name": "Can Serra, L'Hospitalet de Llobregat" },
+        { "@type": "AdministrativeArea", "name": "Collblanc, L'Hospitalet de Llobregat" },
+        { "@type": "AdministrativeArea", "name": "La Torrassa, L'Hospitalet de Llobregat" },
+        { "@type": "AdministrativeArea", "name": "Bellvitge, L'Hospitalet de Llobregat" },
+        { "@type": "AdministrativeArea", "name": "Santa Eulàlia, L'Hospitalet de Llobregat" },
+        { "@type": "City", "name": "L'Hospitalet de Llobregat" }
       ],
-      "offers": {
-        "@type": "Offer",
-        "price": "350.00",
-        "priceCurrency": "EUR",
-        "name": "Pack Presencia Digital"
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Presencia Digital",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pack Presencia Digital",
+              "description": "Instalación de ficha Google Maps, gestión de reseñas, 8-12 publicaciones mensuales y radar semanal del sector."
+            },
+            "price": "350.00",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WhatsApp Business con Asistente y Citas 24/7",
+              "description": "Atención automática 24/7 en WhatsApp, reserva directa sincronizada en Google Calendar y recordatorios automáticos."
+            },
+            "price": "150.00",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Página Web / Landing Page de Barrio",
+              "description": "Diseño web ligero, responsivo y adaptado a móvil para negocios locales."
+            },
+            "price": "600.00",
+            "priceCurrency": "EUR"
+          }
+        ]
       }
     },
     {
@@ -101,6 +165,22 @@
             "@type": "Answer",
             "text": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta (ficha de Google, reseñas o informe semanal)."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se mezclarán mis fotos familiares o mensajes privados con los clientes en WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jamás. El asistente opera únicamente en el WhatsApp de tu empresa o en el número oficial del negocio. Tus chats personales siguen siendo 100% privados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si un cliente hace una pregunta que el asistente no sabe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El asistente le responde con amabilidad que te lo consulta a ti y te envía un aviso inmediato para que le respondas cuando puedas."
+          }
         }
       ]
     }
@@ -127,6 +207,7 @@
     <div class="nav-links">
       <a href="#que-compras" data-i18n="nav-que-compras">Ver lo que compras</a>
       <a href="#que-incluye" data-i18n="nav-que-incluye">Qué incluye</a>
+      <a href="#whatsapp-asistente" style="color: var(--accent); font-weight: 700;">⭐ WhatsApp 24/7</a>
       <a href="#como-funciona" data-i18n="nav-como-funciona">Cómo funciona</a>
       <a href="#precios" data-i18n="nav-precios">Precios</a>
       <a href="#faq" data-i18n="nav-faq">Preguntas</a>
@@ -189,7 +270,7 @@
 
   <!-- ============ LO QUE COMPRAS ============ -->
   <section id="que-compras">
-    <div class="sec-head">
+    <div class="sec-head sec-head--center">
       <h2 data-i18n="compras-h2">Esto es lo que compras: cada parte del paquete, vista.</h2>
       <p data-i18n="compras-lead">Nada de promesas abstractas. Elige tu tipo de negocio para ver una demostración realista; en el tuyo van tus fotos, tus horarios y tu estilo.</p>
     </div>
@@ -238,30 +319,30 @@
           <p data-i18n="compra2-p">Las buenas, para dar las gracias. Las malas, para arreglar el problema en público. Todo respondido con tu tono.</p>
           <p class="compra-note" data-i18n="compra2-note">Respuestas escritas con los datos reales de tus reseñas, respondiendo de verdad a cada cliente.</p>
         </div>
-        <div class="revs">
-          <div class="mb-neg4"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
+        <div class="reviews">
+          <div class="mb-12"><span class="demo-badge">DEMO · DATOS SIMULADOS</span></div>
           <div class="rev">
             <div class="rev-head">
-              <div class="rev-ava">M</div>
-              <div class="who"><b>María P.</b><span>hace 2 semanas · Google</span></div>
+              <div class="avatar">M</div>
+              <div class="who"><b>María P.</b><span data-i18n="rev1-time">hace 3 días</span></div>
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text" data-i18n="rev1-text">Me hicieron un corte y un tinte y quedé encantada. Trato cercano y precio justo. La recomiendo.</p>
             <div class="rev-resp">
               <span class="tag" data-i18n="rev-owner-tag">Respuesta del propietario</span>
-              <span data-i18n="rev1-resp">¡Gracias, María! Nos alegra muchísimo que te gustara el resultado. ¡Te esperamos cuando quieras!</span>
+              <p data-i18n="rev1-resp">¡Gracias, María! Nos alegra muchísimo que te gustara el resultado. ¡Te esperamos cuando quieras!</p>
             </div>
           </div>
           <div class="rev">
             <div class="rev-head">
-              <div class="rev-ava">J</div>
-              <div class="who"><b>Jordi R.</b><span>hace 2 semanas · Bar Cafetería Can Serra</span></div>
+              <div class="avatar">J</div>
+              <div class="who"><b>Jordi R.</b><span data-i18n="rev2-time">hace 1 semana</span></div>
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text" data-i18n="rev2-text">Menú del día muy completo y las mejores bravas del barrio. Trato rápido y amable.</p>
             <div class="rev-resp">
               <span class="tag" data-i18n="rev-owner-tag">Respuesta del propietario</span>
-              <span data-i18n="rev2-resp">¡Muchas gracias, Jordi! Nos alegra que disfrutaras del menú. ¡Te esperamos pronto para probar las nuevas tapas!</span>
+              <p data-i18n="rev2-resp">¡Muchas gracias, Jordi! Nos alegra que disfrutaras del menú. ¡Te esperamos pronto para probar las nuevas tapas!</p>
             </div>
           </div>
         </div>
@@ -296,7 +377,7 @@
                 <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
               </div>
               <img class="foto" src="assets/img/post2-bob.webp" alt="Post de prueba social: corte bob con opinión de clienta" width="340" height="420" loading="lazy">
-              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
               <div class="likes" data-i18n="post2-likes">Le gusta a 64 personas</div>
               <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post2-caption-txt">"El mejor corte que me han hecho en años, y el precio justo." (Marta, Pubilla Cases). Corte + acabado desde 15€.</span><br><span class="tags">#PeluqueriaBarrio #CorteDePelo #LHospitalet</span></div>
             </div>
@@ -307,7 +388,7 @@
                 <div class="user"><b>peluquerias.bellsal</b><span>Pubilla Cases · L'Hospitalet</span></div>
               </div>
               <img class="foto" src="assets/img/post3-local.webp" alt="Post de horario: interior del local" width="340" height="420" loading="lazy">
-              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+              <div class="acciones"><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
               <div class="likes" data-i18n="post3-likes">Le gusta a 52 personas</div>
               <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post3-caption-txt">Viernes de "me lo arreglo para el finde". Tenemos huecos esta tarde; pásate o escríbenos. L-V 9:30-20:00 · S 9:30-14:00</span><br><span class="tags">#ViernesDePelu #PeluqueriaPubillaCases</span></div>
             </div>
@@ -329,7 +410,7 @@
             <div class="wa wa-in"><span data-i18n="bot-chat-msg1">Hola, ¿tenéis hueco para un corte el viernes por la tarde?</span><span class="hora">17:24</span></div>
             <div class="wa wa-out"><span data-i18n="bot-chat-msg2">¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?</span><span class="hora">17:24</span></div>
             <div class="wa wa-in"><span data-i18n="bot-chat-msg3">¡Perfecto, lo reservo!</span><span class="hora">17:25</span></div>
-            <div class="wa-sys" data-i18n="bot-chat-sys">✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar</div>
+            <div class="wa-sys" data-i18n="hero-chat-sys">✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar</div>
           </div>
           <div class="bot-cal">
             <div class="cal-head" data-i18n="bot-cal-head">Agosto 2026</div>
@@ -351,11 +432,11 @@
 
   <!-- ============ QUÉ INCLUYE ============ -->
   <section id="que-incluye">
-    <div class="sec-head">
-      <h2 data-i18n="incluye-h2">Qué incluye (y por qué te trae clientes)</h2>
+    <div class="sec-head sec-head--center">
+      <h2 data-i18n="incluye-h2">Qué incluye el paquete Presencia Digital</h2>
       <p data-i18n="incluye-lead">No es publicidad genérica. Es que tu negocio aparezca cuando tus vecinos lo buscan, con presencia viva cada semana.</p>
     </div>
-    <div class="incluye">
+    <div class="incluye" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
       <div class="inc">
         <span class="check">✓</span>
         <h3 data-i18n="inc1-h3">Tu ficha de Google perfecta</h3>
@@ -373,11 +454,6 @@
       </div>
       <div class="inc">
         <span class="check">✓</span>
-        <h3 data-i18n="inc4-h3">WhatsApp preparado</h3>
-        <p data-i18n="inc4-p">Respuestas rápidas, mensaje de ausencia y catálogo montados. Los clientes preguntan lo de siempre; ahora respondes sin repetirte.</p>
-      </div>
-      <div class="inc">
-        <span class="check">✓</span>
         <h3 data-i18n="inc5-h3">Informe semanal de tu sector</h3>
         <p data-i18n="inc5-p">Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué precios mueven, qué dicen las reseñas.</p>
         <button class="inc-demo-btn" id="btn-open-report" data-i18n="inc-demo-btn">Ver ejemplo de informe semanal →</button>
@@ -385,81 +461,382 @@
     </div>
   </section>
 
+  
+  <!-- ============ WHATSAPP BUSINESS & ASISTENTE CITAS (NATIVA) ============ -->
+  <section id="whatsapp-asistente" style="padding-top: 48px; padding-bottom: 32px; width: 100%;">
+    <div class="sec-head sec-head--center" style="margin-bottom: 24px;">
+      <span class="badge" data-i18n="wa-sec-badge" style="position: static; transform: none; display: inline-block; margin-bottom: 12px;">⭐ ASISTENTE 24/7</span>
+      <h2 data-i18n="wa-sec-h2">WhatsApp Business con Asistente y Citas</h2>
+      <p data-i18n="wa-sec-lead">Descubre de forma interactiva cómo funciona la suite completa de 6 infografías de negocio:</p>
+    </div>
+
+    <div class="wa-suite-container">
+        <!-- Navegación -->
+        <div class="wa-suite-nav" role="tablist" aria-label="Infografías Asistente WhatsApp">
+            <button class="wa-tab-btn active" role="tab" aria-selected="true" aria-controls="info-1" id="wa-tab-1" data-wa-target="info-1" data-i18n="wa-tab-btn-1">1. Comparativa</button>
+            <button class="wa-tab-btn" role="tab" aria-selected="false" aria-controls="info-2" id="wa-tab-2" data-wa-target="info-2" data-i18n="wa-tab-btn-2">2. Separación WA</button>
+            <button class="wa-tab-btn" role="tab" aria-selected="false" aria-controls="info-3" id="wa-tab-3" data-wa-target="info-3" data-i18n="wa-tab-btn-3">3. Calendar Sync</button>
+            <button class="wa-tab-btn" role="tab" aria-selected="false" aria-controls="info-4" id="wa-tab-4" data-wa-target="info-4" data-i18n="wa-tab-btn-4">4. Chat Real</button>
+            <button class="wa-tab-btn" role="tab" aria-selected="false" aria-controls="info-5" id="wa-tab-5" data-wa-target="info-5" data-i18n="wa-tab-btn-5">5. Rutina & Agenda</button>
+            <button class="wa-tab-btn" role="tab" aria-selected="false" aria-controls="info-6" id="wa-tab-6" data-wa-target="info-6" data-i18n="wa-tab-btn-6">6. FAQ & Paz</button>
+        </div>
+
+        <!-- 1. Comparativa -->
+        <div id="info-1" class="wa-tab-pane active" role="tabpanel" aria-labelledby="wa-tab-1">
+            <div class="wa-badge" data-i18n="wa-info1-badge"><i class="fa-solid fa-bolt"></i> COMPARATIVA DE NEGOCIO</div>
+            <div class="wa-header">
+                <h3 data-i18n="wa-info1-h3">El WhatsApp de tu empresa atendido las 24 horas</h3>
+                <p data-i18n="wa-info1-p">Tu asistente automático que responde a clientes y llena tu agenda mientras tú trabajas o descansas.</p>
+            </div>
+            <div class="wa-grid-2">
+                <div class="wa-card red-glow">
+                    <div>
+                        <div class="wa-card-header">
+                            <span class="wa-card-title red" data-i18n="wa-info1-antes-title"><i class="fa-solid fa-xmark-circle"></i> ANTES</span>
+                            <div class="wa-icon-box red"><i class="fa-solid fa-book-bookmark"></i></div>
+                        </div>
+                        <ul class="wa-list">
+                            <li><i class="fa-solid fa-phone-slash" style="color:#ef4444"></i> <span data-i18n="wa-info1-antes-li1"><strong>Llamadas perdidas</strong> mientras estás cortando el pelo o atendiendo a un cliente.</span></li>
+                            <li><i class="fa-solid fa-comment-slash" style="color:#ef4444"></i> <span data-i18n="wa-info1-antes-li2"><strong>Mensajes acumulados</strong> por la noche y fines de semana sin responder.</span></li>
+                            <li><i class="fa-solid fa-eraser" style="color:#ef4444"></i> <span data-i18n="wa-info1-antes-li3"><strong>Citas desorganizadas</strong> en la libreta con tachones y solapamientos.</span></li>
+                            <li><i class="fa-solid fa-user-minus" style="color:#ef4444"></i> <span data-i18n="wa-info1-antes-li4"><strong>Clientes impacientes</strong> que se frustran y se van a la competencia.</span></li>
+                        </ul>
+                    </div>
+                    <div class="wa-card-footer red" data-i18n="wa-info1-antes-footer">Sillones vacíos y pérdida constante de ingresos</div>
+                </div>
+                <div class="wa-card amber-glow">
+                    <div>
+                        <div class="wa-card-header">
+                            <span class="wa-card-title green" data-i18n="wa-info1-ahora-title"><i class="fa-solid fa-circle-check"></i> AHORA</span>
+                            <div class="wa-icon-box green"><i class="fa-brands fa-whatsapp"></i></div>
+                        </div>
+                        <ul class="wa-list">
+                            <li><i class="fa-solid fa-bolt" style="color:var(--accent)"></i> <span data-i18n="wa-info1-ahora-li1"><strong>Respuesta educada e inmediata</strong> en solo 2 segundos a cualquier hora.</span></li>
+                            <li><i class="fa-solid fa-calendar-days" style="color:var(--wa)"></i> <span data-i18n="wa-info1-ahora-li2"><strong>El cliente ve tus huecos libres</strong> en tiempo real y reserva su propia cita.</span></li>
+                            <li><i class="fa-solid fa-square-check" style="color:var(--wa)"></i> <span data-i18n="wa-info1-ahora-li3"><strong>La cita entra sola y ordenada</strong> directamente en tu calendario digital.</span></li>
+                            <li><i class="fa-solid fa-chart-line" style="color:var(--accent)"></i> <span data-i18n="wa-info1-ahora-li4"><strong>Cero clientes perdidos</strong>, trabajando por ti incluso en festivos y madrugadas.</span></li>
+                        </ul>
+                    </div>
+                    <div class="wa-card-footer green" style="color:var(--wa)" data-i18n="wa-info1-ahora-footer">Agenda siempre llena sin mover un solo dedo</div>
+                </div>
+            </div>
+            <div class="wa-footer-box" data-i18n="wa-info1-box">
+                <i class="fa-solid fa-shield-halved" style="color:var(--accent)"></i> <strong>100% Profesional:</strong> Funciona en el WhatsApp de tu empresa sin tocar ni mezclar tu teléfono personal.
+            </div>
+        </div>
+
+        <!-- 2. Separación -->
+        <div id="info-2" class="wa-tab-pane" role="tabpanel" aria-labelledby="wa-tab-2">
+            <div class="wa-badge" data-i18n="wa-info2-badge"><i class="fa-solid fa-mobile-screen-button"></i> INDEPENDENCIA DIGITAL</div>
+            <div class="wa-header">
+                <h3 data-i18n="wa-info2-h3">Tu WhatsApp Personal y el de tu Negocio: 100% Separados</h3>
+                <p data-i18n="wa-info2-p">¿Cómo funciona? Puedes tener 2 WhatsApps en el mismo móvil o un número exclusivo para el trabajo.</p>
+            </div>
+            <div class="wa-grid-2">
+                <div class="wa-card">
+                    <div>
+                        <div class="wa-row-flex" style="margin-bottom:16px;">
+                            <div class="wa-icon-box green"><i class="fa-solid fa-sim-card"></i></div>
+                            <div>
+                                <span style="font-size:0.75rem; color:var(--accent); font-weight:700; text-transform:uppercase;" data-i18n="wa-info2-op1-tag">Opción 1</span>
+                                <h4 style="font-size:1.1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info2-op1-h4">Dos WhatsApps en tu mismo móvil</h4>
+                            </div>
+                        </div>
+                        <div class="wa-mock-app">
+                            <div class="wa-mock-app-col"><div class="icon green-light"><i class="fa-brands fa-whatsapp"></i></div><span style="color:var(--muted)" data-i18n="wa-info2-lbl-personal">Personal</span></div>
+                            <b style="color:var(--line)">+</b>
+                            <div class="wa-mock-app-col"><div class="icon green" style="font-weight:900; font-family:sans-serif;">B</div><span style="color:var(--wa)">Business</span></div>
+                        </div>
+                        <ul class="wa-list">
+                            <li><i class="fa-solid fa-check" style="color:var(--wa)"></i> <span data-i18n="wa-info2-op1-li1">Con una segunda tarjeta SIM o eSIM barata, tienes dos números distintos en tu mismo teléfono.</span></li>
+                            <li><i class="fa-solid fa-lock" style="color:var(--wa)"></i> <span data-i18n="wa-info2-op1-li2">Tu vida personal queda totalmente protegida. Los clientes solo ven el número del negocio.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wa-card">
+                    <div>
+                        <div class="wa-row-flex" style="margin-bottom:16px;">
+                            <div class="wa-icon-box blue"><i class="fa-solid fa-cloud"></i></div>
+                            <div>
+                                <span style="font-size:0.75rem; color:#4285f4; font-weight:700; text-transform:uppercase;" data-i18n="wa-info2-op2-tag">Opción 2</span>
+                                <h4 style="font-size:1.1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info2-op2-h4">Nube Oficial Meta / Fijo del Local</h4>
+                            </div>
+                        </div>
+                        <div class="wa-mock-app">
+                            <div class="wa-mock-app-col"><div class="icon text-blue"><i class="fa-solid fa-phone"></i></div><span style="color:var(--muted)" data-i18n="wa-info2-lbl-fijo">Teléfono Fijo</span></div>
+                            <i class="fa-solid fa-arrow-right" style="color:var(--line)"></i>
+                            <div class="wa-mock-app-col"><div class="icon text-blue"><i class="fa-brands fa-meta"></i></div><span style="color:#4285f4">Meta Cloud API</span></div>
+                        </div>
+                        <ul class="wa-list">
+                            <li><i class="fa-solid fa-check" style="color:var(--wa)"></i> <span data-i18n="wa-info2-op2-li1">Podemos activar el WhatsApp del negocio usando el <strong>teléfono fijo que ya tiene tu local</strong> o un número virtual.</span></li>
+                            <li><i class="fa-solid fa-wifi" style="color:var(--wa)"></i> <span data-i18n="wa-info2-op2-li2">El asistente responde 24/7 sin depender de que tu móvil personal tenga batería o cobertura.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="wa-footer-box" style="margin-bottom: 24px; justify-content: flex-start; padding: 24px;">
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <i class="fa-solid fa-qrcode" style="color:var(--accent); font-size:1.5rem;"></i>
+                    <div style="text-align:left;">
+                        <h4 style="color:#fff; font-weight:700; margin-bottom:4px;" data-i18n="wa-info2-act-h4">¿Cómo se activa en 10 segundos?</h4>
+                        <p style="font-size:0.85rem; color:var(--muted); font-weight:normal; margin:0;" data-i18n="wa-info2-act-p">Solo abres tu WhatsApp de empresa en tu móvil, vas a <strong style="color:#fff">"Dispositivos vinculados"</strong>, apuntas al código QR en pantalla y ya está conectado. ¡Así de fácil!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wa-footer-box" style="background:rgba(245,158,11,0.1); border-color:rgba(245,158,11,0.3); color:var(--accent);" data-i18n="wa-info2-footer">
+                <i class="fa-solid fa-heart-circle-check"></i> Tranquilidad total: Nosotros te dejamos la conexión lista. Tú no tienes que configurar nada técnico.
+            </div>
+        </div>
+
+        <!-- 3. Calendar Sync -->
+        <div id="info-3" class="wa-tab-pane" role="tabpanel" aria-labelledby="wa-tab-3">
+            <div class="wa-badge" style="background:rgba(66,133,244,0.1); color:#4285f4; border-color:rgba(66,133,244,0.3);" data-i18n="wa-info3-badge"><i class="fa-solid fa-calendar-days"></i> CEREBRO DIGITAL</div>
+            <div class="wa-header">
+                <h3 data-i18n="wa-info3-h3">Tu Google Calendar en el móvil: El cerebro de tus citas</h3>
+                <p data-i18n="wa-info3-p">El asistente lee tus huecos libres en tiempo real y anota las reservas al segundo.</p>
+            </div>
+            <div class="wa-grid-2">
+                <div class="wa-card">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">1</div>
+                        <div style="font-size:1.4rem; color:#4285f4;"><i class="fa-solid fa-mobile-screen"></i></div>
+                    </div>
+                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s1-h4">Tu agenda digital gratuita</h4>
+                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s1-p">Usas la aplicación <strong>Google Calendar</strong> que ya viene instalada en tu teléfono móvil (Android o iPhone).</p>
+                </div>
+                <div class="wa-card">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">2</div>
+                        <div style="font-size:1.4rem; color:var(--accent);"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    </div>
+                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s2-h4">Comprobación en directo</h4>
+                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s2-p">Antes de ofrecer una hora, mira tu calendario. Si el jueves a las 16:00 ya tienes ocupado, <strong>JAMÁS ofrecerá esa hora</strong>.</p>
+                </div>
+                <div class="wa-card">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">3</div>
+                        <div style="font-size:1.4rem; color:var(--wa);"><i class="fa-solid fa-calendar-check"></i></div>
+                    </div>
+                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s3-h4">Escritura automática</h4>
+                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s3-p">Al confirmar por WhatsApp, la cita aparece escrita en tu calendario con el <strong>nombre, teléfono y servicio</strong> del cliente.</p>
+                </div>
+                <div class="wa-card">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">4</div>
+                        <div style="font-size:1.4rem; color:var(--accent);"><i class="fa-solid fa-user-gear"></i></div>
+                    </div>
+                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s4-h4">Control Total para ti</h4>
+                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s4-p">Si quieres bloquear un día para fiesta, vacaciones o médico, solo creas un evento en tu calendario y el asistente no dará citas esas horas.</p>
+                </div>
+            </div>
+            <div class="wa-footer-box" data-i18n="wa-info3-footer">
+                <i class="fa-solid fa-circle-check" style="color:var(--wa)"></i> <strong>Adiós al papel y a las agendas físicas:</strong> Todo tu negocio organizado directamente en tu bolsillo.
+            </div>
+        </div>
+
+        <!-- 4. Chat Real -->
+        <div id="info-4" class="wa-tab-pane" role="tabpanel" aria-labelledby="wa-tab-4">
+            <div class="wa-badge" style="background:rgba(37,211,102,0.1); color:var(--wa); border-color:rgba(37,211,102,0.3);" data-i18n="wa-info4-badge"><i class="fa-solid fa-comments"></i> CASO PRÁCTICO REAL</div>
+            <div class="wa-header">
+                <h3 data-i18n="wa-info4-h3">¿Qué pasa cuando un cliente te escribe a deshoras?</h3>
+                <p data-i18n="wa-info4-p">Atención impecable en 3 simples mensajes, sin que tú toques el teléfono.</p>
+            </div>
+            
+            <div class="wa-chat-mockup">
+                <div class="wa-chat-header">
+                    <div style="width:36px; height:36px; border-radius:50%; background:var(--accent); color:#000; font-weight:bold; display:flex; align-items:center; justify-content:center;">V</div>
+                    <div>
+                        <div style="font-weight:700; color:#fff; font-size:0.9rem; display:flex; align-items:center; gap:4px;" data-i18n="wa-info4-chat-user">Verstats Bot Asistente <i class="fa-solid fa-circle-check" style="color:var(--wa); font-size:0.7rem;"></i></div>
+                        <div style="color:var(--wa); font-size:0.75rem;" data-i18n="wa-info4-chat-status">En línea (24/7)</div>
+                    </div>
+                </div>
+                <div class="wa-chat-body">
+                    <div class="wa-bubble wa-bubble-in">
+                        <p data-i18n="wa-info4-msg1">Hola buenas noches, ¿tienen hueco para corte de pelo y barba el viernes por la mañana?</p>
+                        <span class="wa-bubble-time">22:45 h</span>
+                    </div>
+                    <div class="wa-bubble wa-bubble-out">
+                        <div style="color:var(--accent); font-weight:700; font-size:0.75rem; margin-bottom:4px; display:flex; align-items:center; gap:4px;" data-i18n="wa-info4-bot-lbl"><i class="fa-solid fa-robot"></i> Asistente de Empresa</div>
+                        <p data-i18n="wa-info4-msg2">¡Hola! Para corte y barba el viernes por la mañana tenemos disponibles las <strong>10:00</strong> y las <strong>11:30</strong>. ¿Cuál te viene mejor?</p>
+                        <span class="wa-bubble-time">22:45:02 h <i class="fa-solid fa-check-double"></i></span>
+                    </div>
+                    <div class="wa-bubble wa-bubble-in">
+                        <p data-i18n="wa-info4-msg3">A las 11:30 me va perfecto, apúntame por favor.</p>
+                        <span class="wa-bubble-time">22:46 h</span>
+                    </div>
+                    <div class="wa-bubble wa-bubble-out">
+                        <div style="color:var(--accent); font-weight:700; font-size:0.75rem; margin-bottom:4px; display:flex; align-items:center; gap:4px;" data-i18n="wa-info4-bot-lbl"><i class="fa-solid fa-robot"></i> Asistente de Empresa</div>
+                        <p data-i18n="wa-info4-msg4">¡Listo! Te acabo de reservar el <strong>viernes a las 11:30</strong> para corte y barba. Te enviaremos un recordatorio por aquí el día antes. ¡Te esperamos! 😊</p>
+                        <span class="wa-bubble-time">22:46:02 h <i class="fa-solid fa-check-double"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wa-footer-box" data-i18n="wa-info4-footer">
+                El cliente queda atendido y contento al instante. Tú has ganado una cita sin soltar tu trabajo ni interrumpir tu descanso.
+            </div>
+        </div>
+
+        <!-- 5. Rutina -->
+        <div id="info-5" class="wa-tab-pane" role="tabpanel" aria-labelledby="wa-tab-5">
+            <div class="wa-badge" data-i18n="wa-info5-badge"><i class="fa-solid fa-clock"></i> RUTINA & ASISTENCIA</div>
+            <div class="wa-header">
+                <h3 data-i18n="wa-info5-h3">Tu único trabajo diario: Mirar tu agenda cada mañana</h3>
+                <p data-i18n="wa-info5-p">Cómo el sistema protege tu tiempo y elimina los sillones vacíos por despistes.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+                <div class="wa-card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding: 22px; text-align: left;">
+                    <div class="wa-icon-box green" style="flex-shrink: 0;"><i class="fa-solid fa-bell"></i></div>
+                    <div style="flex: 1; text-align: left;">
+                        <h4 style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin: 0 0 6px 0; text-align: left;" data-i18n="wa-info5-c1-h4">1. Recordatorios automáticos por WhatsApp (24h antes)</h4>
+                        <p style="color: var(--muted); font-size: 0.9rem; margin: 0 0 10px 0; line-height: 1.5; text-align: left;" data-i18n="wa-info5-c1-p">El asistente envía un mensaje al cliente recordando su cita de mañana.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; text-align: left;">
+                            <span style="color: var(--wa); display: inline-flex; align-items: center; gap: 6px;" data-i18n="wa-info5-c1-tag1"><i class="fa-solid fa-circle-check"></i> Si confirma: Asistencia garantizada.</span>
+                            <span style="color: #ef4444; display: inline-flex; align-items: center; gap: 6px;" data-i18n="wa-info5-c1-tag2"><i class="fa-solid fa-circle-xmark"></i> Si cancela: Hueco libre al instante para otro.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wa-card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding: 22px; text-align: left;">
+                    <div class="wa-icon-box blue" style="flex-shrink: 0;"><i class="fa-solid fa-store"></i></div>
+                    <div style="flex: 1; text-align: left;">
+                        <h4 style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin: 0 0 6px 0; text-align: left;" data-i18n="wa-info5-c2-h4">2. Citas que entran por la puerta o por llamada</h4>
+                        <p style="color: var(--muted); font-size: 0.9rem; margin: 0; line-height: 1.5; text-align: left;" data-i18n="wa-info5-c2-p">Si un cliente de siempre entra a tu tienda o te llama por teléfono, apuntas la cita en tu móvil en 5 segundos y el asistente respetará esa hora sin ofrecerla a nadie más.</p>
+                    </div>
+                </div>
+                <div class="wa-card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding: 22px; text-align: left;">
+                    <div class="wa-icon-box red" style="flex-shrink: 0;"><i class="fa-solid fa-ban"></i></div>
+                    <div style="flex: 1; text-align: left;">
+                        <h4 style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin: 0 0 6px 0; text-align: left;" data-i18n="wa-info5-c3-h4">3. Bloqueo instantáneo de descansos y festivos</h4>
+                        <p style="color: var(--muted); font-size: 0.9rem; margin: 0; line-height: 1.5; text-align: left;" data-i18n="wa-info5-c3-p">Creas un evento llamado <strong>'Descanso'</strong> o <strong>'Cerrado'</strong> en tu Google Calendar y el asistente jamás ofrecerá citas en esas horas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wa-footer-box" data-i18n="wa-info5-footer">
+                <i class="fa-solid fa-chart-line" style="color:var(--wa)"></i> Menos cancelaciones de última hora, cero huecos desaprovechados y más facturación garantizada.
+            </div>
+        </div>
+
+        <!-- 6. FAQ -->
+        <div id="info-6" class="wa-tab-pane" role="tabpanel" aria-labelledby="wa-tab-6">
+            <div class="wa-badge" data-i18n="wa-info6-badge"><i class="fa-solid fa-circle-question"></i> PREGUNTAS FRECUENTES</div>
+            <div class="wa-header">
+                <h3 data-i18n="wa-info6-h3">Tranquilidad total para tu negocio</h3>
+                <p data-i18n="wa-info6-p">Las dudas más comunes de cualquier autónomo, explicadas sin rodeos.</p>
+            </div>
+            <div class="wa-faq-grid">
+                <div class="wa-faq-card">
+                    <div class="wa-faq-q">
+                        <span class="wa-faq-num">01</span>
+                        <span style="color:#fff" data-i18n="wa-info6-q1">¿Se mezclarán mis fotos familiares o mensajes privados con los clientes?</span>
+                    </div>
+                    <div class="wa-faq-a" data-i18n="wa-info6-a1"><strong style="color:var(--wa)">Jamás.</strong> El asistente opera únicamente en el WhatsApp de tu empresa o en el número oficial del negocio. Tus chats personales siguen siendo 100% privados.</div>
+                </div>
+                <div class="wa-faq-card">
+                    <div class="wa-faq-q">
+                        <span class="wa-faq-num">02</span>
+                        <span style="color:#fff" data-i18n="wa-info6-q2">¿Qué pasa si un cliente hace una pregunta rara que el asistente no sabe?</span>
+                    </div>
+                    <div class="wa-faq-a" data-i18n="wa-info6-a2">El asistente le responde con total amabilidad que te lo consulta a ti y te manda un aviso inmediato para que le respondas cuando tengas un momento libre.</div>
+                </div>
+                <div class="wa-faq-card">
+                    <div class="wa-faq-q">
+                        <span class="wa-faq-num">03</span>
+                        <span style="color:#fff" data-i18n="wa-info6-q3">¿Tengo que aprender informática o tocar códigos raros?</span>
+                    </div>
+                    <div class="wa-faq-a" data-i18n="wa-info6-a3"><strong style="color:var(--accent)">Cero.</strong> Todo te lo dejamos 100% configurado y funcionando. Tu única tarea diaria es abrir tu calendario exactamente igual que siempre.</div>
+                </div>
+                <div class="wa-faq-card">
+                    <div class="wa-faq-q">
+                        <span class="wa-faq-num">04</span>
+                        <span style="color:#fff" data-i18n="wa-info6-q4">¿Puedo apagar o pausar el asistente cuando yo quiera?</span>
+                    </div>
+                    <div class="wa-faq-a" data-i18n="wa-info6-a4"><strong style="color:var(--wa)">Sí.</strong> Tienes el control absoluto para pausarlo o reactivarlo con un solo toque desde tu móvil en cualquier instante.</div>
+                </div>
+            </div>
+            <div class="wa-final-box" data-i18n="wa-info6-footer">
+                <i class="fa-solid fa-star" style="color:var(--accent)"></i> Más clientes atendidos, agenda llena, cero líos de tecnología y más tiempo libre para ti.
+            </div>
+        </div>
+    </div>
+  </section>
+
   <!-- ============ CÓMO FUNCIONA (ROADMAP 14 DÍAS) ============ -->
   <section id="como-funciona">
-    <div class="sec-head">
-      <h2 id="roadmap-title" data-i18n="roadmap-title">Cómo funciona: tus primeros 14 días paso a paso</h2>
-      <p id="roadmap-sub" data-i18n="roadmap-sub">Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.</p>
+    <div class="sec-head sec-head--center">
+      <h2 data-i18n="roadmap-title">Cómo funciona: tus primeros 14 días paso a paso</h2>
+      <p data-i18n="roadmap-sub">Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.</p>
     </div>
     <div class="roadmap">
       <div class="roadmap-step">
         <span class="roadmap-badge" data-i18n="rm-step1-badge">Día 1 – 2</span>
-        <h3 id="rm-step1-h" data-i18n="rm-step1-h">Charla de 10 minutos</h3>
-        <p id="rm-step1-p" data-i18n="rm-step1-p">Nos cuentas tu negocio por WhatsApp y nos envías fotos de tu local o servicios. Sin formularios largos ni papeleo.</p>
+        <h3 data-i18n="rm-step1-h">Charla de 10 minutos</h3>
+        <p data-i18n="rm-step1-p">Nos cuentas tu negocio por WhatsApp y nos envías fotos de tu local o servicios. Sin formularios largos ni papeleo.</p>
       </div>
       <div class="roadmap-step">
         <span class="roadmap-badge" data-i18n="rm-step2-badge">Día 7</span>
-        <h3 id="rm-step2-h" data-i18n="rm-step2-h">Primer borrador en vivo</h3>
-        <p id="rm-step2-p" data-i18n="rm-step2-p">Montamos tu ficha de Google Maps optimizada y preparamos tu primer lote de contenidos para que lo revises.</p>
+        <h3 data-i18n="rm-step2-h">Primer borrador en vivo</h3>
+        <p data-i18n="rm-step2-p">Montamos tu ficha de Google Maps optimizada y preparamos tu primer lote de contenidos para que lo revises.</p>
       </div>
       <div class="roadmap-step">
         <span class="roadmap-badge" data-i18n="rm-step3-badge">Día 10</span>
-        <h3 id="rm-step3-h" data-i18n="rm-step3-h">Lo ves antes de pagar</h3>
-        <p id="rm-step3-p" data-i18n="rm-step3-p">Te enseñamos todo funcionando con tus fotos y datos reales. Si te gusta, seguimos; si no te convence, no pagas nada.</p>
+        <h3 data-i18n="rm-step3-h">Lo ves antes de pagar</h3>
+        <p data-i18n="rm-step3-p">Te enseñamos todo funcionando con tus fotos y datos reales. Si te gusta, seguimos; si no te convence, no pagas nada.</p>
       </div>
       <div class="roadmap-step">
         <span class="roadmap-badge" data-i18n="rm-step4-badge">Día 14</span>
-        <h3 id="rm-step4-h" data-i18n="rm-step4-h">Todo en marcha</h3>
-        <p id="rm-step4-p" data-i18n="rm-step4-p">Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes; tu presencia digital trabaja sola.</p>
+        <h3 data-i18n="rm-step4-h">Todo en marcha</h3>
+        <p data-i18n="rm-step4-p">Ficha activa, reseñas atendidas y WhatsApp listo. Tú sigues con tus clientes mientras tu presencia digital trabaja cada día para que más vecinos te encuentren.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ PRECIOS & CALCULADORA ROI ============ -->
+  <!-- ============ PRECIOS ============ -->
   <section id="precios">
-    <div id="preus"></div>
-    <div class="sec-head">
-      <h2 id="preus-title" data-i18n="preus-title">Todo tu escaparate digital por menos de lo que cuesta 1 café al día</h2>
-      <p id="preus-sub" data-i18n="preus-sub">Sin permanencias ni cuotas sorpresa. Con solo 2-3 clientes nuevos al mes, el paquete completo queda 100% amortizado.</p>
+    <div class="sec-head sec-head--center">
+      <h2 data-i18n="preus-title">Todo tu escaparate digital por menos de lo que cuesta 1 café al día</h2>
+      <p data-i18n="preus-sub">Sin permanencias ni cuotas sorpresa. Con solo 2-3 clientes nuevos al mes, el paquete completo queda 100% amortizado.</p>
     </div>
 
-    <!-- Calculadora interactiva ROI -->
-    <div class="roi-box" aria-label="Calculadora de retorno de inversión">
-      <div class="roi-box-head">
-        <h3 id="roi-title" data-i18n="roi-title">Calcula cuánto te renta este paquete</h3>
-        <p id="roi-sub" data-i18n="roi-sub">Mueve los controles con los números reales de tu negocio y comprueba cómo se amortiza la cuota.</p>
+    <!-- CALCULADORA DE RETORNO (ROI) -->
+    <div class="roi-calc" aria-labelledby="roiCalcTitle">
+      <div class="roi-head">
+        <span class="roi-tag">Simulador de rentabilidad</span>
+        <h3 id="roiCalcTitle" data-i18n="roi-title">Calcula el impacto estimado en tu negocio</h3>
+        <p data-i18n="roi-sub">Mueve los controles con los números reales de tu comercio y comprueba cómo se amortiza la cuota.</p>
       </div>
       <div class="roi-grid-inputs">
         <div class="roi-field">
-          <div class="roi-field-label">
-            <label for="roi-clients" id="roi-lbl-clients" data-i18n="roi-lbl-clients">Clientes nuevos que te encuentran al mes:</label>
-            <span class="roi-field-val" id="roi-clients-val">4 clientes</span>
-          </div>
-          <input type="range" id="roi-clients" min="1" max="15" value="4" step="1" class="roi-range" aria-describedby="roi-clients-val" aria-label="Clientes nuevos al mes">
+          <label class="roi-field-label" for="roi-clients">
+            <span data-i18n="roi-lbl-clients">Clientes nuevos que te encuentran al mes:</span>
+            <b class="roi-field-val" id="roi-clients-val">3 clientes</b>
+          </label>
+          <input type="range" id="roi-clients" min="1" max="15" value="3" step="1" class="roi-range" aria-valuemin="1" aria-valuemax="15" aria-valuenow="3" aria-valuetext="3 clientes">
         </div>
         <div class="roi-field">
-          <div class="roi-field-label">
-            <label for="roi-ticket" id="roi-lbl-ticket" data-i18n="roi-lbl-ticket">Gasto medio por cliente / compra:</label>
-            <span class="roi-field-val" id="roi-ticket-val">20 €</span>
-          </div>
-          <input type="range" id="roi-ticket" min="5" max="80" value="20" step="1" class="roi-range" aria-describedby="roi-ticket-val" aria-label="Gasto medio por cliente">
+          <label class="roi-field-label" for="roi-ticket">
+            <span data-i18n="roi-lbl-ticket">Gasto medio por cliente / compra:</span>
+            <b class="roi-field-val" id="roi-ticket-val">35 €</b>
+          </label>
+          <input type="range" id="roi-ticket" min="10" max="150" value="35" step="5" class="roi-range" aria-valuemin="10" aria-valuemax="150" aria-valuenow="35" aria-valuetext="35 €">
         </div>
       </div>
       <div class="roi-results-row">
         <div class="roi-res-card">
-          <span id="roi-res-extra-lbl" data-i18n="roi-res-extra-lbl">Ingreso extra estimado:</span>
-          <b id="roi-extra">+80 €/mes</b>
+          <span data-i18n="roi-res-extra-lbl">Ingreso adicional estimado:</span>
+          <b id="roi-extra">+105 €/mes</b>
         </div>
         <div class="roi-res-card">
-          <span id="roi-res-fee-lbl" data-i18n="roi-res-fee-lbl">Coste cuota mensual:</span>
-          <b data-i18n="roi-res-fee-val">-50 €/mes</b>
+          <span data-i18n="roi-res-fee-lbl">Coste cuota mensual:</span>
+          <b style="color: #9ca3af;" data-i18n="roi-res-fee-val">-50 €/mes</b>
         </div>
         <div class="roi-res-card profit">
-          <span id="roi-res-profit-lbl" data-i18n="roi-res-profit-lbl">Impacto económico estimado:</span>
-          <b id="roi-profit">+30 €/mes</b>
+          <span data-i18n="roi-res-profit-lbl">Impacto económico estimado:</span>
+          <b id="roi-profit">+55 €/mes</b>
         </div>
       </div>
-      <p class="roi-note-banner" id="roi-note-text">✅ Con solo 3 clientes nuevos al mes, el pack ya se paga completamente solo.</p>
+      <div class="roi-note-banner" id="roi-note-text">
+        ✅ Con solo 2 clientes nuevos al mes, el pack ya se paga completamente solo.
+      </div>
     </div>
 
     <div class="preus">
@@ -477,7 +854,7 @@
         <p class="paquet-subnote" data-i18n="paquet1-subnote">Dinos el nombre de tu asociación por WhatsApp y lo aplicamos al momento.</p>
       </div>
       <div class="paquet recomanat">
-        <div class="badge" data-i18n="paquet2-badge">El más contratado</div>
+        <span class="badge" data-i18n="paquet2-badge">El más contratado</span>
         <div class="tag" data-i18n="paquet2-tag">El paquete completo</div>
         <h3 data-i18n="paquet2-h3">Presencia digital</h3>
         <div class="preu">350 € <small data-i18n="price-mo">+ 50 €/mes</small></div>
@@ -486,11 +863,27 @@
           <li data-i18n="paquet2-li1">Ficha de Google optimizada y gestionada</li>
           <li data-i18n="paquet2-li2">Reseñas respondidas + informe mensual</li>
           <li data-i18n="paquet2-li3">8-12 posts al mes hechos y listos</li>
-          <li data-i18n="paquet2-li4">WhatsApp Business configurado</li>
-          <li data-i18n="paquet2-li5">Informe semanal de tu sector</li>
+          <li data-i18n="paquet2-li5">Informe semanal de competidores del sector</li>
         </ul>
         <a class="btn btn-wa wa-link" data-wa-context="plan-completo" href="#" target="_blank" rel="noopener noreferrer" data-i18n="paquet2-btn">Comenzar</a>
         <p class="paquet-subnote" data-i18n="paquet2-subnote">Primero lo montamos y te lo enseñamos. Si no te gusta, no pagas nada.</p>
+      </div>
+      <div class="paquet inc-highlight">
+        <span class="inc-star-badge" data-i18n="paquet-bot-badge">⭐ EXTRA ESTRELLA</span>
+        <div class="tag" style="color: var(--accent);" data-i18n="paquet-bot-tag">Asistente 24/7</div>
+        <h3 style="color: var(--accent);" data-i18n="paquet-bot-h3">WhatsApp & Bot Citas</h3>
+        <div class="preu">150 € <small data-i18n="price-install">instalación</small></div>
+        <p class="preu-note" data-i18n="paquet-bot-note">Atención automática y reserva en Google Calendar.</p>
+        <ul>
+          <li data-i18n="paquet-bot-li1">Respuestas inmediatas 24/7 sin tocar el móvil</li>
+          <li data-i18n="paquet-bot-li2">Reserva directa sincronizada en Google Calendar</li>
+          <li data-i18n="paquet-bot-li3">Recordatorios automáticos 24h antes por WhatsApp</li>
+          <li data-i18n="paquet-bot-li4">Separación 100% total de tu vida personal</li>
+        </ul>
+        <button class="inc-btn-cta" id="btn-open-bot-modal" aria-haspopup="dialog" aria-controls="botModal" style="margin-bottom: 8px;">
+          <span data-i18n="paquet-bot-demo-btn">Ver cómo funciona (6 Infografías)</span> →
+        </button>
+        <a class="btn btn-wa wa-link" data-wa-context="plan-bot-whatsapp" href="#" target="_blank" rel="noopener noreferrer" data-i18n="paquet-bot-btn">Contratar Asistente</a>
       </div>
       <div class="paquet">
         <div class="tag" data-i18n="paquet3-tag">Extra (a la carta)</div>
@@ -505,7 +898,10 @@
         <a class="btn btn-ghost wa-link" data-wa-context="plan-web" href="#" target="_blank" rel="noopener noreferrer" data-i18n="paquet3-btn">Preguntar</a>
       </div>
     </div>
-    <p class="preus-guarantee"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span data-i18n="preus-guarantee">No pedimos datos bancarios ni tarjetas para ver la demostración.</span></p>
+    <div class="preus-guarantee">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span data-i18n="preus-guarantee">No pedimos datos bancarios ni tarjetas para ver la demostración.</span>
+    </div>
   </section>
 
   <!-- ============ FAQ ============ -->
@@ -585,6 +981,77 @@
     </div>
   </dialog>
 
+  <!-- Modal Suite de 6 Infografías WhatsApp -->
+  <dialog id="botModal" class="suite-modal" aria-labelledby="modalBotTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <span class="modal-tag" data-i18n="bot-modal-tag">SUITE VERSTATS · CÓMO FUNCIONA</span>
+          <h3 id="modalBotTitle" data-i18n="bot-modal-h3" style="font-size: 1.35rem; margin-top: 4px;">El WhatsApp de tu empresa atendido las 24 horas</h3>
+        </div>
+        <button class="modal-close" id="btn-close-bot-x" aria-label="Cerrar modal">×</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Pestañas Espaciosas -->
+        <div class="suite-nav-pills" role="tablist" aria-label="Pestañas de infografía modal">
+          <button class="bot-modal-tab-btn active" role="tab" aria-selected="true" aria-controls="bot-modal-tab-m1" id="bot-tab-m1" data-tab="m1" data-i18n="bot-modal-tab-1">1. Comparativa (Antes/Ahora)</button>
+          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m2" id="bot-tab-m2" data-tab="m2" data-i18n="bot-modal-tab-2">2. Separación Móvil</button>
+          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m3" id="bot-tab-m3" data-tab="m3" data-i18n="bot-modal-tab-3">3. Calendar Sync</button>
+          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m4" id="bot-tab-m4" data-tab="m4" data-i18n="bot-modal-tab-4">4. Chat en Vivo</button>
+          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m5" id="bot-tab-m5" data-tab="m5" data-i18n="bot-modal-tab-5">5. Rutina Diaria</button>
+          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m6" id="bot-tab-m6" data-tab="m6" data-i18n="bot-modal-tab-6">6. FAQ / Preguntas</button>
+        </div>
+
+        <!-- Contenido 1 -->
+        <div id="bot-modal-tab-m1" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m1">
+          <div class="infographic-wrapper">
+            <img src="assets/img/1.webp" alt="Infografía 1: Portada y Comparativa de Negocio" class="infographic-img" width="1536" height="2752" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Contenido 2 -->
+        <div id="bot-modal-tab-m2" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m2" style="display: none;">
+          <div class="infographic-wrapper">
+            <img src="assets/img/2.webp" alt="Infografía 2: Separación WhatsApp Personal y Empresa" class="infographic-img" width="1536" height="2752" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Contenido 3 -->
+        <div id="bot-modal-tab-m3" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m3" style="display: none;">
+          <div class="infographic-wrapper">
+            <img src="assets/img/3.webp" alt="Infografía 3: Sincronización con Google Calendar" class="infographic-img" width="1536" height="2752" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Contenido 4 -->
+        <div id="bot-modal-tab-m4" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m4" style="display: none;">
+          <div class="infographic-wrapper">
+            <img src="assets/img/4.webp" alt="Infografía 4: Simulación de Chat Real" class="infographic-img" width="1536" height="2752" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Contenido 5 -->
+        <div id="bot-modal-tab-m5" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m5" style="display: none;">
+          <div class="infographic-wrapper">
+            <img src="assets/img/5.webp" alt="Infografía 5: Rutina Diaria y Recordatorios Automáticos" class="infographic-img" width="1536" height="2752" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Contenido 6 -->
+        <div id="bot-modal-tab-m6" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m6" style="display: none;">
+          <div class="infographic-wrapper">
+            <img src="assets/img/6.webp" alt="Infografía 6: Preguntas Frecuentes y Tranquilidad Total" class="infographic-img" width="1536" height="2752" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-foot">
+        <button id="btn-close-bot-bottom" class="btn btn-wa" data-i18n="bot-modal-close">Entendido, cerrar</button>
+      </div>
+    </div>
+  </dialog>
+
 </main>
 
 <!-- Mobile Sticky Bottom Bar -->
@@ -593,8 +1060,8 @@
     <b>Verstats</b>
     <span id="mobileBarDesc" data-i18n="mobile-bar-desc">Presencia digital de barrio</span>
   </div>
-  <a class="mobile-bar-btn wa-link" data-wa-context="mobile-sticky" href="#" target="_blank" rel="noopener noreferrer">
-    <svg class="ic ic--va" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  <a class="mobile-bar-btn wa-link" data-wa-context="mobile-sticky" href="#" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
     <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
   </a>
 </div>

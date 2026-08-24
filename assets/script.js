@@ -70,7 +70,7 @@
       "bot-cal-head": "Agosto 2026",
       "bot-cal-note-hit": "Viernes 14 · 17:30",
       "bot-cal-note-desc": "Corte de pelo<br>Cliente: María P. · vía WhatsApp",
-      "incluye-h2": "Qué incluye (y cómo te ayuda a ganar clientes)",
+      "incluye-h2": "Qué incluye el paquete Presencia Digital",
       "incluye-lead": "No es publicidad genérica. Es que tu negocio aparezca cuando tus vecinos lo buscan, con presencia viva cada semana.",
       "inc1-h3": "Tu ficha de Google perfecta",
       "inc1-p": "Fotos, horarios, servicios y categorías correctos. Cuando alguien busca \"peluquería o restaurante en Pubilla Cases\", apareces tú, bien presentado.",
@@ -78,11 +78,97 @@
       "inc2-p": "Respondemos por ti a tus reseñas (bien y mal) y cada mes te contamos qué dicen tus clientes. Las reseñas se leen antes de entrar.",
       "inc3-h3": "Contenido cada semana",
       "inc3-p": "8-12 posts al mes en Instagram/Facebook (2-3 por semana) con tus productos, ofertas y el barrio. Hechos y listos para publicar, con tu estilo.",
-      "inc4-h3": "WhatsApp preparado",
-      "inc4-p": "Respuestas rápidas, mensaje de ausencia y catálogo montados. Los clientes preguntan lo de siempre; ahora respondes sin repetirte.",
-      "inc5-h3": "Radar semanal de tu sector",
-      "inc5-p": "Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué dicen las reseñas y qué acciones puedes aplicar tú.",
-      "inc-demo-btn": "Ver ejemplo de radar semanal →",
+      "inc5-h3": "Informe semanal de tu sector",
+      "inc5-p": "Cada lunes, 5 minutos de lectura: qué hacen tus competidores del barrio, qué precios mueven, qué dicen las reseñas.",
+      "inc-demo-btn": "Ver ejemplo de informe semanal →",
+      "wa-sec-badge": "⭐ ASISTENTE 24/7",
+      "wa-sec-h2": "WhatsApp Business con Asistente y Citas",
+      "wa-sec-lead": "Descubre de forma interactiva cómo funciona la suite completa de 6 infografías de negocio:",
+      "wa-tab-btn-1": "1. Comparativa",
+      "wa-tab-btn-2": "2. Separación WA",
+      "wa-tab-btn-3": "3. Calendar Sync",
+      "wa-tab-btn-4": "4. Chat Real",
+      "wa-tab-btn-5": "5. Rutina & Agenda",
+      "wa-tab-btn-6": "6. FAQ & Paz",
+      "wa-info1-badge": "<i class=\"fa-solid fa-bolt\"></i> COMPARATIVA DE NEGOCIO",
+      "wa-info1-h3": "El WhatsApp de tu empresa atendido las 24 horas",
+      "wa-info1-p": "Tu asistente automático que responde a clientes y llena tu agenda mientras tú trabajas o descansas.",
+      "wa-info1-antes-title": "<i class=\"fa-solid fa-xmark-circle\"></i> ANTES",
+      "wa-info1-antes-li1": "<strong>Llamadas perdidas</strong> mientras estás cortando el pelo o atendiendo a un cliente.",
+      "wa-info1-antes-li2": "<strong>Mensajes acumulados</strong> por la noche y fines de semana sin responder.",
+      "wa-info1-antes-li3": "<strong>Citas desorganizadas</strong> en la libreta con tachones y solapamientos.",
+      "wa-info1-antes-li4": "<strong>Clientes impacientes</strong> que se frustran y se van a la competencia.",
+      "wa-info1-antes-footer": "Sillones vacíos y pérdida constante de ingresos",
+      "wa-info1-ahora-title": "<i class=\"fa-solid fa-circle-check\"></i> AHORA",
+      "wa-info1-ahora-li1": "<strong>Respuesta educada e inmediata</strong> en solo 2 segundos a cualquier hora.",
+      "wa-info1-ahora-li2": "<strong>El cliente ve tus huecos libres</strong> en tiempo real y reserva su propia cita.",
+      "wa-info1-ahora-li3": "<strong>La cita entra sola y ordenada</strong> directamente en tu calendario digital.",
+      "wa-info1-ahora-li4": "<strong>Cero clientes perdidos</strong>, trabajando por ti incluso en festivos y madrugadas.",
+      "wa-info1-ahora-footer": "Agenda siempre llena sin mover un solo dedo",
+      "wa-info1-box": "<i class=\"fa-solid fa-shield-halved\" style=\"color:var(--accent)\"></i> <strong>100% Profesional:</strong> Funciona en el WhatsApp de tu empresa sin tocar ni mezclar tu teléfono personal.",
+      "wa-info2-badge": "<i class=\"fa-solid fa-mobile-screen-button\"></i> INDEPENDENCIA DIGITAL",
+      "wa-info2-h3": "Tu WhatsApp Personal y el de tu Negocio: 100% Separados",
+      "wa-info2-p": "¿Cómo funciona? Puedes tener 2 WhatsApps en el mismo móvil o un número exclusivo para el trabajo.",
+      "wa-info2-op1-tag": "Opción 1",
+      "wa-info2-op1-h4": "Dos WhatsApps en tu mismo móvil",
+      "wa-info2-lbl-personal": "Personal",
+      "wa-info2-op1-li1": "Con una segunda tarjeta SIM o eSIM barata, tienes dos números distintos en tu mismo teléfono.",
+      "wa-info2-op1-li2": "Tu vida personal queda totalmente protegida. Los clientes solo ven el número del negocio.",
+      "wa-info2-op2-tag": "Opción 2",
+      "wa-info2-op2-h4": "Nube Oficial Meta / Fijo del Local",
+      "wa-info2-lbl-fijo": "Teléfono Fijo",
+      "wa-info2-op2-li1": "Podemos activar el WhatsApp del negocio usando el <strong>teléfono fijo que ya tiene tu local</strong> o un número virtual.",
+      "wa-info2-op2-li2": "El asistente responde 24/7 sin depender de que tu móvil personal tenga batería o cobertura.",
+      "wa-info2-act-h4": "¿Cómo se activa en 10 segundos?",
+      "wa-info2-act-p": "Solo abres tu WhatsApp de empresa en tu móvil, vas a <strong style=\"color:#fff\">\"Dispositivos vinculados\"</strong>, apuntas al código QR en pantalla y ya está conectado. ¡Así de fácil!",
+      "wa-info2-footer": "<i class=\"fa-solid fa-heart-circle-check\"></i> Tranquilidad total: Nosotros te dejamos la conexión lista. Tú no tienes que configurar nada técnico.",
+      "wa-info3-badge": "<i class=\"fa-solid fa-calendar-days\"></i> CEREBRO DIGITAL",
+      "wa-info3-h3": "Tu Google Calendar en el móvil: El cerebro de tus citas",
+      "wa-info3-p": "El asistente lee tus huecos libres en tiempo real y anota las reservas al segundo.",
+      "wa-info3-s1-h4": "Tu agenda digital gratuita",
+      "wa-info3-s1-p": "Usas la aplicación <strong>Google Calendar</strong> que ya viene instalada en tu teléfono móvil (Android o iPhone).",
+      "wa-info3-s2-h4": "Comprobación en directo",
+      "wa-info3-s2-p": "Antes de ofrecer una hora, mira tu calendario. Si el jueves a las 16:00 ya tienes ocupado, <strong>JAMÁS ofrecerá esa hora</strong>.",
+      "wa-info3-s3-h4": "Escritura automática",
+      "wa-info3-s3-p": "Al confirmar por WhatsApp, la cita aparece escrita en tu calendario con el <strong>nombre, teléfono y servicio</strong> del cliente.",
+      "wa-info3-s4-h4": "Control Total para ti",
+      "wa-info3-s4-p": "Si quieres bloquear un día para fiesta, vacaciones o médico, solo creas un evento en tu calendario y el asistente no dará citas esas horas.",
+      "wa-info3-footer": "<i class=\"fa-solid fa-circle-check\" style=\"color:var(--wa)\"></i> <strong>Adiós al papel y a las agendas físicas:</strong> Todo tu negocio organizado directamente en tu bolsillo.",
+      "wa-info4-badge": "<i class=\"fa-solid fa-comments\"></i> CASO PRÁCTICO REAL",
+      "wa-info4-h3": "¿Qué pasa cuando un cliente te escribe a deshoras?",
+      "wa-info4-p": "Atención impecable en 3 simples mensajes, sin que tú toques el teléfono.",
+      "wa-info4-chat-user": "Verstats Bot Asistente <i class=\"fa-solid fa-circle-check\" style=\"color:var(--wa); font-size:0.7rem;\"></i>",
+      "wa-info4-chat-status": "En línea (24/7)",
+      "wa-info4-msg1": "Hola buenas noches, ¿tienen hueco para corte de pelo y barba el viernes por la mañana?",
+      "wa-info4-bot-lbl": "<i class=\"fa-solid fa-robot\"></i> Asistente de Empresa",
+      "wa-info4-msg2": "¡Hola! Para corte y barba el viernes por la mañana tenemos disponibles las <strong>10:00</strong> y las <strong>11:30</strong>. ¿Cuál te viene mejor?",
+      "wa-info4-msg3": "A las 11:30 me va perfecto, apúntame por favor.",
+      "wa-info4-msg4": "¡Listo! Te acabo de reservar el <strong>viernes a las 11:30</strong> para corte y barba. Te enviaremos un recordatorio por aquí el día antes. ¡Te esperamos! 😊",
+      "wa-info4-footer": "El cliente queda atendido y contento al instante. Tú has ganado una cita sin soltar tu trabajo ni interrumpir tu descanso.",
+      "wa-info5-badge": "<i class=\"fa-solid fa-clock\"></i> RUTINA & ASISTENCIA",
+      "wa-info5-h3": "Tu único trabajo diario: Mirar tu agenda cada mañana",
+      "wa-info5-p": "Cómo el sistema protege tu tiempo y elimina los sillones vacíos por despistes.",
+      "wa-info5-c1-h4": "1. Recordatorios automáticos por WhatsApp (24h antes)",
+      "wa-info5-c1-p": "El asistente envía un mensaje al cliente recordando su cita de mañana.",
+      "wa-info5-c1-tag1": "<i class=\"fa-solid fa-circle-check\"></i> Si confirma: Asistencia garantizada.",
+      "wa-info5-c1-tag2": "<i class=\"fa-solid fa-circle-xmark\"></i> Si cancela: Hueco libre al instante para otro.",
+      "wa-info5-c2-h4": "2. Citas que entran por la puerta o por llamada",
+      "wa-info5-c2-p": "Si un cliente de siempre entra a tu tienda o te llama por teléfono, apuntas la cita en tu móvil en 5 segundos y el asistente respetará esa hora sin ofrecerla a nadie más.",
+      "wa-info5-c3-h4": "3. Bloqueo instantáneo de descansos y festivos",
+      "wa-info5-c3-p": "Creas un evento llamado <strong>'Descanso'</strong> o <strong>'Cerrado'</strong> en tu Google Calendar y el asistente jamás ofrecerá citas en esas horas.",
+      "wa-info5-footer": "<i class=\"fa-solid fa-chart-line\" style=\"color:var(--wa)\"></i> Menos cancelaciones de última hora, cero huecos desaprovechados y más facturación garantizada.",
+      "wa-info6-badge": "<i class=\"fa-solid fa-circle-question\"></i> PREGUNTES FRECUENTES",
+      "wa-info6-h3": "Tranquilidad total para tu negocio",
+      "wa-info6-p": "Las dudas más comunes de cualquier autónomo, explicadas sin rodeos.",
+      "wa-info6-q1": "¿Se mezclarán mis fotos familiares o mensajes privados con los clientes?",
+      "wa-info6-a1": "<strong style=\"color:var(--wa)\">Jamás.</strong> El asistente opera únicamente en el WhatsApp de tu empresa o en el número oficial del negocio. Tus chats personales siguen siendo 100% privados.",
+      "wa-info6-q2": "¿Qué pasa si un cliente hace una pregunta rara que el asistente no sabe?",
+      "wa-info6-a2": "El asistente le responde con total amabilidad que te lo consulta a ti y te manda un aviso inmediato para que le respondas cuando tengas un momento libre.",
+      "wa-info6-q3": "¿Tengo que aprender informática o tocar códigos raros?",
+      "wa-info6-a3": "<strong style=\"color:var(--accent)\">Cero.</strong> Todo te lo dejamos 100% configurado y funcionando. Tu única tarea diaria es abrir tu calendario exactamente igual que siempre.",
+      "wa-info6-q4": "¿Puedo apagar o pausar el asistente cuando yo quiera?",
+      "wa-info6-a4": "<strong style=\"color:var(--wa)\">Sí.</strong> Tienes el control absoluto para pausarlo o reactivarlo con un solo toque desde tu móvil en cualquier instante.",
+      "wa-info6-footer": "<i class=\"fa-solid fa-star\" style=\"color:var(--accent)\"></i> Más clientes atendidos, agenda llena, cero líos de tecnología y más tiempo libre para ti.",
       "roadmap-title": "Cómo funciona: tus primeros 14 días paso a paso",
       "roadmap-sub": "Sin sorpresas ni tecnicismos. Sabes en todo momento qué ocurre desde el primer mensaje hasta que tu negocio está activo en el barrio.",
       "rm-step1-badge": "Día 1 – 2",
@@ -123,9 +209,20 @@
       "paquet2-li2": "Reseñas respondidas + informe mensual",
       "paquet2-li3": "8-12 posts al mes hechos y listos",
       "paquet2-li4": "WhatsApp Business configurado",
-      "paquet2-li5": "Radar semanal de tu sector",
+      "paquet2-li5": "Informe semanal de competidores del sector",
       "paquet2-btn": "Comenzar",
       "paquet2-subnote": "Primero lo montamos y te lo enseñamos. Si no te gusta, no pagas nada.",
+      "paquet-bot-badge": "⭐ EXTRA ESTRELLA",
+      "paquet-bot-tag": "Asistente 24/7",
+      "paquet-bot-h3": "WhatsApp & Bot Citas",
+      "price-install": "instalación",
+      "paquet-bot-note": "Atención automática y reserva en Google Calendar.",
+      "paquet-bot-li1": "Respuestas inmediatas 24/7 sin tocar el móvil",
+      "paquet-bot-li2": "Reserva directa sincronizada en Google Calendar",
+      "paquet-bot-li3": "Recordatorios automáticos 24h antes por WhatsApp",
+      "paquet-bot-li4": "Separación 100% total de tu vida personal",
+      "paquet-bot-demo-btn": "Ver cómo funciona (6 Infografías)",
+      "paquet-bot-btn": "Contratar Asistente",
       "paquet3-tag": "Extra (a la carta)",
       "paquet3-h3": "Web o landing",
       "paquet3-note": "Página sencilla y para móvil, con tus fotos y tu estilo.",
@@ -146,15 +243,15 @@
       "faq-q4": "¿Tenéis que entrar en mi cuenta de Google?",
       "faq-a4": "No. Te enviamos una invitación con permisos desde tu propia ficha: tú mantienes el control y puedes quitar el acceso cuando quieras. Tu contraseña no se toca.",
       "faq-q5": "¿Qué incluye exactamente el mantenimiento de 50 €/mes?",
-      "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el radar semanal de tu barrio (competencia y oportunidades accionables).",
+      "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el informe semanal de tu barrio (qué hacen tus competidores).",
       "faq-q6": "Ya me llevan las redes. ¿Me sirve esto?",
-      "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el radar semanal. Se paga por lo que se usa.",
+      "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el informe semanal. Se paga por lo que se usa.",
       "prova-h2": "Te lo dejamos montado: si no te convence, no nos debes nada",
       "prova-p": "Envíanos unas fotos por WhatsApp. En 7 días te enseñamos cómo queda tu negocio en Google Maps y redes con tus datos reales. Cero compromiso.",
       "prova-btn-wa": "Ver mi demostración personalizada por WhatsApp",
       "prova-mini": "Respondemos en menos de 24h · Sin compromiso",
       "modal-tag": "DEMO · Ejemplo de Entrega Semanal",
-      "modal-title": "Radar Semanal Verstats — Lunes 10 de Agosto",
+      "modal-title": "Informe Semanal Verstats — Lunes 10 de Agosto",
       "modal-sec1-title": "📍 Movimientos en tu Barrio (<span class=\"barrio-name\">Pubilla Cases / Can Serra</span>)",
       "modal-sec1-p1": "• <b>2 competidores</b> cambiaron horario de verano sin actualizar Google Maps (oportunidad de captar clientes en tarde).",
       "modal-sec1-p2": "• <b>Reseñas destacadas:</b> El local cercano acumuló quejas por lentitud; en tu ficha destacan la atención rápida.",
@@ -170,6 +267,15 @@
       "footer-p2": "Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.",
       "footer-legal": "Aviso legal",
       "footer-privacy": "Privacidad",
+            "bot-modal-tag": "SUITE VERSTATS · CÓMO FUNCIONA",
+      "bot-modal-h3": "El WhatsApp de tu empresa atendido las 24 horas",
+      "bot-modal-tab-1": "1. Comparativa (Antes/Ahora)",
+      "bot-modal-tab-2": "2. Separación Móvil",
+      "bot-modal-tab-3": "3. Calendar Sync",
+      "bot-modal-tab-4": "4. Chat en Vivo",
+      "bot-modal-tab-5": "5. Rutina Diaria",
+      "bot-modal-tab-6": "6. FAQ / Preguntas",
+      "bot-modal-close": "Entendido, cerrar",
       "footer-cookies": "Cookies"
     },
     ca: {
@@ -242,7 +348,7 @@
       "bot-cal-head": "Agost 2026",
       "bot-cal-note-hit": "Divendres 14 · 17:30",
       "bot-cal-note-desc": "Tall de cabell<br>Client: Maria P. · via WhatsApp",
-      "incluye-h2": "Què inclou (i com t'ajuda a guanyar clients)",
+      "incluye-h2": "Què inclou el paquet Presència Digital",
       "incluye-lead": "No és publicitat genèrica. És que el teu negoci aparegui quan els teus veïns el busquen, amb presència viva cada setmana.",
       "inc1-h3": "La teva fitxa de Google perfecta",
       "inc1-p": "Fotos, horaris, serveis i categories correctes. Quan algú cerca \"perruqueria o restaurant a Pubilla Cases\", apareixes tu, ben presentat.",
@@ -250,11 +356,97 @@
       "inc2-p": "Responem per tu a les teves ressenyes (bones i dolentes) i cada mes t'expliquem què diuen els teus clients. Les ressenyes es llegeixen abans d'entrar.",
       "inc3-h3": "Contingut cada setmana",
       "inc3-p": "8-12 posts al mes a Instagram/Facebook (2-3 per setmana) amb els teus productes, ofertes i el barri. Fets i a punt per publicar, amb el teu estil.",
-      "inc4-h3": "WhatsApp a punt",
-      "inc4-p": "Respostes ràpides, missatge d'absència i catàleg muntats. Els clients pregunten el de sempre; ara respons sense repetir-te.",
-      "inc5-h3": "Radar setmanal del teu sector",
-      "inc5-p": "Cada dilluns, 5 minuts de lectura: què fan els teus competidors del barri, quines ressenyes tenen i quines accions pots aplicar tu.",
-      "inc-demo-btn": "Veure exemple de radar setmanal →",
+      "inc5-h3": "Informe setmanal del teu sector",
+      "inc5-p": "Cada dilluns, 5 minuts de lectura: què fan els teus competidors del barri, quins preus mouen, què diuen les ressenyes.",
+      "inc-demo-btn": "Veure exemple d'informe setmanal →",
+      "wa-sec-badge": "⭐ ASSISTENT 24/7",
+      "wa-sec-h2": "WhatsApp Business amb Assistent i Cites",
+      "wa-sec-lead": "Descobreix de manera interactiva com funciona la suite completa de 6 infografies de negoci:",
+      "wa-tab-btn-1": "1. Comparativa",
+      "wa-tab-btn-2": "2. Separació WA",
+      "wa-tab-btn-3": "3. Calendar Sync",
+      "wa-tab-btn-4": "4. Xat Real",
+      "wa-tab-btn-5": "5. Rutina & Agenda",
+      "wa-tab-btn-6": "6. FAQ & Pau",
+      "wa-info1-badge": "<i class=\"fa-solid fa-bolt\"></i> COMPARATIVA DE NEGOCI",
+      "wa-info1-h3": "El WhatsApp de la teva empresa atès les 24 hores",
+      "wa-info1-p": "El teu assistent automàtic que respon a clients i omple la teva agenda mentre treballes o descanses.",
+      "wa-info1-antes-title": "<i class=\"fa-solid fa-xmark-circle\"></i> ABANS",
+      "wa-info1-antes-li1": "<strong>Trucades perdudes</strong> mentre estàs tallant el cabell o atenent un client.",
+      "wa-info1-antes-li2": "<strong>Missatges acumulats</strong> a la nit i caps de setmana sense respondre.",
+      "wa-info1-antes-li3": "<strong>Cites desorganitzades</strong> a la llibreta amb ratllades i solapaments.",
+      "wa-info1-antes-li4": "<strong>Clients impacients</strong> que es frustren i marxen a la competència.",
+      "wa-info1-antes-footer": "Cadires buides i pèrdua constant d'ingressos",
+      "wa-info1-ahora-title": "<i class=\"fa-solid fa-circle-check\"></i> ARA",
+      "wa-info1-ahora-li1": "<strong>Resposta educada i immediata</strong> en només 2 segons a qualsevol hora.",
+      "wa-info1-ahora-li2": "<strong>El client veu els teus forats lliures</strong> en temps real i reserva la seva cita.",
+      "wa-info1-ahora-li3": "<strong>La cita entra sola i ordenada</strong> directament al teu calendari digital.",
+      "wa-info1-ahora-li4": "<strong>Cap client perdut</strong>, treballant per tu fins i tot en festius i matinades.",
+      "wa-info1-ahora-footer": "Agenda sempre plena sense moure ni un dit",
+      "wa-info1-box": "<i class=\"fa-solid fa-shield-halved\" style=\"color:var(--accent)\"></i> <strong>100% Professional:</strong> Funciona al WhatsApp de la teva empresa sense tocar ni barrejar el teu mòbil personal.",
+      "wa-info2-badge": "<i class=\"fa-solid fa-mobile-screen-button\"></i> INDEPENDÈNCIA DIGITAL",
+      "wa-info2-h3": "El teu WhatsApp Personal i el del teu Negoci: 100% Separats",
+      "wa-info2-p": "Com funciona? Pots tenir 2 WhatsApps al mateix mòbil o un número exclusiu per a la feina.",
+      "wa-info2-op1-tag": "Opció 1",
+      "wa-info2-op1-h4": "Dos WhatsApps al teu mateix mòbil",
+      "wa-info2-lbl-personal": "Personal",
+      "wa-info2-op1-li1": "Amb una segona targeta SIM o eSIM econòmica, tens dos números diferents al mateix telèfon.",
+      "wa-info2-op1-li2": "La teva vida personal queda totalment protegida. Els clients només veuen el número del negoci.",
+      "wa-info2-op2-tag": "Opció 2",
+      "wa-info2-op2-h4": "Núvol Oficial Meta / Fix del Local",
+      "wa-info2-lbl-fijo": "Telèfon Fix",
+      "wa-info2-op2-li1": "Podem activar el WhatsApp del negoci usant el <strong>telèfon fix que ja té el teu local</strong> o un número virtual.",
+      "wa-info2-op2-li2": "L'assistent respon 24/7 sense dependre que el teu mòbil personal tingui bateria o cobertura.",
+      "wa-info2-act-h4": "Com s'activa en 10 segons?",
+      "wa-info2-act-p": "Només obres el teu WhatsApp d'empresa al mòbil, vas a <strong style=\"color:#fff\">\"Dispositius vinculats\"</strong>, apuntes al codi QR en pantalla i ja està connectat. Així de fàcil!",
+      "wa-info2-footer": "<i class=\"fa-solid fa-heart-circle-check\"></i> Tranquil·litat total: Nosaltres et deixem la connexió a punt. Tu no has de configurar res tècnic.",
+      "wa-info3-badge": "<i class=\"fa-solid fa-calendar-days\"></i> CERVELL DIGITAL",
+      "wa-info3-h3": "El teu Google Calendar al mòbil: El cervell de les teves cites",
+      "wa-info3-p": "L'assistent llegeix els teus forats lliures en temps real i anota les reserves al segon.",
+      "wa-info3-s1-h4": "La teva agenda digital gratuïta",
+      "wa-info3-s1-p": "Utilitzes l'aplicació <strong>Google Calendar</strong> que ja ve instal·lada al teu telèfon mòbil (Android o iPhone).",
+      "wa-info3-s2-h4": "Comprovació en directe",
+      "wa-info3-s2-p": "Abans d'oferir una hora, mira el teu calendari. Si dijous a les 16:00 ja està ocupat, <strong>MAI oferirà aquesta hora</strong>.",
+      "wa-info3-s3-h4": "Escriptura automàtica",
+      "wa-info3-s3-p": "En confirmar per WhatsApp, la cita apareix escrita al teu calendari amb el <strong>nom, telèfon i servei</strong> del client.",
+      "wa-info3-s4-h4": "Control Total per a tu",
+      "wa-info3-s4-p": "Si vols bloquejar un dia per festa, vacances o metge, només crees un esdeveniment al teu calendari i l'assistent no donarà cites en aquestes hores.",
+      "wa-info3-footer": "<i class=\"fa-solid fa-circle-check\" style=\"color:var(--wa)\"></i> <strong>Adéu al paper i a les agendes físiques:</strong> Tot el teu negoci organitzat directament a la teva butxaca.",
+      "wa-info4-badge": "<i class=\"fa-solid fa-comments\"></i> CAS PRÀCTIC REAL",
+      "wa-info4-h3": "Què passa quan un client t'escriu a deshores?",
+      "wa-info4-p": "Atenció impecable en 3 simples missatges, sense que toquis el telèfon.",
+      "wa-info4-chat-user": "Verstats Bot Assistent <i class=\"fa-solid fa-circle-check\" style=\"color:var(--wa); font-size:0.7rem;\"></i>",
+      "wa-info4-chat-status": "En línia (24/7)",
+      "wa-info4-msg1": "Hola bona nit, teniu forat per tall de cabell i barba divendres al matí?",
+      "wa-info4-bot-lbl": "<i class=\"fa-solid fa-robot\"></i> Assistent d'Empresa",
+      "wa-info4-msg2": "Hola! Per tall i barba divendres al matí tenim disponibles les <strong>10:00</strong> i les <strong>11:30</strong>. Quina et va millor?",
+      "wa-info4-msg3": "A les 11:30 em va perfecte, apunta'm si us plau.",
+      "wa-info4-msg4": "Llest! T'acabo de reservar <strong>divendres a les 11:30</strong> per tall i barba. T'enviarem un recordatori per aquí el dia abans. T'esperem! 😊",
+      "wa-info4-footer": "El client queda atès i content a l'instant. Tu has guanyat una cita sense deixar la feina ni interrompre el descans.",
+      "wa-info5-badge": "<i class=\"fa-solid fa-clock\"></i> RUTINA & ASSISTÈNCIA",
+      "wa-info5-h3": "La teva única feina diària: Mirar la teva agenda cada matí",
+      "wa-info5-p": "Com el sistema protegeix el teu temps i elimina les cadires buides per despistats.",
+      "wa-info5-c1-h4": "1. Recordatoris automàtics per WhatsApp (24h abans)",
+      "wa-info5-c1-p": "L'assistent envia un missatge al client recordant la seva cita de demà.",
+      "wa-info5-c1-tag1": "<i class=\"fa-solid fa-circle-check\"></i> Si confirma: Assistència garantida.",
+      "wa-info5-c1-tag2": "<i class=\"fa-solid fa-circle-xmark\"></i> Si cancel·la: Forat lliure a l'instant per a un altre.",
+      "wa-info5-c2-h4": "2. Cites que entren per la porta o per trucada",
+      "wa-info5-c2-p": "Si un client de sempre entra a la botiga o et truca per telèfon, apuntes la cita al mòbil en 5 segons i l'assistent respectarà aquesta hora.",
+      "wa-info5-c3-h4": "3. Bloqueig instantani de descansos i festius",
+      "wa-info5-c3-p": "Crees un esdeveniment anomenat <strong>'Descans'</strong> o <strong>'Tancat'</strong> al teu Google Calendar i l'assistent mai oferirà cites en aquestes hores.",
+      "wa-info5-footer": "<i class=\"fa-solid fa-chart-line\" style=\"color:var(--wa)\"></i> Menys cancel·lacions d'última hora, zero forats desaprofitats i més facturació garantida.",
+      "wa-info6-badge": "<i class=\"fa-solid fa-circle-question\"></i> PREGUNTES FREQÜENTS",
+      "wa-info6-h3": "Tranquil·litat total per al teu negoci",
+      "wa-info6-p": "Els dubtes més comuns de qualsevol autònom, explicats sense embuts.",
+      "wa-info6-q1": "Es barrejaran les meves fotos familiars o missatges privats amb els clients?",
+      "wa-info6-a1": "<strong style=\"color:var(--wa)\">Mai.</strong> L'assistent opera únicament al WhatsApp de la teva empresa o al número oficial del negoci. Els teus xats personals continuen sent 100% privats.",
+      "wa-info6-q2": "Què passa si un client fa una pregunta estranya que l'assistent no sap?",
+      "wa-info6-a2": "L'assistent li respon amb tota amabilitat que t'ho consulta i t'envia un avís immediat perquè li responguis quan tinguis un moment lliure.",
+      "wa-info6-q3": "He d'aprendre informàtica o tocar codis estranys?",
+      "wa-info6-a3": "<strong style=\"color:var(--accent)\">Zero.</strong> Tot t'ho deixem 100% configurat i funcionant. La teva única tasca diària és obrir el calendari exactament igual que sempre.",
+      "wa-info6-q4": "Puc apagar o pausar l'assistent quan jo vulgui?",
+      "wa-info6-a4": "<strong style=\"color:var(--wa)\">Sí.</strong> Tens el control absolut per pausar-lo o reactivar-lo amb un sol toc des del teu mòbil en qualsevol instant.",
+      "wa-info6-footer": "<i class=\"fa-solid fa-star\" style=\"color:var(--accent)\"></i> Més clients atesos, agenda plena, zero embolics de tecnologia i més temps lliure per a tu.",
       "roadmap-title": "Com funciona: els teus primers 14 dies pas a pas",
       "roadmap-sub": "Sense sorpreses ni tecnicismes. Saps en tot moment què passa des del primer missatge fins que el teu negoci està actiu al barri.",
       "rm-step1-badge": "Dia 1 – 2",
@@ -262,18 +454,18 @@
       "rm-step1-p": "Ens expliques el teu negoci per WhatsApp i ens passes fotos del teu local o serveis. Sense formularis llargs ni paperassa.",
       "rm-step2-badge": "Dia 7",
       "rm-step2-h": "Primer esborrany en viu",
-      "rm-step2-p": "Muntem la teva fitxa de Google Maps optimitzada i preparem el teu primer lot de continguts perquè el revisis.",
+      "rm-step2-p": "Muntem la teva fitxa de Google Maps optimitzada i preparem el teu primer paquet de continguts perquè ho revisis.",
       "rm-step3-badge": "Dia 10",
       "rm-step3-h": "Ho veus abans de pagar",
-      "rm-step3-p": "T'ho ensenyem tot funcionant amb les teves fotos i dades reals. Si t'agrada, seguim; si no et convenç, no pagues res.",
+      "rm-step3-p": "T'ho ensenyem tot funcionant amb les teves fotos i dades reals. Si t'agrada, tirem endavant; si no et convenç, no pagues res.",
       "rm-step4-badge": "Dia 14",
       "rm-step4-h": "Tot en marxa",
       "rm-step4-p": "Fitxa activa, ressenyes ateses i WhatsApp a punt. Tu continues amb els teus clients mentre la teva presència digital treballa cada dia perquè més veïns et trobin.",
       "preus-title": "Tot el teu aparador digital per menys del que costa 1 cafè al dia",
       "preus-sub": "Sense permanències ni quotes sorpresa. Amb només 2-3 clients nous al mes, el paquet complet queda 100% amortitzat.",
       "roi-title": "Calcula l'impacte estimat al teu negoci",
-      "roi-sub": "Mou els controls amb els números reals del teu negoci i comprova com s'amortitza la quota.",
-      "roi-lbl-clients": "Clients nous que et descobreixen al mes:",
+      "roi-sub": "Mou els controls amb els números reals del teu comerç i comprova com s'amortitza la quota.",
+      "roi-lbl-clients": "Clients nous que et troben al mes:",
       "roi-lbl-ticket": "Despesa mitjana per client / compra:",
       "roi-res-extra-lbl": "Ingrés addicional estimat:",
       "roi-res-fee-lbl": "Cost quota mensual:",
@@ -283,7 +475,7 @@
       "paquet1-h3": "Associats de PubillaComerç",
       "paquet1-note": "Per a comerços associats de l'associació del barri.",
       "paquet1-li1": "Tot el paquet Presència digital",
-      "paquet1-li2": "30% de descompte a la instal·lació",
+      "paquet1-li2": "30% de descompte en la instal·lació",
       "paquet1-li3": "Per a comerços associats",
       "paquet1-btn": "Començar",
       "paquet1-subnote": "Digues-nos el nom de la teva associació per WhatsApp i ho apliquem al moment.",
@@ -295,16 +487,27 @@
       "paquet2-li2": "Ressenyes respostes + informe mensual",
       "paquet2-li3": "8-12 posts al mes fets i a punt",
       "paquet2-li4": "WhatsApp Business configurat",
-      "paquet2-li5": "Radar setmanal del teu sector",
+      "paquet2-li5": "Informe setmanal de competidors del sector",
       "paquet2-btn": "Començar",
-      "paquet2-subnote": "Primer ho muntem i t'ho ensenyem. Si no et convenç, no pagues res.",
+      "paquet2-subnote": "Primer ho muntem i t'ho ensenyem. Si no t'agrada, no pagues res.",
+      "paquet-bot-badge": "⭐ EXTRA ESTRELLA",
+      "paquet-bot-tag": "Assistent 24/7",
+      "paquet-bot-h3": "WhatsApp & Bot Cites",
+      "price-install": "instal·lació",
+      "paquet-bot-note": "Atenció automàtica i reserva a Google Calendar.",
+      "paquet-bot-li1": "Respostes immediates 24/7 sense tocar el mòbil",
+      "paquet-bot-li2": "Reserva directa sincronitzada a Google Calendar",
+      "paquet-bot-li3": "Recordatoris automàtics 24h abans per WhatsApp",
+      "paquet-bot-li4": "Separació 100% total de la teva vida personal",
+      "paquet-bot-demo-btn": "Veure com funciona (6 Infografies)",
+      "paquet-bot-btn": "Contractar Assistent",
       "paquet3-tag": "Extra (a la carta)",
       "paquet3-h3": "Web o landing",
       "paquet3-note": "Pàgina senzilla i per a mòbil, amb les teves fotos i el teu estil.",
       "paquet3-li1": "Pàgina web senzilla i per a mòbil",
       "paquet3-li2": "Amb les teves fotos i el teu estil",
       "paquet3-li3": "Manteniment 50 €/mes (opcional)",
-      "paquet3-btn": "Demanar informació",
+      "paquet3-btn": "Demanar",
       "preus-guarantee": "No demanem dades bancàries ni targetes per veure la demostració.",
       "price-mo": "+ 50 €/mes",
       "price-once": "un sol cop",
@@ -312,7 +515,7 @@
       "faq-q1": "Quant triga a estar tot funcionant?",
       "faq-a1": "Entre una i dues setmanes des que confirmem. Abans de pagar res t'ensenyem la teva fitxa de Google i el teu primer post muntats amb les teves fotos reals: ho veus funcionant i després decideixes.",
       "faq-q2": "Necessito saber de tecnologia o fer alguna cosa?",
-      "faq-a2": "No. Tot s'entrega fet: muntem, gestionem i t'avisem per WhatsApp. La teva única tasca és continuar amb el teu negoci; si vols, aproves el contingut abans de publicar-lo.",
+      "faq-a2": "No. Tot s'entrega fet: muntem, gestionem i t'avisem per WhatsApp. La teva única tasca és seguir amb el teu negoci; si vols, aproves el contingut abans de publicar-lo.",
       "faq-q3": "I si no m'agrada o no em convenç?",
       "faq-a3": "Sense permanència: el contracte és mes a mes i et dones de baixa quan vulguis. La instal·lació es paga una vegada; el manteniment es manté només mentre t'estigui funcionant.",
       "faq-q4": "Heu d'entrar al meu compte de Google?",
@@ -320,13 +523,13 @@
       "faq-q5": "Què inclou exactament el manteniment de 50 €/mes?",
       "faq-a5": "Tot el paquet, no peces soltes: la gestió de la teva fitxa de Google, les respostes a les ressenyes, 8-12 continguts al mes i l'informe setmanal del teu barri (què fan els teus competidors).",
       "faq-q6": "Ja em porten les xarxes. Em serveix això?",
-      "faq-a6": "Sí, s'adapta: si ja tens algú, fem només la part que et falta: la fitxa de Google i les ressenyes, per exemple, o l'informe setmanal. Es paga pel que es fa servir.",
+      "faq-a6": "Sí, s'adapta: si ja tens algú, fem només la part que et falta: la fitxa de Google i les ressenyes, per exemple, o l'informe setmanal. Es paga pel que s'utilitza.",
       "prova-h2": "T'ho deixem muntat: si no et convenç, no ens deus res",
-      "prova-p": "Passa'ns unes fotos per WhatsApp. En 7 dies t'ensenyem com queda el teu negoci a Google Maps i a xarxes amb dades reals. Zero compromís.",
+      "prova-p": "Envia'ns unes fotos per WhatsApp. En 7 dies t'ensenyem com queda el teu negoci a Google Maps i xarxes amb les teves dades reals. Zero compromís.",
       "prova-btn-wa": "Veure la meva demostració personalitzada per WhatsApp",
       "prova-mini": "Responem en menys de 24h · Sense compromís",
-      "modal-tag": "Exemple d'Entrega Setmanal",
-      "modal-title": "Radar Setmanal Verstats — Dilluns 10 d'Agost",
+      "modal-tag": "DEMO · Exemple de Lliurament Setmanal",
+      "modal-title": "Informe Setmanal Verstats — Dilluns 10 d'Agost",
       "modal-sec1-title": "📍 Moviments al teu Barri (<span class=\"barrio-name\">Pubilla Cases / Can Serra</span>)",
       "modal-sec1-p1": "• <b>2 competidors</b> van canviar horari d'estiu sense actualitzar Google Maps (oportunitat de captar clients a la tarda).",
       "modal-sec1-p2": "• <b>Ressenyes destacades:</b> El local proper va acumular queixes per lentitud; a la teva fitxa destaquen l'atenció ràpida.",
@@ -341,7 +544,16 @@
       "footer-p1": "Verstats — presència digital per al comerç de barri de L'Hospitalet de Llobregat.",
       "footer-p2": "Pubilla Cases · Can Serra · expansió a altres barris de la ciutat.",
       "footer-legal": "Avís legal",
-      "footer-privacy": "Privadesa",
+      "footer-privacy": "Privacitat",
+            "bot-modal-tag": "SUITE VERSTATS · COM FUNCIONA",
+      "bot-modal-h3": "El WhatsApp de la teva empresa atès les 24 hores",
+      "bot-modal-tab-1": "1. Comparativa (Abans/Ara)",
+      "bot-modal-tab-2": "2. Separació Mòbil",
+      "bot-modal-tab-3": "3. Calendar Sync",
+      "bot-modal-tab-4": "4. Xat en Viu",
+      "bot-modal-tab-5": "5. Rutina Diària",
+      "bot-modal-tab-6": "6. FAQ / Preguntes",
+      "bot-modal-close": "Entès, tancar",
       "footer-cookies": "Cookies"
     }
   };
@@ -351,7 +563,7 @@
 
   // Sanitizador mínimo sin dependencias: whitelist de tags, elimina on* y javascript:
   function sanitizeHTML(s) {
-    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B'];
+    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B', 'I'];
     const tmpl = document.createElement('template');
     tmpl.innerHTML = s;
     tmpl.content.querySelectorAll('*').forEach(n => {
@@ -369,8 +581,10 @@
   function setLang(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
-    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-    document.getElementById('btn-ca').classList.toggle('active', lang === 'ca');
+    const btnEs = document.getElementById('btn-es');
+    const btnCa = document.getElementById('btn-ca');
+    if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+    if (btnCa) btnCa.classList.toggle('active', lang === 'ca');
     const t = i18n[lang];
 
     const a11y = document.getElementById('a11y-status');
@@ -380,15 +594,15 @@
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) {
+      if (t && t[key] !== undefined) {
         el.innerHTML = sanitizeHTML(t[key]);
       }
     });
 
-    calcRoi();
-    switchNiche(activeNiche);
-    applyNeighborhoodPreset();
-    updateWhatsAppLinks();
+    if (typeof calcRoi === 'function') calcRoi();
+    if (typeof switchNiche === 'function') switchNiche(activeNiche);
+    if (typeof applyNeighborhoodPreset === 'function') applyNeighborhoodPreset();
+    if (typeof updateWhatsAppLinks === 'function') updateWhatsAppLinks();
   }
 
   const nicheData = {
@@ -732,4 +946,77 @@ function scheduleRoiCalc() {
 ['roi-clients', 'roi-ticket'].forEach(id => {
   const el = document.getElementById(id);
   if (el) el.addEventListener('input', scheduleRoiCalc, { passive: true });
+});
+
+/* === Bot WhatsApp Modal & Tabs Handler === */
+const botModal = document.getElementById('botModal');
+const btnOpenBotModal = document.getElementById('btn-open-bot-modal');
+const btnCloseBotX = document.getElementById('btn-close-bot-x');
+const btnCloseBotBottom = document.getElementById('btn-close-bot-bottom');
+
+function openBotModal() {
+  if (botModal && typeof botModal.showModal === 'function') {
+    botModal.showModal();
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeBotModal() {
+  if (botModal && botModal.open) {
+    botModal.close();
+    document.body.style.overflow = '';
+  }
+}
+
+if (btnOpenBotModal) btnOpenBotModal.addEventListener('click', openBotModal);
+if (btnCloseBotX) btnCloseBotX.addEventListener('click', closeBotModal);
+if (btnCloseBotBottom) btnCloseBotBottom.addEventListener('click', closeBotModal);
+
+if (botModal) {
+  botModal.addEventListener('click', (e) => {
+    if (e.target === botModal) closeBotModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && botModal.open) closeBotModal();
+  });
+}
+
+const botModalTabBtns = document.querySelectorAll('.bot-modal-tab-btn');
+botModalTabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tabId = btn.getAttribute('data-tab');
+    document.querySelectorAll('.bot-modal-tab-content').forEach(el => el.style.display = 'none');
+    botModalTabBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    const target = document.getElementById('bot-modal-tab-' + tabId);
+    if (target) target.style.display = 'block';
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+  });
+});
+
+// Pestañas Suite WhatsApp Nativa (Accesible)
+document.addEventListener('DOMContentLoaded', () => {
+  const waTabs = document.querySelectorAll('.wa-tab-btn');
+  const waPanes = document.querySelectorAll('.wa-tab-pane');
+
+  if (waTabs.length > 0) {
+    waTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        waTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        waPanes.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const targetId = tab.getAttribute('data-wa-target');
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) targetPane.classList.add('active');
+      });
+    });
+  }
 });
