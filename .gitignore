@@ -12,6 +12,7 @@ Thumbs.db
 node_modules/
 dist/
 build/
+graphify-out/
 
 # Backups & private environment variables
 backups/

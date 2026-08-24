@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografías Corporativas Verstats - WhatsApp IA & Agenda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0a141b',
+                            card: '#0e1f2a',
+                            border: '#1e3a4a',
+                            amber: '#f59e0b',
+                            green: '#25d366',
+                            red: '#ef4444',
+                            blue: '#4285f4',
+                            textMuted: '#94a3b8',
+                            chatUser: '#202c33',
+                            chatBot: '#005c4b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a141b;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-amber {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.25);
+        }
+        .glow-amber-border {
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 15px 0px rgba(245, 158, 11, 0.3);
+        }
+        .glow-red-border {
+            border-color: #ef4444 !important;
+            box-shadow: 0 0 15px 0px rgba(239, 68, 68, 0.2);
+        }
+        .chat-bg {
+            background-color: #0b141a;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 16px 16px;
+        }
+    </style>
+</head>
+<body class="p-2 md:p-6 min-h-screen">
+
+    <!-- Control Header / Navigation Centrado -->
+    <header class="max-w-4xl mx-auto mb-8 bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-4 flex flex-wrap justify-center items-center gap-3 sticky top-2 z-50 shadow-2xl backdrop-blur-md bg-opacity-95">
+        <div class="flex flex-wrap justify-center gap-2 text-xs font-semibold w-full">
+            <button onclick="filterInfographic('all')" class="nav-btn active bg-[#f59e0b] text-black px-3 py-2 rounded-lg transition hover:opacity-90">Ver Todas</button>
+            <button onclick="filterInfographic('1')" class="nav-btn bg-[#0a141b] text-[#94a3b8] hover:text-white px-3 py-2 rounded-lg border border-[#1e3a4a] transition">1. Comparativa</button>
+            <button onclick="filterInfographic('2')" class="nav-btn bg-[#0a141b] text-[#94a3b8] hover:text-white px-3 py-2 rounded-lg border border-[#1e3a4a] transition">2. Separación WA</button>
+            <button onclick="filterInfographic('3')" class="nav-btn bg-[#0a141b] text-[#94a3b8] hover:text-white px-3 py-2 rounded-lg border border-[#1e3a4a] transition">3. Calendar Sync</button>
+            <button onclick="filterInfographic('4')" class="nav-btn bg-[#0a141b] text-[#94a3b8] hover:text-white px-3 py-2 rounded-lg border border-[#1e3a4a] transition">4. Chat Real</button>
+            <button onclick="filterInfographic('5')" class="nav-btn bg-[#0a141b] text-[#94a3b8] hover:text-white px-3 py-2 rounded-lg border border-[#1e3a4a] transition">5. Rutina & Agenda</button>
+            <button onclick="filterInfographic('6')" class="nav-btn bg-[#0a141b] text-[#94a3b8] hover:text-white px-3 py-2 rounded-lg border border-[#1e3a4a] transition">6. FAQ & Paz</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto space-y-12">
+
+        <!-- ==========================================
+             PROMPT 1: Portada y Comparativa de Negocio
+             ========================================== -->
+        <section id="info-1" class="infographic-card bg-[#0a141b] border border-[#1e3a4a] rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <!-- Badge Superior -->
+            <div class="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-bold px-3 py-1 rounded-full mb-6">
+                <i class="fa-solid fa-bolt"></i> COMPARATIVA DE NEGOCIO
+            </div>
+
+            <!-- Cabecera Superior -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                    El WhatsApp de tu empresa atendido las 24 horas
+                </h2>
+                <p class="text-[#f59e0b] font-medium text-base md:text-lg">
+                    Tu asistente automático que responde a clientes y llena tu agenda mientras tú trabajas o descansas.
+                </p>
+            </div>
+
+            <!-- Bloque Central: Comparativa Visual 2 Paneles -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                
+                <!-- Panel Izquierdo (ANTES) -->
+                <div class="bg-[#0e1f2a] border-2 border-[#ef4444]/60 glow-red-border rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-[#1e3a4a] pb-4 mb-5">
+                            <span class="text-[#ef4444] font-black text-xl tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-xmark-circle text-[#ef4444]"></i> ANTES
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-[#ef4444]/10 text-[#ef4444] flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-book-bookmark text-[#ef4444]"></i>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-sm text-[#94a3b8]">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-phone-slash text-[#ef4444] mt-1 shrink-0"></i>
+                                <span><strong>Llamadas perdidas</strong> mientras estás cortando el pelo o atendiendo a un cliente.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-comment-slash text-[#ef4444] mt-1 shrink-0"></i>
+                                <span><strong>Mensajes acumulados</strong> por la noche y fines de semana sin responder.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-eraser text-[#ef4444] mt-1 shrink-0"></i>
+                                <span><strong>Citas desorganizadas</strong> en la libreta con tachones y solapamientos.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-user-minus text-[#ef4444] mt-1 shrink-0"></i>
+                                <span><strong>Clientes impacientes</strong> que se frustran y se van a la competencia.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#1e3a4a] text-center text-xs text-[#ef4444] font-semibold">
+                        Sillones vacíos y pérdida constante de ingresos
+                    </div>
+                </div>
+
+                <!-- Panel Derecho (AHORA) -->
+                <div class="bg-[#0e1f2a] border-2 border-[#f59e0b] glow-amber-border rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-[#1e3a4a] pb-4 mb-5">
+                            <span class="text-[#f59e0b] font-black text-xl tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-[#25d366]"></i> AHORA
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-[#25d366]/10 text-[#25d366] flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-sm text-[#ffffff]">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-bolt text-[#f59e0b] mt-1 shrink-0"></i>
+                                <span><strong>Respuesta educada e inmediata</strong> en solo 2 segundos a cualquier hora.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-calendar-days text-[#25d366] mt-1 shrink-0"></i>
+                                <span><strong>El cliente ve tus huecos libres</strong> en tiempo real y reserva su propia cita.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-square-check text-[#25d366] mt-1 shrink-0"></i>
+                                <span><strong>La cita entra sola y ordenada</strong> directamente en tu calendario digital.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-chart-line text-[#f59e0b] mt-1 shrink-0"></i>
+                                <span><strong>Cero clientes perdidos</strong>, trabajando por ti incluso en festivos y madrugadas.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#1e3a4a] text-center text-xs text-[#25d366] font-bold">
+                        Agenda siempre llena sin mover un solo dedo
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pie de Página -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-xl p-4 text-center">
+                <p class="text-sm font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-[#f59e0b] text-base"></i>
+                    <span><strong>100% Profesional:</strong> Funciona en el WhatsApp de tu empresa sin tocar ni mezclar tu teléfono personal.</span>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             PROMPT 2: Separación de WhatsApp Personal y Empresa
+             ========================================== -->
+        <section id="info-2" class="infographic-card bg-[#0a141b] border border-[#1e3a4a] rounded-3xl p-6 md:p-10 shadow-2xl relative">
+            <!-- Badge Superior -->
+            <div class="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-bold px-3 py-1 rounded-full mb-6">
+                <i class="fa-solid fa-mobile-screen-button text-[#f59e0b]"></i> INDEPENDENCIA DIGITAL
+            </div>
+
+            <!-- Cabecera Superior -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                    Tu WhatsApp Personal y el de tu Negocio: 100% Separados
+                </h2>
+                <p class="text-[#f59e0b] font-medium text-base">
+                    ¿Cómo funciona? Puedes tener 2 WhatsApps en el mismo móvil o un número exclusivo para el trabajo.
+                </p>
+            </div>
+
+            <!-- Bloque Central: 2 Opciones -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                
+                <!-- Opción 1 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-[#25d366]/10 text-[#25d366] flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-sim-card"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">Opción 1</span>
+                                <h3 class="text-lg font-bold text-white">Dos WhatsApps en tu mismo móvil</h3>
+                            </div>
+                        </div>
+
+                        <!-- Mockup Visual de Apps -->
+                        <div class="bg-[#0a141b] rounded-xl p-3 border border-[#1e3a4a] my-4 flex items-center justify-around">
+                            <div class="text-center">
+                                <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white mx-auto mb-1">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <span class="text-[10px] text-[#94a3b8] block">Personal</span>
+                            </div>
+                            <div class="text-xs text-[#1e3a4a] font-bold">+</div>
+                            <div class="text-center">
+                                <div class="w-10 h-10 rounded-full bg-[#25d366] flex items-center justify-center text-black font-extrabold mx-auto mb-1">
+                                    B
+                                </div>
+                                <span class="text-[10px] text-[#25d366] font-bold block">Business</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-[#94a3b8]">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#25d366] mt-1"></i>
+                                <span>Con una segunda tarjeta SIM o eSIM barata, tienes dos números distintos en tu mismo teléfono.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-lock text-[#25d366] mt-1"></i>
+                                <span>Tu vida personal queda totalmente protegida. Los clientes solo ven el número del negocio.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Opción 2 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-[#4285f4]/10 text-[#4285f4] flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-[#4285f4] fa-cloud"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-[#4285f4] uppercase tracking-wider">Opción 2</span>
+                                <h3 class="text-lg font-bold text-white">Nube Oficial Meta / Fijo del Local</h3>
+                            </div>
+                        </div>
+
+                        <!-- Mockup Visual de Nube -->
+                        <div class="bg-[#0a141b] rounded-xl p-3 border border-[#1e3a4a] my-4 flex items-center justify-around">
+                            <div class="text-center">
+                                <i class="fa-solid fa-phone-office text-2xl text-[#4285f4]"></i>
+                                <span class="text-[10px] text-[#94a3b8] block mt-1">Teléfono Fijo</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-[#1e3a4a]"></i>
+                            <div class="text-center">
+                                <i class="fa-brands fa-meta text-2xl text-[#4285f4]"></i>
+                                <span class="text-[10px] text-[#4285f4] font-bold block mt-1">Meta Cloud API</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-[#94a3b8]">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#25d366] mt-1"></i>
+                                <span>Podemos activar el WhatsApp del negocio usando el <strong>teléfono fijo que ya tiene tu local</strong> o un número virtual.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-wifi text-[#25d366] mt-1"></i>
+                                <span>El asistente responde 24/7 sin depender de que tu móvil personal tenga batería o cobertura.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Paso de Activación Rápida -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 mb-8">
+                <h4 class="text-center text-white font-bold text-base mb-4 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-qrcode text-[#f59e0b]"></i> ¿Cómo se activa en 10 segundos?
+                </h4>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left text-sm text-[#94a3b8]">
+                    <p class="leading-relaxed">
+                        Solo abres tu WhatsApp de empresa en tu móvil, vas a <strong class="text-white">"Dispositivos vinculados"</strong>, apuntas al código QR en pantalla y ya está conectado. ¡Así de fácil!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pie de Página -->
+            <div class="bg-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-xl p-4 text-center">
+                <p class="text-sm font-bold text-[#f59e0b] flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                    <span>Tranquilidad total: Nosotros te dejamos la conexión lista. Tú no tienes que configurar nada técnico.</span>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             PROMPT 3: Sincronización con Google Calendar
+             ========================================== -->
+        <section id="info-3" class="infographic-card bg-[#0a141b] border border-[#1e3a4a] rounded-3xl p-6 md:p-10 shadow-2xl relative">
+            <!-- Badge Superior -->
+            <div class="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-bold px-3 py-1 rounded-full mb-6">
+                <i class="fa-solid fa-calendar-days text-[#4285f4]"></i> CEREBRO DIGITAL
+            </div>
+
+            <!-- Cabecera Superior -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                    Tu Google Calendar en el móvil: El cerebro de tus citas
+                </h2>
+                <p class="text-[#f59e0b] font-medium text-base">
+                    El asistente lee tus huecos libres en tiempo real y anota las reservas al segundo.
+                </p>
+            </div>
+
+            <!-- Flujo de Conexión en 3 Pasos Secuenciales -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                
+                <!-- Paso 1 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center mb-4">
+                            1
+                        </div>
+                        <div class="text-[#4285f4] text-2xl mb-2">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2">Tu agenda digital gratuita</h3>
+                        <p class="text-xs text-[#94a3b8] leading-relaxed">
+                            Usas la aplicación <strong>Google Calendar</strong> que ya viene instalada en tu teléfono móvil (Android o iPhone).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center mb-4">
+                            2
+                        </div>
+                        <div class="text-[#f59e0b] text-2xl mb-2">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2">Comprobación en directo</h3>
+                        <p class="text-xs text-[#94a3b8] leading-relaxed">
+                            Antes de ofrecer una hora, mira tu calendario. Si el jueves a las 16:00 ya tienes ocupado, <strong>JAMÁS ofrecerá esa hora</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center mb-4">
+                            3
+                        </div>
+                        <div class="text-[#25d366] text-2xl mb-2">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2">Escritura automática</h3>
+                        <p class="text-xs text-[#94a3b8] leading-relaxed">
+                            Al confirmar por WhatsApp, la cita aparece escrita en tu calendario con el <strong>nombre, teléfono y servicio</strong> del cliente.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Control Total para el Dueño -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 mb-8 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-[#f59e0b]/10 text-[#f59e0b] flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-1">Control Total para ti: Bloqueos al instante</h4>
+                    <p class="text-xs text-[#94a3b8]">
+                        Si quieres bloquear un día para fiesta, vacaciones o médico, solo creas un evento en tu calendario y el asistente no dará citas esas horas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pie de Página -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-xl p-4 text-center">
+                <p class="text-sm font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-check text-[#25d366]"></i>
+                    <span><strong>Adiós al papel y a las agendas físicas:</strong> Todo tu negocio organizado directamente en tu bolsillo.</span>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             PROMPT 4: El Viaje del Cliente (Simulación de Chat Real)
+             ========================================== -->
+        <section id="info-4" class="infographic-card bg-[#0a141b] border border-[#1e3a4a] rounded-3xl p-6 md:p-10 shadow-2xl relative">
+            <!-- Badge Superior -->
+            <div class="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-bold px-3 py-1 rounded-full mb-6">
+                <i class="fa-solid fa-comments text-[#25d366]"></i> CASO PRÁCTICO REAL
+            </div>
+
+            <!-- Cabecera Superior -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                    ¿Qué pasa cuando un cliente te escribe a deshoras?
+                </h2>
+                <p class="text-[#f59e0b] font-medium text-base">
+                    Atención impecable en 3 simples mensajes, sin que tú toques el teléfono.
+                </p>
+            </div>
+
+            <!-- Chat Mockup Container -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-4 md:p-6 mb-8 max-w-xl mx-auto shadow-inner">
+                
+                <!-- Chat Header Bar -->
+                <div class="bg-[#202c33] rounded-t-xl p-3 flex items-center gap-3 border-b border-[#1e3a4a] mb-4">
+                    <div class="w-9 h-9 rounded-full bg-[#f59e0b] text-black font-bold flex items-center justify-center text-xs">
+                        V
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-white flex items-center gap-1">
+                            Verstats Bot Asistente
+                            <i class="fa-solid fa-circle-check text-[#25d366] text-[10px]"></i>
+                        </div>
+                        <div class="text-[10px] text-[#25d366]">En línea (24/7)</div>
+                    </div>
+                </div>
+
+                <!-- Chat Body -->
+                <div class="chat-bg rounded-b-xl p-4 space-y-4 text-xs font-sans">
+                    
+                    <!-- Mensaje 1 (Cliente) -->
+                    <div class="flex justify-start">
+                        <div class="bg-[#202c33] text-white rounded-2xl rounded-tl-none p-3 max-w-[85%] shadow">
+                            <p>Hola buenas noches, ¿tienen hueco para corte de pelo y barba el viernes por la mañana?</p>
+                            <span class="text-[9px] text-[#94a3b8] block text-right mt-1">22:45 h</span>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje 2 (Asistente) -->
+                    <div class="flex justify-end">
+                        <div class="bg-[#005c4b] text-white rounded-2xl rounded-tr-none p-3 max-w-[85%] shadow border border-[#25d366]/20">
+                            <div class="text-[10px] font-bold text-[#f59e0b] mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-robot"></i> Asistente de Empresa
+                            </div>
+                            <p>¡Hola! Para corte y barba el viernes por la mañana tenemos disponibles las <strong>10:00</strong> y las <strong>11:30</strong>. ¿Cuál te viene mejor?</p>
+                            <div class="flex items-center justify-end gap-1 mt-1 text-[9px] text-[#25d366]">
+                                <span>22:45:02 h</span>
+                                <i class="fa-solid fa-check-double"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje 3 (Cliente) -->
+                    <div class="flex justify-start">
+                        <div class="bg-[#202c33] text-white rounded-2xl rounded-tl-none p-3 max-w-[85%] shadow">
+                            <p>A las 11:30 me va perfecto, apúntame por favor.</p>
+                            <span class="text-[9px] text-[#94a3b8] block text-right mt-1">22:46 h</span>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje 4 (Asistente) -->
+                    <div class="flex justify-end">
+                        <div class="bg-[#005c4b] text-white rounded-2xl rounded-tr-none p-3 max-w-[85%] shadow border border-[#25d366]/20">
+                            <div class="text-[10px] font-bold text-[#f59e0b] mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-robot"></i> Asistente de Empresa
+                            </div>
+                            <p>¡Listo! Te acabo de reservar el <strong>viernes a las 11:30</strong> para corte y barba. Te enviaremos un recordatorio por aquí el día antes. ¡Te esperamos! 😊</p>
+                            <div class="flex items-center justify-end gap-1 mt-1 text-[9px] text-[#25d366]">
+                                <span>22:46:02 h</span>
+                                <i class="fa-solid fa-check-double"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Pie de Página -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-xl p-4 text-center">
+                <p class="text-sm font-semibold text-white">
+                    El cliente queda atendido y contento al instante. Tú has ganado una cita sin soltar tu trabajo ni interrumpir tu descanso.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             PROMPT 5: Rutina Diaria y Recordatorios Automáticos
+             ========================================== -->
+        <section id="info-5" class="infographic-card bg-[#0a141b] border border-[#1e3a4a] rounded-3xl p-6 md:p-10 shadow-2xl relative">
+            <!-- Badge Superior -->
+            <div class="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-bold px-3 py-1 rounded-full mb-6">
+                <i class="fa-solid fa-clock text-[#25d366]"></i> RUTINA & ASISTENCIA
+            </div>
+
+            <!-- Cabecera Superior -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                    Tu único trabajo diario: Mirar tu agenda cada mañana
+                </h2>
+                <p class="text-[#f59e0b] font-medium text-base">
+                    Cómo el sistema protege tu tiempo y elimina los sillones vacíos por despistes.
+                </p>
+            </div>
+
+            <!-- 3 Bloques Explicativos Detallados -->
+            <div class="space-y-6 mb-8">
+                
+                <!-- Bloque 1 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 flex flex-col md:flex-row items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#25d366]/10 text-[#25d366] flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-base font-bold text-[#f59e0b]">
+                            1. Recordatorios automáticos por WhatsApp (24h antes)
+                        </h3>
+                        <p class="text-xs text-[#94a3b8] leading-relaxed">
+                            El asistente envía un mensaje al cliente recordando su cita de mañana.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2 text-xs">
+                            <span class="flex items-center gap-1 text-[#25d366]">
+                                <i class="fa-solid fa-circle-check"></i> Si confirma: Asistencia garantizada.
+                            </span>
+                            <span class="flex items-center gap-1 text-[#ef4444]">
+                                <i class="fa-solid fa-circle-xmark"></i> Si cancela: El hueco queda libre al instante en tu Calendar para otro cliente.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 flex flex-col md:flex-row items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#4285f4]/10 text-[#4285f4] flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-base font-bold text-[#f59e0b]">
+                            2. Citas que entran por la puerta o por llamada
+                        </h3>
+                        <p class="text-xs text-[#94a3b8] leading-relaxed">
+                            Si un cliente de siempre entra a tu tienda o te llama por teléfono, apuntas la cita en tu móvil en 5 segundos y el asistente respetará esa hora sin ofrecerla a nadie más.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bloque 3 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6 flex flex-col md:flex-row items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#ef4444]/10 text-[#ef4444] flex items-center justify-center text-2xl shrink-0">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-base font-bold text-[#f59e0b]">
+                            3. Bloqueo instantáneo de descansos y festivos
+                        </h3>
+                        <p class="text-xs text-[#94a3b8] leading-relaxed">
+                            Creas un evento llamado <strong class="text-white">'Descanso'</strong> o <strong class="text-white">'Cerrado'</strong> en tu Google Calendar y el asistente jamás ofrecerá citas en esas horas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pie de Página -->
+            <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-xl p-4 text-center">
+                <p class="text-sm font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-[#25d366] fa-chart-line"></i>
+                    <span>Menos cancelaciones de última hora, cero huecos desaprovechados y más facturación garantizada.</span>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             PROMPT 6: Preguntas Frecuentes y Tranquilidad Total
+             ========================================== -->
+        <section id="info-6" class="infographic-card bg-[#0a141b] border border-[#1e3a4a] rounded-3xl p-6 md:p-10 shadow-2xl relative">
+            <!-- Badge Superior -->
+            <div class="inline-flex items-center gap-2 bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-bold px-3 py-1 rounded-full mb-6">
+                <i class="fa-solid fa-circle-question text-[#f59e0b]"></i> PREGUNTAS FRECUENTES
+            </div>
+
+            <!-- Cabecera Superior -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                    Tranquilidad total para tu negocio
+                </h2>
+                <p class="text-[#f59e0b] font-medium text-base">
+                    Las dudas más comunes de cualquier autónomo, explicadas sin rodeos.
+                </p>
+            </div>
+
+            <!-- Rejilla de 4 Preguntas y Respuestas Clave -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                
+                <!-- FAQ 1 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-[#f59e0b]/20 text-[#f59e0b] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">01</span>
+                        <h3 class="text-sm font-bold text-white leading-snug">
+                            ¿Se mezclarán mis fotos familiares o mensajes privados con los clientes?
+                        </h3>
+                    </div>
+                    <p class="text-xs text-[#94a3b8] pl-10 leading-relaxed">
+                        <strong class="text-[#25d366]">Jamás.</strong> El asistente opera únicamente en el WhatsApp de tu empresa o en el número oficial del negocio. Tus chats personales siguen siendo 100% privados.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-[#f59e0b]/20 text-[#f59e0b] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">02</span>
+                        <h3 class="text-sm font-bold text-white leading-snug">
+                            ¿Qué pasa si un cliente hace una pregunta rara que el asistente no sabe?
+                        </h3>
+                    </div>
+                    <p class="text-xs text-[#94a3b8] pl-10 leading-relaxed">
+                        El asistente le responde con total amabilidad que te lo consulta a ti y te manda un aviso inmediato para que le respondas cuando tengas un momento libre.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-[#f59e0b]/20 text-[#f59e0b] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">03</span>
+                        <h3 class="text-sm font-bold text-white leading-snug">
+                            ¿Tengo que aprender informática o tocar códigos raros?
+                        </h3>
+                    </div>
+                    <p class="text-xs text-[#94a3b8] pl-10 leading-relaxed">
+                        <strong class="text-[#f59e0b]">Cero.</strong> Todo te lo dejamos 100% configurado y funcionando. Tu única tarea diaria es abrir tu calendario exactamente igual que siempre.
+                    </p>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-[#0e1f2a] border border-[#1e3a4a] rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-[#f59e0b]/20 text-[#f59e0b] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">04</span>
+                        <h3 class="text-sm font-bold text-white leading-snug">
+                            ¿Puedo apagar o pausar el asistente cuando yo quiera?
+                        </h3>
+                    </div>
+                    <p class="text-xs text-[#94a3b8] pl-10 leading-relaxed">
+                        <strong class="text-[#25d366]">Sí.</strong> Tienes el control absoluto para pausarlo o reactivarlo con un solo toque desde tu móvil en cualquier instante.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Cierre Destacado Final -->
+            <div class="bg-gradient-to-r from-[#0e1f2a] via-[#1e3a4a]/40 to-[#0e1f2a] border border-[#f59e0b]/40 rounded-2xl p-6 text-center shadow-lg">
+                <p class="text-base md:text-lg font-bold text-white">
+                    <i class="fa-solid fa-star text-[#f59e0b] mr-2"></i>
+                    Más clientes atendidos, agenda llena, cero líos de tecnología y más tiempo libre para ti.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Navigation Script -->
+    <script>
+        function filterInfographic(id) {
+            const cards = document.querySelectorAll('.infographic-card');
+            const buttons = document.querySelectorAll('.nav-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#f59e0b]', 'text-black');
+                btn.classList.add('bg-[#0a141b]', 'text-[#94a3b8]');
+            });
+
+            event.target.classList.remove('bg-[#0a141b]', 'text-[#94a3b8]');
+            event.target.classList.add('bg-[#f59e0b]', 'text-black');
+
+            if (id === 'all') {
+                cards.forEach(card => card.style.display = 'block');
+            } else {
+                cards.forEach(card => card.style.display = 'none');
+                const targetCard = document.getElementById('info-' + id);
+                if (targetCard) {
+                    targetCard.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
