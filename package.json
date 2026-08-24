@@ -1,0 +1,22 @@
+{
+  "name": "verstats",
+  "version": "1.0.0",
+  "description": "Verstats — Presencia digital para el comercio de barrio de L'Hospitalet",
+  "author": "Verstats Team <bengmz9@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "echo 'Use: python -m http.server 8000 for development server'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "private"
+  },
+  "keywords": [
+    "landing-page",
+    "digital-presence",
+    "L'Hospitalet",
+    "Google-Maps",
+    "WhatsApp"
+  ]
+}
