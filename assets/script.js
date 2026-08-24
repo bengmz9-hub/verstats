@@ -312,9 +312,9 @@
       "compra1-note": "A la teva fitxa van les teves fotos, el teu horari i les teves dades reals.",
       "gm-open-text": "Obert · Tanca a les 20:00",
       "gm-dist-text": "2 min a peu · 3,4 km",
-      "gm-act-call": "Trucar",
-      "gm-act-route": "Com arribar",
-      "gm-act-web": "Lloc web",
+      "gm-act-call": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/></svg> Trucar",
+      "gm-act-route": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"3 11 22 2 13 21 11 13 3 11\"/></svg> Com arribar",
+      "gm-act-web": "<svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1a73e8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg> Lloc web",
       "compra2-num": "Les teves ressenyes",
       "compra2-h3": "Les teves ressenyes, respostes per tu (sense que hagis de pensar-ho)",
       "compra2-p": "Les bones, per donar les gràcies. Les dolentes, per arreglar el problema en públic. Tot respost amb el teu to.",
@@ -563,7 +563,7 @@
 
   // Sanitizador mínimo sin dependencias: whitelist de tags, elimina on* y javascript:
   function sanitizeHTML(s) {
-    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B', 'I'];
+    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B', 'I', 'SVG', 'PATH', 'POLYGON', 'CIRCLE', 'G'];
     const tmpl = document.createElement('template');
     tmpl.innerHTML = s;
     tmpl.content.querySelectorAll('*').forEach(n => {
@@ -573,7 +573,7 @@
           n.removeAttribute(a.name);
         }
       });
-      if (!ALLOWED.includes(n.tagName)) n.replaceWith(...n.childNodes);
+      if (!ALLOWED.includes(n.tagName.toUpperCase())) n.replaceWith(...n.childNodes);
     });
     return tmpl.innerHTML;
   }
@@ -831,6 +831,10 @@
     informe: {
       es: "Hola, quiero una muestra del informe semanal con los competidores de mi calle. Os digo el sector y el barrio por aquí.",
       ca: "Hola, vull una mostra de l'informe setmanal amb els competidors del meu carrer. Us dic el sector i el barri per aquí."
+    },
+    'plan-bot-whatsapp': {
+      es: "Hola, me interesa el Asistente de WhatsApp con citas automáticas en Google Calendar. ¿Cómo lo activamos?",
+      ca: "Hola, m'interessa l'Assistent de WhatsApp amb cites automàtiques a Google Calendar. Com ho activem?"
     }
   };
 
@@ -846,7 +850,7 @@
       if (WHATSAPP_PHONE.includes('X') || WHATSAPP_PHONE === '34XXXXXXXXX') {
         link.addEventListener('click', (e) => {
           e.preventDefault();
-          console.warn('⚠️ WhatsApp number aún es placeholder. Actualizar WHATSAPP_PHONE en script.js:571');
+          console.warn('⚠️ WhatsApp number aún es placeholder. Configurar WHATSAPP_PHONE antes del despliegue.');
         }, { once: true });
       }
     });
@@ -981,41 +985,71 @@ if (botModal) {
   });
 }
 
-const botModalTabBtns = document.querySelectorAll('.bot-modal-tab-btn');
-botModalTabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const tabId = btn.getAttribute('data-tab');
-    document.querySelectorAll('.bot-modal-tab-content').forEach(el => el.style.display = 'none');
-    botModalTabBtns.forEach(b => {
-      b.classList.remove('active');
-      b.setAttribute('aria-selected', 'false');
-    });
-    const target = document.getElementById('bot-modal-tab-' + tabId);
-    if (target) target.style.display = 'block';
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
+const botModalTabBtns = Array.from(document.querySelectorAll('.bot-modal-tab-btn'));
+function activateBotModalTab(btn) {
+  const tabId = btn.getAttribute('data-tab');
+  document.querySelectorAll('.bot-modal-tab-content').forEach(el => el.style.display = 'none');
+  botModalTabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  const target = document.getElementById('bot-modal-tab-' + tabId);
+  if (target) target.style.display = 'block';
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+}
+
+botModalTabBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => activateBotModalTab(btn));
+  btn.addEventListener('keydown', (e) => {
+    let nextIndex = null;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      nextIndex = (index + 1) % botModalTabBtns.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      nextIndex = (index - 1 + botModalTabBtns.length) % botModalTabBtns.length;
+    }
+    if (nextIndex !== null) {
+      e.preventDefault();
+      botModalTabBtns[nextIndex].focus();
+      activateBotModalTab(botModalTabBtns[nextIndex]);
+    }
   });
 });
 
 // Pestañas Suite WhatsApp Nativa (Accesible)
 document.addEventListener('DOMContentLoaded', () => {
-  const waTabs = document.querySelectorAll('.wa-tab-btn');
+  const waTabs = Array.from(document.querySelectorAll('.wa-tab-btn'));
   const waPanes = document.querySelectorAll('.wa-tab-pane');
 
-  if (waTabs.length > 0) {
-    waTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        waTabs.forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        waPanes.forEach(p => p.classList.remove('active'));
+  function activateWaTab(tab) {
+    waTabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    waPanes.forEach(p => p.classList.remove('active'));
 
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        const targetId = tab.getAttribute('data-wa-target');
-        const targetPane = document.getElementById(targetId);
-        if (targetPane) targetPane.classList.add('active');
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    const targetId = tab.getAttribute('data-wa-target');
+    const targetPane = document.getElementById(targetId);
+    if (targetPane) targetPane.classList.add('active');
+  }
+
+  if (waTabs.length > 0) {
+    waTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateWaTab(tab));
+      tab.addEventListener('keydown', (e) => {
+        let nextIndex = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          nextIndex = (index + 1) % waTabs.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          nextIndex = (index - 1 + waTabs.length) % waTabs.length;
+        }
+        if (nextIndex !== null) {
+          e.preventDefault();
+          waTabs[nextIndex].focus();
+          activateWaTab(waTabs[nextIndex]);
+        }
       });
     });
   }
