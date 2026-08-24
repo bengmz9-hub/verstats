@@ -322,6 +322,7 @@
       "modal-sec1-title": "📍 Moviments al teu Barri (<span class=\"barrio-name\">Pubilla Cases / Can Serra</span>)",
       "modal-sec1-p1": "• <b>2 competidors</b> van canviar horari d'estiu sense actualitzar Google Maps (oportunitat de captar clients a la tarda).",
       "modal-sec1-p2": "• <b>Ressenyes destacades:</b> El local proper va acumular queixes per lentitud; a la teva fitxa destaquen l'atenció ràpida.",
+      "modal-sec1-p3": "• <b>Acció recomanada:</b> Mantenir horari visible a WhatsApp i destacar servei ràpid al proper post.",
       "modal-sec2-title": "⭐ Rendiment de la teva Fitxa",
       "modal-sec2-p1": "• <b>18 trucades directes</b> des de la teva fitxa de Google Maps (+22% vs setmana anterior).",
       "modal-sec2-p2": "• <b>4 ressenyes noves</b> rebudes i respostes al 100% en menys de 2 hores amb el teu to.",
