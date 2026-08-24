@@ -567,8 +567,10 @@
     }
   }
 
-  // Configuración de WhatsApp centralizada (fácil de sustituir en producción)
-  const WHATSAPP_PHONE = '34XXXXXXXXX';
+  // ⚙️ CONFIGURACIÓN CENTRALIZADA DE WHATSAPP
+  // Cambiar este número actualiza automáticamente TODOS los enlaces wa.me
+  // Formato: código país + número (ej: 34612345678 para España)
+  const WHATSAPP_PHONE = '34XXXXXXXXX'; // ← REEMPLAZAR CON NÚMERO REAL
 
   const waMessages = {
     hero: {
@@ -606,7 +608,16 @@
       const ctx = link.getAttribute('data-wa-context') || 'hero';
       const msgObj = waMessages[ctx] || waMessages.hero;
       const text = encodeURIComponent(msgObj[currentLang] || msgObj.es);
-      link.href = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
+      link.href = url;
+
+      // Prevenir navegación accidental si el número aún es placeholder
+      if (WHATSAPP_PHONE.includes('X') || WHATSAPP_PHONE === '34XXXXXXXXX') {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          console.warn('⚠️ WhatsApp number aún es placeholder. Actualizar WHATSAPP_PHONE en script.js:571');
+        }, { once: true });
+      }
     });
   }
 
