@@ -66,9 +66,14 @@ def generar(barrio_key: str):
     html = html.replace("Asociados de PubillaComerç", cfg["asociacion"])
     html = html.replace("C/ de la Marina 12, Pubilla Cases", cfg["calle_demo"])
     
+    # Adaptar Schema.org JSON-LD
+    schema_old = '"name": "Pubilla Cases, L\'Hospitalet de Llobregat"\n        },\n        {\n          "@type": "AdministrativeArea",\n          "name": "Can Serra, L\'Hospitalet de Llobregat"'
+    schema_new = f'"name": "{cfg["nombre"]}, L\'Hospitalet de Llobregat"'
+    html = html.replace(schema_old, schema_new)
+    
     salida_path = base_dir / cfg["archivo_salida"]
     salida_path.write_text(html, encoding="utf-8")
-    print(f"✅ Landing generada con éxito para '{cfg['nombre']}' -> {salida_path.name}")
+    print(f"[OK] Landing generada con exito para '{cfg['nombre']}' -> {salida_path.name}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

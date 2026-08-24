@@ -107,25 +107,10 @@ function build() {
     const totalSaved = cssSaved + jsSaved;
 
 
-    `);
-    }`);
-    }`);
-    } (${((cssSaved / cssSizeOriginal) * 100).toFixed(1)}%)\n`);
 
-    `);
-    }`);
-    }`);
-    } (${((jsSaved / jsSizeOriginal) * 100).toFixed(1)}%)\n`);
-
-    } (${((totalSaved / (cssSizeOriginal + jsSizeOriginal)) * 100).toFixed(1)}%)\n`);
-
-
-
-
-
-
-
-
+    } -> ${formatSize(cssSizeMin)} (ahorro: ${((cssSaved / cssSizeOriginal) * 100).toFixed(1)}%)`);
+    } -> ${formatSize(jsSizeMin)} (ahorro: ${((jsSaved / jsSizeOriginal) * 100).toFixed(1)}%)`);
+    } (${(((totalSaved) / (cssSizeOriginal + jsSizeOriginal)) * 100).toFixed(1)}%)\n`);
   } catch (error) {
     console.error('❌ Build failed:', error.message);
     process.exit(1);

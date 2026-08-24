@@ -343,7 +343,7 @@
 
   // Sanitizador mínimo sin dependencias: whitelist de tags, elimina on* y javascript:
   function sanitizeHTML(s) {
-    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK'];
+    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B'];
     const tmpl = document.createElement('template');
     tmpl.innerHTML = s;
     tmpl.content.querySelectorAll('*').forEach(n => {
@@ -537,7 +537,7 @@
   function applyNeighborhoodPreset() {
     const params = new URLSearchParams(window.location.search);
     const barrioKey = params.get('barrio')?.toLowerCase();
-    if (!barrioKey || !neighborhoodPresets[barrioKey]) return;
+    if (!barrioKey || !Object.prototype.hasOwnProperty.call(neighborhoodPresets, barrioKey)) return;
     const b = neighborhoodPresets[barrioKey];
     const nameTxt = b.name[currentLang] || b.name.es;
     const assocTxt = b.assoc[currentLang] || b.assoc.es;
