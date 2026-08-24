@@ -84,6 +84,8 @@
   .hero h1 em { font-style: normal; color: var(--accent); }
   .hero .lead { font-size: 1.18rem; color: var(--muted); margin-top: 22px; max-width: 26em; text-wrap: pretty; }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero-microcopy { font-size: 0.88rem; color: var(--muted); margin-top: 14px; display: flex; align-items: center; gap: 8px; max-width: 32em; line-height: 1.4; }
+  .hero-microcopy svg { flex-shrink: 0; color: var(--green); }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     min-height: 50px; padding: 12px 24px; border-radius: 12px;
@@ -283,6 +285,9 @@
   .paquet li { padding: 8px 0 8px 26px; position: relative; font-size: .98rem; line-height: 1.45; }
   .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
   .paquet .btn { width: 100%; }
+  .paquet-subnote { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.35; }
+  .preus-guarantee { margin-top: 28px; text-align: center; font-size: 0.92rem; color: var(--muted); display: flex; justify-content: center; align-items: center; gap: 8px; }
+  .preus-guarantee svg { color: var(--green); flex-shrink: 0; }
   .paquet.recomanat {
     border: 2px solid var(--accent);
     position: relative;

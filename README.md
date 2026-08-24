@@ -1,38 +1,46 @@
-# Landing Verstats — estructura
+# Landing Verstats — Estructura y Pipeline
 
-Landing del pack "Presencia digital + más clientes" (proyecto FUTURO, Hospitalet — marca Verstats).
-Diseño: petróleo nocturno #0e1f2a + ámbar #e8a33d, Satoshi + General Sans (Fontshare), gate impeccable 4.0 a 0 hallazgos.
+Landing del pack "Presencia digital para el comercio de barrio" (proyecto FUTURO, Hospitalet — marca Verstats).
+Diseño: fondo petróleo `#08141C` + acento ámbar `#E8A33D`, tipografías locales Satoshi + General Sans (woff2), suite Impeccable 4.0 y bilingüe ES / CA.
 
-## Estructura (regla: NADA suelto en la raíz)
+## Estructura Actual
 
 ```
-landing/
-├── index.html                 # la web (CSS+JS inline, no hay separados)
-├── README.md                  # este mapa
+04-landing/
+├── index.html                 # Plantilla base (Pubilla Cases y Can Serra)
+├── index-collblanc.html       # Variante Collblanc y La Torrassa
+├── index-bellvitge.html       # Variante Bellvitge y Gornal
+├── index-florida.html         # Variante La Florida y Les Planes
+├── aviso-legal.html           # Página legal (RGPD / LSSI)
+├── privacidad.html            # Política de privacidad
+├── cookies.html               # Política de cookies
+├── build.js                   # Pipeline de minificación de assets (npm run build)
+├── package.json               # Configuración de scripts y dependencias
 ├── assets/
-│   └── img/
-│       ├── post1-color.webp   # posts IG usados por la web (WebP, ~60-80 KB)
-│       ├── post2-bob.webp
-│       ├── post3-local.webp
-│       ├── og-image.png       # imagen Open Graph 1200x630 (compartir WhatsApp)
-│       └── originales/        # PNG FLUX 1088x1344 (fuente de alta resolución, ~1,6 MB c/u)
-├── backups/                   # snapshots de versiones anteriores (NO editar)
-│   ├── index-backup-correcciones.html
-│   └── index-backup-mejoras-tecnicas.html
+│   ├── styles.css / .min.css  # Estilos globales y versión minificada
+│   ├── script.js / .min.js    # Lógica i18n, interactividad, ROI y modal
+│   ├── legal.css              # Estilos para páginas legales
+│   ├── fonts/                 # Tipografías locales WOFF2 (Satoshi, General Sans)
+│   └── img/                   # WebP optimizados y logos transparentes
 └── scripts/
-    └── optimizar_imagenes.py  # PNG -> WebP + genera og-image (Pillow, rutas relativas)
+    └── generar_landing_barrio.py # Motor multibarrio CLI (Schema.org + textos)
 ```
 
-## Reglas
+## Comandos Operativos
 
-- Cualquier imagen nueva va a `assets/img/`; originales pesados a `assets/img/originales/`.
-- Referencias en index.html SIEMPRE como `assets/img/<archivo>` (rutas relativas a la raíz de landing/).
-- Los backups son históricos: sus rutas internas son de su época, no se tocan.
-- Scripts en `scripts/`, nunca en la raíz.
-- Regenerar imágenes: `python scripts/optimizar_imagenes.py` (escribe en assets/img/).
+- **Compilar assets minificados:**
+  ```bash
+  npm run build
+  ```
+- **Generar landing de barrio específica:**
+  ```bash
+  python scripts/generar_landing_barrio.py collblanc
+  python scripts/generar_landing_barrio.py bellvitge
+  python scripts/generar_landing_barrio.py florida
+  ```
 
-## Pendientes
+## Pendientes de Lanzamiento
 
-- Número real de WhatsApp en los 5 wa.me (placeholder 34XXXXXXXXX).
-- og:image debe ser URL absoluta del dominio final al publicar.
-- Decidir si se publica (aún no hay luz verde).
+- Reemplazar placeholder `WHATSAPP_PHONE` en `assets/script.js` con el número real.
+- Asignar dominio definitivo y activar `index, follow` en robots/meta.
+- Desplegar en CDN con soporte de cabeceras HTTP de seguridad.

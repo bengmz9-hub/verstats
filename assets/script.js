@@ -7,10 +7,11 @@
       "nav-precios": "Precios",
       "nav-faq": "Preguntas",
       "nav-btn-whatsapp": "Escríbenos por WhatsApp",
-      "hero-h1": "Consigue que los vecinos de tu barrio te encuentren antes que a tu competencia",
-      "hero-lead": "Ficha de Google Maps optimizada, reseñas respondidas en minutos y redes al día sin quitarte ni 10 minutos de tu negocio. Lo dejamos todo montado en 14 días y lo ves funcionando antes de pagar 1 solo euro.",
-      "hero-btn-wa": "Ver demostración por WhatsApp",
-      "hero-btn-ghost": "Ver lo que compras",
+      "hero-h1": "Tu Google, tus reseñas y tus redes al día sin que toques un ordenador",
+      "hero-lead": "Nos mandas cuatro fotos por WhatsApp y te lo devolvemos montado: ficha de Google optimizada, reseñas respondidas con tu tono y 8-12 publicaciones al mes listas para publicar. 350 € de instalación y 50 €/mes sin permanencia.",
+      "hero-btn-wa": "Mandar mis fotos por WhatsApp",
+      "hero-btn-ghost": "Ver los 14 días paso a paso",
+      "hero-microcopy": "Te respondemos por WhatsApp en <15 min. Sin formularios ni llamadas comerciales.",
       "hero-chat-msg1": "Hola, ¿tenéis hueco para un corte el viernes por la tarde?",
       "hero-chat-msg2": "¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?",
       "hero-chat-msg3": "¡Perfecto, lo reservo!",
@@ -113,6 +114,7 @@
       "paquet1-li2": "30% de descuento en la instalación",
       "paquet1-li3": "Para comercios asociados",
       "paquet1-btn": "Comenzar",
+      "paquet1-subnote": "Dinos el nombre de tu asociación por WhatsApp y lo aplicamos al momento.",
       "paquet2-badge": "El más contratado",
       "paquet2-tag": "El paquete completo",
       "paquet2-h3": "Presencia digital",
@@ -123,6 +125,7 @@
       "paquet2-li4": "WhatsApp Business configurado",
       "paquet2-li5": "Radar semanal de tu sector",
       "paquet2-btn": "Comenzar",
+      "paquet2-subnote": "Primero lo montamos y te lo enseñamos. Si no te gusta, no pagas nada.",
       "paquet3-tag": "Extra (a la carta)",
       "paquet3-h3": "Web o landing",
       "paquet3-note": "Página sencilla y para móvil, con tus fotos y tu estilo.",
@@ -130,6 +133,7 @@
       "paquet3-li2": "Con tus fotos y tu estilo",
       "paquet3-li3": "Mantenimiento 50 €/mes (opcional)",
       "paquet3-btn": "Preguntar",
+      "preus-guarantee": "No pedimos datos bancarios ni tarjetas para ver la demostración.",
       "price-mo": "+ 50 €/mes",
       "price-once": "una vez",
       "faq-title": "Preguntas que nos hacen antes de empezar",
@@ -175,10 +179,11 @@
       "nav-precios": "Preus",
       "nav-faq": "Preguntes",
       "nav-btn-whatsapp": "Escriu-nos per WhatsApp",
-      "hero-h1": "Aconsegueix que els veïns del teu barri et trobin abans que a la teva competència",
-      "hero-lead": "Fitxa de Google Maps optimitzada, ressenyes respostes en minuts i xarxes al dia sense treure't ni 10 minuts del teu negoci. T'ho deixem tot muntat en 14 dies i ho veus funcionant abans de pagar 1 sol euro.",
-      "hero-btn-wa": "Veure demostració per WhatsApp",
-      "hero-btn-ghost": "Veure el que compres",
+      "hero-h1": "El teu Google, les teves ressenyes i les teves xarxes al dia sense tocar un ordinador",
+      "hero-lead": "Ens passes quatre fotos per WhatsApp i t'ho tornem muntat: fitxa de Google optimitzada, ressenyes respostes amb el teu to i 8-12 publicacions al mes a punt per penjar. 350 € d'instal·lació i 50 €/mes sense permanència.",
+      "hero-btn-wa": "Enviar les meves fotos per WhatsApp",
+      "hero-btn-ghost": "Veure els 14 dies pas a pas",
+      "hero-microcopy": "Et responem per WhatsApp en <15 min. Sense formularis ni trucades comercials.",
       "hero-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
       "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
       "hero-chat-msg3": "Perfecte, me'l reservo!",
@@ -281,6 +286,7 @@
       "paquet1-li2": "30% de descompte a la instal·lació",
       "paquet1-li3": "Per a comerços associats",
       "paquet1-btn": "Començar",
+      "paquet1-subnote": "Digues-nos el nom de la teva associació per WhatsApp i ho apliquem al moment.",
       "paquet2-badge": "El més contractat",
       "paquet2-tag": "El paquet complet",
       "paquet2-h3": "Presència digital",
@@ -291,6 +297,7 @@
       "paquet2-li4": "WhatsApp Business configurat",
       "paquet2-li5": "Radar setmanal del teu sector",
       "paquet2-btn": "Començar",
+      "paquet2-subnote": "Primer ho muntem i t'ho ensenyem. Si no et convenç, no pagues res.",
       "paquet3-tag": "Extra (a la carta)",
       "paquet3-h3": "Web o landing",
       "paquet3-note": "Pàgina senzilla i per a mòbil, amb les teves fotos i el teu estil.",
@@ -298,6 +305,7 @@
       "paquet3-li2": "Amb les teves fotos i el teu estil",
       "paquet3-li3": "Manteniment 50 €/mes (opcional)",
       "paquet3-btn": "Demanar informació",
+      "preus-guarantee": "No demanem dades bancàries ni targetes per veure la demostració.",
       "price-mo": "+ 50 €/mes",
       "price-once": "un sol cop",
       "faq-title": "Preguntes que ens fan abans de començar",
@@ -575,32 +583,40 @@
 
   const waMessages = {
     hero: {
-      es: 'Hola! Quiero ver una demostración para mi negocio',
-      ca: 'Hola! Vull veure una demostració per al meu negoci'
+      es: "Hola, tengo un negocio en L'Hospitalet y quiero ver la demo con mis fotos antes de decidir nada.",
+      ca: "Hola, tinc un negoci a L'Hospitalet i vull veure la demo amb les meves fotos abans de decidir res."
     },
     nav: {
-      es: 'Hola! Quiero saber más de Verstats para mi negocio',
-      ca: 'Hola! Vull saber més de Verstats per al meu negoci'
+      es: "Hola, tengo un negocio en L'Hospitalet y quiero ver la demo con mis fotos antes de decidir nada.",
+      ca: "Hola, tinc un negoci a L'Hospitalet i vull veure la demo amb les meves fotos abans de decidir res."
     },
     'plan-asociados': {
-      es: 'Hola! Soy asociado de la asociación de comerciantes y quiero el precio especial',
-      ca: 'Hola! Sóc associat de l\'associació de comerciants i vull el preu especial'
+      es: "Hola, me interesa el paquete completo. Soy socio de la asociación de comerciantes, ¿me entra la instalación a 245 € en vez de 350 €?",
+      ca: "Hola, m'interessa el paquet complet. Sóc soci de l'associació de comerciants, em queda la instal·lació a 245 € en lloc de 350 €?"
     },
     'plan-completo': {
-      es: 'Hola! Quiero información sobre el paquete completo de Presencia Digital',
-      ca: 'Hola! Vull informació sobre el paquet complet de Presència Digital'
+      es: "Hola, me interesa el paquete completo de presencia digital y quiero ver cómo quedaría con mi negocio.",
+      ca: "Hola, m'interessa el paquet complet de presència digital i vull veure com quedaria amb el meu negoci."
     },
     'plan-web': {
-      es: 'Hola! Quiero saber más sobre el extra de Web o Landing',
-      ca: 'Hola! Vull saber més sobre l\'extra de Web o Landing'
+      es: "Hola, me interesa añadir el extra de página web a la presencia digital.",
+      ca: "Hola, m'interessa afegir l'extra de pàgina web a la presència digital."
     },
     'cta-final': {
-      es: 'Hola! Quiero ver mi demostración personalizada por WhatsApp',
-      ca: 'Hola! Vull veure la meva demostració personalitzada per WhatsApp'
+      es: "Hola, quiero ver la demostración montada con mis fotos antes de pagar nada.",
+      ca: "Hola, vull veure la demostració muntada amb les meves fotos abans de pagar res."
     },
     'mobile-sticky': {
-      es: 'Hola! Quiero saber más de Verstats',
-      ca: 'Hola! Vull saber més de Verstats'
+      es: "Hola, tengo un negocio en el barrio y quiero ver una demostración.",
+      ca: "Hola, tinc un negoci al barri i vull veure una demostració."
+    },
+    faq: {
+      es: "Hola, antes de empezar quiero aclarar dos cosas: si tengo que daros la contraseña de mi Google y en cuánto tiempo lo tendría montado.",
+      ca: "Hola, abans de començar vull aclarir dues coses: si us haig de donar la contrasenya del meu Google i en quant temps ho tindria muntat."
+    },
+    informe: {
+      es: "Hola, quiero una muestra del informe semanal con los competidores de mi calle. Os digo el sector y el barrio por aquí.",
+      ca: "Hola, vull una mostra de l'informe setmanal amb els competidors del meu carrer. Us dic el sector i el barri per aquí."
     }
   };
 
@@ -666,12 +682,41 @@
     });
   });
 
-/* === CSP refactor 19-08: handlers inline -> listeners === */
+/* === CSP refactor: listeners y accesibilidad APG === */
 document.getElementById('btn-es').addEventListener('click', () => setLang('es'));
 document.getElementById('btn-ca').addEventListener('click', () => setLang('ca'));
-document.getElementById('tab-peluqueria').addEventListener('click', () => switchNiche('peluqueria'));
-document.getElementById('tab-hosteleria').addEventListener('click', () => switchNiche('hosteleria'));
-document.getElementById('tab-comercio').addEventListener('click', () => switchNiche('comercio'));
+
+const nicheTabs = Array.from(document.querySelectorAll('.niche-btn'));
+const nicheKeys = ['peluqueria', 'hosteleria', 'comercio'];
+
+nicheTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => switchNiche(nicheKeys[index]));
+  tab.addEventListener('keydown', (e) => {
+    let nextIndex = null;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      nextIndex = (index + 1) % nicheTabs.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      nextIndex = (index - 1 + nicheTabs.length) % nicheTabs.length;
+    }
+    if (nextIndex !== null) {
+      e.preventDefault();
+      nicheTabs[nextIndex].focus();
+      switchNiche(nicheKeys[nextIndex]);
+    }
+  });
+});
+
+const reportModal = document.getElementById('reportModal');
+if (reportModal) {
+  reportModal.addEventListener('click', (e) => {
+    // Cerrar si se hace clic en el backdrop fuera del modal-card
+    if (e.target === reportModal) closeReportModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && reportModal.open) closeReportModal();
+  });
+}
+
 document.getElementById('btn-open-report').addEventListener('click', () => openReportModal());
 document.getElementById('btn-close-demo').addEventListener('click', () => closeReportModal());
 document.querySelectorAll('.modal-close').forEach(el => el.addEventListener('click', () => closeReportModal()));
