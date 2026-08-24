@@ -328,7 +328,7 @@
   .final .btn-wa:hover { background: #1eb857; color: #06402d; }
   .final .mini { margin-top: 16px; font-size: .88rem; color: #8d8374; }
 
-  footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--muted); font-size: .88rem; }
+  footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--muted); font-size: .88rem; text-align: center; }
   footer p { margin-bottom: 4px; }
 
   /* ===== Overrides dark mode: mockups y hardcoded ===== */

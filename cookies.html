@@ -10,6 +10,10 @@
 <meta name="description" content="Información sobre el uso de cookies y almacenamiento local en Verstats.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://verstats.com/cookies.html">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="preload" href="assets/fonts/satoshi-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/general-sans-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/legal.css">
 </head>
@@ -17,8 +21,8 @@
 
 <header>
   <div class="nav">
-    <a class="logo" href="/"><img src="assets/img/logo-verstats.png" alt="Logo Verstats" class="logo-img" width="32" height="32">VER<span>STATS</span></a>
-    <a href="/" class="back-link" style="margin-bottom: 0;">← Volver al inicio</a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-verstats.png" alt="Logo Verstats" class="logo-img" width="34" height="34">VER<span>STATS</span></a>
+    <a href="index.html" class="nav-back">← Volver al inicio</a>
   </div>
 </header>
 
@@ -49,15 +53,15 @@
     </thead>
     <tbody>
       <tr>
-        <td>Preferencia de idioma (ES/CA)</td>
+        <td><strong>Preferencia de idioma (ES/CA)</strong></td>
         <td>Propia / Técnica</td>
         <td>Recordar selección de idioma en el selector</td>
         <td>Sesión</td>
       </tr>
       <tr>
-        <td>Estado de navegación</td>
+        <td><strong>Estado de navegación</strong></td>
         <td>Propia / Técnica</td>
-        <td>Recordar secciones visitadas, modal cerrado, etc.</td>
+        <td>Recordar secciones visitadas, modal de demostración cerrado, etc.</td>
         <td>Sesión</td>
       </tr>
     </tbody>
@@ -76,10 +80,10 @@
     </thead>
     <tbody>
       <tr>
-        <td>Google Analytics</td>
+        <td><strong>Google Analytics</strong></td>
         <td>_ga, _gid, _gat</td>
         <td>Análisis anónimo de tráfico, comportamiento de usuarios, conversiones</td>
-        <td><a href="https://policies.google.com/technologies/cookies" target="_blank" style="color: var(--accent);">Política Google Analytics</a></td>
+        <td><a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">Política Google Analytics</a></td>
       </tr>
     </tbody>
   </table>
@@ -87,17 +91,17 @@
   <h2>5. Cookies de Terceros</h2>
   <p>Este sitio integra servicios externos que pueden instalar sus propias cookies:</p>
   <ul>
-    <li><strong>Google Maps:</strong> Para gestión de fichas de negocio (ver <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--accent);">política Google</a>)</li>
-    <li><strong>WhatsApp:</strong> Links de contacto directo (ver <a href="https://www.whatsapp.com/legal/privacy" target="_blank" style="color: var(--accent);">política WhatsApp</a>)</li>
-    <li><strong>Meta (Instagram/Facebook):</strong> Integración de contenido y píxeles (ver <a href="https://www.instagram.com/about/privacy/" target="_blank" style="color: var(--accent);">política Meta</a>)</li>
+    <li><strong>Google Maps:</strong> Para gestión de fichas de negocio (ver <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política Google</a>)</li>
+    <li><strong>WhatsApp:</strong> Links de contacto directo (ver <a href="https://www.whatsapp.com/legal/privacy" target="_blank" rel="noopener noreferrer">política WhatsApp</a>)</li>
+    <li><strong>Meta (Instagram/Facebook):</strong> Integración de contenido y presencia en redes (ver <a href="https://www.instagram.com/about/privacy/" target="_blank" rel="noopener noreferrer">política Meta</a>)</li>
   </ul>
 
   <h2>6. Cómo Desactivar o Eliminar Cookies</h2>
   <p>Puede permitir, bloquear o eliminar cookies instaladas mediante la configuración del navegador:</p>
   <ul>
-    <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies</li>
-    <li><strong>Firefox:</strong> Configuración → Privacidad y seguridad → Cookies</li>
-    <li><strong>Safari:</strong> Preferencias → Privacidad → Gestionar datos de sitios web</li>
+    <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies de terceros</li>
+    <li><strong>Firefox:</strong> Ajustes → Privacidad & Seguridad → Cookies y datos del sitio</li>
+    <li><strong>Safari:</strong> Ajustes / Preferencias → Privacidad → Bloquear cookies</li>
     <li><strong>Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies</li>
   </ul>
   <p><strong>Advertencia:</strong> Desactivar cookies técnicas puede afectar el funcionamiento del sitio (selector de idioma, navegación).</p>
@@ -106,12 +110,20 @@
   <p>Al usar este sitio web, usted acepta el uso de cookies técnicas descritas en esta política. Verstats se reserva el derecho de actualizar esta política. Cambios importantes se notificarán en este sitio.</p>
 
   <h2>8. Contacto</h2>
-  <p>Para preguntas sobre cookies, contacte a Verstats mediante WhatsApp o consulte la <a href="privacidad.html" style="color: var(--accent);">Política de Privacidad</a>.</p>
+  <p>Para preguntas sobre cookies, contacte a Verstats mediante WhatsApp o consulte la <a href="privacidad.html">Política de Privacidad</a>.</p>
   </div>
 </main>
 
 <footer>
-  <p>© 2026 Verstats · Presencia digital para el comercio de barrio</p>
+  <div class="wrap">
+    <p>Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.</p>
+    <p>Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.</p>
+    <p class="footer-note">
+      <a href="aviso-legal.html" class="legal-link">Aviso legal</a> · 
+      <a href="privacidad.html" class="legal-link">Privacidad</a> · 
+      <a href="cookies.html" class="legal-link">Cookies</a>
+    </p>
+  </div>
 </footer>
 
 </body>
