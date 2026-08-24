@@ -105,12 +105,10 @@ function build() {
     const cssSaved = cssSizeOriginal - cssSizeMin;
     const jsSaved = jsSizeOriginal - jsSizeMin;
     const totalSaved = cssSaved + jsSaved;
-
-
-
-    } -> ${formatSize(cssSizeMin)} (ahorro: ${((cssSaved / cssSizeOriginal) * 100).toFixed(1)}%)`);
-    } -> ${formatSize(jsSizeMin)} (ahorro: ${((jsSaved / jsSizeOriginal) * 100).toFixed(1)}%)`);
-    } (${(((totalSaved) / (cssSizeOriginal + jsSizeOriginal)) * 100).toFixed(1)}%)\n`);
+    process.stdout.write(`\n[Build] Minificacion completada:\n`);
+    process.stdout.write(`  CSS: ${formatSize(cssSizeOriginal)} -> ${formatSize(cssSizeMin)} (ahorro: ${((cssSaved / cssSizeOriginal) * 100).toFixed(1)}%)\n`);
+    process.stdout.write(`  JS:  ${formatSize(jsSizeOriginal)} -> ${formatSize(jsSizeMin)} (ahorro: ${((jsSaved / jsSizeOriginal) * 100).toFixed(1)}%)\n`);
+    process.stdout.write(`  Total: ${formatSize(totalSaved)} (${(((totalSaved) / (cssSizeOriginal + jsSizeOriginal)) * 100).toFixed(1)}%)\n\n`);
   } catch (error) {
     console.error('❌ Build failed:', error.message);
     process.exit(1);
