@@ -20,3 +20,5 @@ backups/
 *.bak
 .env
 .env.local
+
+.vercel
