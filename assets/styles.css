@@ -697,6 +697,20 @@
   display: block;
 }
 
+.suite-nav-pills .tab-num { display: none; }
+
+/* Mobile: pestañas numeradas compactas (evita wrap a varias líneas) +
+   imagen limitada al alto visible para no forzar scroll dentro del modal */
+@media (max-width: 600px) {
+  .suite-modal .modal-card { padding: 18px 14px; }
+  .suite-nav-pills { flex-wrap: nowrap; gap: 6px; padding: 4px; margin-bottom: 14px; overflow: hidden; }
+  .suite-nav-pills .bot-modal-tab-btn { padding: 8px 4px; }
+  .suite-nav-pills .tab-num { display: inline; }
+  .suite-nav-pills .tab-label { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .infographic-wrapper { padding: 8px; }
+  .infographic-img { max-height: 50vh; }
+}
+
 /* ============ WA SUITE INTERACTIVA NATIVA ============ */
 .wa-suite-container { max-width: 980px; margin: 0 auto; background: #0a141b; border: 1px solid var(--line); border-radius: 20px; padding: 24px; color: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
 .wa-suite-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; background: var(--paper); padding: 14px; border-radius: 16px; border: 1px solid var(--line); }
