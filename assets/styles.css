@@ -799,12 +799,15 @@
   .wa-slider-track::-webkit-scrollbar { display: none; }
   .wa-tab-pane {
     /* El track (sin align-items propio, stretch por defecto) estira cada
-       pane a la altura del más alto de los 6. En vez de dejar el hueco
-       de los más cortos vacío al final, centramos su contenido dentro
-       de esa altura -- CSS puro, sin JS que recalcule nada al hacer scroll. */
+       pane a la altura del más alto de los 6. Repartimos el espacio
+       sobrante ENTRE sus bloques internos (badge/título/tarjetas/footer)
+       en vez de dejarlo como un bloque vacío -- CSS puro, sin JS.
+       (Probamos transform:scale() para agrandar el contenido real, pero
+       el CSS interno de las tarjetas no comprime bien su ancho mínimo y
+       el contenido queda cortado por los lados -- ver commit anterior.) */
     display: flex !important;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     flex: 0 0 100%;
     min-width: 0;
     scroll-snap-align: start;
