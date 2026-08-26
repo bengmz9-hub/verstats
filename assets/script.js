@@ -1101,3 +1101,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 });
+
+// Mobile Menu - SIMPLE & FUNCTIONAL
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const links = document.querySelectorAll('.mobile-menu-link');
+
+  if (!toggle || !menu) return;
+
+  // Toggle menu
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    menu.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
+  });
+
+  // Close menu on link click
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      menu.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close menu on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggle.classList.contains('active')) {
+      toggle.classList.remove('active');
+      menu.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('header') && menu.classList.contains('active')) {
+      toggle.classList.remove('active');
+      menu.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
