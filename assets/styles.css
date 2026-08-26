@@ -789,7 +789,6 @@
 
   .wa-slider-track {
     display: flex;
-    align-items: flex-start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -799,7 +798,13 @@
   }
   .wa-slider-track::-webkit-scrollbar { display: none; }
   .wa-tab-pane {
-    display: block !important;
+    /* El track (sin align-items propio, stretch por defecto) estira cada
+       pane a la altura del más alto de los 6. En vez de dejar el hueco
+       de los más cortos vacío al final, centramos su contenido dentro
+       de esa altura -- CSS puro, sin JS que recalcule nada al hacer scroll. */
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
     flex: 0 0 100%;
     min-width: 0;
     scroll-snap-align: start;

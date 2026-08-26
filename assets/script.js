@@ -1070,36 +1070,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (waSliderTrack && waDots.length > 0) {
     const waSlides = Array.from(document.querySelectorAll('.wa-tab-pane'));
 
-    // El track (flex row) toma la altura del slide más alto por defecto,
-    // dejando hueco bajo los slides más cortos. La ajustamos al slide
-    // activo, pero si simplemente cambiamos la altura, el documento se
-    // encoge/agranda bajo el dedo del usuario cuando está scrolleado más
-    // abajo del inicio del track, y la vista "salta" a otro contenido.
-    // Compensamos ese salto moviendo el scroll exactamente lo mismo que
-    // se movió el contenido, así la vista del usuario no cambia.
-    function setWaTrackHeightFor(pane) {
-      if (window.innerWidth > 600) { waSliderTrack.style.height = ''; return; }
-      if (!pane) return;
-      const oldRect = waSliderTrack.getBoundingClientRect();
-      const oldHeight = oldRect.height;
-      const newHeight = pane.offsetHeight;
-      if (Math.abs(newHeight - oldHeight) < 1) return;
-      waSliderTrack.style.height = newHeight + 'px';
-      if (oldRect.top < 0) {
-        window.scrollBy(0, newHeight - oldHeight);
-      }
-    }
-
-    function activeWaSlideIndex() {
-      const width = waSliderTrack.clientWidth || 1;
-      return Math.round(waSliderTrack.scrollLeft / width);
-    }
-
     function goToWaSlide(index) {
       const target = waSlides[index];
       if (!target) return;
       waSliderTrack.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
-      setWaTrackHeightFor(target);
     }
 
     waDots.forEach((dot, index) => {
@@ -1107,32 +1081,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let waDotsRaf = false;
-    let waScrollEndTimer = null;
     waSliderTrack.addEventListener('scroll', () => {
-      if (!waDotsRaf) {
-        waDotsRaf = true;
-        requestAnimationFrame(() => {
-          const activeIndex = activeWaSlideIndex();
-          waDots.forEach((dot, i) => {
-            const isActive = i === activeIndex;
-            dot.classList.toggle('active', isActive);
-            dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          });
-          waDotsRaf = false;
+      if (waDotsRaf) return;
+      waDotsRaf = true;
+      requestAnimationFrame(() => {
+        const width = waSliderTrack.clientWidth || 1;
+        const activeIndex = Math.round(waSliderTrack.scrollLeft / width);
+        waDots.forEach((dot, i) => {
+          const isActive = i === activeIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
-      }
-      // Durante un swipe manual el scroll dispara eventos en cada frame;
-      // esperamos a que se asiente (snap terminado) antes de ajustar la
-      // altura, para no recalcular/temblar mientras el dedo sigue en pantalla.
-      clearTimeout(waScrollEndTimer);
-      waScrollEndTimer = setTimeout(() => {
-        setWaTrackHeightFor(waSlides[activeWaSlideIndex()]);
-      }, 120);
+        waDotsRaf = false;
+      });
     }, { passive: true });
-
-    setWaTrackHeightFor(waSlides[0]);
-    window.addEventListener('resize', () => {
-      setWaTrackHeightFor(waSlides[activeWaSlideIndex()] || waSlides[0]);
-    });
   }
 });
