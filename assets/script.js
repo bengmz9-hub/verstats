@@ -1061,4 +1061,54 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Slider lateral mobile: puntos indicadores sincronizados con el swipe.
+  // En desktop el track no tiene overflow (ver CSS), así que este código
+  // queda inerte ahí; solo actúa cuando el usuario está en mobile.
+  const waSliderTrack = document.querySelector('.wa-slider-track');
+  const waDots = Array.from(document.querySelectorAll('.wa-dot'));
+  if (waSliderTrack && waDots.length > 0) {
+    const waSlides = Array.from(document.querySelectorAll('.wa-tab-pane'));
+
+    // El track (flex row) toma la altura del slide más alto por defecto.
+    // Si la ajustáramos dinámicamente al slide activo, el documento se
+    // encogería/agrandaría bajo el dedo del usuario cuando está scrolleado
+    // más abajo, "saltando" el contenido de forma confusa. En su lugar
+    // fijamos una altura constante (el máximo de los 6) una sola vez: los
+    // slides más cortos dejan algo de espacio, pero el scroll nunca salta.
+    function setWaTrackHeight() {
+      if (window.innerWidth > 600) { waSliderTrack.style.height = ''; return; }
+      const maxHeight = Math.max(...waSlides.map(s => s.offsetHeight));
+      waSliderTrack.style.height = maxHeight + 'px';
+    }
+
+    function goToWaSlide(index) {
+      const target = waSlides[index];
+      if (!target) return;
+      waSliderTrack.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    }
+
+    waDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToWaSlide(index));
+    });
+
+    let waDotsRaf = false;
+    waSliderTrack.addEventListener('scroll', () => {
+      if (waDotsRaf) return;
+      waDotsRaf = true;
+      requestAnimationFrame(() => {
+        const width = waSliderTrack.clientWidth || 1;
+        const activeIndex = Math.round(waSliderTrack.scrollLeft / width);
+        waDots.forEach((dot, i) => {
+          const isActive = i === activeIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        waDotsRaf = false;
+      });
+    }, { passive: true });
+
+    setWaTrackHeight();
+    window.addEventListener('resize', setWaTrackHeight);
+  }
 });
