@@ -214,9 +214,9 @@
       "paquet2-subnote": "Primero lo montamos y te lo enseñamos. Si no te gusta, no pagas nada.",
       "paquet-bot-badge": "⭐ EXTRA ESTRELLA",
       "paquet-bot-tag": "Asistente 24/7",
-      "paquet-bot-h3": "WhatsApp & Bot Citas",
+      "paquet-bot-h3": "WhatsApp & Telegram Bot",
       "price-install": "instalación",
-      "paquet-bot-note": "Atención automática y reserva en Google Calendar.",
+      "paquet-bot-note": "Atención automática en WhatsApp y Telegram con reserva en Google Calendar.",
       "paquet-bot-li1": "Respuestas inmediatas 24/7 sin tocar el móvil",
       "paquet-bot-li2": "Reserva directa sincronizada en Google Calendar",
       "paquet-bot-li3": "Recordatorios automáticos 24h antes por WhatsApp",
@@ -492,9 +492,9 @@
       "paquet2-subnote": "Primer ho muntem i t'ho ensenyem. Si no t'agrada, no pagues res.",
       "paquet-bot-badge": "⭐ EXTRA ESTRELLA",
       "paquet-bot-tag": "Assistent 24/7",
-      "paquet-bot-h3": "WhatsApp & Bot Cites",
-      "price-install": "instal·lació",
-      "paquet-bot-note": "Atenció automàtica i reserva a Google Calendar.",
+      "paquet-bot-h3": "WhatsApp & Telegram Bot",
+      "price-mo": "+ 50 €/mes",
+      "paquet-bot-note": "Atenció automàtica a WhatsApp i Telegram amb reserva a Google Calendar.",
       "paquet-bot-li1": "Respostes immediates 24/7 sense tocar el mòbil",
       "paquet-bot-li2": "Reserva directa sincronitzada a Google Calendar",
       "paquet-bot-li3": "Recordatoris automàtics 24h abans per WhatsApp",
@@ -833,8 +833,8 @@
       ca: "Hola, vull una mostra de l'informe setmanal amb els competidors del meu carrer. Us dic el sector i el barri per aquí."
     },
     'plan-bot-whatsapp': {
-      es: "Hola, me interesa el Asistente de WhatsApp con citas automáticas en Google Calendar. ¿Cómo lo activamos?",
-      ca: "Hola, m'interessa l'Assistent de WhatsApp amb cites automàtiques a Google Calendar. Com ho activem?"
+      es: "Hola, me interesa el Asistente de WhatsApp y Telegram con citas automáticas en Google Calendar. ¿Cómo lo activamos?",
+      ca: "Hola, m'interessa l'Assistent de WhatsApp i Telegram amb cites automàtiques a Google Calendar. Com ho activem?"
     }
   };
 
