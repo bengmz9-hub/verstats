@@ -775,3 +775,14 @@
 .wa-mock-app-col .icon.text-blue { background: transparent; color: #4285f4; font-size: 1.8rem; }
 .wa-row-flex { display: flex; align-items: flex-start; gap: 16px; }
 @media(max-width: 768px) { .wa-row-flex { flex-direction: column; } }
+
+.wa-suite-nav .tab-num { display: none; }
+
+/* Mobile: pestañas numeradas compactas en la suite nativa (evita wrap a
+   varias líneas que empujaba el contenido y dificultaba verlo entero) */
+@media (max-width: 600px) {
+  .wa-suite-nav { flex-wrap: nowrap; gap: 6px; padding: 8px; margin-bottom: 20px; overflow: hidden; scroll-margin-top: 84px; }
+  .wa-tab-btn { padding: 8px 4px; }
+  .wa-suite-nav .tab-num { display: inline; }
+  .wa-suite-nav .tab-label { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+}

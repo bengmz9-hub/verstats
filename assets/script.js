@@ -1033,6 +1033,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetId = tab.getAttribute('data-wa-target');
     const targetPane = document.getElementById(targetId);
     if (targetPane) targetPane.classList.add('active');
+
+    // Mobile: al cambiar de pestaña, el contenido queda a mitad de scroll
+    // de la pestaña anterior. Llevamos la vista al inicio de la nav para
+    // que el usuario siempre vea la infografía completa desde el principio.
+    if (window.innerWidth <= 600) {
+      const nav = document.querySelector('.wa-suite-nav');
+      if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   if (waTabs.length > 0) {
