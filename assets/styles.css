@@ -384,7 +384,7 @@
   @media (max-width: 900px) {
     .nav-links { display: none; }
     .nav-cta-text { display: none; }
-    .nav-cta { min-height: 38px; width: 38px; padding: 0; display: inline-grid; place-items: center; border-radius: 50%; }
+    .nav-cta { min-height: 44px; width: 44px; padding: 0; display: inline-grid; place-items: center; border-radius: 50%; }
     .nav-cta-icon { width: 20px; height: 20px; }
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .phone { max-width: 320px; }
@@ -418,6 +418,10 @@
     }
     .roi-grid-inputs { grid-template-columns: 1fr; }
     .roi-results-row { grid-template-columns: 1fr; gap: 12px; }
+    .roi-range { height: 10px; }
+    .roi-range::-webkit-slider-thumb { width: 30px; height: 30px; }
+    .roi-range::-moz-range-thumb { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+    .roi-range::-moz-range-track { height: 10px; border-radius: 5px; background: var(--line); }
     .incluye { grid-template-columns: 1fr; gap: 12px; }
     .inc {
       display: grid;
