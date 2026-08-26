@@ -781,8 +781,26 @@
 /* Mobile: pestañas numeradas compactas en la suite nativa (evita wrap a
    varias líneas que empujaba el contenido y dificultaba verlo entero) */
 @media (max-width: 600px) {
-  .wa-suite-nav { flex-wrap: nowrap; gap: 6px; padding: 8px; margin-bottom: 20px; overflow: hidden; scroll-margin-top: 84px; }
+  .wa-suite-nav { flex-wrap: nowrap; gap: 6px; padding: 8px; margin-bottom: 16px; overflow: hidden; scroll-margin-top: 84px; }
   .wa-tab-btn { padding: 8px 4px; }
   .wa-suite-nav .tab-num { display: inline; }
   .wa-suite-nav .tab-label { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  /* Compactar las tarjetas ANTES/AHORA etc: en mobile .wa-grid-2 pasa a
+     1 columna (se apilan), duplicando el alto. Reducimos paddings/gaps/
+     tamaños de fuente para que el conjunto quepa con mucho menos scroll. */
+  .wa-suite-container { padding: 14px; }
+  .wa-badge { margin-bottom: 12px; }
+  .wa-header { margin-bottom: 18px; }
+  .wa-header h3 { font-size: 1.3rem; margin-bottom: 6px; }
+  .wa-header p { font-size: 0.92rem; }
+  .wa-grid-2 { gap: 12px; margin-bottom: 16px; }
+  .wa-card { padding: 14px; }
+  .wa-card-header { padding-bottom: 10px; margin-bottom: 10px; }
+  .wa-card-title { font-size: 1.05rem; }
+  .wa-icon-box { width: 32px; height: 32px; font-size: 1rem; }
+  .wa-list { gap: 8px; }
+  .wa-list li { font-size: 0.85rem; line-height: 1.35; gap: 8px; }
+  .wa-card-footer { margin-top: 12px; padding-top: 10px; }
+  .wa-footer-box { padding: 12px; font-size: 0.85rem; }
 }
