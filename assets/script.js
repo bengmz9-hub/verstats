@@ -797,7 +797,7 @@
   // ⚙️ CONFIGURACIÓN CENTRALIZADA DE WHATSAPP
   // Cambiar este número actualiza automáticamente TODOS los enlaces wa.me
   // Formato: código país + número (ej: 34612345678 para España)
-  const WHATSAPP_PHONE = '34XXXXXXXXX'; // ← REEMPLAZAR CON NÚMERO REAL
+  const WHATSAPP_PHONE = '34636253724'; // ← Número real (28-08-2026)
 
   const waMessages = {
     hero: {
