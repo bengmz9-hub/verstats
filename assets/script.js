@@ -730,7 +730,7 @@
   }
   function closeReportModal() {
     const modal = document.getElementById('reportModal');
-    if (modal) {
+    if (modal && modal.open) {
       modal.close();
     }
   }
@@ -941,7 +941,7 @@ if (reportModal) {
 
 document.getElementById('btn-open-report').addEventListener('click', () => openReportModal());
 document.getElementById('btn-close-demo').addEventListener('click', () => closeReportModal());
-document.querySelectorAll('.modal-close').forEach(el => el.addEventListener('click', () => closeReportModal()));
+document.querySelectorAll('#reportModal .modal-close').forEach(el => el.addEventListener('click', () => closeReportModal()));
 
 let roiRafId = null;
 function scheduleRoiCalc() {
