@@ -61,6 +61,8 @@
   .nav-cta { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 700; font-size: .9rem; text-decoration: none; transition: background .15s ease, color .15s ease; }
   .nav-cta-icon { width: 18px; height: 18px; flex: none; display: inline-block; }
   .nav-cta-text { display: inline; }
+  /* CTA secundario (correo): mismo tamaño/forma que .nav-cta, estilo ghost para no competir con el CTA principal de WhatsApp */
+  .nav-cta-email { background: transparent; border: 1px solid var(--line); color: var(--ink); }
   
   .lang-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
   .lang-btn { background: transparent; border: none; color: var(--muted); font-family: var(--font-display); font-weight: 700; font-size: .78rem; padding: 4px 10px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
@@ -70,6 +72,7 @@
   @media (hover: hover) {
     .nav-links a:hover { color: var(--ink); }
     .nav-cta:hover { background: #1eb857; color: #06402d; }
+    .nav-cta-email:hover { background: var(--card); border-color: var(--accent-soft); color: var(--ink); }
     .btn:hover { transform: translateY(-1px); }
     .btn-wa:hover { background: #1eb857; color: #06402d; }
     .btn-ghost:hover { background: var(--ink); color: var(--paper); }
