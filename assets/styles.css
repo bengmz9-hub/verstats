@@ -994,7 +994,21 @@
     animation: none !important;
   }
 
-  .wa-dots { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 4px; }
+  /* Dots ARRIBA (antes del slider) + hint de swipe: el usuario debe
+     entender que hay scroll lateral sin haber deslizado antes. */
+  .wa-suite-container { display: flex; flex-direction: column; }
+  .wa-dots { order: -1; display: flex; justify-content: center; align-items: center; gap: 10px; margin: 0 0 10px; }
+  .wa-dots::after {
+    content: "Desliza →";
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-left: 10px;
+    animation: waSwipeHint 2s ease-in-out infinite;
+  }
+  @keyframes waSwipeHint {
+    0%, 100% { opacity: 0.45; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(4px); }
+  }
   .wa-dot { width: 9px; height: 9px; padding: 0; border: none; border-radius: 50%; background: var(--line); cursor: pointer; transition: background .2s ease, transform .2s ease; }
   .wa-dot.active { background: var(--accent); transform: scale(1.3); }
 
