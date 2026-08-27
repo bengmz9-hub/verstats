@@ -838,4 +838,41 @@
   .wa-list li { font-size: 0.85rem; line-height: 1.35; gap: 8px; }
   .wa-card-footer { margin-top: 12px; padding-top: 10px; }
   .wa-footer-box { padding: 12px; font-size: 0.85rem; }
+
+  /* Ajuste individual de las 4 tarjetas cortas del slider (déficit vs.
+     info-2/info-6 ~1330px): agrandamos tipografía/espaciado internos
+     para que su contenido llene mejor el alto que reparte
+     justify-content:space-between en .wa-tab-pane. Algunos elementos de
+     info-3/info-5 tienen font-size inline en el HTML -> !important. */
+
+  /* #info-1 Comparativa (déficit ~343px) */
+  #info-1 .wa-header p { font-size: 1rem; }
+  #info-1 .wa-card { padding: 20px; }
+  #info-1 .wa-list { gap: 14px; }
+  #info-1 .wa-list li { font-size: 0.95rem; line-height: 1.5; }
+  #info-1 .wa-card-footer { font-size: 0.9rem; padding-top: 14px; margin-top: 16px; }
+  #info-1 .wa-footer-box { padding: 18px; font-size: 0.95rem; }
+
+  /* #info-3 Calendar Sync (déficit ~274px) */
+  #info-3 .wa-grid-2 { gap: 16px; margin-bottom: 22px; }
+  #info-3 .wa-card { padding: 22px; }
+  #info-3 .wa-card h4 { font-size: 1.15rem !important; margin-bottom: 10px !important; }
+  #info-3 .wa-card p { font-size: 0.95rem !important; }
+  #info-3 .wa-footer-box { padding: 22px; font-size: 0.98rem; }
+
+  /* #info-4 Chat Real (déficit ~427px, la más corta) */
+  #info-4 .wa-header { margin-bottom: 24px; }
+  #info-4 .wa-header h3 { font-size: 1.4rem; }
+  #info-4 .wa-header p { font-size: 1.05rem; }
+  #info-4 .wa-chat-header { padding: 22px; }
+  #info-4 .wa-chat-body { padding: 22px; gap: 24px; font-size: 1rem; }
+  #info-4 .wa-bubble { padding: 18px 20px; }
+  #info-4 .wa-bubble-time { font-size: 0.75rem; }
+  #info-4 .wa-footer-box { padding: 26px; font-size: 1.02rem; margin-top: 24px; }
+
+  /* #info-5 Rutina & Agenda (déficit ~245px) */
+  #info-5 .wa-card { padding: 26px !important; gap: 24px !important; }
+  #info-5 .wa-card h4 { font-size: 1.2rem !important; margin-bottom: 10px !important; }
+  #info-5 .wa-card p { font-size: 0.98rem !important; }
+  #info-5 .wa-footer-box { padding: 18px; font-size: 0.95rem; }
 }
