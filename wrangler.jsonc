@@ -1,8 +1,7 @@
 {
   "name": "verstats",
   "assets": {
-    "directory": "./",
-    "binding": "ASSETS"
+    "directory": "./"
   },
   "compatibility_date": "2026-08-28"
 }
