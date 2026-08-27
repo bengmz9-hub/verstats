@@ -878,13 +878,14 @@
 /* Mobile: pestañas numeradas compactas (evita wrap a varias líneas) +
    imagen limitada al alto visible para no forzar scroll dentro del modal */
 @media (max-width: 600px) {
-  .suite-modal .modal-card { padding: 18px 14px; }
+  .suite-modal { width: 100vw !important; max-width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; margin: 0; }
+  .suite-modal .modal-card { max-height: 100dvh; height: 100dvh; padding: 14px 10px; border-radius: 0; border: none; }
   .suite-nav-pills { flex-wrap: nowrap; gap: 6px; padding: 4px; margin-bottom: 14px; overflow: hidden; }
   .suite-nav-pills .bot-modal-tab-btn { padding: 8px 4px; }
   .suite-nav-pills .tab-num { display: inline; }
   .suite-nav-pills .tab-label { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .infographic-wrapper { padding: 8px; }
-  .infographic-img { max-height: 50vh; }
+  .infographic-wrapper { padding: 0; }
+  .infographic-img { max-height: none; }
 }
 
 /* ============ WA SUITE INTERACTIVA NATIVA ============ */
