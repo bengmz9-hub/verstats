@@ -921,8 +921,10 @@
   });
 
 /* === CSP refactor: listeners y accesibilidad APG === */
-document.getElementById('btn-es').addEventListener('click', () => setLang('es'));
-document.getElementById('btn-ca').addEventListener('click', () => setLang('ca'));
+const btnEsEl = document.getElementById('btn-es');
+if (btnEsEl) btnEsEl.addEventListener('click', () => setLang('es'));
+const btnCaEl = document.getElementById('btn-ca');
+if (btnCaEl) btnCaEl.addEventListener('click', () => setLang('ca'));
 
 const nicheTabs = Array.from(document.querySelectorAll('.niche-btn'));
 const nicheKeys = ['peluqueria', 'hosteleria', 'comercio'];
@@ -955,8 +957,10 @@ if (reportModal) {
   });
 }
 
-document.getElementById('btn-open-report').addEventListener('click', () => openReportModal());
-document.getElementById('btn-close-demo').addEventListener('click', () => closeReportModal());
+const btnOpenReport = document.getElementById('btn-open-report');
+if (btnOpenReport) btnOpenReport.addEventListener('click', () => openReportModal());
+const btnCloseDemo = document.getElementById('btn-close-demo');
+if (btnCloseDemo) btnCloseDemo.addEventListener('click', () => closeReportModal());
 document.querySelectorAll('#reportModal .modal-close').forEach(el => el.addEventListener('click', () => closeReportModal()));
 
 let roiRafId = null;
