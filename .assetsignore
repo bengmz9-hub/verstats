@@ -21,3 +21,5 @@ vercel.json
 .gitignore
 wrangler.jsonc
 wrangler.toml
+asistente-whatsapp.html
+bot-explicacion.html

@@ -2,7 +2,7 @@
   "name": "verstats",
   "version": "1.0.0",
   "description": "Verstats — Presencia digital para el comercio de barrio de L'Hospitalet",
-  "author": "Verstats Team <bengmz9@gmail.com>",
+  "author": "Verstats <info@verstats.es>",
   "license": "UNLICENSED",
   "scripts": {
     "build": "node build.js",

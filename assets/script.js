@@ -565,19 +565,24 @@
   let currentLang = 'es';
   let activeNiche = 'peluqueria';
 
-  // Sanitizador mínimo sin dependencias: whitelist de tags, elimina on* y javascript:
+  // Sanitizador defensivo sin dependencias: whitelist de tags de texto y atributos seguros
   function sanitizeHTML(s) {
-    const ALLOWED = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B', 'I', 'SVG', 'PATH', 'POLYGON', 'CIRCLE', 'G'];
+    if (typeof s !== 'string') return '';
+    const ALLOWED_TAGS = ['EM', 'STRONG', 'BR', 'SMALL', 'SPAN', 'MARK', 'B', 'I'];
+    const ALLOWED_ATTRS = ['class', 'lang', 'dir'];
     const tmpl = document.createElement('template');
     tmpl.innerHTML = s;
     tmpl.content.querySelectorAll('*').forEach(n => {
+      if (!ALLOWED_TAGS.includes(n.tagName.toUpperCase())) {
+        n.replaceWith(...n.childNodes);
+        return;
+      }
       [...n.attributes].forEach(a => {
-        const name = a.name.toLowerCase();
-        if (name.startsWith('on') || (name === 'href' && a.value.toLowerCase().startsWith('javascript:'))) {
+        const attrName = a.name.toLowerCase();
+        if (!ALLOWED_ATTRS.includes(attrName)) {
           n.removeAttribute(a.name);
         }
       });
-      if (!ALLOWED.includes(n.tagName.toUpperCase())) n.replaceWith(...n.childNodes);
     });
     return tmpl.innerHTML;
   }
