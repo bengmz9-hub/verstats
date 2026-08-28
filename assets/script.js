@@ -604,7 +604,12 @@
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (t && t[key] !== undefined) {
-        el.innerHTML = sanitizeHTML(t[key]);
+        const val = t[key];
+        if (typeof val === 'string' && val.includes('<')) {
+          el.innerHTML = sanitizeHTML(val);
+        } else {
+          el.textContent = val;
+        }
       }
     });
 
@@ -669,6 +674,15 @@
     if (gmTag) gmTag.innerHTML = sanitizeHTML(data.tag);
   }
 
+  const moneyFormatters = {
+    es: new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }),
+    ca: new Intl.NumberFormat('ca-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })
+  };
+  const pluralFormatters = {
+    es: new Intl.PluralRules('es'),
+    ca: new Intl.PluralRules('ca')
+  };
+
   function calcRoi() {
     const clientsInput = document.getElementById('roi-clients');
     const ticketInput = document.getElementById('roi-ticket');
@@ -681,13 +695,10 @@
     const profitEl = document.getElementById('roi-profit');
     const noteEl = document.getElementById('roi-note-text');
 
-    const formatMoney = (val) => new Intl.NumberFormat(currentLang === 'ca' ? 'ca-ES' : 'es-ES', {
-      style: 'currency',
-      currency: 'EUR',
-      maximumFractionDigits: 0
-    }).format(val);
+    const fmt = moneyFormatters[currentLang] || moneyFormatters.es;
+    const pr = pluralFormatters[currentLang] || pluralFormatters.es;
+    const formatMoney = (val) => fmt.format(val);
 
-    const pr = new Intl.PluralRules(currentLang === 'ca' ? 'ca' : 'es');
     const clientSuffix = currentLang === 'ca'
       ? (pr.select(clients) === 'one' ? 'client' : 'clients')
       : (pr.select(clients) === 'one' ? 'cliente' : 'clientes');
