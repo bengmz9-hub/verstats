@@ -892,6 +892,11 @@
   });
 
   // Initialize
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang')?.toLowerCase();
+  if (langParam === 'ca' || langParam === 'es') {
+    setLang(langParam);
+  }
   calcRoi();
   applyNeighborhoodPreset();
   updateWhatsAppLinks();
