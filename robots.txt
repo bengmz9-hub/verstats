@@ -59,9 +59,4 @@ Disallow: /
 
 # END Cloudflare Managed Content
 
-# Bloqueo temporal de indexación durante desarrollo (sin dominio)
-# TODO (LANZAMIENTO CON DOMINIO): Permitir rastreo 'Allow: /' y enlazar sitemap oficial
-User-agent: *
-Allow: /
-
 Sitemap: https://verstats.es/sitemap.xml

@@ -24,3 +24,5 @@ backups/
 .vercel
 .wrangler
 .claude
+.agents/
+.nojekyll

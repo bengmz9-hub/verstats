@@ -1,7 +1,10 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "verstats",
   "assets": {
-    "directory": "./"
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
   },
   "compatibility_date": "2026-08-28"
 }
