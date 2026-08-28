@@ -305,10 +305,9 @@
   /* ===== PRECIOS ===== */
   .preus { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: stretch; }
   .paquet { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: flex; flex-direction: column; }
-  .paquet .tag { font-size: .74rem; letter-spacing: .1em; font-weight: 700; color: var(--muted); font-family: var(--font-display); margin-bottom: 10px; }
-  .paquet .preu { font-family: var(--font-display); font-weight: 800; font-size: 2.1rem; letter-spacing: -0.02em; margin: 14px 0 10px; display: flex; flex-direction: column; line-height: 1.15; }
-  .paquet .preu small { font-size: .86rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 5px; }
-  .paquet .preu-note { font-size: .88rem; color: var(--muted); margin-top: 6px; margin-bottom: 20px; }
+  .paquet .preu { font-family: var(--font-display); font-weight: 800; font-size: 2.1rem; letter-spacing: -0.02em; margin: 14px 0 14px; display: flex; flex-direction: column; line-height: 1.15; }
+  .paquet .preu small { font-size: .85rem; font-style: italic; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 6px; }
+  .paquet .preu-note { font-size: .88rem; color: var(--muted); margin-top: 10px; margin-bottom: 22px; }
   .paquet ul { list-style: none; margin: 0 0 26px; flex: 1; }
   .paquet li { padding: 8px 0 8px 26px; position: relative; font-size: .98rem; line-height: 1.45; }
   .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
