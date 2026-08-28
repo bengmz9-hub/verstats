@@ -989,6 +989,8 @@ const btnCloseBotBottom = document.getElementById('btn-close-bot-bottom');
 
 function openBotModal() {
   if (botModal && typeof botModal.showModal === 'function') {
+    const firstTab = document.querySelector('.bot-modal-tab-btn[data-tab="m1"]');
+    if (firstTab) activateBotModalTab(firstTab);
     botModal.showModal();
     document.body.style.overflow = 'hidden';
   }
