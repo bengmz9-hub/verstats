@@ -496,7 +496,6 @@
       "paquet-bot-badge": "⭐ EXTRA ESTRELLA",
       "paquet-bot-tag": "Assistent 24/7",
       "paquet-bot-h3": "WhatsApp & Telegram Bot",
-      "price-mo": "+ 50 €/mes",
       "paquet-bot-note": "Atenció automàtica a WhatsApp i Telegram amb reserva a Google Calendar.",
       "paquet-bot-li1": "Respostes immediates 24/7 sense tocar el mòbil",
       "paquet-bot-li2": "Reserva directa sincronitzada a Google Calendar",
