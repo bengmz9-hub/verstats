@@ -331,25 +331,28 @@
   .roi-note-banner { margin-top: 16px; font-size: .88rem; color: var(--ink); background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.2); padding: 10px 14px; border-radius: 10px; display: flex; align-items: center; gap: 8px; }
 
   /* ===== PRECIOS ===== */
-  .preus { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: stretch; }
-  .paquet { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: flex; flex-direction: column; }
-  .paquet .preu { font-family: var(--font-display); font-weight: 800; font-size: 2.1rem; letter-spacing: -0.02em; margin: 14px 0 14px; display: flex; flex-direction: column; line-height: 1.15; }
-  .paquet .preu small { font-size: .85rem; font-style: italic; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 6px; }
-  .paquet .preu-note { font-size: .88rem; color: var(--muted); margin-top: 10px; margin-bottom: 22px; }
-  .paquet ul { list-style: none; margin: 0 0 26px; flex: 1; }
-  .paquet li { padding: 8px 0 8px 26px; position: relative; font-size: .98rem; line-height: 1.45; }
-  .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
-  .paquet .btn { width: 100%; }
-  .paquet-subnote { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.35; }
-  .preus-guarantee { margin-top: 28px; text-align: center; font-size: 0.92rem; color: var(--muted); display: flex; justify-content: center; align-items: center; gap: 8px; }
-  .preus-guarantee svg { color: var(--green); flex-shrink: 0; }
+  .preus { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: stretch; max-width: 1080px; margin: 0 auto; }
+  .paquet { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; }
+  .paquet .tag { font-size: .78rem; margin-bottom: 2px; }
+  .paquet h3 { font-size: 1.15rem; margin-bottom: 2px; }
+  .paquet .preu { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; letter-spacing: -0.02em; margin: 8px 0 8px; display: flex; flex-direction: column; line-height: 1.15; }
+  .paquet .preu small { font-size: .78rem; font-style: italic; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 4px; }
+  .paquet .preu-note { font-size: .82rem; color: var(--muted); margin-top: 4px; margin-bottom: 14px; line-height: 1.35; }
+  .paquet ul { list-style: none; margin: 0 0 16px; flex: 1; }
+  .paquet li { padding: 5px 0 5px 22px; position: relative; font-size: .88rem; line-height: 1.35; }
+  .paquet li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; font-size: .85rem; }
+  .paquet .inc-btn-cta { padding: 6px 10px; font-size: .82rem; margin-bottom: 6px; }
+  .paquet .btn { width: 100%; padding: 8px 14px; font-size: .9rem; min-height: 38px; }
+  .paquet-subnote { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 8px; line-height: 1.3; }
+  .preus-guarantee { margin-top: 20px; text-align: center; font-size: 0.86rem; color: var(--muted); display: flex; justify-content: center; align-items: center; gap: 8px; }
+  .preus-guarantee svg { color: var(--green); flex-shrink: 0; width: 18px; height: 18px; }
   .paquet.recomanat {
     border: 2px solid var(--accent);
     position: relative;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
   .paquet.recomanat .tag { color: var(--accent); }
-  .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--dark); font-family: var(--font-display); font-size: .75rem; font-weight: 800; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--dark); font-family: var(--font-display); font-size: .7rem; font-weight: 800; letter-spacing: .04em; padding: 4px 12px; border-radius: 999px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
 
   /* Modal de Informe Semanal (Craft) */
   .inc-demo-btn {
