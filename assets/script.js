@@ -264,6 +264,7 @@
       "modal-btn-close": "Cerrar demostración",
       "mobile-bar-desc": "Presencia digital de barrio",
       "mobile-bar-cta": "WhatsApp",
+      "popup-nav-title": "Navegar a sección",
       "footer-p1": "Verstats — presencia digital para el comercio de barrio de L'Hospitalet de Llobregat.",
       "footer-p2": "Pubilla Cases · Can Serra · expansión a otros barrios de la ciudad.",
       "footer-email-label": "Correo:",
@@ -543,6 +544,7 @@
       "modal-btn-close": "Tancar demostració",
       "mobile-bar-desc": "Presència digital de barri",
       "mobile-bar-cta": "WhatsApp",
+      "popup-nav-title": "Navegar a secció",
       "footer-p1": "Verstats — presència digital per al comerç de barri de L'Hospitalet de Llobregat.",
       "footer-p2": "Pubilla Cases · Can Serra · expansió a altres barris de la ciutat.",
       "footer-email-label": "Correu:",
@@ -853,10 +855,54 @@
   applyNeighborhoodPreset();
   updateWhatsAppLinks();
 
-  // Scroll listener inteligente para la barra flotante (Hide on scroll down / Show on scroll up)
+  // Scroll listener inteligente para la barra flotante y botón Scroll to Top
   let scrollRaf = false;
   let lastScrollY = window.scrollY;
   let scrollThreshold = 10;
+
+  const btnScrollTop = document.getElementById('btnScrollTop');
+  const sectionsPopup = document.getElementById('mobileSectionsPopup');
+  const btnToggleSections = document.getElementById('btnToggleSectionsPopup');
+  const btnCloseSections = document.getElementById('btnCloseSectionsPopup');
+
+  if (btnScrollTop) {
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  function toggleSectionsPopup(open) {
+    if (!sectionsPopup) return;
+    const shouldOpen = open !== undefined ? open : !sectionsPopup.classList.contains('active');
+    sectionsPopup.classList.toggle('active', shouldOpen);
+    sectionsPopup.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+    if (btnToggleSections) {
+      btnToggleSections.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+    }
+  }
+
+  if (btnToggleSections) {
+    btnToggleSections.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleSectionsPopup();
+    });
+  }
+
+  if (btnCloseSections) {
+    btnCloseSections.addEventListener('click', () => toggleSectionsPopup(false));
+  }
+
+  // Cerrar popup al hacer click en un enlace de sección
+  document.querySelectorAll('.mobile-sections-popup .popup-item').forEach(link => {
+    link.addEventListener('click', () => toggleSectionsPopup(false));
+  });
+
+  // Cerrar popup al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (sectionsPopup && sectionsPopup.classList.contains('active') && !e.target.closest('#mobileSectionsPopup') && !e.target.closest('#btnToggleSectionsPopup')) {
+      toggleSectionsPopup(false);
+    }
+  });
 
   window.addEventListener('scroll', () => {
     if (!scrollRaf) {
@@ -864,21 +910,33 @@
         const bar = document.getElementById('mobileStickyBar');
         const currentScrollY = window.scrollY;
 
+        // Botón Scroll to Top visible tras superar 400px de scroll
+        if (btnScrollTop) {
+          if (currentScrollY > 400) {
+            btnScrollTop.classList.add('visible');
+          } else {
+            btnScrollTop.classList.remove('visible');
+          }
+        }
+
         if (bar) {
           if (currentScrollY > 380) {
             bar.classList.add('visible');
 
-            // Si baja más de 10px, ocultar para dar espacio de lectura
+            // Si baja más de 10px, ocultar barra para dar espacio de lectura
             if (currentScrollY - lastScrollY > scrollThreshold && currentScrollY > 500) {
               bar.classList.add('hidden-by-scroll');
+              if (btnScrollTop) btnScrollTop.style.bottom = '16px';
             }
-            // Si sube o frena, mostrar inmediatamente
+            // Si sube o frena, mostrar barra inmediatamente
             else if (lastScrollY - currentScrollY > scrollThreshold) {
               bar.classList.remove('hidden-by-scroll');
+              if (btnScrollTop) btnScrollTop.style.bottom = '74px';
             }
           } else {
             bar.classList.remove('visible');
             bar.classList.remove('hidden-by-scroll');
+            if (btnScrollTop) btnScrollTop.style.bottom = '74px';
           }
         }
 

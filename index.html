@@ -1610,16 +1610,42 @@
 
 </main>
 
+<!-- Botón flotante Scroll to Top (flecha hacia arriba con desenfoque) -->
+<button class="btn-scroll-top" id="btnScrollTop" aria-label="Volver arriba" title="Volver arriba">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Menú popup de navegación de secciones móvil -->
+<div class="mobile-sections-popup" id="mobileSectionsPopup" role="dialog" aria-label="Secciones de la página" aria-hidden="true">
+  <div class="popup-head">
+    <span data-i18n="popup-nav-title">Navegar a sección</span>
+    <button class="popup-close" id="btnCloseSectionsPopup" aria-label="Cerrar menú">✕</button>
+  </div>
+  <div class="popup-links">
+    <a href="#que-compras" class="popup-item" data-i18n="nav-que-compras">Ver lo que compras <span>→</span></a>
+    <a href="#que-incluye" class="popup-item" data-i18n="nav-que-incluye">Qué incluye <span>→</span></a>
+    <a href="#whatsapp-asistente" class="popup-item popup-item--highlight">⭐ WhatsApp 24/7 (Bot) <span>→</span></a>
+    <a href="#como-funciona" class="popup-item" data-i18n="nav-como-funciona">Cómo funciona <span>→</span></a>
+    <a href="#precios" class="popup-item" data-i18n="nav-precios">Precios <span>→</span></a>
+    <a href="#faq" class="popup-item" data-i18n="nav-faq">Preguntas <span>→</span></a>
+  </div>
+</div>
+
 <!-- Mobile Sticky Bottom Bar -->
 <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacto rápido">
   <div class="mobile-bar-info">
     <b>Verstats</b>
     <span id="mobileBarDesc" data-i18n="mobile-bar-desc">Presencia digital de barrio</span>
   </div>
-  <a class="mobile-bar-btn wa-link" data-wa-context="mobile-sticky" href="#" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-    <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
-  </a>
+  <div class="mobile-bar-actions">
+    <button class="mobile-bar-menu-btn" id="btnToggleSectionsPopup" aria-label="Abrir secciones" title="Secciones">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a class="mobile-bar-btn wa-link" data-wa-context="mobile-sticky" href="#" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
+    </a>
+  </div>
 </div>
 
 <footer>
