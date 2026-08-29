@@ -1199,33 +1199,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('mobile-menu-overlay');
   const links = document.querySelectorAll('.mobile-menu-link');
 
-  if (!toggle || !menu) return;
-
-  function closeMobileMenu() {
-    toggle.classList.remove('active');
-    menu.classList.remove('active');
-    if (overlay) overlay.classList.remove('active');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-
-  // Toggle menu desde navbar
-  toggle.addEventListener('click', () => {
+  function toggleMobileMenu(e) {
+    if (e) e.stopPropagation();
     const isOpen = menu.classList.toggle('active');
     toggle.classList.toggle('active', isOpen);
     if (overlay) overlay.classList.toggle('active', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+  }
+
+  // Toggle menu desde navbar
+  toggle.addEventListener('click', toggleMobileMenu);
 
   // Toggle menu desde barra móvil inferior
   const bottomMenuBtn = document.getElementById('btnToggleSectionsPopup');
   if (bottomMenuBtn) {
-    bottomMenuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = menu.classList.toggle('active');
-      toggle.classList.toggle('active', isOpen);
-      if (overlay) overlay.classList.toggle('active', isOpen);
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
+    bottomMenuBtn.addEventListener('click', toggleMobileMenu);
   }
 
   // Close menu on overlay click
@@ -1245,9 +1233,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close menu when clicking outside
+  // Close menu when clicking outside (salvo clics en los botones toggle)
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('header') && menu.classList.contains('active')) {
+    if (!e.target.closest('#mobile-menu') &&
+        !e.target.closest('#mobile-menu-toggle') &&
+        !e.target.closest('#btnToggleSectionsPopup') &&
+        menu.classList.contains('active')) {
       closeMobileMenu();
     }
   });
