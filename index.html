@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
 <title>Verstats — Google Maps y WhatsApp en L'Hospitalet</title>
 <meta name="description" content="Optimización de ficha de Google Maps, gestión de reseñas y Asistente WhatsApp 24/7 con citas automáticas para comercios de L'Hospitalet de Llobregat.">
 <meta name="keywords" content="presencia digital, google maps hospitalet, asistente whatsapp citas, reservas google calendar, reseñas google negocio, pubilla cases, can serra, hospitalet de llobregat">
@@ -929,10 +928,10 @@
             </div>
           </div>
           <!-- Dots Indicadores de Instagram (Solo Mobile) -->
-          <div class="posts-dots" role="tablist" aria-label="Navegación de publicaciones de muestra">
-            <button class="posts-dot active" role="tab" aria-selected="true" aria-label="Ver post 1 de 3"></button>
-            <button class="posts-dot" role="tab" aria-selected="false" aria-label="Ver post 2 de 3"></button>
-            <button class="posts-dot" role="tab" aria-selected="false" aria-label="Ver post 3 de 3"></button>
+          <div class="posts-dots" aria-label="Navegación de publicaciones de muestra">
+            <button class="posts-dot active" aria-label="Ver post 1 de 3"></button>
+            <button class="posts-dot" aria-label="Ver post 2 de 3"></button>
+            <button class="posts-dot" aria-label="Ver post 3 de 3"></button>
           </div>
         </div>
       </div>
@@ -1340,7 +1339,7 @@
     </div>
 
     <!-- CALCULADORA DE RETORNO (ROI) -->
-    <div class="roi-box" aria-labelledby="roiCalcTitle">
+    <div class="roi-box" role="region" aria-labelledby="roiCalcTitle">
       <div class="roi-box-head">
         <span class="roi-tag">Simulador de rentabilidad</span>
         <h3 id="roiCalcTitle" data-i18n="roi-title">Calcula el impacto estimado en tu negocio</h3>
@@ -1352,14 +1351,14 @@
             <span data-i18n="roi-lbl-clients">Clientes nuevos que te encuentran al mes:</span>
             <b class="roi-field-val" id="roi-clients-val">3 clientes</b>
           </label>
-          <input type="range" id="roi-clients" min="1" max="15" value="3" step="1" class="roi-range" aria-valuemin="1" aria-valuemax="15" aria-valuenow="3" aria-valuetext="3 clientes">
+          <input type="range" id="roi-clients" min="1" max="15" value="3" step="1" class="roi-range">
         </div>
         <div class="roi-field">
           <label class="roi-field-label" for="roi-ticket">
             <span data-i18n="roi-lbl-ticket">Gasto medio por cliente / compra:</span>
             <b class="roi-field-val" id="roi-ticket-val">35 €</b>
           </label>
-          <input type="range" id="roi-ticket" min="10" max="150" value="35" step="5" class="roi-range" aria-valuemin="10" aria-valuemax="150" aria-valuenow="35" aria-valuetext="35 €">
+          <input type="range" id="roi-ticket" min="10" max="150" value="35" step="5" class="roi-range">
         </div>
       </div>
       <div class="roi-results-row">
@@ -1454,27 +1453,27 @@
       </div>
       <div class="faq-list">
         <details>
-          <summary aria-expanded="false" data-i18n="faq-q1">¿Cuánto tarda en estar todo funcionando?</summary>
+          <summary data-i18n="faq-q1">¿Cuánto tarda en estar todo funcionando?</summary>
           <p data-i18n="faq-a1">Entre una y dos semanas desde que confirmamos. Antes de pagar nada te enseñamos tu ficha de Google y tu primer post montados con tus fotos reales: lo ves funcionando y luego decides.</p>
         </details>
         <details>
-          <summary aria-expanded="false" data-i18n="faq-q2">¿Necesito saber de tecnología o hacer algo?</summary>
+          <summary data-i18n="faq-q2">¿Necesito saber de tecnología o hacer algo?</summary>
           <p data-i18n="faq-a2">No. Todo se entrega hecho: montamos, gestionamos y te avisamos por WhatsApp. Tu única tarea es seguir con tu negocio; si quieres, apruebas el contenido antes de publicarlo.</p>
         </details>
         <details>
-          <summary aria-expanded="false" data-i18n="faq-q3">¿Y si no me gusta o no me convence?</summary>
+          <summary data-i18n="faq-q3">¿Y si no me gusta o no me convence?</summary>
           <p data-i18n="faq-a3">Sin permanencia: el contrato es mes a mes y te das de baja cuando quieras. La instalación se paga una vez; el mantenimiento se mantiene solo mientras te esté funcionando.</p>
         </details>
         <details>
-          <summary aria-expanded="false" data-i18n="faq-q4">¿Tenéis que entrar en mi cuenta de Google?</summary>
+          <summary data-i18n="faq-q4">¿Tenéis que entrar en mi cuenta de Google?</summary>
           <p data-i18n="faq-a4">No. Te enviamos una invitación con permisos desde tu propia ficha: tú mantienes el control y puedes quitar el acceso cuando quieras. Tu contraseña no se toca.</p>
         </details>
         <details>
-          <summary aria-expanded="false" data-i18n="faq-q5">¿Qué incluye exactamente el mantenimiento de 50 €/mes?</summary>
+          <summary data-i18n="faq-q5">¿Qué incluye exactamente el mantenimiento de 50 €/mes?</summary>
           <p data-i18n="faq-a5">Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el informe semanal de tu barrio (qué hacen tus competidores).</p>
         </details>
         <details>
-          <summary aria-expanded="false" data-i18n="faq-q6">Ya me llevan las redes. ¿Me sirve esto?</summary>
+          <summary data-i18n="faq-q6">Ya me llevan las redes. ¿Me sirve esto?</summary>
           <p data-i18n="faq-a6">Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el informe semanal. Se paga por lo que se usa.</p>
         </details>
       </div>
@@ -1538,13 +1537,13 @@
         <!-- Navegación Apple con flechas condicionales y puntos elásticos -->
         <div class="infographic-nav-wrapper">
           <button class="infographic-arrow prev" id="infoBtnPrev" aria-label="Infografía anterior" style="visibility: hidden; opacity: 0;">‹</button>
-          <div class="infographic-dots" role="tablist" aria-label="Navegación de infografías">
-            <button class="infographic-dot active" role="tab" aria-selected="true" aria-label="Ver infografía 1"></button>
-            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 2"></button>
-            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 3"></button>
-            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 4"></button>
-            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 5"></button>
-            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 6"></button>
+          <div class="infographic-dots" aria-label="Navegación de infografías">
+            <button class="infographic-dot active" aria-label="Ver infografía 1"></button>
+            <button class="infographic-dot" aria-label="Ver infografía 2"></button>
+            <button class="infographic-dot" aria-label="Ver infografía 3"></button>
+            <button class="infographic-dot" aria-label="Ver infografía 4"></button>
+            <button class="infographic-dot" aria-label="Ver infografía 5"></button>
+            <button class="infographic-dot" aria-label="Ver infografía 6"></button>
           </div>
           <button class="infographic-arrow next" id="infoBtnNext" aria-label="Infografía siguiente">›</button>
         </div>
@@ -1626,7 +1625,7 @@
 </button>
 
 <!-- Mobile Sticky Bottom Bar -->
-<div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacto rápido">
+<aside class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Contacto rápido">
   <div class="mobile-bar-info">
     <b>Verstats</b>
     <span id="mobileBarDesc" data-i18n="mobile-bar-desc">Presencia digital de barrio</span>
@@ -1640,7 +1639,7 @@
       <span id="mobileBarCta" data-i18n="mobile-bar-cta">WhatsApp</span>
     </a>
   </div>
-</div>
+</aside>
 
 <footer>
   <div class="wrap">
