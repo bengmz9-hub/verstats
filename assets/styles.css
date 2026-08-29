@@ -12,7 +12,7 @@
     --paper: #0e1f2a;
     --card: #17303d;
     --ink: #e6eef2;
-    --muted: #93a7b2;
+    --muted: #a8bac4;
     --line: #28424f;
     --accent: #e8a33d;      /* ámbar petróleo */
     --accent-deep: #c98a2a;
@@ -213,6 +213,22 @@
   }
   .btn:active, .nav-cta:active, .mobile-bar-btn:active, .lang-btn:active {
     transform: scale(0.95) !important;
+  }
+
+  /* Touch Targets Accesibles (WCAG 2.2 / Lighthouse Target Size) */
+  .posts-dot, .wa-dot, .infographic-dot {
+    position: relative;
+  }
+  .posts-dot::before, .wa-dot::before, .infographic-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 44px;
+    min-height: 44px;
+    width: 100%;
+    height: 100%;
   }
 
   .demo-badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-display); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
