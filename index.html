@@ -192,7 +192,510 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=2.1">
+<style>
+@media (max-width: 900px) {
+  .hero .lead {
+    margin-bottom: 24px !important;
+    line-height: 1.55 !important;
+  }
+  .hero-ctas {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 0 20px !important;
+  }
+  .hero-ctas .btn {
+    width: 100% !important;
+    padding: 11px 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+    letter-spacing: -0.01em !important;
+    min-height: 44px !important;
+  }
+  .hero-microcopy {
+    margin-top: 0 !important;
+    margin-bottom: 28px !important;
+    line-height: 1.45 !important;
+  }
+  .compra-flat {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .compra-flat > div {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .compra-copy { width: 100% !important; min-width: 0 !important; }
+  .compra-copy h3 { font-size: 1.15rem !important; line-height: 1.25 !important; width: 100% !important; word-wrap: break-word !important; }
+  .posts { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important;
+    overflow-x: scroll !important; 
+    -webkit-overflow-scrolling: touch !important; 
+    gap: 14px !important; 
+    padding: 6px 4px 18px !important; 
+    width: 100% !important; 
+    box-sizing: border-box !important;
+  }
+  .post { 
+    flex: 0 0 280px !important; 
+    width: 280px !important; 
+    min-width: 280px !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important; 
+  }
+  .post .foto {
+    width: 100% !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .post .caption {
+    padding: 8px 10px 10px !important;
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+  }
+  .posts-dots {
+    display: none;
+  }
+  /* Barra de Confianza (Trust Bar) estilizada con esquinas redondeadas y tamaño compacto */
+  .trust {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 10px 0 24px !important;
+    width: 100% !important;
+  }
+  .trust-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  @media (min-width: 640px) {
+    .trust-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      align-items: stretch !important;
+    }
+  }
+  .trust-item {
+    background: var(--card) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 12px !important;
+    padding: 9px 14px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 310px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+    border-left: 1px solid var(--line) !important;
+    border-top: 1px solid var(--line) !important;
+  }
+  .trust-item .tick {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50% !important;
+    background: rgba(37, 211, 102, 0.12) !important;
+    color: var(--wa) !important;
+    display: grid !important;
+    place-items: center !important;
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    flex-shrink: 0 !important;
+  }
+  .trust-item b {
+    font-size: 0.86rem !important;
+    line-height: 1.2 !important;
+  }
+  .trust-item span {
+    font-size: 0.76rem !important;
+    color: var(--muted) !important;
+    line-height: 1.25 !important;
+  }
+}
+@media (max-width: 900px) {
+  .posts-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  .posts-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .posts-dot.active {
+    width: 24px;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 179, 0, 0.4);
+  }
+  .niche-selector {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    margin: 20px 0 44px !important;
+    padding: 4px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+  .niche-btn {
+    width: 100% !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    padding: 6px 2px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    border-radius: 9px !important;
+    min-height: 36px !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  /* Separación y respiración visual universal en todas las secciones móviles */
+  section {
+    padding: 56px 0 !important;
+  }
+  .sec-head {
+    margin-bottom: 32px !important;
+  }
+  .sec-head h2 {
+    margin-bottom: 12px !important;
+    line-height: 1.22 !important;
+  }
+  .sec-head p {
+    line-height: 1.55 !important;
+    margin-bottom: 0 !important;
+  }
+  .compras {
+    gap: 48px !important;
+  }
+  .compra-num {
+    margin-bottom: 8px !important;
+  }
+  .compra-copy h3 {
+    margin-bottom: 12px !important;
+  }
+  .compra-copy p {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    line-height: 1.55 !important;
+  }
+  .compra-note {
+    margin-top: 14px !important;
+    padding-top: 12px !important;
+  }
+  .faq-list {
+    gap: 14px !important;
+  }
+  details p {
+    padding-top: 6px !important;
+    padding-bottom: 18px !important;
+    line-height: 1.6 !important;
+  }
+  .roi-box {
+    margin-top: 24px !important;
+  }
+  .roi-results-row {
+    margin-top: 18px !important;
+  }
+  .paquet {
+    padding: 24px 18px !important;
+  }
+  /* Demostraciones (Google Maps, Reseñas, WhatsApp y Calendario) centradas y compactas (mismo ancho exacto 330px) */
+  .reviews, .gm, .bot-grid, .bot-chat, .bot-cal {
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  .bot-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .bot-chat {
+    border-radius: 14px !important;
+    border: 1px solid var(--line) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+    padding: 14px 12px !important;
+  }
+  .bot-cal {
+    border-radius: 14px !important;
+    background: #eef1f4 !important;
+    border: 1px solid #d0d7de !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+  }
+  .cal-head {
+    background: #dfe5ea !important;
+    color: #0f1d26 !important;
+    border-bottom: 1px solid #c8d3dc !important;
+    font-size: 0.88rem !important;
+    padding: 9px !important;
+  }
+  .cal-grid .dow {
+    color: #576874 !important;
+    font-size: 0.72rem !important;
+  }
+  .cal-grid .day {
+    color: #243b48 !important;
+    font-size: 0.78rem !important;
+  }
+  .cal-grid .day.muted {
+    color: #a0aec0 !important;
+  }
+  .cal-grid .day.hit {
+    background: var(--accent) !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+  }
+  .cal-note {
+    border-top: 1px dashed #c8d3dc !important;
+    color: #576874 !important;
+    font-size: 0.78rem !important;
+    padding: 9px 12px !important;
+  }
+  .cal-note b {
+    color: #0f1d26 !important;
+  }
+  .rev {
+    background: #eef1f4 !important;
+    border: 1px solid #d0d7de !important;
+    padding: 12px 14px !important;
+    border-radius: 12px !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  .rev-head {
+    margin-bottom: 6px !important;
+    gap: 8px !important;
+  }
+  .rev-head .avatar, .rev-ava {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.8rem !important;
+    background: #dfe5ea !important;
+    color: #1e3a47 !important;
+    border-radius: 50% !important;
+    display: grid !important;
+    place-items: center !important;
+    font-weight: 700 !important;
+  }
+  .rev-head .who b {
+    font-size: 0.84rem !important;
+    color: #0f1d26 !important;
+    font-weight: 700 !important;
+  }
+  .rev-head .who span {
+    font-size: 0.72rem !important;
+    color: #576874 !important;
+  }
+  .rev-stars {
+    font-size: 0.82rem !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 4px !important;
+    color: #d97706 !important;
+  }
+  .rev-text {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    color: #243b48 !important;
+  }
+  .rev-resp {
+    margin-top: 8px !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+    background: #dfe5ea !important;
+    border: 1px solid #c8d3dc !important;
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+    color: #182e3a !important;
+  }
+  .rev-resp .tag {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    color: #b45309 !important;
+    margin-bottom: 2px !important;
+    display: block !important;
+  }
+  /* Modal Suite 6 Infografías móvil */
+  /* Modal Suite 6 Infografías móvil */
+  @media (max-width: 600px) {
+    dialog#botModal.suite-modal {
+      width: calc(100vw - 12px) !important;
+      max-width: 410px !important;
+      height: 96vh !important;
+      height: 96dvh !important;
+      max-height: 96vh !important;
+      max-height: 96dvh !important;
+      border-radius: 20px !important;
+      background: #060e14 !important;
+      padding: 0 !important;
+      margin: auto !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85) !important;
+      overflow: hidden !important;
+    }
+    dialog#botModal .modal-card {
+      background: #060e14 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      padding: 8px 6px 36px !important;
+      position: relative !important;
+      border: none !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+      overflow: hidden !important;
+    }
+    dialog#botModal .modal-head {
+      margin-bottom: 0 !important;
+      padding: 0 4px !important;
+      flex-shrink: 0 !important;
+    }
+    dialog#botModal .modal-head h3 {
+      font-size: 0.95rem !important;
+    }
+    dialog#botModal .infographic-nav-wrapper {
+      margin-bottom: 2px !important;
+      flex-shrink: 0 !important;
+    }
+    dialog#botModal .modal-body {
+      flex: 1 1 auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+    dialog#botModal .infographic-carousel {
+      flex: 1 1 auto !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      display: flex !important;
+    }
+    dialog#botModal .infographic-slide {
+      height: 100% !important;
+      display: flex !important;
+      align-items: stretch !important;
+      justify-content: center !important;
+    }
+    dialog#botModal .infographic-wrapper {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: stretch !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+    }
+    dialog#botModal picture {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: stretch !important;
+      justify-content: center !important;
+    }
+    dialog#botModal .infographic-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      object-fit: fill !important;
+      border-radius: 16px !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      display: block !important;
+    }
+    dialog#botModal .modal-foot {
+      position: absolute !important;
+      bottom: 8px !important;
+      left: 0 !important;
+      right: 0 !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      z-index: 99 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    dialog#botModal #btn-close-bot-bottom {
+      width: 115px !important;
+      min-width: 100px !important;
+      max-width: 130px !important;
+      height: 22px !important;
+      min-height: 22px !important;
+      max-height: 22px !important;
+      line-height: 22px !important;
+      padding: 0 !important;
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+      border-radius: 6px !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      background: rgba(10, 20, 28, 0.92) !important;
+      backdrop-filter: blur(8px) !important;
+      color: #cbd5e1 !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+      cursor: pointer !important;
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  }
+  .wa-typing {
+    display: none;
+    align-self: flex-end;
+    background: var(--wa-out);
+    padding: 8px 14px;
+    border-radius: 12px;
+    border-bottom-right-radius: 3px;
+    width: fit-content;
+    gap: 4px;
+    align-items: center;
+  }
+  .wa-typing span {
+    width: 6px;
+    height: 6px;
+    background: #06402d;
+    border-radius: 50%;
+    animation: typingBlink 1.2s infinite ease-in-out both;
+  }
+  .wa-typing span:nth-child(1) { animation-delay: 0s; }
+  .wa-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .wa-typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typingBlink {
+    0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1.1); }
+  }
+}
+</style>
 
 <!-- TODO (ANALYTICS): Descomenta cuando tengas Google Analytics ID
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
@@ -240,6 +743,7 @@
     <a href="#precios" data-i18n="nav-precios" class="mobile-menu-link">Precios</a>
     <a href="#faq" data-i18n="nav-faq" class="mobile-menu-link">Preguntas</a>
   </div>
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
 </header>
 
 <div id="a11y-status" role="status" aria-live="polite" class="sr-only"></div>
@@ -251,12 +755,12 @@
     <div class="hero-grid">
       <div>
         <h1 data-i18n="hero-h1">Tu Google, tus reseñas y tus redes al día sin que toques un ordenador</h1>
-        <p class="lead" data-i18n="hero-lead">Nos mandas cuatro fotos por WhatsApp y te lo devolvemos montado: ficha de Google optimizada, reseñas respondidas con tu tono y 8-12 publicaciones al mes listas para publicar. 350 € de instalación y 50 €/mes sin permanencia.</p>
+        <p class="lead" data-i18n="hero-lead">Escríbenos por WhatsApp, cuéntanos cómo es tu negocio y te asesoramos paso a paso para conseguir el mejor resultado: ponemos al día tu Google Maps, atendemos a tus clientes y atraemos más vecinos a tu local sin complicaciones.</p>
         <div class="hero-ctas">
-          <a class="btn btn-wa wa-link" data-wa-context="hero" href="#" target="_blank" rel="noopener noreferrer" data-i18n="hero-btn-wa">Mandar mis fotos por WhatsApp</a>
-          <a class="btn btn-ghost" href="#como-funciona" data-i18n="hero-btn-ghost">Ver los 14 días paso a paso</a>
+          <a class="btn btn-wa wa-link" data-wa-context="hero" href="#" target="_blank" rel="noopener noreferrer" data-i18n="hero-btn-wa">Pedir Demo WhatsApp</a>
+          <a class="btn btn-ghost" href="#como-funciona" data-i18n="hero-btn-ghost">Ver cómo funciona</a>
         </div>
-        <p class="hero-microcopy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="hero-microcopy">Te respondemos por WhatsApp en <15 min. Sin formularios ni llamadas comerciales.</span></p>
+        <p class="hero-microcopy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="hero-microcopy">Te respondemos por WhatsApp lo antes posible. Sin formularios ni llamadas comerciales.</span></p>
       </div>
       <div>
         <div class="phone">
@@ -266,8 +770,9 @@
               <div class="ava">B</div>
               <div class="who"><b>Peluquería Bell Sal</b><span>en línea</span></div>
             </div>
-            <div class="phone-chat">
+            <div class="phone-chat" id="heroChatContainer">
               <div class="wa wa-in"><span data-i18n="hero-chat-msg1">Hola, ¿tenéis hueco para un corte el viernes por la tarde?</span><span class="hora">17:24</span></div>
+              <div class="wa-typing" id="heroTypingBubble" aria-hidden="true"><span></span><span></span><span></span></div>
               <div class="wa wa-out"><span data-i18n="hero-chat-msg2">¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?</span><span class="hora">17:24</span></div>
               <div class="wa wa-in"><span data-i18n="hero-chat-msg3">¡Perfecto, lo reservo!</span><span class="hora">17:25</span></div>
               <div class="wa-sys" data-i18n="hero-chat-sys">✅ Cita creada. Viernes 14 de agosto, 17:30 · Corte de pelo<br>Se ha apuntado sola en tu Google Calendar</div>
@@ -281,7 +786,7 @@
 
   <!-- ============ TRUST BAR ============ -->
   <div class="trust">
-    <div class="trust-grid wrap">
+    <div class="trust-grid">
       <div class="trust-item"><span class="tick" aria-hidden="true">✓</span><div><b data-i18n="trust-1-b">Sin permanencia</b><span data-i18n="trust-1-span">Si no te convence, lo dejamos.</span></div></div>
       <div class="trust-item"><span class="tick" aria-hidden="true">✓</span><div><b data-i18n="trust-2-b">Alta en 1-2 semanas</b><span data-i18n="trust-2-span">Nada de proyectos eternos.</span></div></div>
       <div class="trust-item"><span class="tick" aria-hidden="true">✓</span><div><b data-i18n="trust-3-b">Datos reales</b><span data-i18n="trust-3-span">Tus fotos, tu horario, tu estilo.</span></div></div>
@@ -412,6 +917,12 @@
               <div class="likes" data-i18n="post3-likes">Le gusta a 52 personas</div>
               <div class="caption"><b>peluquerias.bellsal</b> <span data-i18n="post3-caption-txt">Viernes de "me lo arreglo para el finde". Tenemos huecos esta tarde; pásate o escríbenos. L-V 9:30-20:00 · S 9:30-14:00</span><br><span class="tags">#ViernesDePelu #PeluqueriaPubillaCases</span></div>
             </div>
+          </div>
+          <!-- Dots Indicadores de Instagram (Solo Mobile) -->
+          <div class="posts-dots" role="tablist" aria-label="Navegación de publicaciones de muestra">
+            <button class="posts-dot active" role="tab" aria-selected="true" aria-label="Ver post 1 de 3"></button>
+            <button class="posts-dot" role="tab" aria-selected="false" aria-label="Ver post 2 de 3"></button>
+            <button class="posts-dot" role="tab" aria-selected="false" aria-label="Ver post 3 de 3"></button>
           </div>
         </div>
       </div>
@@ -556,12 +1067,9 @@
             <div class="wa-grid-2">
                 <div class="wa-card">
                     <div>
-                        <div class="wa-row-flex" style="margin-bottom:16px;">
-                            <div class="wa-icon-box green"><i class="fa-solid fa-sim-card"></i></div>
-                            <div>
-                                <span style="font-size:0.75rem; color:var(--accent); font-weight:700; text-transform:uppercase;" data-i18n="wa-info2-op1-tag">Opción 1</span>
-                                <h4 style="font-size:1.1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info2-op1-h4">Dos WhatsApps en tu mismo móvil</h4>
-                            </div>
+                        <div style="margin-bottom:10px;">
+                            <span style="font-size:0.75rem; color:var(--accent); font-weight:700; text-transform:uppercase;" data-i18n="wa-info2-op1-tag">Opción 1</span>
+                            <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin:2px 0 0;" data-i18n="wa-info2-op1-h4">Dos WhatsApps en tu mismo móvil</h4>
                         </div>
                         <div class="wa-mock-app">
                             <div class="wa-mock-app-col"><div class="icon green-light"><i class="fa-brands fa-whatsapp"></i></div><span style="color:var(--muted)" data-i18n="wa-info2-lbl-personal">Personal</span></div>
@@ -576,12 +1084,9 @@
                 </div>
                 <div class="wa-card">
                     <div>
-                        <div class="wa-row-flex" style="margin-bottom:16px;">
-                            <div class="wa-icon-box blue"><i class="fa-solid fa-cloud"></i></div>
-                            <div>
-                                <span style="font-size:0.75rem; color:#4285f4; font-weight:700; text-transform:uppercase;" data-i18n="wa-info2-op2-tag">Opción 2</span>
-                                <h4 style="font-size:1.1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info2-op2-h4">Nube Oficial Meta / Fijo del Local</h4>
-                            </div>
+                        <div style="margin-bottom:10px;">
+                            <span style="font-size:0.75rem; color:#4285f4; font-weight:700; text-transform:uppercase;" data-i18n="wa-info2-op2-tag">Opción 2</span>
+                            <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin:2px 0 0;" data-i18n="wa-info2-op2-h4">Nube Oficial Meta / Fijo del Local</h4>
                         </div>
                         <div class="wa-mock-app">
                             <div class="wa-mock-app-col"><div class="icon text-blue"><i class="fa-solid fa-phone"></i></div><span style="color:var(--muted)" data-i18n="wa-info2-lbl-fijo">Teléfono Fijo</span></div>
@@ -618,36 +1123,32 @@
             </div>
             <div class="wa-grid-2">
                 <div class="wa-card">
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">1</div>
-                        <div style="font-size:1.4rem; color:#4285f4;"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                        <h4 style="font-size:1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info3-s1-h4">Tu agenda digital gratuita</h4>
+                        <div style="font-size:1.05rem; color:#4285f4; flex-shrink:0; margin-left:8px;"><i class="fa-solid fa-mobile-screen"></i></div>
                     </div>
-                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s1-h4">Tu agenda digital gratuita</h4>
-                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s1-p">Usas la aplicación <strong>Google Calendar</strong> que ya viene instalada en tu teléfono móvil (Android o iPhone).</p>
+                    <p style="font-size:0.82rem; color:var(--muted); margin:0; line-height:1.35;" data-i18n="wa-info3-s1-p">Usas la aplicación <strong>Google Calendar</strong> que ya viene instalada en tu teléfono móvil (Android o iPhone).</p>
                 </div>
                 <div class="wa-card">
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">2</div>
-                        <div style="font-size:1.4rem; color:var(--accent);"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                        <h4 style="font-size:1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info3-s2-h4">Comprobación en directo</h4>
+                        <div style="font-size:1.05rem; color:var(--accent); flex-shrink:0; margin-left:8px;"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                     </div>
-                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s2-h4">Comprobación en directo</h4>
-                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s2-p">Antes de ofrecer una hora, mira tu calendario. Si el jueves a las 16:00 ya tienes ocupado, <strong>JAMÁS ofrecerá esa hora</strong>.</p>
+                    <p style="font-size:0.82rem; color:var(--muted); margin:0; line-height:1.35;" data-i18n="wa-info3-s2-p">Antes de ofrecer una hora, mira tu calendario. Si el jueves a las 16:00 ya tienes ocupado, <strong>JAMÁS ofrecerá esa hora</strong>.</p>
                 </div>
                 <div class="wa-card">
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">3</div>
-                        <div style="font-size:1.4rem; color:var(--wa);"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                        <h4 style="font-size:1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info3-s3-h4">Escritura automática</h4>
+                        <div style="font-size:1.05rem; color:var(--wa); flex-shrink:0; margin-left:8px;"><i class="fa-solid fa-calendar-check"></i></div>
                     </div>
-                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s3-h4">Escritura automática</h4>
-                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s3-p">Al confirmar por WhatsApp, la cita aparece escrita en tu calendario con el <strong>nombre, teléfono y servicio</strong> del cliente.</p>
+                    <p style="font-size:0.82rem; color:var(--muted); margin:0; line-height:1.35;" data-i18n="wa-info3-s3-p">Al confirmar por WhatsApp, la cita aparece escrita en tu calendario con el <strong>nombre, teléfono y servicio</strong> del cliente.</p>
                 </div>
                 <div class="wa-card">
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-                        <div class="wa-step-num" style="margin-bottom:0; width:36px; height:36px; font-size:1.1rem;">4</div>
-                        <div style="font-size:1.4rem; color:var(--accent);"><i class="fa-solid fa-user-gear"></i></div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                        <h4 style="font-size:1rem; color:#fff; font-weight:700; margin:0;" data-i18n="wa-info3-s4-h4">Control Total para ti</h4>
+                        <div style="font-size:1.05rem; color:var(--accent); flex-shrink:0; margin-left:8px;"><i class="fa-solid fa-user-gear"></i></div>
                     </div>
-                    <h4 style="font-size:1.05rem; color:#fff; font-weight:700; margin-bottom:6px;" data-i18n="wa-info3-s4-h4">Control Total para ti</h4>
-                    <p style="font-size:0.85rem; color:var(--muted); margin:0;" data-i18n="wa-info3-s4-p">Si quieres bloquear un día para fiesta, vacaciones o médico, solo creas un evento en tu calendario y el asistente no dará citas esas horas.</p>
+                    <p style="font-size:0.82rem; color:var(--muted); margin:0; line-height:1.35;" data-i18n="wa-info3-s4-p">Si quieres bloquear un día para fiesta, vacaciones o médico, solo creas un evento en tu calendario y el asistente no dará citas esas horas.</p>
                 </div>
             </div>
             <div class="wa-footer-box" data-i18n="wa-info3-footer">
@@ -705,30 +1206,30 @@
                 <h3 data-i18n="wa-info5-h3">Tu único trabajo diario: Mirar tu agenda cada mañana</h3>
                 <p data-i18n="wa-info5-p">Cómo el sistema protege tu tiempo y elimina los sillones vacíos por despistes.</p>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
-                <div class="wa-card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding: 22px; text-align: left;">
+            <div class="wa-grid-2">
+                <div class="wa-card" style="display: flex; flex-direction: row; gap: 12px; align-items: flex-start; text-align: left;">
                     <div class="wa-icon-box green" style="flex-shrink: 0;"><i class="fa-solid fa-bell"></i></div>
                     <div style="flex: 1; text-align: left;">
-                        <h4 style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin: 0 0 6px 0; text-align: left;" data-i18n="wa-info5-c1-h4">1. Recordatorios automáticos por WhatsApp (24h antes)</h4>
-                        <p style="color: var(--muted); font-size: 0.9rem; margin: 0 0 10px 0; line-height: 1.5; text-align: left;" data-i18n="wa-info5-c1-p">El asistente envía un mensaje al cliente recordando su cita de mañana.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; text-align: left;">
+                        <h4 style="color: #fff; font-weight: 700; font-size: 0.95rem; margin: 0 0 4px 0; text-align: left;" data-i18n="wa-info5-c1-h4">1. Recordatorios por WhatsApp (24h antes)</h4>
+                        <p style="color: var(--muted); font-size: 0.82rem; margin: 0 0 6px 0; line-height: 1.35; text-align: left;" data-i18n="wa-info5-c1-p">El asistente envía un mensaje al cliente recordando su cita de mañana.</p>
+                        <div style="display: flex; flex-direction: column; gap: 4px; font-size: 0.78rem; text-align: left;">
                             <span style="color: var(--wa); display: inline-flex; align-items: center; gap: 6px;" data-i18n="wa-info5-c1-tag1"><i class="fa-solid fa-circle-check"></i> Si confirma: Asistencia garantizada.</span>
                             <span style="color: #ef4444; display: inline-flex; align-items: center; gap: 6px;" data-i18n="wa-info5-c1-tag2"><i class="fa-solid fa-circle-xmark"></i> Si cancela: Hueco libre al instante para otro.</span>
                         </div>
                     </div>
                 </div>
-                <div class="wa-card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding: 22px; text-align: left;">
+                <div class="wa-card" style="display: flex; flex-direction: row; gap: 12px; align-items: flex-start; text-align: left;">
                     <div class="wa-icon-box blue" style="flex-shrink: 0;"><i class="fa-solid fa-store"></i></div>
                     <div style="flex: 1; text-align: left;">
-                        <h4 style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin: 0 0 6px 0; text-align: left;" data-i18n="wa-info5-c2-h4">2. Citas que entran por la puerta o por llamada</h4>
-                        <p style="color: var(--muted); font-size: 0.9rem; margin: 0; line-height: 1.5; text-align: left;" data-i18n="wa-info5-c2-p">Si un cliente de siempre entra a tu tienda o te llama por teléfono, apuntas la cita en tu móvil en 5 segundos y el asistente respetará esa hora sin ofrecerla a nadie más.</p>
+                        <h4 style="color: #fff; font-weight: 700; font-size: 0.95rem; margin: 0 0 4px 0; text-align: left;" data-i18n="wa-info5-c2-h4">2. Citas por la puerta o por llamada</h4>
+                        <p style="color: var(--muted); font-size: 0.82rem; margin: 0; line-height: 1.35; text-align: left;" data-i18n="wa-info5-c2-p">Si un cliente de siempre entra a tu tienda o te llama, apuntas la cita en tu móvil en 5 segundos y el asistente respetará esa hora.</p>
                     </div>
                 </div>
-                <div class="wa-card" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding: 22px; text-align: left;">
+                <div class="wa-card" style="display: flex; flex-direction: row; gap: 12px; align-items: flex-start; text-align: left;">
                     <div class="wa-icon-box red" style="flex-shrink: 0;"><i class="fa-solid fa-ban"></i></div>
                     <div style="flex: 1; text-align: left;">
-                        <h4 style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin: 0 0 6px 0; text-align: left;" data-i18n="wa-info5-c3-h4">3. Bloqueo instantáneo de descansos y festivos</h4>
-                        <p style="color: var(--muted); font-size: 0.9rem; margin: 0; line-height: 1.5; text-align: left;" data-i18n="wa-info5-c3-p">Creas un evento llamado <strong>'Descanso'</strong> o <strong>'Cerrado'</strong> en tu Google Calendar y el asistente jamás ofrecerá citas en esas horas.</p>
+                        <h4 style="color: #fff; font-weight: 700; font-size: 0.95rem; margin: 0 0 4px 0; text-align: left;" data-i18n="wa-info5-c3-h4">3. Bloqueo de descansos y festivos</h4>
+                        <p style="color: var(--muted); font-size: 0.82rem; margin: 0; line-height: 1.35; text-align: left;" data-i18n="wa-info5-c3-p">Creas un evento llamado <strong>'Descanso'</strong> en tu Google Calendar y el asistente jamás ofrecerá citas en esas horas.</p>
                     </div>
                 </div>
             </div>
@@ -1006,9 +1507,8 @@
           <p id="modalTip" data-i18n="modal-tip">💡 <b>Recomendación para este viernes:</b> Publicar post de aviso de horarios del fin de semana con la foto del nuevo producto.</p>
         </div>
       </div>
-      <div class="modal-foot" style="display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;">
-        <button id="btn-close-demo" class="btn btn-ghost" data-i18n="modal-btn-close">Cerrar</button>
-        <a class="btn btn-wa wa-link" data-wa-context="informe" href="#" target="_blank" rel="noopener noreferrer">Quiero este informe para mi calle →</a>
+      <div class="modal-foot" style="display: flex; justify-content: center;">
+        <button id="btn-close-demo" class="btn btn-ghost" data-i18n="modal-btn-close" style="min-width: 160px; text-align: center; justify-content: center; border-radius: 999px;">Cerrar</button>
       </div>
     </div>
   </dialog>
@@ -1025,80 +1525,85 @@
       </div>
       <div class="modal-body">
         
-        <!-- Pestañas Espaciosas -->
-        <div class="suite-nav-pills" role="tablist" aria-label="Pestañas de infografía modal">
-          <button class="bot-modal-tab-btn active" role="tab" aria-selected="true" aria-controls="bot-modal-tab-m1" id="bot-tab-m1" data-tab="m1"><span class="tab-num" aria-hidden="true">1</span><span class="tab-label" data-i18n="bot-modal-tab-1">1. Comparativa (Antes/Ahora)</span></button>
-          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m2" id="bot-tab-m2" data-tab="m2"><span class="tab-num" aria-hidden="true">2</span><span class="tab-label" data-i18n="bot-modal-tab-2">2. Separación Móvil</span></button>
-          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m3" id="bot-tab-m3" data-tab="m3"><span class="tab-num" aria-hidden="true">3</span><span class="tab-label" data-i18n="bot-modal-tab-3">3. Calendar Sync</span></button>
-          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m4" id="bot-tab-m4" data-tab="m4"><span class="tab-num" aria-hidden="true">4</span><span class="tab-label" data-i18n="bot-modal-tab-4">4. Chat en Vivo</span></button>
-          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m5" id="bot-tab-m5" data-tab="m5"><span class="tab-num" aria-hidden="true">5</span><span class="tab-label" data-i18n="bot-modal-tab-5">5. Rutina Diaria</span></button>
-          <button class="bot-modal-tab-btn" role="tab" aria-selected="false" aria-controls="bot-modal-tab-m6" id="bot-tab-m6" data-tab="m6"><span class="tab-num" aria-hidden="true">6</span><span class="tab-label" data-i18n="bot-modal-tab-6">6. FAQ / Preguntas</span></button>
-        </div>
-
-        <!-- Contenido 1 -->
-        <div id="bot-modal-tab-m1" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m1">
-          <div class="infographic-wrapper">
-            <picture>
-              <source media="(max-width: 600px)" srcset="assets/img/1-mobile.webp">
-              <img src="assets/img/1.webp" alt="Infografía 1: Portada y Comparativa de Negocio" class="infographic-img" width="1536" height="2752" loading="lazy">
-            </picture>
+        <!-- Navegación Apple con flechas condicionales y puntos elásticos -->
+        <div class="infographic-nav-wrapper">
+          <button class="infographic-arrow prev" id="infoBtnPrev" aria-label="Infografía anterior" style="visibility: hidden; opacity: 0;">‹</button>
+          <div class="infographic-dots" role="tablist" aria-label="Navegación de infografías">
+            <button class="infographic-dot active" role="tab" aria-selected="true" aria-label="Ver infografía 1"></button>
+            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 2"></button>
+            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 3"></button>
+            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 4"></button>
+            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 5"></button>
+            <button class="infographic-dot" role="tab" aria-selected="false" aria-label="Ver infografía 6"></button>
           </div>
+          <button class="infographic-arrow next" id="infoBtnNext" aria-label="Infografía siguiente">›</button>
         </div>
 
-        <!-- Contenido 2 -->
-        <div id="bot-modal-tab-m2" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m2" style="display: none;">
-          <div class="infographic-wrapper">
-            <picture>
-              <source media="(max-width: 600px)" srcset="assets/img/2-mobile.webp">
-              <img src="assets/img/2.webp" alt="Infografía 2: Separación WhatsApp Personal y Empresa" class="infographic-img" width="1536" height="2752" loading="lazy">
-            </picture>
+        <div class="infographic-carousel" id="infographicCarousel">
+          <!-- Slide 1 -->
+          <div class="infographic-slide">
+            <div class="infographic-wrapper">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/img/1-mobile.webp">
+                <img src="assets/img/1.webp" alt="Infografía 1: Portada y Comparativa de Negocio" class="infographic-img" width="1536" height="2752" loading="lazy">
+              </picture>
+            </div>
           </div>
-        </div>
 
-        <!-- Contenido 3 -->
-        <div id="bot-modal-tab-m3" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m3" style="display: none;">
-          <div class="infographic-wrapper">
-            <picture>
-              <source media="(max-width: 600px)" srcset="assets/img/3-mobile.webp">
-              <img src="assets/img/3.webp" alt="Infografía 3: Sincronización con Google Calendar" class="infographic-img" width="1536" height="2752" loading="lazy">
-            </picture>
+          <!-- Slide 2 -->
+          <div class="infographic-slide">
+            <div class="infographic-wrapper">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/img/2-mobile.webp">
+                <img src="assets/img/2.webp" alt="Infografía 2: Separación WhatsApp Personal y Empresa" class="infographic-img" width="1536" height="2752" loading="lazy">
+              </picture>
+            </div>
           </div>
-        </div>
 
-        <!-- Contenido 4 -->
-        <div id="bot-modal-tab-m4" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m4" style="display: none;">
-          <div class="infographic-wrapper">
-            <picture>
-              <source media="(max-width: 600px)" srcset="assets/img/4-mobile.webp">
-              <img src="assets/img/4.webp" alt="Infografía 4: Simulación de Chat Real" class="infographic-img" width="1536" height="2752" loading="lazy">
-            </picture>
+          <!-- Slide 3 -->
+          <div class="infographic-slide">
+            <div class="infographic-wrapper">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/img/3-mobile.webp">
+                <img src="assets/img/3.webp" alt="Infografía 3: Sincronización con Google Calendar" class="infographic-img" width="1536" height="2752" loading="lazy">
+              </picture>
+            </div>
           </div>
-        </div>
 
-        <!-- Contenido 5 -->
-        <div id="bot-modal-tab-m5" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m5" style="display: none;">
-          <div class="infographic-wrapper">
-            <picture>
-              <source media="(max-width: 600px)" srcset="assets/img/5-mobile.webp">
-              <img src="assets/img/5.webp" alt="Infografía 5: Rutina Diaria y Recordatorios Automáticos" class="infographic-img" width="1536" height="2752" loading="lazy">
-            </picture>
+          <!-- Slide 4 -->
+          <div class="infographic-slide">
+            <div class="infographic-wrapper">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/img/4-mobile.webp">
+                <img src="assets/img/4.webp" alt="Infografía 4: Simulación de Chat Real" class="infographic-img" width="1536" height="2752" loading="lazy">
+              </picture>
+            </div>
           </div>
-        </div>
 
-        <!-- Contenido 6 -->
-        <div id="bot-modal-tab-m6" class="bot-modal-tab-content" role="tabpanel" aria-labelledby="bot-tab-m6" style="display: none;">
-          <div class="infographic-wrapper">
-            <picture>
-              <source media="(max-width: 600px)" srcset="assets/img/6-mobile.webp">
-              <img src="assets/img/6.webp" alt="Infografía 6: Preguntas Frecuentes y Tranquilidad Total" class="infographic-img" width="1536" height="2752" loading="lazy">
-            </picture>
+          <!-- Slide 5 -->
+          <div class="infographic-slide">
+            <div class="infographic-wrapper">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/img/5-mobile.webp">
+                <img src="assets/img/5.webp" alt="Infografía 5: Rutina Diaria y Recordatorios Automáticos" class="infographic-img" width="1536" height="2752" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="infographic-slide">
+            <div class="infographic-wrapper">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/img/6-mobile.webp">
+                <img src="assets/img/6.webp" alt="Infografía 6: Preguntas Frecuentes y Tranquilidad Total" class="infographic-img" width="1536" height="2752" loading="lazy">
+              </picture>
+            </div>
           </div>
         </div>
 
       </div>
-      <div class="modal-foot" style="display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;">
+      <div class="modal-foot">
         <button id="btn-close-bot-bottom" class="btn btn-ghost" data-i18n="bot-modal-close">Cerrar</button>
-        <a class="btn btn-wa wa-link" data-wa-context="plan-bot-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Activar Asistente WhatsApp 24/7 →</a>
       </div>
     </div>
   </dialog>
@@ -1130,7 +1635,7 @@
   </div>
 </footer>
 
-<script src="assets/script.js"></script>
+<script src="assets/script.js?v=2.1"></script>
 
 </body>
 </html>

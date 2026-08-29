@@ -9,10 +9,10 @@
       "nav-btn-whatsapp": "WhatsApp",
       "nav-btn-email": "Mail",
       "hero-h1": "Tu Google, tus reseñas y tus redes al día sin que toques un ordenador",
-      "hero-lead": "Nos mandas cuatro fotos por WhatsApp y te lo devolvemos montado: ficha de Google optimizada, reseñas respondidas con tu tono y 8-12 publicaciones al mes listas para publicar. 350 € de instalación y 50 €/mes sin permanencia.",
-      "hero-btn-wa": "Mandar mis fotos por WhatsApp",
-      "hero-btn-ghost": "Ver los 14 días paso a paso",
-      "hero-microcopy": "Te respondemos por WhatsApp en <15 min. Sin formularios ni llamadas comerciales.",
+      "hero-lead": "Escríbenos por WhatsApp, cuéntanos cómo es tu negocio y te asesoramos paso a paso para conseguir el mejor resultado: ponemos al día tu Google Maps, atendemos a tus clientes y atraemos más vecinos a tu local sin complicaciones.",
+      "hero-btn-wa": "Pedir Demo WhatsApp",
+      "hero-btn-ghost": "Ver cómo funciona",
+      "hero-microcopy": "Te respondemos por WhatsApp lo antes posible. Sin formularios ni llamadas comerciales.",
       "hero-chat-msg1": "Hola, ¿tenéis hueco para un corte el viernes por la tarde?",
       "hero-chat-msg2": "¡Hola! Sí, el viernes a las 17:30 tenemos un hueco. ¿Te va bien?",
       "hero-chat-msg3": "¡Perfecto, lo reservo!",
@@ -289,10 +289,10 @@
       "nav-btn-whatsapp": "WhatsApp",
       "nav-btn-email": "Mail",
       "hero-h1": "El teu Google, les teves ressenyes i les teves xarxes al dia sense tocar un ordinador",
-      "hero-lead": "Ens passes quatre fotos per WhatsApp i t'ho tornem muntat: fitxa de Google optimitzada, ressenyes respostes amb el teu to i 8-12 publicacions al mes a punt per penjar. 350 € d'instal·lació i 50 €/mes sense permanència.",
-      "hero-btn-wa": "Enviar les meves fotos per WhatsApp",
-      "hero-btn-ghost": "Veure els 14 dies pas a pas",
-      "hero-microcopy": "Et responem per WhatsApp en <15 min. Sense formularis ni trucades comercials.",
+      "hero-lead": "Escriu-nos per WhatsApp, explica'ns com és el teu negoci i t'assessorem pas a pas per aconseguir el millor resultat: posem al dia el teu Google Maps, atenem els teus clients i portem més veïns al teu local sense complicacions.",
+      "hero-btn-wa": "Demanar Demo WhatsApp",
+      "hero-btn-ghost": "Veure com funciona",
+      "hero-microcopy": "Et responem per WhatsApp com més aviat millor. Sense formularis ni trucades comercials.",
       "hero-chat-msg1": "Hola, teniu lloc per a un tall divendres a la tarda?",
       "hero-chat-msg2": "Hola! Sí, divendres a les 17:30 tenim un forat. Et va bé?",
       "hero-chat-msg3": "Perfecte, me'l reservo!",
@@ -900,16 +900,36 @@
   applyNeighborhoodPreset();
   updateWhatsAppLinks();
 
-  // Scroll listener for mobile sticky bar (desacoplado con rAF)
+  // Scroll listener inteligente para la barra flotante (Hide on scroll down / Show on scroll up)
   let scrollRaf = false;
+  let lastScrollY = window.scrollY;
+  let scrollThreshold = 10;
+
   window.addEventListener('scroll', () => {
     if (!scrollRaf) {
       requestAnimationFrame(() => {
         const bar = document.getElementById('mobileStickyBar');
+        const currentScrollY = window.scrollY;
+
         if (bar) {
-          if (window.scrollY > 380) bar.classList.add('visible');
-          else bar.classList.remove('visible');
+          if (currentScrollY > 380) {
+            bar.classList.add('visible');
+
+            // Si baja más de 10px, ocultar para dar espacio de lectura
+            if (currentScrollY - lastScrollY > scrollThreshold && currentScrollY > 500) {
+              bar.classList.add('hidden-by-scroll');
+            }
+            // Si sube o frena, mostrar inmediatamente
+            else if (lastScrollY - currentScrollY > scrollThreshold) {
+              bar.classList.remove('hidden-by-scroll');
+            }
+          } else {
+            bar.classList.remove('visible');
+            bar.classList.remove('hidden-by-scroll');
+          }
         }
+
+        lastScrollY = currentScrollY;
         scrollRaf = false;
       });
       scrollRaf = true;
@@ -1015,36 +1035,84 @@ if (botModal) {
   });
 }
 
-const botModalTabBtns = Array.from(document.querySelectorAll('.bot-modal-tab-btn'));
-function activateBotModalTab(btn) {
-  const tabId = btn.getAttribute('data-tab');
-  document.querySelectorAll('.bot-modal-tab-content').forEach(el => el.style.display = 'none');
-  botModalTabBtns.forEach(b => {
-    b.classList.remove('active');
-    b.setAttribute('aria-selected', 'false');
-  });
-  const target = document.getElementById('bot-modal-tab-' + tabId);
-  if (target) target.style.display = 'block';
-  btn.classList.add('active');
-  btn.setAttribute('aria-selected', 'true');
-}
+const infoCarousel = document.getElementById('infographicCarousel');
+const infoDots = Array.from(document.querySelectorAll('.infographic-dot'));
+const infoBtnPrev = document.getElementById('infoBtnPrev');
+const infoBtnNext = document.getElementById('infoBtnNext');
 
-botModalTabBtns.forEach((btn, index) => {
-  btn.addEventListener('click', () => activateBotModalTab(btn));
-  btn.addEventListener('keydown', (e) => {
-    let nextIndex = null;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      nextIndex = (index + 1) % botModalTabBtns.length;
-    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-      nextIndex = (index - 1 + botModalTabBtns.length) % botModalTabBtns.length;
+if (infoCarousel && infoDots.length > 0) {
+  const infoSlides = Array.from(infoCarousel.querySelectorAll('.infographic-slide'));
+
+  function updateArrows(index) {
+    if (infoBtnPrev) {
+      if (index >= 1) {
+        infoBtnPrev.style.visibility = 'visible';
+        infoBtnPrev.style.opacity = '1';
+        infoBtnPrev.style.pointerEvents = 'auto';
+      } else {
+        infoBtnPrev.style.visibility = 'hidden';
+        infoBtnPrev.style.opacity = '0';
+        infoBtnPrev.style.pointerEvents = 'none';
+      }
     }
-    if (nextIndex !== null) {
-      e.preventDefault();
-      botModalTabBtns[nextIndex].focus();
-      activateBotModalTab(botModalTabBtns[nextIndex]);
+    if (infoBtnNext) {
+      if (index < infoSlides.length - 1) {
+        infoBtnNext.style.visibility = 'visible';
+        infoBtnNext.style.opacity = '1';
+        infoBtnNext.style.pointerEvents = 'auto';
+      } else {
+        infoBtnNext.style.visibility = 'hidden';
+        infoBtnNext.style.opacity = '0';
+        infoBtnNext.style.pointerEvents = 'none';
+      }
     }
+  }
+
+  function goToInfoSlide(index) {
+    if (index < 0 || index >= infoSlides.length) return;
+    const target = infoSlides[index];
+    if (!target) return;
+    infoCarousel.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    updateArrows(index);
+  }
+
+  infoDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => goToInfoSlide(index));
   });
-});
+
+  if (infoBtnPrev) {
+    infoBtnPrev.addEventListener('click', () => {
+      const width = infoCarousel.clientWidth || 1;
+      const currentIndex = Math.round(infoCarousel.scrollLeft / width);
+      goToInfoSlide(currentIndex - 1);
+    });
+  }
+
+  if (infoBtnNext) {
+    infoBtnNext.addEventListener('click', () => {
+      const width = infoCarousel.clientWidth || 1;
+      const currentIndex = Math.round(infoCarousel.scrollLeft / width);
+      goToInfoSlide(currentIndex + 1);
+    });
+  }
+
+  let infoDotsRaf = false;
+  infoCarousel.addEventListener('scroll', () => {
+    if (infoDotsRaf) return;
+    infoDotsRaf = true;
+    requestAnimationFrame(() => {
+      const width = infoCarousel.clientWidth || 1;
+      const activeIndex = Math.round(infoCarousel.scrollLeft / width);
+      infoDots.forEach((dot, i) => {
+        const isActive = i === activeIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      updateArrows(activeIndex);
+      infoDotsRaf = false;
+    });
+  }, { passive: true });
+}
 
 // Pestañas Suite WhatsApp Nativa (Accesible)
 document.addEventListener('DOMContentLoaded', () => {
@@ -1100,10 +1168,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (waSliderTrack && waDots.length > 0) {
     const waSlides = Array.from(document.querySelectorAll('.wa-tab-pane'));
 
+    function updateTrackHeight(index) {
+      if (window.innerWidth <= 600 && waSlides[index]) {
+        const slideHeight = waSlides[index].offsetHeight;
+        if (slideHeight > 0) {
+          waSliderTrack.style.height = slideHeight + 'px';
+        }
+      } else {
+        waSliderTrack.style.height = 'auto';
+      }
+    }
+
     function goToWaSlide(index) {
       const target = waSlides[index];
       if (!target) return;
       waSliderTrack.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+      updateTrackHeight(index);
     }
 
     waDots.forEach((dot, index) => {
@@ -1122,8 +1202,17 @@ document.addEventListener('DOMContentLoaded', () => {
           dot.classList.toggle('active', isActive);
           dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
+        updateTrackHeight(activeIndex);
         waDotsRaf = false;
       });
+    }, { passive: true });
+
+    // Inicializar altura al cargar
+    setTimeout(() => updateTrackHeight(0), 100);
+    window.addEventListener('resize', () => {
+      const width = waSliderTrack.clientWidth || 1;
+      const activeIndex = Math.round(waSliderTrack.scrollLeft / width);
+      updateTrackHeight(activeIndex);
     }, { passive: true });
   }
 });
@@ -1132,41 +1221,166 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
   const links = document.querySelectorAll('.mobile-menu-link');
 
   if (!toggle || !menu) return;
 
+  function closeMobileMenu() {
+    toggle.classList.remove('active');
+    menu.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
   // Toggle menu
   toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    menu.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
+    const isOpen = menu.classList.toggle('active');
+    toggle.classList.toggle('active', isOpen);
+    if (overlay) overlay.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
+
+  // Close menu on overlay click
+  if (overlay) {
+    overlay.addEventListener('click', closeMobileMenu);
+  }
 
   // Close menu on link click
   links.forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      menu.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMobileMenu);
   });
 
   // Close menu on Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && toggle.classList.contains('active')) {
-      toggle.classList.remove('active');
-      menu.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
+    if (e.key === 'Escape' && menu.classList.contains('active')) {
+      closeMobileMenu();
     }
   });
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('header') && menu.classList.contains('active')) {
-      toggle.classList.remove('active');
-      menu.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
+      closeMobileMenu();
     }
   });
+
+  // Sincronización interactiva de los puntos del carrusel de Instagram
+  const postsTrack = document.querySelector('.posts');
+  const postDots = Array.from(document.querySelectorAll('.posts-dot'));
+  if (postsTrack && postDots.length > 0) {
+    const postCards = Array.from(postsTrack.querySelectorAll('.post'));
+
+    function goToPost(index) {
+      const target = postCards[index];
+      if (!target) return;
+      postsTrack.scrollTo({ left: target.offsetLeft - 16, behavior: 'smooth' });
+    }
+
+    postDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToPost(index));
+    });
+
+    let postsRaf = false;
+    postsTrack.addEventListener('scroll', () => {
+      if (postsRaf) return;
+      postsRaf = true;
+      requestAnimationFrame(() => {
+        const scrollPos = postsTrack.scrollLeft;
+        let closestIndex = 0;
+        let minDiff = Infinity;
+        postCards.forEach((card, i) => {
+          const diff = Math.abs(card.offsetLeft - 16 - scrollPos);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+          }
+        });
+        postDots.forEach((dot, i) => {
+          const isActive = i === closestIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        postsRaf = false;
+      });
+    }, { passive: true });
+  }
+
+  // Simulación interactiva de WhatsApp en bucle continuo y sincronizado
+  const heroChat = document.getElementById('heroChatContainer');
+  const typingBubble = document.getElementById('heroTypingBubble');
+
+  if (heroChat) {
+    const msgs = Array.from(heroChat.querySelectorAll('.wa, .wa-sys'));
+    let simTimeouts = [];
+
+    function clearSimTimeouts() {
+      simTimeouts.forEach(t => clearTimeout(t));
+      simTimeouts = [];
+    }
+
+    function runHeroChatLoop() {
+      clearSimTimeouts();
+
+      // Ocultar todos los mensajes al inicio del ciclo
+      msgs.forEach(m => {
+        m.style.opacity = '0';
+        m.style.transform = 'translateY(8px)';
+        m.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+      });
+      if (typingBubble) {
+        typingBubble.style.display = 'none';
+        typingBubble.style.opacity = '0';
+      }
+
+      // 1. Entra mensaje del cliente
+      simTimeouts.push(setTimeout(() => {
+        if (msgs[0]) {
+          msgs[0].style.opacity = '1';
+          msgs[0].style.transform = 'translateY(0)';
+        }
+      }, 500));
+
+      // 2. Aparecen los 3 puntos ("escribiendo...")
+      simTimeouts.push(setTimeout(() => {
+        if (typingBubble) {
+          typingBubble.style.display = 'inline-flex';
+          requestAnimationFrame(() => typingBubble.style.opacity = '1');
+        }
+      }, 1400));
+
+      // 3. Tras 3 segundos de escritura, desaparecen los puntos y entra la respuesta del bot
+      simTimeouts.push(setTimeout(() => {
+        if (typingBubble) typingBubble.style.display = 'none';
+        if (msgs[1]) {
+          msgs[1].style.opacity = '1';
+          msgs[1].style.transform = 'translateY(0)';
+        }
+      }, 4400));
+
+      // 4. Mensaje de confirmación del cliente
+      simTimeouts.push(setTimeout(() => {
+        if (msgs[2]) {
+          msgs[2].style.opacity = '1';
+          msgs[2].style.transform = 'translateY(0)';
+        }
+      }, 5600));
+
+      // 5. Confirmación del sistema Calendar
+      simTimeouts.push(setTimeout(() => {
+        if (msgs[3]) {
+          msgs[3].style.opacity = '1';
+          msgs[3].style.transform = 'translateY(0)';
+        }
+      }, 6600));
+
+      // 6. Pausa de lectura breve (~2.6s) y reiniciar el bucle
+      simTimeouts.push(setTimeout(() => {
+        runHeroChatLoop();
+      }, 9200));
+    }
+
+    // Iniciar bucle
+    runHeroChatLoop();
+  }
 });
