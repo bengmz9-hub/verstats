@@ -1326,8 +1326,23 @@ document.addEventListener('DOMContentLoaded', () => {
       simTimeouts = [];
     }
 
+    let isLoopRunning = false;
+
+    function startLoop() {
+      if (!isLoopRunning && document.visibilityState !== 'hidden') {
+        isLoopRunning = true;
+        runHeroChatLoop();
+      }
+    }
+
+    function stopLoop() {
+      isLoopRunning = false;
+      clearSimTimeouts();
+    }
+
     function runHeroChatLoop() {
       clearSimTimeouts();
+      if (!isLoopRunning || document.visibilityState === 'hidden') return;
 
       // Ocultar todos los mensajes al inicio del ciclo
       msgs.forEach(m => {
@@ -1381,13 +1396,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, 6600));
 
-      // 6. Pausa de lectura breve (~2.6s) y reiniciar el bucle
+      // 6. Pausa de lectura breve (~2.6s) y reiniciar el bucle si sigue activo y visible
       simTimeouts.push(setTimeout(() => {
-        runHeroChatLoop();
+        if (isLoopRunning && document.visibilityState !== 'hidden') {
+          runHeroChatLoop();
+        }
       }, 9200));
     }
 
-    // Iniciar bucle
-    runHeroChatLoop();
+    // Escuchar cambios de visibilidad de pestaña para ahorrar ciclos de CPU
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        stopLoop();
+      } else {
+        startLoop();
+      }
+    });
+
+    // Iniciar bucle inicial
+    startLoop();
   }
 });
