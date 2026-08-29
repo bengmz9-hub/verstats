@@ -521,7 +521,7 @@
       animation: slideInLeft 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
       z-index: 1001;
     }
-    .mobile-menu.active { display: flex; }
+    .mobile-menu.active { display: flex !important; }
 
     /* Overlay de fondo con desenfoque óptico (cubre toda la pantalla y el navbar) */
     .mobile-menu-overlay {
@@ -538,7 +538,7 @@
       animation: fadeIn 0.25s ease-out forwards;
     }
     .mobile-menu-overlay.active {
-      display: block;
+      display: block !important;
     }
 
     /* Menu Links - Separated Island Pills */
@@ -651,9 +651,6 @@
       padding: 8px 10px 10px !important;
       font-size: 0.8rem !important;
       line-height: 1.35 !important;
-    }
-      font-size: 0.82rem;
-      line-height: 1.4;
     }
     .roadmap { grid-template-columns: 1fr; gap: 12px; }
     .roadmap-step {
