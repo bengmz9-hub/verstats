@@ -810,60 +810,13 @@
   }
 
   // ⚙️ CONFIGURACIÓN CENTRALIZADA DE WHATSAPP
-  // Cambiar este número actualiza automáticamente TODOS los enlaces wa.me
   // Formato: código país + número (ej: 34612345678 para España)
-  const WHATSAPP_PHONE = '34636253724'; // ← Número real (28-08-2026)
-
-  const waMessages = {
-    hero: {
-      es: "Hola, tengo un negocio en L'Hospitalet y quiero ver la demo con mis fotos antes de decidir nada.",
-      ca: "Hola, tinc un negoci a L'Hospitalet i vull veure la demo amb les meves fotos abans de decidir res."
-    },
-    nav: {
-      es: "Hola, tengo un negocio en L'Hospitalet y quiero ver la demo con mis fotos antes de decidir nada.",
-      ca: "Hola, tinc un negoci a L'Hospitalet i vull veure la demo amb les meves fotos abans de decidir res."
-    },
-    'plan-asociados': {
-      es: "Hola, me interesa el paquete completo. Soy socio de la asociación de comerciantes, ¿me entra la instalación a 245 € en vez de 350 €?",
-      ca: "Hola, m'interessa el paquet complet. Sóc soci de l'associació de comerciants, em queda la instal·lació a 245 € en lloc de 350 €?"
-    },
-    'plan-completo': {
-      es: "Hola, me interesa el paquete completo de presencia digital y quiero ver cómo quedaría con mi negocio.",
-      ca: "Hola, m'interessa el paquet complet de presència digital i vull veure com quedaria amb el meu negoci."
-    },
-    'plan-web': {
-      es: "Hola, me interesa añadir el extra de página web a la presencia digital.",
-      ca: "Hola, m'interessa afegir l'extra de pàgina web a la presència digital."
-    },
-    'cta-final': {
-      es: "Hola, quiero ver la demostración montada con mis fotos antes de pagar nada.",
-      ca: "Hola, vull veure la demostració muntada amb les meves fotos abans de pagar res."
-    },
-    'mobile-sticky': {
-      es: "Hola, tengo un negocio en el barrio y quiero ver una demostración.",
-      ca: "Hola, tinc un negoci al barri i vull veure una demostració."
-    },
-    faq: {
-      es: "Hola, antes de empezar quiero aclarar dos cosas: si tengo que daros la contraseña de mi Google y en cuánto tiempo lo tendría montado.",
-      ca: "Hola, abans de començar vull aclarir dues coses: si us haig de donar la contrasenya del meu Google i en quant temps ho tindria muntat."
-    },
-    informe: {
-      es: "Hola, quiero una muestra del informe semanal con los competidores de mi calle. Os digo el sector y el barrio por aquí.",
-      ca: "Hola, vull una mostra de l'informe setmanal amb els competidors del meu carrer. Us dic el sector i el barri per aquí."
-    },
-    'plan-bot-whatsapp': {
-      es: "Hola, me interesa el Asistente de WhatsApp y Telegram con citas automáticas en Google Calendar. ¿Cómo lo activamos?",
-      ca: "Hola, m'interessa l'Assistent de WhatsApp i Telegram amb cites automàtiques a Google Calendar. Com ho activem?"
-    }
-  };
+  const WHATSAPP_PHONE = '34636253724';
 
   function updateWhatsAppLinks() {
     document.querySelectorAll('.wa-link').forEach(link => {
-      const ctx = link.getAttribute('data-wa-context') || 'hero';
-      const msgObj = waMessages[ctx] || waMessages.hero;
-      const text = encodeURIComponent(msgObj[currentLang] || msgObj.es);
-      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
-      link.href = url;
+      // Enlace directo al chat limpio sin texto predefinido
+      link.href = `https://wa.me/${WHATSAPP_PHONE}`;
 
       // Prevenir navegación accidental si el número aún es placeholder
       if (WHATSAPP_PHONE.includes('X') || WHATSAPP_PHONE === '34XXXXXXXXX') {
