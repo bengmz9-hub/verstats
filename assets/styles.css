@@ -769,8 +769,17 @@
     gap: 16px;
     user-select: none;
     outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
     transition: color 0.2s ease;
+  }
+  summary:active, summary:focus, summary:hover {
+    outline: none;
+    background: transparent;
   }
   summary:focus { outline: none; }
   summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius); }
