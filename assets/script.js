@@ -1239,7 +1239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.add('from-bottom');
         menu.classList.add('active');
         toggle.classList.add('active');
-        if (overlay) overlay.classList.add('active');
+        if (overlay) overlay.classList.remove('active');
         toggle.setAttribute('aria-expanded', 'true');
       }
     });

@@ -577,6 +577,9 @@
     .mobile-menu-overlay.active {
       display: block !important;
     }
+    body:has(.mobile-menu.from-bottom.active) .mobile-menu-overlay {
+      display: none !important;
+    }
 
     /* Menu Links - Separated Island Pills */
     .mobile-menu-link {
