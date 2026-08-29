@@ -68,7 +68,12 @@
     top: 0;
   }
   @media (prefers-reduced-motion: reduce) {
-    .skip-link { transition: none; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   /* ===================== NAV ===================== */
@@ -1163,6 +1168,9 @@
   gap: 16px;
   padding-bottom: 8px;
   width: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
   scrollbar-width: none;
 }
 .infographic-carousel::-webkit-scrollbar { display: none; }
