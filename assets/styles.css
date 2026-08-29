@@ -526,20 +526,23 @@
       transform: translateX(0) !important;
     }
 
-    /* Apertura encima de la barra flotante inferior (Mirror exacto a la derecha y abajo) */
+    /* Apertura encima de la barra flotante inferior (Mirror exacto a la derecha y abajo ultra-compacto) */
     .mobile-menu.from-bottom {
       top: auto !important;
-      bottom: 74px !important;
+      bottom: 70px !important;
       left: auto !important;
       right: 0 !important;
-      width: 58vw !important;
-      max-width: 250px !important;
+      width: max-content !important;
+      min-width: 160px !important;
+      max-width: calc(100vw - 32px) !important;
       background: linear-gradient(215deg, #152733 0%, #101e28 100%) !important;
       border-left: 2px solid var(--accent) !important;
       border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
       border-right: none !important;
-      border-radius: 20px 0 0 0 !important;
+      border-radius: 18px 0 0 0 !important;
+      padding: 8px 6px !important;
+      gap: 5px !important;
       box-shadow: -10px 0 25px rgba(232, 163, 61, 0.18), -14px -12px 40px rgba(0, 0, 0, 0.75) !important;
       transform: translateX(100%) !important;
       opacity: 0;
@@ -549,6 +552,12 @@
       display: flex !important;
       transform: translateX(0) !important;
       opacity: 1 !important;
+    }
+    .mobile-menu.from-bottom .mobile-menu-link {
+      justify-content: flex-end !important;
+      text-align: right !important;
+      padding: 8px 12px !important;
+      white-space: nowrap !important;
     }
 
     /* Overlay de fondo con desenfoque óptico (cubre toda la pantalla y el navbar) */
