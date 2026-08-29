@@ -1199,8 +1199,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('mobile-menu-overlay');
   const links = document.querySelectorAll('.mobile-menu-link');
 
+  function closeMobileMenu() {
+    toggle.classList.remove('active');
+    menu.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
   function toggleMobileMenu(e) {
-    if (e) e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const isOpen = menu.classList.toggle('active');
     toggle.classList.toggle('active', isOpen);
     if (overlay) overlay.classList.toggle('active', isOpen);
