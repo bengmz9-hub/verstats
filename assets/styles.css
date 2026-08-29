@@ -860,77 +860,6 @@
     background: rgba(23, 48, 61, 0.95);
   }
 
-  /* Menú Popup de Secciones Móvil */
-  .mobile-sections-popup {
-    display: none;
-    position: fixed;
-    bottom: 72px;
-    left: 14px;
-    right: 14px;
-    background: rgba(14, 31, 42, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(40, 66, 79, 0.85);
-    border-radius: 20px;
-    padding: 10px;
-    flex-direction: column;
-    gap: 4px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.8);
-    z-index: 96;
-    opacity: 0;
-    transform: translateY(16px);
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .mobile-sections-popup.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .popup-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 10px 8px;
-    border-bottom: 1px solid rgba(40, 66, 79, 0.5);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .popup-close {
-    background: transparent;
-    border: none;
-    color: var(--muted);
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 2px 6px;
-    border-radius: 6px;
-  }
-  .popup-close:active { color: var(--ink); }
-  .popup-links { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
-  .popup-item {
-    padding: 10px 14px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background 0.15s ease, color 0.15s ease;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .popup-item span { color: var(--muted); font-size: 0.85rem; }
-  .popup-item:active {
-    background: rgba(232, 163, 61, 0.14);
-    color: var(--accent);
-  }
-  .popup-item:active span { color: var(--accent); }
-  .popup-item--highlight { color: var(--accent); font-weight: 700; }
-
   /* Mobile Sticky Action Bar - Smart iOS Style */
   .mobile-sticky-bar {
     display: none;
@@ -1001,7 +930,6 @@
   @media (max-width: 600px) {
     .mobile-sticky-bar { display: flex; }
     .btn-scroll-top { display: flex; }
-    .mobile-sections-popup { display: flex; }
     body { padding-bottom: 72px; }
     .bot-grid { max-width: 100%; gap: 14px; }
     .bot-chat { padding: 14px 12px; font-size: .84rem; }

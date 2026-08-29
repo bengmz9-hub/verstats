@@ -860,49 +860,13 @@
   let lastScrollY = window.scrollY;
   let scrollThreshold = 10;
 
+  // Botón Scroll to Top
   const btnScrollTop = document.getElementById('btnScrollTop');
-  const sectionsPopup = document.getElementById('mobileSectionsPopup');
-  const btnToggleSections = document.getElementById('btnToggleSectionsPopup');
-  const btnCloseSections = document.getElementById('btnCloseSectionsPopup');
-
   if (btnScrollTop) {
     btnScrollTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-
-  function toggleSectionsPopup(open) {
-    if (!sectionsPopup) return;
-    const shouldOpen = open !== undefined ? open : !sectionsPopup.classList.contains('active');
-    sectionsPopup.classList.toggle('active', shouldOpen);
-    sectionsPopup.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
-    if (btnToggleSections) {
-      btnToggleSections.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
-    }
-  }
-
-  if (btnToggleSections) {
-    btnToggleSections.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleSectionsPopup();
-    });
-  }
-
-  if (btnCloseSections) {
-    btnCloseSections.addEventListener('click', () => toggleSectionsPopup(false));
-  }
-
-  // Cerrar popup al hacer click en un enlace de sección
-  document.querySelectorAll('.mobile-sections-popup .popup-item').forEach(link => {
-    link.addEventListener('click', () => toggleSectionsPopup(false));
-  });
-
-  // Cerrar popup al hacer click fuera
-  document.addEventListener('click', (e) => {
-    if (sectionsPopup && sectionsPopup.classList.contains('active') && !e.target.closest('#mobileSectionsPopup') && !e.target.closest('#btnToggleSectionsPopup')) {
-      toggleSectionsPopup(false);
-    }
-  });
 
   window.addEventListener('scroll', () => {
     if (!scrollRaf) {
@@ -1244,13 +1208,25 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-expanded', 'false');
   }
 
-  // Toggle menu
+  // Toggle menu desde navbar
   toggle.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('active');
     toggle.classList.toggle('active', isOpen);
     if (overlay) overlay.classList.toggle('active', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
+
+  // Toggle menu desde barra móvil inferior
+  const bottomMenuBtn = document.getElementById('btnToggleSectionsPopup');
+  if (bottomMenuBtn) {
+    bottomMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = menu.classList.toggle('active');
+      toggle.classList.toggle('active', isOpen);
+      if (overlay) overlay.classList.toggle('active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
 
   // Close menu on overlay click
   if (overlay) {
