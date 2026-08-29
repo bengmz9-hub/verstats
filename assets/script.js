@@ -1202,28 +1202,47 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeMobileMenu() {
     toggle.classList.remove('active');
     menu.classList.remove('active');
+    menu.classList.remove('from-bottom');
     if (overlay) overlay.classList.remove('active');
     toggle.setAttribute('aria-expanded', 'false');
   }
 
-  function toggleMobileMenu(e) {
+  // Toggle menu desde navbar (arriba a la izquierda)
+  toggle.addEventListener('click', (e) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
-    const isOpen = menu.classList.toggle('active');
+    const isCurrentlyFromBottom = menu.classList.contains('from-bottom');
+    menu.classList.remove('from-bottom');
+
+    const isOpen = isCurrentlyFromBottom ? true : menu.classList.toggle('active');
+    if (isCurrentlyFromBottom) menu.classList.add('active');
+
     toggle.classList.toggle('active', isOpen);
     if (overlay) overlay.classList.toggle('active', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
+  });
 
-  // Toggle menu desde navbar
-  toggle.addEventListener('click', toggleMobileMenu);
-
-  // Toggle menu desde barra móvil inferior
+  // Toggle menu desde barra móvil inferior (justo encima del botón de la barra)
   const bottomMenuBtn = document.getElementById('btnToggleSectionsPopup');
   if (bottomMenuBtn) {
-    bottomMenuBtn.addEventListener('click', toggleMobileMenu);
+    bottomMenuBtn.addEventListener('click', (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const isAlreadyFromBottom = menu.classList.contains('from-bottom') && menu.classList.contains('active');
+      if (isAlreadyFromBottom) {
+        closeMobileMenu();
+      } else {
+        menu.classList.add('from-bottom');
+        menu.classList.add('active');
+        toggle.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
   }
 
   // Close menu on overlay click
