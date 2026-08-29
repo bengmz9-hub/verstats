@@ -18,5 +18,8 @@
     "L'Hospitalet",
     "Google-Maps",
     "WhatsApp"
-  ]
+  ],
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
 }

@@ -1,119 +1,83 @@
 #!/usr/bin/env node
 
 // Build Script para Verstats
-// Minifica CSS y JavaScript para produccion
+// Minifica CSS y JavaScript con esbuild de forma segura y aplica cache-busting en index.html
 // Uso: node build.js
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+const esbuild = require('esbuild');
 
-const ASSETS_DIR = path.join(__dirname, 'assets');
+const ROOT_DIR = __dirname;
+const ASSETS_DIR = path.join(ROOT_DIR, 'assets');
+const HTML_FILE = path.join(ROOT_DIR, 'index.html');
+
 const CSS_SRC = path.join(ASSETS_DIR, 'styles.css');
 const JS_SRC = path.join(ASSETS_DIR, 'script.js');
 const CSS_OUT = path.join(ASSETS_DIR, 'styles.min.css');
 const JS_OUT = path.join(ASSETS_DIR, 'script.min.js');
 
-// Minify CSS: remove comments, extra whitespace
-function minifyCSS(content) {
-  let minified = content
-    // Remove multi-line comments /* ... */
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    // Remove single-line comments //
-    .replace(/\/\/.*$/gm, '')
-    // Remove leading/trailing whitespace
-    .replace(/^\s+|\s+$/gm, '')
-    // Remove empty lines
-    .replace(/\n\n+/g, '\n')
-    // Compress spaces around selectors and properties
-    .replace(/\s*([{};:,>+~])\s*/g, '$1')
-    // Remove spaces inside @media, @keyframes, etc
-    .replace(/(@[a-z-]+)\s+/gi, '$1 ')
-    // Remove last semicolon before }
-    .replace(/;}/g, '}')
-    // Trim final newlines
-    .trim();
-
-  return minified;
-}
-
-// Minify JavaScript: remove comments, extra whitespace
-function minifyJS(content) {
-  let minified = content
-    // Preserve string literals by replacing them with placeholders
-    .split('\n')
-    .map(line => {
-      // Remove line comments (but not inside strings)
-      if (line.includes('//')) {
-        const idx = line.indexOf('//');
-        // Simple check: count quotes before comment
-        const before = line.substring(0, idx);
-        const quotes = (before.match(/["']/g) || []).length;
-        if (quotes % 2 === 0) {
-          return line.substring(0, idx);
-        }
-      }
-      return line;
-    })
-    .join('\n')
-    // Remove multi-line comments /* ... */
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    // Remove leading/trailing whitespace from lines
-    .replace(/^\s+|\s+$/gm, '')
-    // Remove empty lines
-    .replace(/\n\n+/g, '\n')
-    // Compress whitespace around operators (but preserve in strings)
-    .replace(/\s*([\{\}=;:,\(\)])\s*/g, '$1')
-    // Add back space after keywords
-    .replace(/(if|for|while|function|return|const|let|var)\(/g, '$1(')
-    .trim();
-
-  return minified;
-}
-
-// Format file size for display
 function formatSize(bytes) {
   return (bytes / 1024).toFixed(2) + ' KB';
 }
 
-// Main build function
-function build() {
+function getFileHash(content) {
+  return crypto.createHash('md5').update(content).digest('hex').slice(0, 8);
+}
 
-
+async function build() {
   try {
-    // Read source files
+    const cssRaw = fs.readFileSync(CSS_SRC, 'utf8');
+    const jsRaw = fs.readFileSync(JS_SRC, 'utf8');
 
-    const cssContent = fs.readFileSync(CSS_SRC, 'utf8');
-    const jsContent = fs.readFileSync(JS_SRC, 'utf8');
+    // 1. Minificación ultra-rápida y segura con esbuild
+    const cssResult = await esbuild.transform(cssRaw, { loader: 'css', minify: true });
+    const jsResult = await esbuild.transform(jsRaw, { loader: 'js', minify: true });
 
-    const cssSizeOriginal = cssContent.length;
-    const jsSizeOriginal = jsContent.length;
+    fs.writeFileSync(CSS_OUT, cssResult.code, 'utf8');
+    fs.writeFileSync(JS_OUT, jsResult.code, 'utf8');
 
-    // Minify
+    // 2. Generar hashes para Cache-Busting
+    const cssHash = getFileHash(cssResult.code);
+    const jsHash = getFileHash(jsResult.code);
 
-    const cssMinified = minifyCSS(cssContent);
-    const jsMinified = minifyJS(jsContent);
+    // 3. Inyectar versión en index.html si existe
+    if (fs.existsSync(HTML_FILE)) {
+      let htmlContent = fs.readFileSync(HTML_FILE, 'utf8');
 
-    const cssSizeMin = cssMinified.length;
-    const jsSizeMin = jsMinified.length;
+      // Actualizar enlace CSS
+      htmlContent = htmlContent.replace(
+        /href=["']assets\/(?:styles|styles\.min)\.css(?:\?[^"']*)?["']/g,
+        `href="assets/styles.min.css?v=${cssHash}"`
+      );
 
-    // Write output
+      // Actualizar script JS
+      htmlContent = htmlContent.replace(
+        /src=["']assets\/(?:script|script\.min)\.js(?:\?[^"']*)?["']/g,
+        `src="assets/script.min.js?v=${jsHash}"`
+      );
 
-    fs.writeFileSync(CSS_OUT, cssMinified, 'utf8');
-    fs.writeFileSync(JS_OUT, jsMinified, 'utf8');
+      fs.writeFileSync(HTML_FILE, htmlContent, 'utf8');
+    }
 
-    // Calculate and display results
-    const cssSaved = cssSizeOriginal - cssSizeMin;
-    const jsSaved = jsSizeOriginal - jsSizeMin;
+    // 4. Reporte
+    const cssSaved = cssRaw.length - cssResult.code.length;
+    const jsSaved = jsRaw.length - jsResult.code.length;
+    const totalOriginal = cssRaw.length + jsRaw.length;
     const totalSaved = cssSaved + jsSaved;
-    process.stdout.write(`\n[Build] Minificacion completada:\n`);
-    process.stdout.write(`  CSS: ${formatSize(cssSizeOriginal)} -> ${formatSize(cssSizeMin)} (ahorro: ${((cssSaved / cssSizeOriginal) * 100).toFixed(1)}%)\n`);
-    process.stdout.write(`  JS:  ${formatSize(jsSizeOriginal)} -> ${formatSize(jsSizeMin)} (ahorro: ${((jsSaved / jsSizeOriginal) * 100).toFixed(1)}%)\n`);
-    process.stdout.write(`  Total: ${formatSize(totalSaved)} (${(((totalSaved) / (cssSizeOriginal + jsSizeOriginal)) * 100).toFixed(1)}%)\n\n`);
+
+    process.stdout.write(`\n[Build] Minificacion completada (esbuild):\n`);
+    process.stdout.write(`  CSS: ${formatSize(cssRaw.length)} -> ${formatSize(cssResult.code.length)} (ahorro: ${((cssSaved / cssRaw.length) * 100).toFixed(1)}%) [v=${cssHash}]\n`);
+    process.stdout.write(`  JS:  ${formatSize(jsRaw.length)} -> ${formatSize(jsResult.code.length)} (ahorro: ${((jsSaved / jsRaw.length) * 100).toFixed(1)}%) [v=${jsHash}]\n`);
+    process.stdout.write(`  Total ahorrado: ${formatSize(totalSaved)} (${((totalSaved / totalOriginal) * 100).toFixed(1)}%)\n`);
+    process.stdout.write(`  Cache-busting inyectado en index.html con exito.\n\n`);
+
   } catch (error) {
     console.error('❌ Build failed:', error.message);
     process.exit(1);
   }
 }
 
-// Run build
 build();
+
