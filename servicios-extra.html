@@ -235,6 +235,17 @@
     .nav-back:hover {
       color: var(--accent, #ffb300);
     }
+    .nav-cta {
+      min-height: 38px !important;
+      width: 38px !important;
+      padding: 0 !important;
+      display: inline-grid !important;
+      place-items: center !important;
+      border-radius: 50% !important;
+    }
+    .nav-cta-text {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
@@ -250,14 +261,28 @@
       <a href="index.html#precios">Precios</a>
       <a href="index.html#faq">Preguntas</a>
     </div>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="lang-switch">
       <a class="nav-cta wa-link" href="https://wa.me/34636253724?text=Hola%20Verstats,%20quiero%20informaci%C3%B3n%20sobre%20las%20soluciones%20extra" target="_blank" rel="noopener noreferrer">
         <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        <span>WhatsApp</span>
       </a>
     </div>
   </nav>
 </header>
+
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menú móvil">
+  <a href="index.html#que-compras" class="mobile-menu-link">Ver lo que compras</a>
+  <a href="index.html#que-incluye" class="mobile-menu-link">Qué incluye</a>
+  <a href="index.html#whatsapp-asistente" class="mobile-menu-link">WhatsApp 24/7</a>
+  <a href="servicios-extra.html" class="mobile-menu-link" style="color: var(--accent); font-weight: 700;">⭐ Soluciones Extra</a>
+  <a href="index.html#precios" class="mobile-menu-link">Precios</a>
+  <a href="index.html#faq" class="mobile-menu-link">Preguntas</a>
+</div>
+<div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
 
 <main class="wrap">
   
