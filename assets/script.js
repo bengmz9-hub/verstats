@@ -3,6 +3,8 @@
     es: {
       "nav-que-compras": "Ver lo que compras",
       "nav-que-incluye": "Qué incluye",
+      "nav-wa-247": "⭐ WhatsApp 24/7",
+      "nav-soluciones-extra": "🚀 Soluciones Extra",
       "nav-como-funciona": "Cómo funciona",
       "nav-precios": "Precios",
       "nav-faq": "Preguntas",
@@ -284,6 +286,8 @@
     ca: {
       "nav-que-compras": "Veure el que compres",
       "nav-que-incluye": "Què inclou",
+      "nav-wa-247": "⭐ WhatsApp 24/7",
+      "nav-soluciones-extra": "🚀 Solucions Extra",
       "nav-como-funciona": "Com funciona",
       "nav-precios": "Preus",
       "nav-faq": "Preguntes",
