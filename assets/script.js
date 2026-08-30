@@ -911,11 +911,19 @@
     }
   }, { passive: true });
 
-  // FAQ: aria-expanded dinámico para screen readers
-  document.querySelectorAll('#faq details').forEach(detail => {
+  // FAQ: acordeón exclusivo (solo un desplegable abierto a la vez) + aria-expanded
+  const faqDetails = document.querySelectorAll('#faq details');
+  faqDetails.forEach(detail => {
     detail.addEventListener('toggle', () => {
       const summary = detail.querySelector('summary');
       if (summary) summary.setAttribute('aria-expanded', detail.open);
+      if (detail.open) {
+        faqDetails.forEach(other => {
+          if (other !== detail && other.open) {
+            other.open = false;
+          }
+        });
+      }
     });
   });
 
