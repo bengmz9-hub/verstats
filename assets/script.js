@@ -1087,6 +1087,51 @@ if (infoCarousel && infoDots.length > 0) {
       infoDotsRaf = false;
     });
   }, { passive: true });
+
+  // Arrastre con ratón en PC (Mouse Drag & Slide)
+  let isDown = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let hasMoved = false;
+
+  infoCarousel.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return; // solo click izquierdo
+    isDown = true;
+    hasMoved = false;
+    startX = e.pageX - infoCarousel.offsetLeft;
+    startScrollLeft = infoCarousel.scrollLeft;
+    infoCarousel.classList.add('is-dragging');
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDown) return;
+    isDown = false;
+    infoCarousel.classList.remove('is-dragging');
+    if (hasMoved) {
+      const width = infoCarousel.clientWidth || 1;
+      const moved = (e.pageX - infoCarousel.offsetLeft) - startX;
+      let targetIndex;
+      if (Math.abs(moved) > 50) {
+        targetIndex = moved < 0
+          ? Math.ceil(infoCarousel.scrollLeft / width)
+          : Math.floor(infoCarousel.scrollLeft / width);
+      } else {
+        targetIndex = Math.round(infoCarousel.scrollLeft / width);
+      }
+      goToInfoSlide(Math.max(0, Math.min(infoSlides.length - 1, targetIndex)));
+    }
+  });
+
+  infoCarousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const x = e.pageX - infoCarousel.offsetLeft;
+    const walk = x - startX;
+    if (Math.abs(walk) > 4) {
+      hasMoved = true;
+      e.preventDefault();
+      infoCarousel.scrollLeft = startScrollLeft - walk;
+    }
+  });
 }
 
 // Pestañas Suite WhatsApp Nativa (Accesible)
