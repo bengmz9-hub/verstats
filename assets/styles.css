@@ -88,15 +88,71 @@
   .logo { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; -webkit-tap-highlight-color: transparent; outline: none; }
   .logo span { color: var(--accent); }
   .logo-img { height: 34px; width: auto; background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
-  .nav-links { display: flex; align-items: center; gap: 14px; }
-  .nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 16px; background: var(--wa); color: #06402d; border-radius: 10px; font-weight: 700; font-size: .9rem; text-decoration: none; -webkit-tap-highlight-color: transparent; outline: none; transition: background .15s ease, color .15s ease; }
+  .nav-links { display: flex; align-items: center; gap: 18px; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; transition: color 0.15s ease; white-space: nowrap; }
+  
+  /* Desktop Dropdown Menú */
+  .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+  .nav-dropdown-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+  }
+  .nav-dropdown-btn:hover { color: var(--ink); }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, #152733 0%, #101e28 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    padding: 8px 6px;
+    min-width: 185px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+  }
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #d4e0e7;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--ink);
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+  }
+
+  .nav-cta { display: inline-grid; place-items: center; width: 38px; height: 38px; min-height: 38px; padding: 0; background: var(--wa); color: #06402d; border-radius: 50%; text-decoration: none; -webkit-tap-highlight-color: transparent; outline: none; transition: background .15s ease, color .15s ease, transform .2s ease; }
   .nav-cta:focus, .nav-cta:active { outline: none; }
   .nav-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .nav-cta-icon { width: 18px; height: 18px; flex: none; display: inline-block; }
-  .nav-cta-text { display: inline; }
+  .nav-cta-text { display: none; }
   /* CTA secundario (correo): mismo tamaño/forma que .nav-cta, estilo ghost para no competir con el CTA principal de WhatsApp */
   .nav-cta-email { background: transparent; border: 1px solid var(--line); color: var(--ink); }
   
+  .lang-switch { display: inline-flex; align-items: center; gap: 8px; }
   .lang-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; -webkit-tap-highlight-color: transparent; }
   .lang-btn { background: transparent; border: none; color: var(--muted); font-family: var(--font-display); font-weight: 700; font-size: .78rem; padding: 4px 10px; border-radius: 999px; cursor: pointer; -webkit-tap-highlight-color: transparent; outline: none; transition: all .15s ease; }
   .lang-btn:focus, .lang-btn:active { outline: none; }
@@ -467,10 +523,8 @@
   .mobile-menu { display: none; }
 
   /* ===================== RESPONSIVE ===================== */
-  /* Breakpoint del navbar separado del breakpoint de contenido (900px):
-     con el CTA de correo + textos completos, el nav necesita ~1200px para no partirse en 2 líneas
-     (verificado con Playwright). Por debajo de 1240px pasa a menú hamburguesa. */
-  @media (max-width: 1240px) {
+  /* Breakpoint del navbar ajustado a 900px tras compactar enlaces y botones icon-only */
+  @media (max-width: 900px) {
     .nav-links { display: none; }
 
     /* Hamburger Button - Apple Style */
