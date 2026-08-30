@@ -746,18 +746,104 @@
   const toggleBtn = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const overlay = document.getElementById('mobile-menu-overlay');
+  const bottomMenuBtn = document.getElementById('btnToggleSectionsPopup');
+  const btnScrollTop = document.getElementById('btnScrollTop');
+  const mobileBar = document.getElementById('mobileStickyBar');
+  const links = document.querySelectorAll('.mobile-menu-link');
 
-  function toggleMenu() {
-    const isActive = menu.classList.toggle('active');
-    overlay.classList.toggle('active', isActive);
-    toggleBtn.classList.toggle('active', isActive);
-    toggleBtn.setAttribute('aria-expanded', isActive);
+  function closeMobileMenu() {
+    if (toggleBtn) toggleBtn.classList.remove('active');
+    if (menu) {
+      menu.classList.remove('active');
+      menu.classList.remove('from-bottom');
+    }
+    if (overlay) overlay.classList.remove('active');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
   }
 
-  if (toggleBtn && menu && overlay) {
-    toggleBtn.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+  if (toggleBtn && menu) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isFromBottom = menu.classList.contains('from-bottom');
+      menu.classList.remove('from-bottom');
+      const isOpen = isFromBottom ? true : menu.classList.toggle('active');
+      if (isFromBottom) menu.classList.add('active');
+      toggleBtn.classList.toggle('active', isOpen);
+      if (overlay) overlay.classList.toggle('active', isOpen);
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
   }
+
+  if (bottomMenuBtn && menu) {
+    bottomMenuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isAlreadyOpen = menu.classList.contains('from-bottom') && menu.classList.contains('active');
+      if (isAlreadyOpen) {
+        closeMobileMenu();
+      } else {
+        menu.classList.add('from-bottom');
+        menu.classList.add('active');
+        if (toggleBtn) toggleBtn.classList.add('active');
+        if (overlay) overlay.classList.remove('active');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
+  if (overlay) overlay.addEventListener('click', closeMobileMenu);
+  links.forEach(l => l.addEventListener('click', closeMobileMenu));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu && menu.classList.contains('active')) {
+      closeMobileMenu();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (menu && menu.classList.contains('active') &&
+        !e.target.closest('#mobile-menu') &&
+        !e.target.closest('#mobile-menu-toggle') &&
+        !e.target.closest('#btnToggleSectionsPopup')) {
+      closeMobileMenu();
+    }
+  });
+
+  if (btnScrollTop) {
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY;
+    if (btnScrollTop) {
+      if (currentY > 300) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    }
+    if (mobileBar) {
+      if (currentY > 200) {
+        mobileBar.classList.add('visible');
+        if (currentY - lastScrollY > 10 && currentY > 500) {
+          mobileBar.classList.add('hidden-by-scroll');
+          if (btnScrollTop) btnScrollTop.style.bottom = '16px';
+        } else if (lastScrollY - currentY > 10) {
+          mobileBar.classList.remove('hidden-by-scroll');
+          if (btnScrollTop) btnScrollTop.style.bottom = '74px';
+        }
+      } else {
+        mobileBar.classList.remove('visible');
+        mobileBar.classList.remove('hidden-by-scroll');
+        if (btnScrollTop) btnScrollTop.style.bottom = '74px';
+      }
+    }
+    lastScrollY = currentY;
+  }, { passive: true });
 </script>
 
 </body>
