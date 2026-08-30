@@ -536,9 +536,26 @@
       <a href="aviso-legal.html" class="legal-link">Aviso legal</a> · 
       <a href="privacidad.html" class="legal-link">Privacidad</a> · 
       <a href="cookies.html" class="legal-link">Cookies</a>
-    </p>
   </div>
 </footer>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
+
+  function toggleMenu() {
+    const isActive = menu.classList.toggle('active');
+    overlay.classList.toggle('active', isActive);
+    toggleBtn.classList.toggle('active', isActive);
+    toggleBtn.setAttribute('aria-expanded', isActive);
+  }
+
+  if (toggleBtn && menu && overlay) {
+    toggleBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+  }
+</script>
 
 </body>
 </html>
