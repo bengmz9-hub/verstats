@@ -356,7 +356,7 @@
   .roi-note-banner { margin-top: 16px; font-size: .88rem; color: var(--ink); background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.2); padding: 10px 14px; border-radius: 10px; display: flex; align-items: center; gap: 8px; }
 
   /* ===== PRECIOS ===== */
-  .preus { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: stretch; max-width: 1080px; margin: 0 auto; }
+  .preus { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; width: 100%; }
   .paquet { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; }
   .paquet .tag { font-size: .78rem; margin-bottom: 2px; }
   .paquet h3 { font-size: 1.15rem; margin-bottom: 2px; }
