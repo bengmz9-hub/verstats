@@ -14,13 +14,13 @@ dist/
 build/
 graphify-out/
 
-# Backups & private environment variables
-backups/
-*.zip
-*.bak
-*.txt
-.env
-.env.local
+# Backups & private environment variables (Blindaje total)
+.env*
+!.env.example
+*.env
+*.secret
+*.key
+*.pem
 
 .vercel
 .wrangler
