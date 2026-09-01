@@ -54,8 +54,10 @@
       "compra2-p": "Las buenas, para dar las gracias. Las malas, para arreglar el problema en público. Todo respondido con tu tono.",
       "compra2-note": "Respuestas escritas con los datos reales de tus reseñas, respondiendo de verdad a cada cliente.",
       "rev-owner-tag": "Respuesta del propietario",
+      "rev1-time": "hace 3 días",
       "rev1-text": "Me hicieron un corte y un tinte y quedé encantada. Trato cercano y precio justo. La recomiendo.",
       "rev1-resp": "¡Gracias, María! Nos alegra muchísimo que te gustara el resultado. ¡Te esperamos cuando quieras!",
+      "rev2-time": "hace 1 semana",
       "rev2-text": "Menú del día muy completo y las mejores bravas del barrio. Trato rápido y amable.",
       "rev2-resp": "¡Muchas gracias, Jordi! Nos alegra que disfrutaras del menú. ¡Te esperamos pronto para probar las nuevas tapas!",
       "compra3-num": "Tu Instagram",
@@ -64,6 +66,7 @@
       "compra3-note": "Estos tres ejemplos están creados para la demo. En tu pack se usan fotos reales de TU negocio, nada de stock genérico.",
       "post1-dia": "Lunes · Promoción",
       "post1-likes": "Le gusta a 87 personas",
+      "post1-caption-user": "peluquerias.bellsal",
       "post1-caption-txt": "¿Te acuerdas de ese color que se te va rápido? Este mes, tinte + brillo con <b>20% de descuento</b> por WhatsApp.",
       "post2-dia": "Miércoles · Prueba social",
       "post2-likes": "Le gusta a 64 personas",
@@ -352,8 +355,10 @@
       "compra2-p": "Les bones, per donar les gràcies. Les dolentes, per arreglar el problema en públic. Tot respost amb el teu to.",
       "compra2-note": "Respostes escrites amb les dades reals de les teves ressenyes, responent de debò a cada client.",
       "rev-owner-tag": "Resposta del propietari",
+      "rev1-time": "fa 3 dies",
       "rev1-text": "Em van fer un tall i un tint i vaig quedar encantada. Tracte proper i preu just. La recomano.",
       "rev1-resp": "Gràcies, Maria! Ens alegra moltíssim que t'agradés el resultat. T'esperem quan vulguis!",
+      "rev2-time": "fa 1 setmana",
       "rev2-text": "Menú del dia molt complet i les millors braves del barri. Tracte ràpid i amable.",
       "rev2-resp": "Moltes gràcies, Jordi! Ens alegra que gaudissis del menú. T'esperem aviat per tastar les noves tapes!",
       "compra3-num": "El teu Instagram",
@@ -362,6 +367,7 @@
       "compra3-note": "Aquests tres exemples estan creats per a la demo. Al teu pack s'utilitzen fotos reals del TEU negoci, res de stock genèric.",
       "post1-dia": "Dilluns · Promoció",
       "post1-likes": "Li agrada a 87 persones",
+      "post1-caption-user": "peluquerias.bellsal",
       "post1-caption-txt": "Te'n recordes d'aquell color que se te'n va ràpid? Aquest mes, tint + brillantor amb un <b>20% de descompte</b> per WhatsApp.",
       "post2-dia": "Dimecres · Prova social",
       "post2-likes": "Li agrada a 64 persones",
@@ -625,6 +631,9 @@
   function setLang(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
+    try {
+      localStorage.setItem('verstats_lang', lang);
+    } catch (e) {}
     const btnEs = document.getElementById('btn-es');
     const btnCa = document.getElementById('btn-ca');
     if (btnEs) btnEs.classList.toggle('active', lang === 'es');
@@ -722,8 +731,8 @@
     const clientsInput = document.getElementById('roi-clients');
     const ticketInput = document.getElementById('roi-ticket');
     if (!clientsInput || !ticketInput) return;
-    const clients = parseInt(clientsInput.value, 10);
-    const ticket = parseInt(ticketInput.value, 10);
+    const clients = Math.max(0, parseInt(clientsInput.value, 10) || 0);
+    const ticket = Math.max(1, parseInt(ticketInput.value, 10) || 1);
     const clientsVal = document.getElementById('roi-clients-val');
     const ticketVal = document.getElementById('roi-ticket-val');
     const extraEl = document.getElementById('roi-extra');
@@ -882,8 +891,15 @@
   // Initialize
   const urlParams = new URLSearchParams(window.location.search);
   const langParam = urlParams.get('lang')?.toLowerCase();
+  let initialLang = 'es';
+  try {
+    initialLang = localStorage.getItem('verstats_lang') || 'es';
+  } catch (e) {}
   if (langParam === 'ca' || langParam === 'es') {
-    setLang(langParam);
+    initialLang = langParam;
+  }
+  if (initialLang === 'ca' || initialLang === 'es') {
+    setLang(initialLang);
   }
   calcRoi();
   applyNeighborhoodPreset();
@@ -1026,7 +1042,7 @@ const btnCloseBotBottom = document.getElementById('btn-close-bot-bottom');
 function openBotModal() {
   if (botModal && typeof botModal.showModal === 'function') {
     const firstTab = document.querySelector('.bot-modal-tab-btn[data-tab="m1"]');
-    if (firstTab) activateBotModalTab(firstTab);
+    if (firstTab && typeof activateBotModalTab === 'function') activateBotModalTab(firstTab);
     botModal.showModal();
     document.body.style.overflow = 'hidden';
   }
