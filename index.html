@@ -200,8 +200,106 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/styles.min.css?v=530d5f90">
+<link rel="stylesheet" href="assets/styles.min.css?v=a4ff1d9e">
 <style>
+/* Banner Sectorial Hostelería */
+.sector-banner {
+  margin: 32px 0 24px;
+  background: linear-gradient(135deg, rgba(20, 36, 48, 0.85), rgba(12, 24, 34, 0.95));
+  border: 1px solid rgba(255, 179, 0, 0.35);
+  border-radius: 20px;
+  padding: 26px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+.sector-banner::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 179, 0, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.sector-banner-content {
+  flex: 1;
+}
+.sector-badge {
+  display: inline-block;
+  background: rgba(255, 179, 0, 0.15);
+  color: var(--accent, #ffb300);
+  border: 1px solid rgba(255, 179, 0, 0.4);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.sector-banner h3 {
+  font-size: 1.32rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+.sector-banner p {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 680px;
+}
+.sector-banner-cta {
+  flex-shrink: 0;
+}
+.btn-sector {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent, #ffb300);
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(255, 179, 0, 0.25);
+}
+.btn-sector:hover {
+  transform: translateY(-2px);
+  background: #ffc107;
+  box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+}
+@media (max-width: 800px) {
+  .sector-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px 18px;
+    gap: 16px;
+  }
+  .sector-banner h3 {
+    font-size: 1.18rem;
+  }
+  .sector-banner p {
+    font-size: 0.86rem;
+  }
+  .btn-sector {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+}
 /* Botones de contacto en Navbar solo icono en desktop */
 .nav-cta-text {
   display: none !important;
@@ -747,7 +845,62 @@
       <a href="#que-compras" data-i18n="nav-que-compras">Ver lo que compras</a>
       <a href="#que-incluye" data-i18n="nav-que-incluye">Qué incluye</a>
       <a href="#whatsapp-asistente" data-i18n="nav-wa-247" style="color: var(--accent); font-weight: 700;">⭐ WhatsApp 24/7</a>
-      <a href="servicios-extra.html" data-i18n="nav-soluciones-extra" style="color: #38bdf8; font-weight: 700;">🚀 Soluciones Extra</a>
+      <div class="nav-item-dropdown" id="navSolucionesDropdown">
+        <a href="servicios-extra.html" class="nav-dropdown-trigger" data-i18n="nav-soluciones-extra" aria-haspopup="true" aria-expanded="false">
+          🚀 Soluciones Extra
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <div class="dropdown-bridge" aria-hidden="true"></div>
+        <div class="dropdown-panel" role="region" aria-label="Menú Soluciones Extra">
+          <div class="apple-dropdown-card">
+            <div class="apple-dropdown-head">
+              <span class="apple-head-label" data-i18n="dropdown-head-packs">Packs por Sector</span>
+              <span class="apple-head-brand">Verstats</span>
+            </div>
+            <div class="apple-dropdown-list">
+              <a href="servicios-extra.html#hosteleria" class="apple-dropdown-item">
+                <div class="apple-item-left">
+                  <div class="apple-item-icon icon-amber">☕</div>
+                  <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería y Bares</span>
+                </div>
+                <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
+              </a>
+              <a href="servicios-extra.html#belleza" class="apple-dropdown-item">
+                <div class="apple-item-left">
+                  <div class="apple-item-icon icon-green">💇‍♀️</div>
+                  <span class="apple-item-title" data-i18n="dropdown-pack-bell">Pack de Belleza y Estética</span>
+                </div>
+                <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
+              </a>
+              <a href="servicios-extra.html#talleres" class="apple-dropdown-item">
+                <div class="apple-item-left">
+                  <div class="apple-item-icon icon-blue">🔧</div>
+                  <span class="apple-item-title" data-i18n="dropdown-pack-tall">Pack de Talleres y Automoción</span>
+                </div>
+                <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
+              </a>
+              <a href="servicios-extra.html#comercio" class="apple-dropdown-item">
+                <div class="apple-item-left">
+                  <div class="apple-item-icon icon-purple">🛍️</div>
+                  <span class="apple-item-title" data-i18n="dropdown-pack-com">Pack de Comercio y Tiendas</span>
+                </div>
+                <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
+              </a>
+              <a href="servicios-extra.html#salud" class="apple-dropdown-item">
+                <div class="apple-item-left">
+                  <div class="apple-item-icon icon-rose">🏥</div>
+                  <span class="apple-item-title" data-i18n="dropdown-pack-salud">Pack de Clínicas y Salud</span>
+                </div>
+                <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
+              </a>
+            </div>
+            <div class="apple-dropdown-foot">
+              <span class="apple-foot-trust" data-i18n="dropdown-sin-permanencia">✓ Sin permanencia</span>
+              <a href="servicios-extra.html" class="apple-foot-link" data-i18n="dropdown-ver-todo">Ver todo el catálogo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="#como-funciona" data-i18n="nav-como-funciona">Cómo funciona</a>
       <a href="#precios" data-i18n="nav-precios">Precios</a>
       <a href="#faq" data-i18n="nav-faq">Preguntas</a>
@@ -1463,6 +1616,21 @@
         <a class="btn btn-ghost wa-link" data-wa-context="plan-web" href="#" target="_blank" rel="noopener noreferrer" data-i18n="paquet3-btn">Preguntar</a>
       </div>
     </div>
+
+    <!-- BANNER SECTORIAL: PACK HOSTELERÍA -->
+    <div class="sector-banner">
+      <div class="sector-banner-content">
+        <span class="sector-badge" data-i18n="sector-banner-badge">🍽️ Solución por Sector</span>
+        <h3 data-i18n="sector-banner-h3">¿Tienes un Bar, Restaurante o Cafetería?</h3>
+        <p data-i18n="sector-banner-p">Descubre el <strong>Pack Hostelería Modular</strong>: Carta Digital QR ultrarrápida, Bot de Reservas 24/7 y Ficha Google Maps optimizada. Contrata solo lo que necesitas o el pack completo con descuento.</p>
+      </div>
+      <div class="sector-banner-cta">
+        <a class="btn-sector" href="servicios-extra.html#pack-hosteleria" data-i18n="sector-banner-btn">
+          Ver Pack Hostelería Modular →
+        </a>
+      </div>
+    </div>
+
     <div class="preus-guarantee">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       <span data-i18n="preus-guarantee">No pedimos datos bancarios ni tarjetas para ver la demostración. Precios con IVA no incluido.</span>
@@ -1676,7 +1844,7 @@
   </div>
 </footer>
 
-<script src="assets/script.min.js?v=5495f00d"></script>
+<script src="assets/script.min.js?v=47c397d5"></script>
 
 </body>
 </html>
