@@ -1352,7 +1352,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       e.stopPropagation();
 
-      const wasOpen = dropdown.classList.contains('is-open') || dropdown.matches(':hover:not(.prevent-hover)');
+      const wasOpen = dropdown.classList.contains('is-open');
 
       if (wasOpen) {
         // Cierra y previene que el hover lo vuelva a abrir de inmediato

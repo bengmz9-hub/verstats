@@ -199,7 +199,7 @@
   .apple-dropdown-card {
     width: 340px;
     max-width: calc(100vw - 28px);
-    background: #193342;
+    background: rgba(14, 28, 38, 0.75); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 18px;
     padding: 12px;
@@ -1119,6 +1119,7 @@
       padding: 12px 16px;
       font-size: 0.9rem;
     }
+    .mobile-dropdown-trigger { padding: 12px 16px; font-size: 0.9rem; }
     .mobile-menu-toggle {
       width: 40px;
       height: 40px;
@@ -1841,7 +1842,7 @@
   .mobile-nav-item-dropdown {
     position: relative;
     width: 100%;
-    margin: 2px 0;
+    margin: 0;
   }
   
   .mobile-dropdown-trigger {
@@ -1919,7 +1920,7 @@
                 transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
                 clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
                 visibility 0.35s;
-    background: #193342;
+    background: rgba(14, 28, 38, 0.75); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(232, 163, 61, 0.45);
     border-radius: 14px;
     padding: 8px;
@@ -1939,7 +1940,7 @@
     pointer-events: auto;
   }
   
-  .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel,
+  @media (hover: hover) and (pointer: fine) {
   .mobile-nav-item-dropdown:not(.prevent-hover):hover .mobile-dropdown-panel {
     opacity: 1;
     visibility: visible;
@@ -1947,6 +1948,15 @@
     clip-path: inset(-20px);
     transform: translateX(0);
   }
+}
+
+.mobile-nav-item-dropdown.is-open .mobile-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  clip-path: inset(-20px);
+  transform: translateX(0);
+}
   
   /* 2. Menú flotante inferior (.from-bottom): flyout a la IZQUIERDA con cascada horizontal */
   .mobile-menu.from-bottom .mobile-nav-item-dropdown {
@@ -1967,7 +1977,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    background: #193342;
+    background: rgba(14, 28, 38, 0.75); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(232, 163, 61, 0.45);
     border-radius: 14px;
     padding: 8px;
@@ -1992,7 +2002,7 @@
     pointer-events: auto;
   }
   
-  .mobile-menu.from-bottom .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel,
+  @media (hover: hover) and (pointer: fine) {
   .mobile-menu.from-bottom .mobile-nav-item-dropdown:not(.prevent-hover):hover .mobile-dropdown-panel {
     opacity: 1;
     visibility: visible;
@@ -2000,6 +2010,15 @@
     clip-path: inset(-20px);
     transform: translateX(0);
   }
+}
+
+.mobile-menu.from-bottom .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  clip-path: inset(-20px);
+  transform: translateX(0);
+}
 
   /* Animación en cascada de los elementos interiores del submenú */
   .mobile-dropdown-panel .apple-dropdown-item {
@@ -2056,4 +2075,9 @@
     gap: 2px;
   }
 }
+
+
+
+
+
 
