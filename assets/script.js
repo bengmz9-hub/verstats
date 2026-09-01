@@ -6,7 +6,7 @@
       "nav-wa-247": "⭐ WhatsApp 24/7",
       "nav-soluciones-extra": "🚀 Soluciones Extra",
       "dropdown-head-packs": "Packs por Sector",
-      "dropdown-pack-host": "Pack de Hostelería y Bares",
+      "dropdown-pack-host": "Pack de Hostelería",
       "dropdown-pack-bell": "Pack de Belleza y Estética",
       "dropdown-pack-tall": "Pack de Talleres y Automoción",
       "dropdown-pack-com": "Pack de Comercio y Tiendas",
@@ -1394,6 +1394,31 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menu && menu.classList.contains('active')) {
       closeMobileMenu();
+    }
+  });
+
+  // Manejador interactivo de dropdowns en navbar desktop (Click y Touch)
+  const desktopDropdowns = document.querySelectorAll('.nav-item-dropdown');
+  desktopDropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger, .nav-link-dropdown');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  // Cerrar dropdown desktop al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item-dropdown')) {
+      desktopDropdowns.forEach(d => {
+        d.classList.remove('is-open');
+        const tr = d.querySelector('.nav-dropdown-trigger, .nav-link-dropdown');
+        if (tr) tr.setAttribute('aria-expanded', 'false');
+      });
     }
   });
 

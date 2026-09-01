@@ -476,41 +476,51 @@
       background: rgba(255, 179, 0, 0.08);
     }
 
-    /* 4 MODULAR CARDS GRID */
+    /* BENTO GRID MODULAR HOSTELERÍA (4 MÓDULOS) */
     .host-modules-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       margin-bottom: 28px;
     }
     .mod-card {
-      background: rgba(18, 28, 38, 0.72);
+      background: linear-gradient(145deg, rgba(22, 38, 52, 0.8), rgba(12, 22, 32, 0.95));
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 2px solid rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
       border-radius: 20px;
       padding: 24px 22px;
       display: flex;
       flex-direction: column;
       cursor: pointer;
       position: relative;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       user-select: none;
     }
     .mod-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 179, 0, 0.35);
+      transform: translateY(-3px);
+      border-color: rgba(255, 179, 0, 0.4);
       box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.45);
     }
     .mod-card.selected {
       border-color: var(--accent, #ffb300);
-      background: rgba(22, 38, 52, 0.88);
-      box-shadow: 0 12px 32px rgba(255, 179, 0, 0.15), inset 0 0 0 1px rgba(255, 179, 0, 0.3);
+      background: linear-gradient(145deg, rgba(26, 48, 66, 0.95), rgba(14, 28, 40, 0.98));
+      box-shadow: 0 12px 32px rgba(255, 179, 0, 0.18), inset 0 0 0 1px rgba(255, 179, 0, 0.3);
     }
     .mod-card:focus-visible {
       outline: 2px solid var(--accent, #ffb300);
       outline-offset: 3px;
+    }
+    @media (max-width: 680px) {
+      .host-modules-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .mod-card {
+        padding: 20px 18px;
+        border-radius: 16px;
+      }
     }
     .mod-card-top {
       display: flex;
@@ -866,7 +876,7 @@
               <a href="servicios-extra.html#hosteleria" class="apple-dropdown-item">
                 <div class="apple-item-left">
                   <div class="apple-item-icon icon-amber">☕</div>
-                  <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería y Bares</span>
+                  <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería</span>
                 </div>
               </a>
             </div>
@@ -913,7 +923,7 @@
         <a href="servicios-extra.html#hosteleria" class="apple-dropdown-item mobile-menu-link">
           <div class="apple-item-left">
             <div class="apple-item-icon icon-amber">☕</div>
-            <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería y Bares</span>
+            <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería</span>
           </div>
         </a>
       </div>
@@ -941,15 +951,11 @@
        SECCIÓN DESTACADA: PACK HOSTELERÍA MODULAR
        ========================================== -->
   <section id="pack-hosteleria" class="hosteleria-section" aria-labelledby="host-section-title">
+    <div id="hosteleria" style="position:absolute; top:-80px;"></div>
     <div class="host-header">
       <span class="extra-badge host-badge" data-i18n="host-badge">🍽️ Solución Especializada para Hostelería</span>
       <h2 id="host-section-title" data-i18n="host-title">Pack Hostelería Modular: <span>Elige lo que Necesita tu Local</span></h2>
       <p data-i18n="host-desc">Diseñado exclusivamente para bares, cafeterías y restaurantes. Contrata módulos individuales a tu ritmo o llévate el Pack Completo con más de 200 € de ahorro.</p>
-      <div class="host-pills">
-        <span class="host-pill" data-i18n="host-pill1">⚡ Llave en mano en 5 días</span>
-        <span class="host-pill" data-i18n="host-pill2">📱 100% Adaptado a móvil</span>
-        <span class="host-pill" data-i18n="host-pill3">🚫 0% Comisiones por reserva</span>
-      </div>
     </div>
 
     <!-- Banner Destacado ⭐ Pack Completo Hostelería Combo -->
