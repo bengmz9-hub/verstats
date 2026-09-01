@@ -194,13 +194,13 @@
       "roi-lbl-ticket": "Gasto medio por cliente / compra:",
       "roi-res-extra-lbl": "Ingreso adicional estimado:",
       "roi-res-fee-lbl": "Coste cuota mensual:",
-      "roi-res-fee-val": "-50 €/mes",
+      "roi-res-fee-val": "-79 €/mes",
       "roi-res-profit-lbl": "Impacto económico estimado:",
       "paquet1-tag": "Precio especial barrio",
       "paquet1-h3": "Asociados de PubillaComerç",
       "paquet1-note": "Para comercios asociados de la asociación del barrio.",
       "paquet1-li1": "Todo el paquete Presencia digital",
-      "paquet1-li2": "30% de descuento en la instalación",
+      "paquet1-li2": "100 € de descuento en la instalación",
       "paquet1-li3": "Para comercios asociados",
       "paquet1-btn": "Comenzar",
       "paquet1-subnote": "Dinos el nombre de tu asociación por WhatsApp y lo aplicamos al momento.",
@@ -231,10 +231,12 @@
       "paquet3-note": "Página sencilla y para móvil, con tus fotos y tu estilo.",
       "paquet3-li1": "Página web sencilla y para móvil",
       "paquet3-li2": "Con tus fotos y tu estilo",
-      "paquet3-li3": "Mantenimiento 50 €/mes (opcional)",
+      "paquet3-li3": "Mantenimiento 49 €/mes (opcional)",
       "paquet3-btn": "Preguntar",
       "preus-guarantee": "No pedimos datos bancarios ni tarjetas para ver la demostración. Precios con IVA no incluido.",
-      "price-mo": "+ 50 €/mes (IVA no incl.)",
+      "price-mo": "+ 79 €/mes (IVA no incl.)",
+      "price-mo-assoc": "+ 65 €/mes (IVA no incl.)",
+      "price-mo-bot": "+ 59 €/mes (IVA no incl.)",
       "price-once": "una vez (IVA no incl.)",
       "faq-title": "Preguntas que nos hacen antes de empezar",
       "faq-q1": "¿Cuánto tarda en estar todo funcionando?",
@@ -245,7 +247,7 @@
       "faq-a3": "Sin permanencia: el contrato es mes a mes y te das de baja cuando quieras. La instalación se paga una vez; el mantenimiento se mantiene solo mientras te esté funcionando.",
       "faq-q4": "¿Tenéis que entrar en mi cuenta de Google?",
       "faq-a4": "No. Te enviamos una invitación con permisos desde tu propia ficha: tú mantienes el control y puedes quitar el acceso cuando quieras. Tu contraseña no se toca.",
-      "faq-q5": "¿Qué incluye exactamente el mantenimiento de 50 €/mes?",
+      "faq-q5": "¿Qué incluye exactamente el mantenimiento de 79 €/mes?",
       "faq-a5": "Todo el paquete, no piezas sueltas: la gestión de tu ficha de Google, las respuestas a las reseñas, 8-12 contenidos al mes y el informe semanal de tu barrio (qué hacen tus competidores).",
       "faq-q6": "Ya me llevan las redes. ¿Me sirve esto?",
       "faq-a6": "Sí, se adapta: si ya tienes a alguien, hacemos solo la parte que te falta: la ficha de Google y las reseñas, por ejemplo, o el informe semanal. Se paga por lo que se usa.",
@@ -477,13 +479,13 @@
       "roi-lbl-ticket": "Despesa mitjana per client / compra:",
       "roi-res-extra-lbl": "Ingrés addicional estimat:",
       "roi-res-fee-lbl": "Cost quota mensual:",
-      "roi-res-fee-val": "-50 €/mes",
+      "roi-res-fee-val": "-79 €/mes",
       "roi-res-profit-lbl": "Impacte econòmic estimat:",
       "paquet1-tag": "Preu especial barri",
       "paquet1-h3": "Associats de PubillaComerç",
       "paquet1-note": "Per a comerços associats de l'associació del barri.",
       "paquet1-li1": "Tot el paquet Presència digital",
-      "paquet1-li2": "30% de descompte en la instal·lació",
+      "paquet1-li2": "100 € de descompte en la instal·lació",
       "paquet1-li3": "Per a comerços associats",
       "paquet1-btn": "Començar",
       "paquet1-subnote": "Digues-nos el nom de la teva associació per WhatsApp i ho apliquem al moment.",
@@ -513,10 +515,12 @@
       "paquet3-note": "Pàgina senzilla i per a mòbil, amb les teves fotos i el teu estil.",
       "paquet3-li1": "Pàgina web senzilla i per a mòbil",
       "paquet3-li2": "Amb les teves fotos i el teu estil",
-      "paquet3-li3": "Manteniment 50 €/mes (opcional)",
+      "paquet3-li3": "Manteniment 49 €/mes (opcional)",
       "paquet3-btn": "Demanar",
       "preus-guarantee": "No demanem dades bancàries ni targetes per veure la demostració. Preus amb IVA no inclòs.",
-      "price-mo": "+ 50 €/mes (IVA no incl.)",
+      "price-mo": "+ 79 €/mes (IVA no incl.)",
+      "price-mo-assoc": "+ 65 €/mes (IVA no incl.)",
+      "price-mo-bot": "+ 59 €/mes (IVA no incl.)",
       "price-once": "un sol cop (IVA no incl.)",
       "faq-title": "Preguntes que ens fan abans de començar",
       "faq-q1": "Quant triga a estar tot funcionant?",
@@ -527,7 +531,7 @@
       "faq-a3": "Sense permanència: el contracte és mes a mes i et dones de baixa quan vulguis. La instal·lació es paga una vegada; el manteniment es manté només mentre t'estigui funcionant.",
       "faq-q4": "Heu d'entrar al meu compte de Google?",
       "faq-a4": "No. T'enviem una invitació amb permisos des de la teva pròpia fitxa: tu mantens el control i pots treure l'accés quan vulguis. La teva contrasenya no es toca.",
-      "faq-q5": "Què inclou exactament el manteniment de 50 €/mes?",
+      "faq-q5": "Què inclou exactament el manteniment de 79 €/mes?",
       "faq-a5": "Tot el paquet, no peces soltes: la gestió de la teva fitxa de Google, les respostes a les ressenyes, 8-12 continguts al mes i l'informe setmanal del teu barri (què fan els teus competidors).",
       "faq-q6": "Ja em porten les xarxes. Em serveix això?",
       "faq-a6": "Sí, s'adapta: si ja tens algú, fem només la part que et falta: la fitxa de Google i les ressenyes, per exemple, o l'informe setmanal. Es paga pel que s'utilitza.",
@@ -715,7 +719,7 @@
     ticketInput.setAttribute('aria-valuetext', formatMoney(ticket));
 
     const extra = clients * ticket;
-    const profit = extra - 50;
+    const profit = extra - 79;
 
     if (extraEl) extraEl.textContent = `+${formatMoney(extra)}/mes`;
     if (profitEl) {
@@ -729,7 +733,7 @@
     }
 
     if (noteEl) {
-      const minNeeded = Math.ceil(50 / ticket);
+      const minNeeded = Math.ceil(79 / ticket);
       const minSuffix = currentLang === 'ca'
         ? (pr.select(minNeeded) === 'one' ? 'client nou' : 'clients nous')
         : (pr.select(minNeeded) === 'one' ? 'cliente nuevo' : 'clientes nuevos');
