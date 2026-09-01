@@ -1285,35 +1285,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('mobile-menu');
   const overlay = document.getElementById('mobile-menu-overlay');
   const links = document.querySelectorAll('.mobile-menu-link');
+  const mobileDropdowns = document.querySelectorAll('.mobile-nav-item-dropdown');
 
   function closeMobileMenu() {
-    toggle.classList.remove('active');
-    menu.classList.remove('active');
-    menu.classList.remove('from-bottom');
+    if (toggle) toggle.classList.remove('active');
+    if (menu) {
+      menu.classList.remove('active');
+      menu.classList.remove('from-bottom');
+    }
     if (overlay) overlay.classList.remove('active');
-    toggle.setAttribute('aria-expanded', 'false');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+
+    mobileDropdowns.forEach(d => {
+      d.classList.remove('is-open');
+      const tr = d.querySelector('.mobile-dropdown-trigger');
+      if (tr) tr.setAttribute('aria-expanded', 'false');
+    });
   }
 
   // Toggle menu desde navbar (arriba a la izquierda)
-  toggle.addEventListener('click', (e) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    const isCurrentlyFromBottom = menu.classList.contains('from-bottom');
-    menu.classList.remove('from-bottom');
+  if (toggle && menu) {
+    toggle.addEventListener('click', (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const isCurrentlyFromBottom = menu.classList.contains('from-bottom');
+      menu.classList.remove('from-bottom');
 
-    const isOpen = isCurrentlyFromBottom ? true : menu.classList.toggle('active');
-    if (isCurrentlyFromBottom) menu.classList.add('active');
+      const isOpen = isCurrentlyFromBottom ? true : menu.classList.toggle('active');
+      if (isCurrentlyFromBottom) menu.classList.add('active');
 
-    toggle.classList.toggle('active', isOpen);
-    if (overlay) overlay.classList.toggle('active', isOpen);
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+      toggle.classList.toggle('active', isOpen);
+      if (overlay) overlay.classList.toggle('active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
 
   // Toggle menu desde barra móvil inferior (justo encima del botón de la barra)
   const bottomMenuBtn = document.getElementById('btnToggleSectionsPopup');
-  if (bottomMenuBtn) {
+  if (bottomMenuBtn && menu) {
     bottomMenuBtn.addEventListener('click', (e) => {
       if (e) {
         e.preventDefault();
@@ -1325,12 +1336,34 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         menu.classList.add('from-bottom');
         menu.classList.add('active');
-        toggle.classList.add('active');
+        if (toggle) toggle.classList.add('active');
         if (overlay) overlay.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'true');
+        if (toggle) toggle.setAttribute('aria-expanded', 'true');
       }
     });
   }
+
+  // Manejador interactivo de submenús en móvil (Touch & Click)
+  mobileDropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.mobile-dropdown-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      // Cerrar otros dropdowns móviles si hubiera más de uno
+      mobileDropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('is-open');
+          const otherTr = other.querySelector('.mobile-dropdown-trigger');
+          if (otherTr) otherTr.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
 
   // Close menu on overlay click
   if (overlay) {
@@ -1344,17 +1377,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close menu on Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menu.classList.contains('active')) {
+    if (e.key === 'Escape' && menu && menu.classList.contains('active')) {
       closeMobileMenu();
     }
   });
 
-  // Close menu when clicking outside (salvo clics en los botones toggle)
+  // Close menu when clicking outside (salvo clics en los botones toggle o dentro del menú)
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('#mobile-menu') &&
+    if (menu && menu.classList.contains('active') &&
+        !e.target.closest('#mobile-menu') &&
         !e.target.closest('#mobile-menu-toggle') &&
-        !e.target.closest('#btnToggleSectionsPopup') &&
-        menu.classList.contains('active')) {
+        !e.target.closest('#btnToggleSectionsPopup')) {
       closeMobileMenu();
     }
   });

@@ -200,7 +200,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/styles.min.css?v=35a3bb9d">
+<link rel="stylesheet" href="assets/styles.min.css?v=4ad87ede">
 <style>
 /* Banner Sectorial Hostelería */
 .sector-banner {
@@ -897,17 +897,19 @@
   <a href="#que-compras" data-i18n="nav-que-compras" class="mobile-menu-link">Ver lo que compras</a>
   <a href="#que-incluye" data-i18n="nav-que-incluye" class="mobile-menu-link">Qué incluye</a>
   <a href="#whatsapp-asistente" data-i18n="nav-wa-247" class="mobile-menu-link" style="color: var(--accent); font-weight: 700;">⭐ WhatsApp 24/7</a>
-  <div class="mobile-nav-item-dropdown">
-    <a href="#" class="mobile-dropdown-trigger premium-glow">
+  <div class="mobile-nav-item-dropdown" id="mobileSolucionesDropdown">
+    <button type="button" class="mobile-dropdown-trigger premium-glow" aria-haspopup="true" aria-expanded="false" aria-label="Desplegar Soluciones Extra">
       <span style="display:flex; align-items:center; gap:6px;">🚀 <span data-i18n="nav-soluciones-extra">Soluciones Extra</span></span>
-    </a>
-    <div class="mobile-dropdown-panel">
+      <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div class="mobile-dropdown-panel" role="region" aria-label="Submenú Soluciones Extra">
       <div class="apple-dropdown-list">
         <a href="servicios-extra.html#hosteleria" class="apple-dropdown-item mobile-menu-link">
           <div class="apple-item-left">
             <div class="apple-item-icon icon-amber">☕</div>
             <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería y Bares</span>
           </div>
+          <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
         </a>
       </div>
     </div>
@@ -1830,7 +1832,7 @@
   </div>
 </footer>
 
-<script src="assets/script.min.js?v=47c397d5"></script>
+<script src="assets/script.min.js?v=e04aeace"></script>
 
 </body>
 </html>

@@ -904,17 +904,19 @@
   <a href="index.html#que-compras" data-i18n="nav-que-compras" class="mobile-menu-link">Ver lo que compras</a>
   <a href="index.html#que-incluye" data-i18n="nav-que-incluye" class="mobile-menu-link">Qué incluye</a>
   <a href="index.html#whatsapp-asistente" data-i18n="nav-wa-247" class="mobile-menu-link" style="color: var(--accent); font-weight: 700;">⭐ WhatsApp 24/7</a>
-  <div class="mobile-nav-item-dropdown">
-    <a href="#" class="mobile-dropdown-trigger premium-glow">
+  <div class="mobile-nav-item-dropdown" id="mobileSolucionesDropdown">
+    <button type="button" class="mobile-dropdown-trigger premium-glow" aria-haspopup="true" aria-expanded="false" aria-label="Desplegar Soluciones Extra">
       <span style="display:flex; align-items:center; gap:6px;">🚀 <span data-i18n="nav-soluciones-extra">Soluciones Extra</span></span>
-    </a>
-    <div class="mobile-dropdown-panel">
+      <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div class="mobile-dropdown-panel" role="region" aria-label="Submenú Soluciones Extra">
       <div class="apple-dropdown-list">
         <a href="servicios-extra.html#hosteleria" class="apple-dropdown-item mobile-menu-link">
           <div class="apple-item-left">
             <div class="apple-item-icon icon-amber">☕</div>
             <span class="apple-item-title" data-i18n="dropdown-pack-host">Pack de Hostelería y Bares</span>
           </div>
+          <span class="apple-item-action" data-i18n="dropdown-acceder">Acceder →</span>
         </a>
       </div>
     </div>
@@ -1793,6 +1795,7 @@
   const btnScrollTop = document.getElementById('btnScrollTop');
   const mobileBar = document.getElementById('mobileStickyBar');
   const links = document.querySelectorAll('.mobile-menu-link');
+  const mobileDropdowns = document.querySelectorAll('.mobile-nav-item-dropdown');
 
   function closeMobileMenu() {
     if (toggleBtn) toggleBtn.classList.remove('active');
@@ -1802,6 +1805,12 @@
     }
     if (overlay) overlay.classList.remove('active');
     if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+
+    mobileDropdowns.forEach(d => {
+      d.classList.remove('is-open');
+      const tr = d.querySelector('.mobile-dropdown-trigger');
+      if (tr) tr.setAttribute('aria-expanded', 'false');
+    });
   }
 
   if (toggleBtn && menu) {
@@ -1834,6 +1843,27 @@
       }
     });
   }
+
+  // Manejador interactivo de submenús en móvil (Touch & Click)
+  mobileDropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.mobile-dropdown-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      mobileDropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('is-open');
+          const otherTr = other.querySelector('.mobile-dropdown-trigger');
+          if (otherTr) otherTr.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
 
   if (overlay) overlay.addEventListener('click', closeMobileMenu);
   links.forEach(l => l.addEventListener('click', closeMobileMenu));
