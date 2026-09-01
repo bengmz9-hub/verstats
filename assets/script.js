@@ -1351,8 +1351,19 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const isOpen = dropdown.classList.toggle('is-open');
-      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      const wasOpen = dropdown.classList.contains('is-open') || dropdown.matches(':hover:not(.prevent-hover)');
+
+      if (wasOpen) {
+        // Cierra y previene que el hover lo vuelva a abrir de inmediato
+        dropdown.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        dropdown.classList.add('prevent-hover');
+      } else {
+        dropdown.classList.add('is-open');
+        dropdown.classList.remove('prevent-hover');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
 
       // Cerrar otros dropdowns móviles si hubiera más de uno
       mobileDropdowns.forEach(other => {
@@ -1362,6 +1373,10 @@ document.addEventListener('DOMContentLoaded', () => {
           if (otherTr) otherTr.setAttribute('aria-expanded', 'false');
         }
       });
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('prevent-hover');
     });
   });
 

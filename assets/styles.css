@@ -851,8 +851,9 @@
       position: fixed;
       top: 68px;
       left: 0;
-      width: 58vw;
-      max-width: 250px;
+      width: max-content;
+      min-width: 180px;
+      max-width: 220px;
       height: auto;
       background: linear-gradient(145deg, #152733 0%, #101e28 100%);
       border-right: 2px solid var(--accent);
@@ -861,7 +862,7 @@
       border-left: none;
       border-radius: 0 0 20px 0;
       flex-direction: column;
-      padding: 10px 8px;
+      padding: 10px 14px 14px 10px;
       gap: 6px;
       box-shadow: 10px 0 25px rgba(232, 163, 61, 0.18), 14px 12px 40px rgba(0, 0, 0, 0.75);
       z-index: 1001;
@@ -1869,13 +1870,13 @@
   }
 
   .mobile-nav-item-dropdown.is-open .dropdown-chevron,
-  .mobile-nav-item-dropdown:hover .dropdown-chevron {
+  .mobile-nav-item-dropdown:not(.prevent-hover):hover .dropdown-chevron {
     transform: rotate(-90deg); /* Apunta hacia el flyout lateral */
     color: #fff;
   }
 
   .mobile-menu.from-bottom .mobile-nav-item-dropdown.is-open .dropdown-chevron,
-  .mobile-menu.from-bottom .mobile-nav-item-dropdown:hover .dropdown-chevron {
+  .mobile-menu.from-bottom .mobile-nav-item-dropdown:not(.prevent-hover):hover .dropdown-chevron {
     transform: rotate(90deg); /* Apunta hacia la izquierda */
     color: #fff;
   }
@@ -1891,7 +1892,7 @@
   }
 
   .mobile-nav-item-dropdown.is-open .premium-glow,
-  .mobile-nav-item-dropdown:hover .premium-glow,
+  .mobile-nav-item-dropdown:not(.prevent-hover):hover .premium-glow,
   .premium-glow:hover {
     background: linear-gradient(145deg, rgba(232,163,61,0.22), rgba(232,163,61,0.06)) !important;
     border-color: rgba(232, 163, 61, 0.75) !important;
@@ -1939,7 +1940,7 @@
   }
   
   .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel,
-  .mobile-nav-item-dropdown:hover .mobile-dropdown-panel {
+  .mobile-nav-item-dropdown:not(.prevent-hover):hover .mobile-dropdown-panel {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -1992,7 +1993,7 @@
   }
   
   .mobile-menu.from-bottom .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel,
-  .mobile-menu.from-bottom .mobile-nav-item-dropdown:hover .mobile-dropdown-panel {
+  .mobile-menu.from-bottom .mobile-nav-item-dropdown:not(.prevent-hover):hover .mobile-dropdown-panel {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -2021,7 +2022,7 @@
   }
 
   .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel .apple-dropdown-item,
-  .mobile-nav-item-dropdown:hover .mobile-dropdown-panel .apple-dropdown-item {
+  .mobile-nav-item-dropdown:not(.prevent-hover):hover .mobile-dropdown-panel .apple-dropdown-item {
     opacity: 1;
     transform: translateX(0);
     transition-delay: 0.08s;
