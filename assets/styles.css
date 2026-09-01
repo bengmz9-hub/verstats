@@ -1827,7 +1827,16 @@
 }
 
 /* ===================== MOBILE SUBMENU ===================== */
+/* ===================== MOBILE SUBMENU ===================== */
 @media (max-width: 1080px) {
+  .mobile-menu {
+    overflow: visible !important;
+  }
+
+  .mobile-menu.from-bottom {
+    overflow: visible !important;
+  }
+
   .mobile-nav-item-dropdown {
     position: relative;
     width: 100%;
@@ -1861,7 +1870,13 @@
 
   .mobile-nav-item-dropdown.is-open .dropdown-chevron,
   .mobile-nav-item-dropdown:hover .dropdown-chevron {
-    transform: rotate(180deg);
+    transform: rotate(-90deg); /* Apunta hacia el flyout lateral */
+    color: #fff;
+  }
+
+  .mobile-menu.from-bottom .mobile-nav-item-dropdown.is-open .dropdown-chevron,
+  .mobile-menu.from-bottom .mobile-nav-item-dropdown:hover .dropdown-chevron {
+    transform: rotate(90deg); /* Apunta hacia la izquierda */
     color: #fff;
   }
   
@@ -1884,74 +1899,96 @@
     box-shadow: 0 0 18px rgba(232,163,61,0.35) !important;
   }
   
-  /* 1. Menú hamburguesa superior: cascada fluida integrada dentro del drawer */
+  /* 1. Menú hamburguesa superior: flyout a la DERECHA con cascada horizontal */
   .mobile-dropdown-panel {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 8px);
+    right: auto;
+    width: 250px;
+    max-width: calc(100vw - 250px);
+    min-width: 210px;
     box-sizing: border-box;
-    max-height: 0;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    overflow: hidden;
-    margin-top: 0;
-    clip-path: inset(0 0 100% 0);
-    transform: translateY(-4px);
-    transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-                opacity 0.35s ease,
+    clip-path: inset(0 100% 0 0); /* Cascada hacia la derecha */
+    transform: translateX(-12px);
+    transition: opacity 0.35s ease,
                 transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-                clip-path 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-                margin-top 0.3s ease,
-                visibility 0.4s;
-    background: rgba(19, 39, 51, 0.95);
-    border: 1px solid rgba(232, 163, 61, 0.35);
-    border-radius: 12px;
-    padding: 0 6px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.45);
-    z-index: 1002;
+                clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                visibility 0.35s;
+    background: #193342;
+    border: 1px solid rgba(232, 163, 61, 0.45);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(232, 163, 61, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    z-index: 1010;
+  }
+
+  /* Hover Bridge para que el ratón no pierda el hover al cruzar el hueco a la derecha */
+  .mobile-dropdown-panel::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -16px;
+    width: 20px;
+    background: transparent;
+    pointer-events: auto;
   }
   
   .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel,
   .mobile-nav-item-dropdown:hover .mobile-dropdown-panel {
-    max-height: 200px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    margin-top: 6px;
-    padding: 6px;
-    clip-path: inset(-15px);
-    transform: translateY(0);
+    clip-path: inset(-20px);
+    transform: translateX(0);
   }
   
-  /* 2. Menú flotante inferior (.from-bottom): cascada de abajo hacia arriba flotando sobre el menú */
+  /* 2. Menú flotante inferior (.from-bottom): flyout a la IZQUIERDA con cascada horizontal */
   .mobile-menu.from-bottom .mobile-nav-item-dropdown {
     position: relative;
   }
 
   .mobile-menu.from-bottom .mobile-nav-item-dropdown .mobile-dropdown-panel {
     position: absolute;
-    bottom: calc(100% + 8px);
-    right: 0;
+    top: 0;
+    right: calc(100% + 8px);
     left: auto;
-    top: auto;
-    width: 255px;
-    max-width: calc(100vw - 20px);
-    max-height: none;
-    overflow: visible;
-    margin-top: 0;
-    padding: 6px;
-    clip-path: inset(100% 0 0 0); /* Cascada de abajo hacia arriba */
-    transform: translateY(8px);
+    bottom: auto;
+    width: 250px;
+    max-width: calc(100vw - 180px);
+    min-width: 210px;
+    clip-path: inset(0 0 0 100%); /* Cascada hacia la izquierda */
+    transform: translateX(12px);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     background: #193342;
-    border: 1px solid rgba(232, 163, 61, 0.5);
+    border: 1px solid rgba(232, 163, 61, 0.45);
     border-radius: 14px;
-    box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(232, 163, 61, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    padding: 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(232, 163, 61, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transition: opacity 0.35s ease,
                 transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
                 clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-                visibility 0.4s;
+                visibility 0.35s;
+    z-index: 1010;
+  }
+
+  /* Hover Bridge para que el ratón no pierda el hover al cruzar el hueco a la izquierda */
+  .mobile-menu.from-bottom .mobile-dropdown-panel::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    right: -16px;
+    left: auto;
+    width: 20px;
+    background: transparent;
+    pointer-events: auto;
   }
   
   .mobile-menu.from-bottom .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel,
@@ -1960,7 +1997,7 @@
     visibility: visible;
     pointer-events: auto;
     clip-path: inset(-20px);
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   /* Animación en cascada de los elementos interiores del submenú */
@@ -1975,18 +2012,18 @@
     justify-content: space-between;
     text-decoration: none;
     opacity: 0;
-    transform: translateY(-4px);
+    transform: translateX(-8px);
     transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s ease, border-color 0.2s ease;
   }
 
   .mobile-menu.from-bottom .mobile-dropdown-panel .apple-dropdown-item {
-    transform: translateY(4px);
+    transform: translateX(8px);
   }
 
   .mobile-nav-item-dropdown.is-open .mobile-dropdown-panel .apple-dropdown-item,
   .mobile-nav-item-dropdown:hover .mobile-dropdown-panel .apple-dropdown-item {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     transition-delay: 0.08s;
   }
 
